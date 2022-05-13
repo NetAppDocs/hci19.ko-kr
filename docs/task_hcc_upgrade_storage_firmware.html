@@ -1,0 +1,2841 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head class="at-element-marker">
+  <title>스토리지 펌웨어를 업그레이드합니다</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="스토리지 펌웨어를 업그레이드합니다" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/ko-kr/hci19/docs/task_hcc_upgrade_storage_firmware.html" />
+	<meta property="og:description" content="NetApp HCI 시스템 업그레이드의 일환으로 스토리지 노드와 연결된 펌웨어를 업그레이드합니다." />
+  <meta property="og:image" content="https://docs.netapp.com/ko-kr/hci19/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="NetApp HCI 시스템 업그레이드의 일환으로 스토리지 노드와 연결된 펌웨어를 업그레이드합니다.">
+  <meta name="keywords" content=" netapp, element, hcc, firmware, storage firmware"><!-- Icons -->
+  <link rel="icon" href="/ko-kr/hci19/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Controls AsciiDoctor Admonition Blocks -->
+  <link rel="stylesheet" type="text/css" href="/ko-kr/hci19/css/font-awesome.min.css">
+
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/ko-kr/hci19/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel="stylesheet" type="text/css" href="/ko-kr/hci19/css/netapp.css">
+
+  <!-- WWW CSS Content -->
+  <link rel="stylesheet" type="text/css" href="/ko-kr/hci19/css/www-luci-dotcom.min.css">
+  <link rel="stylesheet" type="text/css" href="/ko-kr/hci19/css/www-netapp-dotcom.css">
+  <link rel="stylesheet" href="/ko-kr/hci19/css/www-netapp-library-critical.min.css" media="all" >
+  <link rel="stylesheet" href="/ko-kr/hci19/css/www-netapp-library-non-critical.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="/ko-kr/hci19/css/www-netapp-library-global-header-footer.min.css">
+
+  <!-- NetApp IE Customizations -->
+  <link rel="stylesheet" href='/ko-kr/hci19/css/na-utility.css' type='text/css'>
+  <link rel="stylesheet" href='/ko-kr/hci19/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/ko-kr/hci19/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/ko-kr/hci19/css/custom-dropdown.css' type='text/css'>
+  <link rel='stylesheet' href='/ko-kr/hci19/css/na-pagenav.css' type='text/css'>
+
+  
+  <link rel="stylesheet" href="/ko-kr/hci19/css/landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/ko-kr/hci19/css/tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel='stylesheet' href='/ko-kr/hci19/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
+    if (document.location.hostname === "docs.netapp.com") {
+      var head = document.getElementsByTagName('head')[0];
+      var onetrustConsent = document.createElement("script");
+      onetrustConsent.type = "text/javascript";
+      onetrustConsent.src = "https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js";
+      head.appendChild(onetrustConsent);
+
+      var onetrustScript = document.createElement("script");
+      onetrustScript.type = "text/javascript";
+      onetrustScript.src = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js";
+      onetrustScript.charset = "UTF-8";
+      onetrustScript.dataset.documentLanguage = "true";
+      onetrustScript.dataset.domainScript = "72570c5c-fe30-465f-b0e0-b77f7fb4ae34";
+      head.appendChild(onetrustScript);
+    }
+
+    function OptanonWrapper() { }
+
+    if (document.location.hostname === "docs.netapp.com") {
+      var adobe = document.createElement("script");
+      adobe.type = "text/plain";
+      adobe.className = "optanon-category-C0002";
+      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+      head.appendChild(adobe);
+
+      var google = document.createElement("script");
+      google.type = "text/plain";
+      google.className = "optanon-category-C0002";
+      google.src = "https://www.googletagmanager.com/gtag/js?id=UA-81697994-3";
+      head.appendChild(google);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-81697994-3');
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/ko-kr/hci19/js/na-search.js'></script><script src='/ko-kr/hci19/js/na-pagenav.js'></script><link rel='stylesheet' href='/ko-kr/hci19/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/ko-kr/hci19/css/prism-netapp.css' type='text/css'>
+
+
+  <script src='/ko-kr/hci19/js/na-utility.js'></script>
+  <script src='/ko-kr/hci19/js/clouddocs.js'></script>
+  <script src='/ko-kr/hci19/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/ko-kr/hci19/js/toc.js'></script>
+  <script src='/ko-kr/hci19/js/customscripts.js'></script><script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script>
+  <script src='/ko-kr/hci19/js/custom-dropdown.js'></script>
+  <script src='/ko-kr/hci19/js/FileSaver.min.js'></script>
+  <script src='/ko-kr/hci19/js/jszip-utils.min.js'></script>
+  <script src='/ko-kr/hci19/js/jszip.min.js'></script>
+  <script src='/ko-kr/hci19/js/pdf-ux.js'></script>
+</head>
+
+
+  <body class role="document" data-flavor="">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/hci19/issues/new?body=Page%3A%20[스토리지 펌웨어를 업그레이드합니다](https://docs.netapp.com/ko-kr/hci19/docs/task_hcc_upgrade_storage_firmware.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/hci19/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a><a target="_blank" href="https://github.com/NetAppDocs/hci19/blob/main/docs/task_hcc_upgrade_storage_firmware.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/hci19/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/hci19/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a></div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">이 페이지의 내용</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">제품 및 솔루션</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">지원 및 교육</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">커뮤니티</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">블로그</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">고객 성공 사례</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">연락처</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">연락처</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/ko-kr/hci19/common/svg/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/ko-kr/hci19/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/ko-kr/hci19/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" 
+          data-search-html="/ko-kr/hci19/search.html"
+          data-type="widget" 
+          data-placeholder="설명서 검색" 
+          data-no-results-found="{query}에 대한 결과를 찾을 수 없음" 
+          data-did-you-mean="{suggestion}을(를) 검색해보십시오." 
+          data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?" 
+          data-results-found="{hitCount}개의 결과를 찾음"  
+          data-sk-es-pf-indexes=""
+          data-flavor=""></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/hci19/common/svg/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar">
+    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
+      <div id="ie-i18n-menu">
+      <span class="ie-i18n-lang">한국어</span>
+        <button class="ie-i18n-icon-container" type="button">
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/hci19/common/svg/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
+        <div class="n-language-selector-menu">
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/us-en/hci19/docs/task_hcc_upgrade_storage_firmware.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ja-jp/hci19/docs/task_hcc_upgrade_storage_firmware.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ko-kr/hci19/docs/task_hcc_upgrade_storage_firmware.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/hci19/docs/task_hcc_upgrade_storage_firmware.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-tw/hci19/docs/task_hcc_upgrade_storage_firmware.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
+                </li></ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <script>
+    $(function(){
+        var currentLocalization = $('html').attr('lang');
+
+        var localizationsDictionary = {
+            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
+            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
+            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
+            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
+            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
+            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
+            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
+            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
+            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
+            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
+            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
+            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
+            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
+            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
+            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
+        };
+
+        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
+            $('.n-property-bar__property-link').attr('href', '/');
+        }
+    });
+  </script>
+  <!-- End property bar -->
+</header>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" id="sidebar-height">
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+    <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>사용 가능한 PDF<span>
+    </span>
+  </a>
+</div>
+<div class="n-pdf-body-container">
+  <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        
+        
+        
+        <a target="_blank" href="/ko-kr/hci19/pdfs/fullsite-sidebar/NetApp_HCI_문서.pdf" >
+          <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>이 문서 사이트의 PDF</a>
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/hci19/pdfs/sidebar/릴리즈_노트.pdf" 
+            
+          >
+            <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>
+            릴리즈 노트
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/hci19/pdfs/sidebar/개념.pdf" 
+            
+          >
+            <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>
+            개념
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/hci19/pdfs/sidebar/스토리지.pdf" 
+            
+          >
+            <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>
+            스토리지
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/hci19/pdfs/sidebar/요구_사항_및_구축_전_작업.pdf" 
+            
+          >
+            <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>
+            요구 사항 및 구축 전 작업
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/hci19/pdfs/sidebar/네트워크_구성.pdf" 
+            
+          >
+            <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>
+            네트워크 구성
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/hci19/pdfs/sidebar/NetApp_HCI를_시작하십시오.pdf" 
+            
+          >
+            <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>
+            NetApp HCI를 시작하십시오
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/hci19/pdfs/sidebar/NetApp_HCI_구축.pdf" 
+            
+          >
+            <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>
+            NetApp HCI 구축
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/hci19/pdfs/sidebar/NetApp_배포_엔진에_액세스합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>
+            NetApp 배포 엔진에 액세스합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/hci19/pdfs/sidebar/VMware_vSphere를_구성합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>
+            VMware vSphere를 구성합니다
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/hci19/pdfs/sidebar/재고_선택.pdf" 
+            
+          >
+            <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>
+            재고 선택
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/hci19/pdfs/sidebar/구축_후_작업.pdf" 
+            
+          >
+            <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>
+            구축 후 작업
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/hci19/pdfs/sidebar/NetApp_HCI_관리.pdf" 
+            
+          >
+            <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>
+            NetApp HCI 관리
+          </a>
+          
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/hci19/pdfs/sidebar/NetApp_HCI_스토리지_관리.pdf" 
+            
+          >
+            <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>
+            NetApp HCI 스토리지 관리
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/hci19/pdfs/sidebar/관리_노드와_작업합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>
+            관리 노드와 작업합니다
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/hci19/pdfs/sidebar/관리_노드를_설치_또는_복구합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>
+            관리 노드를 설치 또는 복구합니다
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/hci19/pdfs/sidebar/관리_노드_UI를_사용합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>
+            관리 노드 UI를 사용합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/hci19/pdfs/sidebar/관리_노드_REST_API를_사용합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>
+            관리 노드 REST API를 사용합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/hci19/pdfs/sidebar/지원_연결을_관리합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>
+            지원 연결을 관리합니다
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/hci19/pdfs/sidebar/NetApp_HCI_시스템의_전원을_끄거나_켭니다.pdf" 
+            
+          >
+            <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>
+            NetApp HCI 시스템의 전원을 끄거나 켭니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/hci19/pdfs/sidebar/NetApp_하이브리드_클라우드_제어로_NetApp_HCI_시스템을_모니터링합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>
+            NetApp 하이브리드 클라우드 제어로 NetApp HCI 시스템을 모니터링합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/hci19/pdfs/sidebar/NetApp_HCI_시스템_버전_1_9_또는_1_9P1을_를__업그레이드합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>
+            NetApp HCI 시스템 버전 1.9 또는 1.9P1을(를) 업그레이드합니다
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/hci19/pdfs/sidebar/시스템_업그레이드_절차.pdf" 
+            
+          >
+            <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>
+            시스템 업그레이드 절차
+          </a>
+          
+
+
+
+
+
+
+
+
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/ko-kr/hci19/pdfs/pages/docs/task_hcc_upgrade_storage_firmware.pdf" >
+    <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/hci19/pdfs/sidebar/NetApp_HCI_시스템을_확장합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>
+            NetApp HCI 시스템을 확장합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/hci19/pdfs/sidebar/NetApp_HCI에서_Rancher를_사용합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>
+            NetApp HCI에서 Rancher를 사용합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/hci19/pdfs/sidebar/구축_후_작업.pdf" 
+            
+          >
+            <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>
+            구축 후 작업
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/ko-kr/hci19/pdfs/sidebar/H_시리즈_하드웨어_유지_관리.pdf" 
+            
+          >
+            <img src="/ko-kr/hci19/images/pdf.png" width="16" height="16"/>
+            H 시리즈 하드웨어 유지 관리
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+</li></ul>
+  <div class="zip-pdf-link-container" style="display: none;">   
+    <a href="#" id="zipPdf">
+      <img src="/ko-kr/hci19/images/pdf-zip.png" width="16" height="16"/>
+      <pre>별도의 PDF 문서 모음<span class="zip-size"></span></pre>
+    </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+</div>
+<script>
+  $("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+  });
+</script><div class="sidebar-nav-container">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/index.html">
+        NetApp HCI 문서
+      </a></li><li class=" "><a class="na-navbar-padding" href="https://docs.netapp.com/us-en/hci-solutions/index.html">
+        NetApp HCI 솔루션
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 릴리즈 노트</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/rn_whatsnew.html">
+        NetApp HCI의 새로운 기능
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/rn_relatedrn.html">
+        추가 릴리스 정보
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 개념</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/concept_hci_product_overview.html">
+        제품 개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/concept_cg_hci_accounts.html">
+        계정
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/concept_hci_dataprotection.html">
+        데이터 보호
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/concept_hci_clusters.html">
+        클러스터
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/concept_hci_nodes.html">
+        노드
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 스토리지</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/concept_hci_storage_maintenance_mode.html">
+        유지보수 모드
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/concept_hci_volumes.html">
+        볼륨
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/concept_hci_volume_access_groups.html">
+        볼륨 액세스 그룹
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/concept_hci_initiators.html">
+        이니시에이터
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/concept_hcc_custom_protection_domains.html">
+        사용자 지정 보호 도메인
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/concept_cg_hci_licensing.html">
+        라이센싱
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/reference_hcc_config_maximums.html">
+        NetApp 하이브리드 클라우드 제어 구성 최대 한도
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/concept_cg_hci_security.html">
+        보안
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/concept_hci_performance.html">
+        성능
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 요구 사항 및 구축 전 작업</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/hci_prereqs_overview.html">
+        NetApp HCI 구축 요구 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/hci_prereqs_management_node.html">
+        관리 노드 요구 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/hci_prereqs_required_network_ports.html">
+        네트워크 포트 요구 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/hci_prereqs_network_switch.html">
+        네트워크 및 스위치 요구 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/hci_prereqs_network_cables.html">
+        네트워크 케이블 요구 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/hci_prereqs_ip_address.html">
+        IP 주소 요구 사항
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 네트워크 구성</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/hci_prereqs_network_configuration.html">
+        네트워크 구성 옵션 개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/hci_prereqs_network_configuration_option_A.html">
+        네트워크 구성 옵션 A
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/hci_prereqs_network_configuration_option_B.html">
+        네트워크 구성 옵션 B
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/hci_prereqs_network_configuration_option_C.html">
+        네트워크 구성 옵션 C
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/hci_prereqs_timekeeping.html">
+        DNS 및 시간 표시 요구 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/hci_prereqs_environmental.html">
+        환경 요구 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/hci_prereqs_protection_domains.html">
+        보호 도메인
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/hci_prereqs_witness_nodes.html">
+        노드 2개 스토리지 클러스터의 노드 리소스 요구 사항
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> NetApp HCI를 시작하십시오</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hci_getstarted.html">
+        NetApp HCI 설치 및 구축 개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hci_installhw.html">
+        H 시리즈 하드웨어를 설치합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/hci_prereqs_LACP_configuration.html">
+        최적의 스토리지 성능을 위해 LACP를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/hci_prereqs_task_validate_config_advisor.html">
+        Active IQ Config Advisor로 환경을 검증합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/hci_prereqs_final_prep.html">
+        각 노드에 대해 IPMI를 구성합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> NetApp HCI 구축</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> NetApp 배포 엔진에 액세스합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/concept_nde_access_overview.html">
+        NetApp 배포 엔진 액세스 옵션 개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_nde_access_no_dhcp.html">
+        DHCP를 사용하지 않는 환경에서 NetApp 배포 엔진에 액세스합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_nde_access_dhcp.html">
+        DHCP를 사용하는 환경에서 NetApp 배포 엔진에 액세스합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_nde_access_manual_ip.html">
+        IP 주소를 수동으로 할당하여 NetApp Deployment Engine에 액세스합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_nde_start_deployment.html">
+        배포를 시작합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_nde_import_installation_profile.html">
+        설치 프로파일을 가져옵니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> VMware vSphere를 구성합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/concept_nde_config_vsphere_overview.html">
+        vSphere 구성 개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_nde_configure_new_vsphere.html">
+        새로운 VMware vSphere 환경을 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_nde_join_existing_vsphere.html">
+        기존 VMware vSphere 구축 환경에 가입하십시오
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_nde_configure_credentials.html">
+        NetApp HCI 자격 증명을 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_nde_select_net_topology.html">
+        네트워크 토폴로지를 선택합니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 재고 선택</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/concept_nde_node_compatibility.html">
+        인벤토리 선택 및 노드 호환성
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_nde_select_inventory.html">
+        재고를 선택합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_nde_configure_net_settings.html">
+        네트워크 설정을 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_nde_review_deploy.html">
+        검토 및 배포
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 구축 후 작업</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/concept_nde_post_deployment_overview.html">
+        구축 후 작업 개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_nde_supported_net_changes.html">
+        지원되는 네트워킹 변경 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_nde_disable_smartd.html">
+        NetApp HCI 컴퓨팅 노드에서 smartd 서비스를 비활성화합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_nde_disable_lacp_individual.html">
+        구성된 스위치에서 "LACP-Individual" 명령을 비활성화합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_mnode_create_netapp_hcc_role_vcenter.html">
+        vCenter에서 NetApp HCC 역할을 생성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_nde_update_vsphere.html">
+        VMware vSphere를 최신 상태로 유지
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_nde_install_GPU_drivers.html">
+        GPU 지원 컴퓨팅 노드용 GPU 드라이버를 설치합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_nde_access_hcc.html">
+        NetApp 하이브리드 클라우드 제어에 액세스
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_reduce_boot_media_wear.html">
+        NetApp HCI 컴퓨팅 노드의 부팅 미디어 마모 감소
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> NetApp HCI 관리</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hci_manage_overview.html">
+        NetApp HCI 개요 관리
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_nde_access_ui_fqdn.html">
+        정규화된 도메인 이름 웹 UI 액세스를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_post_deploy_credentials.html">
+        NetApp HCI에서 자격 증명을 변경합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hci_credentials_vcenter_esxi.html">
+        vCenter 및 ESXi 자격 증명을 업데이트합니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> NetApp HCI 스토리지 관리</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hcc_manage_storage_overview.html">
+        NetApp HCI 스토리지 관리 개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hcc_manage_accounts.html">
+        사용자 계정을 만들고 관리합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hcc_manage_storage_clusters.html">
+        스토리지 클러스터를 추가하고 관리합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hcc_manage_vol_management.html">
+        볼륨 생성 및 관리
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hcc_manage_vol_access_groups.html">
+        볼륨 액세스 그룹을 생성하고 관리합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hcc_manage_initiators.html">
+        이니시에이터를 생성 및 관리합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hcc_qos_policies.html">
+        볼륨 QoS 정책 생성 및 관리
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 관리 노드와 작업합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_mnode_work_overview.html">
+        관리 노드 개요
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 관리 노드를 설치 또는 복구합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_mnode_install.html">
+        관리 노드를 설치합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_mnode_install_add_storage_NIC.html">
+        스토리지 NIC(Network Interface Controller) 구성
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_mnode_recover.html">
+        관리 노드를 복구합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_mnode_access_ui.html">
+        관리 노드에 액세스합니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 관리 노드 UI를 사용합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_mnode_work_overview_UI.html">
+        관리 노드 UI 개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_mnode_enable_alerts.html">
+        NetApp HCI에서 경고 모니터링을 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_mnode_settings.html">
+        관리 노드 네트워크, 클러스터 및 시스템 설정을 수정하고 테스트합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_mnode_run_system_utilities.html">
+        관리 노드에서 시스템 유틸리티를 실행합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 관리 노드 REST API를 사용합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_mnode_work_overview_API.html">
+        관리 노드 REST API UI 개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_mnode_api_get_authorizationtouse.html">
+        REST API 사용 인증 획득
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_mnode_enable_activeIQ.html">
+        Active IQ 및 NetApp HCI 모니터링을 활성화합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_mnode_multi_vcenter_config.html">
+        NetApp 하이브리드 클라우드 제어를 여러 vCenter에 맞게 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_mnode_add_assets.html">
+        컴퓨팅 및 컨트롤러 자산을 관리 노드에 추가합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_mnode_locate_hardware_tag.html">
+        컴퓨팅 노드의 하드웨어 태그를 찾는 방법
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_mnode_manage_storage_cluster_assets.html">
+        스토리지 클러스터 자산을 생성하고 관리합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_mnode_edit_vcenter_assets.html">
+        기존 컨트롤러 자산을 보거나 편집합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_mnode_remove_assets.html">
+        관리 노드에서 자산을 제거합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_mnode_configure_proxy_server.html">
+        관리 노드에 대한 프록시 서버를 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_mnode_api_find_mgmt_svcs_version.html">
+        관리 노드 OS 및 서비스 버전을 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_mnode_logs.html">
+        관리 서비스에서 로그를 가져오는 중입니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 지원 연결을 관리합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_mnode_enable_remote_support_connections.html">
+        원격 NetApp 지원 세션을 시작합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_mnode_ssh_management.html">
+        관리 노드에서 SSH 기능을 관리합니다
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> NetApp HCI 시스템의 전원을 끄거나 켭니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/concept_nde_hci_power_off_on.html">
+        NetApp HCI 전원 개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_nde_hci_power_off_compute.html">
+        NetApp HCI 시스템의 컴퓨팅 리소스 전원을 끕니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_nde_hci_power_off_storage.html">
+        NetApp HCI 시스템의 스토리지 리소스 전원을 끕니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_nde_hci_power_on_storage.html">
+        NetApp HCI 시스템의 스토리지 리소스 전원을 켭니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_nde_hci_power_on_compute.html">
+        NetApp HCI 시스템의 컴퓨팅 리소스 전원을 켭니다
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> NetApp 하이브리드 클라우드 제어로 NetApp HCI 시스템을 모니터링합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hcc_dashboard.html">
+        NetApp 하이브리드 클라우드 제어 대시보드에서 리소스를 봅니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hcc_nodes.html">
+        NetApp 하이브리드 클라우드 제어의 노드 페이지에서 재고를 확인하십시오
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hcc_edit_bmc_info.html">
+        NetApp 하이브리드 클라우드 제어를 사용하여 BMC 연결 정보를 편집합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hcc_volumes.html">
+        NetApp 하이브리드 클라우드 제어로 스토리지 클러스터의 볼륨을 모니터링합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hcc_activeiq.html">
+        Active IQ에 대한 NetApp 하이브리드 클라우드 제어 연결을 통해 성능, 용량, 클러스터 상태를 모니터링합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hcc_collectlogs.html">
+        문제 해결을 위해 로그를 수집합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> NetApp HCI 시스템 버전 1.9 또는 1.9P1을(를) 업그레이드합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/concept_hci_upgrade_overview.html">
+        업그레이드 순서 개요
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 시스템 업그레이드 절차</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hcc_update_management_services.html">
+        관리 서비스를 업데이트합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_upgrade_element_latest_healthtools.html">
+        최신 HealthTools로 업그레이드하십시오
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hcc_upgrade_element_prechecks.html">
+        스토리지를 업그레이드하기 전에 Element 스토리지 상태 점검을 실행합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hcc_upgrade_element_software.html">
+        Element 소프트웨어 업그레이드
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hcc_upgrade_storage_firmware.html">
+        스토리지 펌웨어를 업그레이드합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hcc_upgrade_management_node.html">
+        관리 노드를 업그레이드합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_vcp_upgrade_plugin.html">
+        vCenter Server용 NetApp Element 플러그인을 업그레이드합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_upgrade_compute_prechecks.html">
+        컴퓨팅 펌웨어를 업그레이드하기 전에 컴퓨팅 노드 상태 점검을 실행합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hcc_upgrade_compute_node_drivers.html">
+        컴퓨팅 노드 드라이버를 업데이트합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hcc_upgrade_compute_node_firmware.html">
+        컴퓨팅 노드 펌웨어를 업그레이드합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hcc_upgrade_compute_firmware_ansible.html">
+        Ansible을 사용하여 컴퓨팅 노드 펌웨어의 업그레이드 자동화
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hci_upgrade_all_vsphere.html">
+        vCenter Server용 Element 플러그인을 사용하여 NetApp HCI 시스템용 vSphere 구성 요소를 업그레이드합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> NetApp HCI 시스템을 확장합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/concept_hcc_expandoverview.html">
+        개요를 확장합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hcc_expand_storage.html">
+        NetApp HCI 스토리지 리소스를 확장합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hcc_expand_compute.html">
+        NetApp HCI 컴퓨팅 리소스를 확장합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hcc_expand_compute_and_storage.html">
+        NetApp 스토리지 및 컴퓨팅 리소스 확장
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hci_removewn.html">
+        클러스터를 확장한 후 Witness 노드를 제거합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> NetApp HCI에서 Rancher를 사용합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/concept_rancher_product_overview.html">
+        NetApp HCI의 Rancher 개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/concept_rancher_concepts.html">
+        개념
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/rancher_prereqs_overview.html">
+        NetApp HCI의 Rancher에 대한 요구 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_rancher_deploy.html">
+        NetApp HCI에 Rancher 구축
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 구축 후 작업</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/concept_rancher_post_deployment_overview.html">
+        구축 후 작업 개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_rancher_ensure_rancher_support_parity.html">
+        Rancher 지원 패리티를 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_rancher_config_anti_affinity.html">
+        Rancher VM 복구 성능 향상
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_rancher_enable_monitoring.html">
+        모니터링을 구성합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_rancher_trident.html">
+        Trident를 설치합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_trident_configure_networking.html">
+        사용자 클러스터에 대한 Trident 지원을 활성화합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_rancher_deploy_user_clusters.html">
+        사용자 클러스터 및 애플리케이션 배포
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_rancher_manage.html">
+        NetApp HCI에서 Rancher를 관리합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_rancher_monitor.html">
+        NetApp HCI의 Rancher 모니터링
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_rancher_upgrades.html">
+        NetApp HCI에서 Rancher를 업그레이드합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_rancher_remove_deployment.html">
+        NetApp HCI에서 목장 설치를 제거합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> H 시리즈 하드웨어 유지 관리</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hci_hwmainoverview.html">
+        H 시리즈 하드웨어 유지 관리 개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hci_hserieschassisrepl.html">
+        2U H 시리즈 섀시를 교체합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hci_dcpsurepl.html">
+        H615C 및 H610S 노드의 DC 전원 공급 장치를 교체합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hci_dimmcomputerepl.html">
+        컴퓨팅 노드의 DIMM을 교체합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hci_driverepl.html">
+        스토리지 노드의 드라이브를 교체합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hci_h410crepl.html">
+        H410C 노드를 교체합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hci_h410srepl.html">
+        H410S 노드를 교체합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hci_h610ch615crepl.html">
+        H610C 및 H615C 노드를 교체합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hci_h610srepl.html">
+        H610S 노드를 교체합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hci_psurepl.html">
+        전원 공급 장치를 교체합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hci_snswitches.html">
+        SN2010, SN2100 및 SN2700 스위치를 교체합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/task_hci_2noderepl.html">
+        2노드 클러스터의 스토리지 노드를 교체합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/reference_earlier_versions.html">
+        이전 버전
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/hci19/docs/reference_notices_hci.html">
+        법적 고지
+      </a></li></ul>
+</div>
+<script>
+  window.onscroll = () => {
+    const value = -40 - (document.body.scrollHeight - (window.innerHeight + document.scrollingElement.scrollTop));
+    
+    document.getElementById("sidebar-height").style.bottom = Math.max(0,value) + "px";
+};
+</script>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content">
+      <div class="ie-utility">
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
+        </li>
+        
+
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/ko-kr/hci19/">HCI</a>
+        </li>
+
+      </ul>
+    </div>
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+      <div class="ie-nmt-disclaimer">
+  <span>
+    <div class="ie-nmt-disclaimer-container">
+      <div class="ie-nmt-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/ko-kr/hci19/common/svg/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-nmt-disclaimer-content">
+        <span> 본 한국어 번역은 사용자 편의를 위해 제공되는 기계 번역입니다. 영어 버전과 한국어 버전이 서로 어긋나는 경우에는 언제나 영어 버전이 우선합니다. </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div><div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">스토리지 펌웨어를 업그레이드합니다</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2022-05-13 19:47:57 +0000">05/13/2022</time>
+    
+  
+
+
+</p>
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>Element 12.0 및 관리 서비스 버전 2.14부터 NetApp 하이브리드 클라우드 제어 UI 및 REST API를 사용하여 스토리지 노드에서 펌웨어 전용 업그레이드를 수행할 수 있습니다. 이 절차에서는 Element 소프트웨어를 업그레이드하지 않으며 주요 Element 릴리스 외부에서 스토리지 펌웨어를 업그레이드할 수 있습니다.</p>
+</div>
+<div class="ulist">
+<div class="title">무엇을 &#8217;필요로 할거야</div>
+<ul>
+<li>
+<p>* 관리자 권한 *: 업그레이드를 수행할 수 있는 스토리지 클러스터 관리자 권한이 있습니다.</p>
+</li>
+<li>
+<p>* 시스템 시간 동기화 *: 모든 노드의 시스템 시간이 동기화되고 스토리지 클러스터 및 노드에 대해 NTP가 올바르게 구성되었는지 확인했습니다. 각 노드는 시간편중과 관련된 해결되지 않은 클러스터 장애가 없는 노드별 웹 UI('https://[IP address]:442')에서 DNS 이름 서버로 구성되어야 합니다.</p>
+</li>
+<li>
+<p>* 시스템 포트 *: 업그레이드에 NetApp 하이브리드 클라우드 제어를 사용하는 경우 필요한 포트가 열려 있는지 확인했습니다. 을 참조하십시오 <a href="hci_prereqs_required_network_ports.html">"네트워크 포트"</a> 를 참조하십시오.</p>
+</li>
+<li>
+<p>* 관리 노드 *: NetApp 하이브리드 클라우드 제어 UI 및 API의 경우, 사용자 환경의 관리 노드에서 버전 11.3이 실행되고 있습니다.</p>
+</li>
+<li>
+<p>* 관리 서비스 *: 관리 서비스 번들을 최신 버전으로 업데이트했습니다.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/hci19/images/important.svg" alt="중요">
+</td>
+<td class="content">
+Element 소프트웨어 버전 12.0을 실행하는 H610S 스토리지 노드의 경우 스토리지 펌웨어 번들 2.27로 업그레이드하기 전에 D-패치 SUST-909를 적용해야 합니다. 업그레이드하기 전에 NetApp Support에서 D-패치를 받으려면 먼저 NetApp Support에 문의하십시오. 을 참조하십시오 <a href="http://docs.netapp.com/us-en/hci/docs/rn_storage_firmware_2.27.html" target="_blank" rel="noopener">"스토리지 펌웨어 번들 2.27 릴리스 정보"</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/hci19/images/important.svg" alt="중요">
+</td>
+<td class="content">
+스토리지 노드의 펌웨어를 업그레이드하기 전에 최신 관리 서비스 번들로 업그레이드해야 합니다. Element 소프트웨어를 버전 12.2 이상으로 업데이트하는 경우 계속하려면 관리 서비스 2.14.60 이상이 필요합니다.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/hci19/images/important.svg" alt="중요">
+</td>
+<td class="content">
+iDRAC/BIOS 펌웨어를 업데이트하려면 NetApp 지원 에 문의하십시오. 자세한 내용은 다음을 참조하십시오 <a href="https://kb.netapp.com/Advice_and_Troubleshooting/Flash_Storage/SF_Series/How_to_update_iDRAC%2F%2FBIOS_firmware_on_SF_Series_nodes" target="_blank" rel="noopener">"KB 문서를 참조하십시오"</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* 클러스터 상태 *: 상태 점검을 실행하였습니다. 을 참조하십시오 <a href="task_hcc_upgrade_element_prechecks.html">"스토리지를 업그레이드하기 전에 Element 스토리지 상태 점검을 실행합니다"</a>.</p>
+</li>
+<li>
+<p>* H610S 노드의 업데이트된 BMC *: H610S 노드의 BMC 버전을 업그레이드했습니다. 을 참조하십시오 <a href="rn_H610S_BMC_3.84.07.html" target="_blank" rel="noopener">"릴리스 정보 및 업그레이드 지침"</a>.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/hci19/images/note.svg" alt="참고">
+</td>
+<td class="content">
+하드웨어에 대한 펌웨어 및 드라이버 펌웨어의 전체 매트릭스를 보려면 다음을 참조하십시오 <a href="https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/NetApp_HCI/Firmware_and_driver_versions_in_NetApp_HCI_and_NetApp_Element_software" target="_blank" rel="noopener">"KB 문서를 참조하십시오"</a> (로그인 필요).
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* 최종 사용자 라이센스 계약(EULA) *: 관리 서비스 2.20부터 NetApp 하이브리드 클라우드 제어 UI 또는 API를 사용하여 스토리지 펌웨어를 업그레이드하기 전에 EULA에 동의하고 저장해야 합니다.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>웹 브라우저에서 관리 노드의 IP 주소를 엽니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre>https://&lt;ManagementNodeIP&gt;</pre>
+</div>
+</div>
+</li>
+<li>
+<p>NetApp 하이브리드 클라우드 제어에 스토리지 클러스터 관리자 자격 증명을 제공하여 로그인하십시오.</p>
+</li>
+<li>
+<p>인터페이스의 오른쪽 상단 근처에 있는 * Upgrade * 를 선택합니다.</p>
+</li>
+<li>
+<p>EULA가 나타납니다. 아래로 스크롤하여 * 현재 업데이트 및 향후 모든 업데이트에 동의함 * 을 선택하고 * 저장 * 을 선택합니다.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/hci19/images/note.svg" alt="참고">
+</td>
+<td class="content">
+EULA에 동의하면 향후 모든 업데이트에 대해 기록되고 자동 다운로드 기능이 활성화됩니다. NetApp 소프트웨어 업데이트 및 업그레이드 관련 업데이트는 고유 권한으로 설치할 수 있습니다. NetApp 온라인 소프트웨어 저장소에 대한 네트워크 연결을 비활성화하여 자동 다운로드 기능을 비활성화할 수 있습니다.
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>다음 스토리지 펌웨어 업그레이드 옵션 중 하나를 선택합니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#Use NetApp Hybrid Cloud Control UI to upgrade storage firmware">[Use NetApp Hybrid Cloud Control UI to upgrade storage firmware]</a></p>
+</li>
+<li>
+<p><a href="#Use NetApp Hybrid Cloud Control API to upgrade storage firmware">[Use NetApp Hybrid Cloud Control API to upgrade storage firmware]</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="netapp-하이브리드-클라우드-제어-ui를-사용하여-스토리지-펌웨어를-업그레이드하십시오">NetApp 하이브리드 클라우드 제어 UI를 사용하여 스토리지 펌웨어를 업그레이드하십시오</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>NetApp 하이브리드 클라우드 제어 UI를 사용하여 클러스터에 있는 스토리지 노드의 펌웨어를 업그레이드할 수 있습니다.</p>
+</div>
+<div class="paragraph">
+<p>관리 노드가 인터넷에 연결되어 있지 않은 경우 이 있는 것입니다 <a href="https://mysupport.netapp.com/site/products/all/details/element-software/downloads-tab/download/62654/Storage_Firmware_Bundle" target="_blank" rel="noopener">"NetApp HCI 스토리지 클러스터용 스토리지 펌웨어 패키지를 다운로드했습니다"</a>.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/hci19/images/caution.svg" alt="주의">
+</td>
+<td class="content">
+NetApp 하이브리드 클라우드 제어를 사용하여 스토리지 클러스터를 업그레이드하는 동안 발생할 수 있는 문제와 그 해결 방법은 을 참조하십시오 <a href="https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/NetApp_HCI/Potential_issues_and_workarounds_when_running_storage_upgrades_using_NetApp_Hybrid_Cloud_Control" target="_blank" rel="noopener">"KB 문서를 참조하십시오"</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/hci19/images/tip.svg" alt="팁">
+</td>
+<td class="content">
+업그레이드 프로세스는 스토리지 노드당 약 30분이 소요됩니다. Element 스토리지 클러스터를 버전 2.76 이상의 스토리지 펌웨어로 업그레이드하는 경우, 개별 스토리지 노드는 새 펌웨어가 노드에 기록된 경우에만 업그레이드 중에 재부팅됩니다.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>웹 브라우저에서 관리 노드의 IP 주소를 엽니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre>https://&lt;ManagementNodeIP&gt;</pre>
+</div>
+</div>
+</li>
+<li>
+<p>NetApp 하이브리드 클라우드 제어에 스토리지 클러스터 관리자 자격 증명을 제공하여 로그인하십시오.</p>
+</li>
+<li>
+<p>인터페이스의 오른쪽 상단 근처에 있는 * Upgrade * 를 선택합니다.</p>
+</li>
+<li>
+<p>업그레이드 * 페이지에서 * 스토리지 * 를 선택합니다.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/hci19/images/note.svg" alt="참고">
+</td>
+<td class="content">
+Storage * 탭에는 설치에 포함된 스토리지 클러스터가 나열됩니다. NetApp Hybrid Cloud Control에서 클러스터에 액세스할 수 없는 경우 * 업그레이드 * 페이지에 표시되지 않습니다. Element 12.0 이상을 실행하는 클러스터가 있는 경우 이러한 클러스터에 대해 현재 펌웨어 번들 버전이 나열됩니다. 단일 클러스터의 노드가 서로 다른 펌웨어 버전을 가지고 있거나 업그레이드가 진행되는 동안 * Current Firmware Bundle Version * (현재 펌웨어 번들 버전 *) 열에 * Multiple * (다중 *)이 표시됩니다. 여러 * 를 선택하여 * 노드 * 페이지로 이동하여 펌웨어 버전을 비교할 수 있습니다. 모든 클러스터가 12.0 이전 버전의 Element를 실행하는 경우 펌웨어 번들 버전 번호에 대한 정보가 표시되지 않습니다. 이 정보는 * 노드 * 페이지에서도 사용할 수 있습니다. 을 참조하십시오 <a href="task_hcc_nodes.html">"재고를 확인하십시오"</a>. 클러스터가 최신 버전이거나 사용 가능한 업그레이드 패키지가 없는 경우 * Element * 및 * Firmware Only * 탭이 표시되지 않습니다. 이 탭은 업그레이드가 진행 중일 때도 표시되지 않습니다. Element * 탭이 표시되지만 * Firmware Only * 탭이 표시되지 않으면 사용 가능한 펌웨어 패키지가 없습니다.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>다음 옵션 중 하나를 선택하고 클러스터에 적용할 수 있는 단계 세트를 수행합니다.</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">옵션을 선택합니다</th>
+<th class="tableblock halign-left valign-top">단계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">관리 노드에 외부 연결이 있습니다.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>업그레이드할 클러스터 옆에 있는 드롭다운 화살표를 선택합니다.</p>
+</li>
+<li>
+<p>펌웨어 전용 * 을 선택하고 사용 가능한 업그레이드 버전 중에서 선택합니다.</p>
+</li>
+<li>
+<p>업그레이드 시작 * 을 선택합니다.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/hci19/images/tip.svg" alt="팁">
+</td>
+<td class="content">
+업그레이드 중 * 업그레이드 상태 * 는 프로세스 상태를 반영하기 위해 변경됩니다. 또한 업그레이드를 일시 중지하거나 업그레이드가 오류를 반환하는 경우와 같이 수행한 작업에 대한 응답으로 변경됩니다. 을 참조하십시오 <a href="#Upgrade status changes">[Upgrade status changes]</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/hci19/images/note.svg" alt="참고">
+</td>
+<td class="content">
+업그레이드가 진행되는 동안 페이지를 종료하고 나중에 다시 돌아와 진행 상황을 계속 모니터링할 수 있습니다. 클러스터 행이 축소되어 있는 경우 이 페이지는 상태 및 현재 버전을 동적으로 업데이트하지 않습니다. 테이블을 업데이트하거나 페이지를 새로 고치려면 클러스터 행을 확장해야 합니다.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>업그레이드가 완료된 후 로그를 다운로드할 수 있습니다.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">관리 노드는 외부 연결이 없는 어두운 사이트 내에 있습니다.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>업그레이드할 클러스터 옆에 있는 드롭다운 화살표를 선택합니다.</p>
+</li>
+<li>
+<p>다운로드한 업그레이드 패키지를 업로드하려면 * 찾아보기 * 를 선택합니다.</p>
+</li>
+<li>
+<p>업로드가 완료될 때까지 기다립니다. 진행률 표시줄에 업로드 상태가 표시됩니다.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/hci19/images/caution.svg" alt="주의">
+</td>
+<td class="content">
+브라우저 창에서 이동하면 파일 업로드가 손실됩니다.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>파일이 성공적으로 업로드 및 확인되면 화면에 메시지가 표시됩니다. 정품 확인에 몇 분 정도 걸릴 수 있습니다. 이 단계에서 브라우저 창에서 다른 곳으로 이동하면 파일 업로드가 유지됩니다. 업그레이드가 완료된 후 로그를 다운로드할 수 있습니다. 다양한 업그레이드 상태 변경에 대한 자세한 내용은 을 참조하십시오 <a href="#Upgrade status changes">[Upgrade status changes]</a>.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="업그레이드-상태-변경">업그레이드 상태 변경</h3>
+<div class="paragraph">
+<p>업그레이드 프로세스 전, 도중 및 이후에 UI의 * 업그레이드 상태 * 열에 표시되는 다양한 상태는 다음과 같습니다.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">업그레이드 상태입니다</th>
+<th class="tableblock halign-left valign-top">설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">최신</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">클러스터가 사용 가능한 최신 Element 버전으로 업그레이드되었거나 펌웨어가 최신 버전으로 업그레이드되었습니다.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">감지할 수 없습니다</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NetApp 하이브리드 클라우드 제어에는 온라인 소프트웨어 리포지토리에 연결할 수 있는 외부 연결이 없을 때 * 사용 가능한 버전 * 대신 * 이 상태가 표시됩니다. 스토리지 서비스 API가 가능한 업그레이드 상태의 열거 목록에 없는 업그레이드 상태를 반환하는 경우에도 이 상태가 표시됩니다.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">사용 가능한 버전</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Element 및/또는 스토리지 펌웨어의 최신 버전을 업그레이드할 수 있습니다.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">진행 중</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">업그레이드가 진행 중입니다. 진행 표시줄에 업그레이드 상태가 표시됩니다. 화면 메시지에는 노드 레벨 장애가 표시되고 업그레이드가 진행되는 동안 클러스터의 각 노드에 대한 노드 ID가 표시됩니다. Element UI 또는 vCenter Server UI용 NetApp Element 플러그인을 사용하여 각 노드의 상태를 모니터링할 수 있습니다.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">업그레이드 일시 중지 중</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">업그레이드를 일시 중지할 수 있습니다. 업그레이드 프로세스의 상태에 따라 일시 중지 작업이 성공하거나 실패할 수 있습니다. 일시 중지 작업을 확인하는 UI 프롬프트가 표시됩니다. 업그레이드를 일시 중지하기 전에 클러스터가 안전한 장소에 있는지 확인하려면 업그레이드 작업을 완전히 일시 중지하는 데 최대 2시간이 걸릴 수 있습니다. 업그레이드를 다시 시작하려면 * Resume * 을 선택합니다.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">일시 중지되었습니다</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">업그레이드를 일시 중지했습니다. 프로세스를 재개하려면 * Resume * 을 선택하십시오.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">오류</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">업그레이드 중 오류가 발생했습니다. 오류 로그를 다운로드하여 NetApp Support에 보낼 수 있습니다. 오류를 해결한 후 페이지로 돌아가서 * Resume * 을 선택할 수 있습니다. 업그레이드를 다시 시작하면 시스템에서 상태 점검을 실행하고 업그레이드의 현재 상태를 확인하는 동안 진행 표시줄이 몇 분 동안 뒤로 이동합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="netapp-하이브리드-클라우드-제어를-사용하여-업그레이드에-실패할-경우-어떻게-됩니까">NetApp 하이브리드 클라우드 제어를 사용하여 업그레이드에 실패할 경우 어떻게 됩니까</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>업그레이드 중 드라이브 또는 노드에 장애가 발생할 경우 Element UI에 클러스터 장애가 표시됩니다. 업그레이드 프로세스가 다음 노드로 진행되지 않고 클러스터 오류가 해결될 때까지 대기합니다. UI의 진행률 표시줄에 클러스터 오류가 해결될 때까지 업그레이드가 기다리고 있음을 나타냅니다. 이 단계에서 UI에서 * Pause * 를 선택하면 업그레이드가 클러스터가 정상 상태가 될 때까지 대기하므로 작동하지 않습니다. 장애 조사를 돕기 위해 NetApp Support에 문의해야 합니다.</p>
+</div>
+<div class="paragraph">
+<p>NetApp 하이브리드 클라우드 제어에는 3시간의 사전 설정 대기 시간이 있으며, 그 동안 다음 시나리오 중 하나가 발생할 수 있습니다.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>3시간 이내에 클러스터 장애가 해결되고 업그레이드가 재개됩니다. 이 시나리오에서는 어떠한 조치도 취할 필요가 없습니다.</p>
+</li>
+<li>
+<p>3시간 후에도 문제가 지속되고 업그레이드 상태가 빨간색 배너와 함께 * 오류 * 로 표시됩니다. 문제가 해결된 후 * Resume * 을 선택하여 업그레이드를 재개할 수 있습니다.</p>
+</li>
+<li>
+<p>NetApp 지원에 따라 3시간 이내에 수정 조치를 취하려면 업그레이드를 일시적으로 중단해야 한다고 판단했습니다. 지원 부서에서 API를 사용하여 업그레이드를 중단합니다.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/hci19/images/caution.svg" alt="주의">
+</td>
+<td class="content">
+노드가 업데이트되는 동안 클러스터 업그레이드를 중단하면 드라이브가 노드에서 올바르게 제거되지 않을 수 있습니다. 드라이브가 올바르게 제거되지 않은 경우 업그레이드 중에 드라이브를 다시 추가하려면 NetApp Support에서 수동으로 개입해야 합니다. 노드가 펌웨어 업데이트 또는 업데이트 동기화 후 작업을 수행하는 데 시간이 더 오래 걸릴 수 있습니다. 업그레이드 진행이 멈춘 것 같다면 NetApp Support에 지원을 문의하십시오.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="netapp-하이브리드-클라우드-제어-api를-사용하여-스토리지-펌웨어를-업그레이드하십시오">NetApp 하이브리드 클라우드 제어 API를 사용하여 스토리지 펌웨어를 업그레이드하십시오</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>API를 사용하여 클러스터의 스토리지 노드를 최신 Element 소프트웨어 버전으로 업그레이드할 수 있습니다. 원하는 자동화 툴을 사용하여 API를 실행할 수 있습니다. 여기에 설명된 API 워크플로에서는 관리 노드에서 사용할 수 있는 REST API UI를 예로 사용합니다.</p>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>연결에 따라 다음 중 하나를 수행합니다.</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">옵션을 선택합니다</th>
+<th class="tableblock halign-left valign-top">단계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">관리 노드에 외부 연결이 있습니다.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>리포지토리 연결을 확인합니다.</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>관리 노드에서 관리 노드 REST API UI를 엽니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre>https://&lt;ManagementNodeIP&gt;/package-repository/1/</pre>
+</div>
+</div>
+</li>
+<li>
+<p>authorize * 를 선택하고 다음을 완료합니다.</p>
+<div class="olist upperalpha">
+<ol class="upperalpha" type="A">
+<li>
+<p>클러스터 사용자 이름 및 암호를 입력합니다.</p>
+</li>
+<li>
+<p>Client ID를 mnode-client로 입력한다.</p>
+</li>
+<li>
+<p>세션을 시작하려면 * authorize * 를 선택합니다.</p>
+</li>
+<li>
+<p>인증 창을 닫습니다.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>REST API UI에서 * get s./packagesmote/remote-repositorysessitory이거나 connection * 을 선택합니다.</p>
+</li>
+<li>
+<p>체험하기 * 를 선택합니다.</p>
+</li>
+<li>
+<p>Execute * 를 선택합니다.</p>
+</li>
+<li>
+<p>코드 200이 반환되는 경우 다음 단계로 이동합니다. 원격 리포지토리에 연결되지 않은 경우 연결을 설정하거나 다크 사이트 옵션을 사용합니다.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>업그레이드 패키지 ID 찾기:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>REST API UI에서 * GET/packages * 를 선택한다.</p>
+</li>
+<li>
+<p>체험하기 * 를 선택합니다.</p>
+</li>
+<li>
+<p>Execute * 를 선택합니다.</p>
+</li>
+<li>
+<p>응답에서 펌웨어 패키지 ID를 복사하여 나중에 사용할 수 있도록 저장합니다.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">관리 노드는 외부 연결이 없는 어두운 사이트 내에 있습니다.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>관리 노드에서 액세스할 수 있는 장치에 최신 스토리지 펌웨어 업그레이드 패키지를 다운로드합니다. 로 이동합니다 <a href="https://mysupport.netapp.com/site/products/all/details/element-software/downloads-tab/download/62654/Storage_Firmware_Bundle" target="_blank" rel="noopener">"Element 소프트웨어 스토리지 펌웨어 번들 페이지"</a> 최신 스토리지 펌웨어 이미지를 다운로드합니다.</p>
+</li>
+<li>
+<p>스토리지 펌웨어 업그레이드 패키지를 관리 노드에 업로드합니다.</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>관리 노드에서 관리 노드 REST API UI를 엽니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre>https://&lt;ManagementNodeIP&gt;/package-repository/1/</pre>
+</div>
+</div>
+</li>
+<li>
+<p>authorize * 를 선택하고 다음을 완료합니다.</p>
+<div class="olist upperalpha">
+<ol class="upperalpha" type="A">
+<li>
+<p>클러스터 사용자 이름 및 암호를 입력합니다.</p>
+</li>
+<li>
+<p>Client ID를 mnode-client로 입력한다.</p>
+</li>
+<li>
+<p>세션을 시작하려면 * authorize * 를 선택합니다.</p>
+</li>
+<li>
+<p>인증 창을 닫습니다.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>REST API UI에서 * POST/packages * 를 선택합니다.</p>
+</li>
+<li>
+<p>체험하기 * 를 선택합니다.</p>
+</li>
+<li>
+<p>Browse * 를 선택하고 업그레이드 패키지를 선택합니다.</p>
+</li>
+<li>
+<p>업로드를 시작하려면 * 실행 * 을 선택합니다.</p>
+</li>
+<li>
+<p>응답에서 패키지 ID(""id"")를 복사하여 나중에 사용할 수 있도록 저장합니다.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>업로드 상태를 확인합니다.</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>REST API UI에서 * GETCi.\packagesCmx/{id}} mi있거나 status * 를 선택합니다.</p>
+</li>
+<li>
+<p>체험하기 * 를 선택합니다.</p>
+</li>
+<li>
+<p>이전 단계에서 복사한 펌웨어 패키지 ID를 * id * 에 입력합니다.</p>
+</li>
+<li>
+<p>상태 요청을 시작하려면 * Execute * 를 선택합니다.</p>
+<div class="paragraph">
+<p>완료했을 때 '성공&#8217;이라는 응답이 나타납니다.</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>설치 자산 ID를 찾습니다.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>관리 노드에서 관리 노드 REST API UI를 엽니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre>https://&lt;ManagementNodeIP&gt;/inventory/1/</pre>
+</div>
+</div>
+</li>
+<li>
+<p>authorize * 를 선택하고 다음을 완료합니다.</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>클러스터 사용자 이름 및 암호를 입력합니다.</p>
+</li>
+<li>
+<p>Client ID를 mnode-client로 입력한다.</p>
+</li>
+<li>
+<p>세션을 시작하려면 * authorize * 를 선택합니다.</p>
+</li>
+<li>
+<p>인증 창을 닫습니다.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>REST API UI에서 * GET/Installations * 를 선택합니다.</p>
+</li>
+<li>
+<p>체험하기 * 를 선택합니다.</p>
+</li>
+<li>
+<p>Execute * 를 선택합니다.</p>
+</li>
+<li>
+<p>응답에서 설치 자산 ID("id")를 복사합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre><strong>"id": "abcd01e2-xx00-4ccf-11ee-11f111xx9a0b",</strong>
+"management": {
+  "errors": [],
+  "inventory": {
+    "authoritativeClusterMvip": "10.111.111.111",
+    "bundleVersion": "2.14.19",
+    "managementIp": "10.111.111.111",
+    "version": "1.4.12"</pre>
+</div>
+</div>
+</li>
+<li>
+<p>REST API UI에서 * get/Installations/{id} * 를 선택합니다.</p>
+</li>
+<li>
+<p>체험하기 * 를 선택합니다.</p>
+</li>
+<li>
+<p>설치 자산 ID를 * id * 필드에 붙여 넣습니다.</p>
+</li>
+<li>
+<p>Execute * 를 선택합니다.</p>
+</li>
+<li>
+<p>응답에서 업그레이드할 클러스터의 스토리지 클러스터 ID("" id")를 복사하여 나중에 사용할 수 있도록 저장합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre>"storage": {
+  "errors": [],
+  "inventory": {
+    "clusters": [
+      {
+        "clusterUuid": "a1bd1111-4f1e-46zz-ab6f-0a1111b1111x",
+        <strong>"id": "a1bd1111-4f1e-46zz-ab6f-a1a1a111b012",</strong></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>스토리지 펌웨어 업그레이드를 실행합니다.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>관리 노드에서 스토리지 REST API UI를 엽니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre>https://&lt;ManagementNodeIP&gt;/storage/1/</pre>
+</div>
+</div>
+</li>
+<li>
+<p>authorize * 를 선택하고 다음을 완료합니다.</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>클러스터 사용자 이름 및 암호를 입력합니다.</p>
+</li>
+<li>
+<p>Client ID를 mnode-client로 입력한다.</p>
+</li>
+<li>
+<p>세션을 시작하려면 * authorize * 를 선택합니다.</p>
+</li>
+<li>
+<p>창을 닫습니다.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>POST/upgrades * 를 선택합니다.</p>
+</li>
+<li>
+<p>체험하기 * 를 선택합니다.</p>
+</li>
+<li>
+<p>매개변수 필드에 업그레이드 패키지 ID를 입력합니다.</p>
+</li>
+<li>
+<p>매개 변수 필드에 스토리지 클러스터 ID를 입력합니다.</p>
+</li>
+<li>
+<p>업그레이드를 시작하려면 * Execute * 를 선택합니다.</p>
+<div class="paragraph">
+<p>이 응답은 "초기화 중"으로 표시되어야 합니다.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{
+  "_links": {
+    "collection": "https://localhost:442/storage/upgrades",
+    "self": "https://localhost:442/storage/upgrades/3fa85f64-1111-4562-b3fc-2c963f66abc1",
+    "log": https://localhost:442/storage/upgrades/3fa85f64-1111-4562-b3fc-2c963f66abc1/log
+  },
+  "storageId": "114f14a4-1a1a-11e9-9088-6c0b84e200b4",
+  "upgradeId": "334f14a4-1a1a-11e9-1055-6c0b84e2001b4",
+  "packageId": "774f14a4-1a1a-11e9-8888-6c0b84e200b4",
+  "config": {},
+  <strong>"state": "initializing",</strong>
+  "status": {
+    "availableActions": [
+      "string"
+    ],
+    "message": "string",
+    "nodeDetails": [
+      {
+        "message": "string",
+        "step": "NodePreStart",
+        "nodeID": 0,
+        "numAttempt": 0
+      }
+    ],
+    "percent": 0,
+    "step": "ClusterPreStart",
+    "timestamp": "2020-04-21T22:10:57.057Z",
+    "failedHealthChecks": [
+      {
+        "checkID": 0,
+        "name": "string",
+        "displayName": "string",
+        "passed": true,
+        "kb": "string",
+        "description": "string",
+        "remedy": "string",
+        "severity": "string",
+        "data": {},
+        "nodeID": 0
+      }
+    ]
+  },
+  "taskId": "123f14a4-1a1a-11e9-7777-6c0b84e123b2",
+  "dateCompleted": "2020-04-21T22:10:57.057Z",
+  "dateCreated": "2020-04-21T22:10:57.057Z"
+}</pre>
+</div>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>응답에 포함된 업그레이드 ID("upgrade eId")를 복사합니다.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>업그레이드 진행 상황 및 결과를 확인합니다.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Get h./upgrades/{upgrade eId} * 를 선택합니다.</p>
+</li>
+<li>
+<p>체험하기 * 를 선택합니다.</p>
+</li>
+<li>
+<p>이전 단계의 업그레이드 ID를 * upgrade eId * 에 입력합니다.</p>
+</li>
+<li>
+<p>Execute * 를 선택합니다.</p>
+</li>
+<li>
+<p>업그레이드 중 문제가 있거나 특별한 요구 사항이 있는 경우 다음 중 하나를 수행합니다.</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">옵션을 선택합니다</th>
+<th class="tableblock halign-left valign-top">단계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">응답 본문의 'failedHealthChecks' 메시지로 인해 클러스터 상태 문제를 해결해야 합니다.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>각 문제에 대해 나열된 특정 KB 문서로 이동하거나 지정된 해결책을 수행합니다.</p>
+</li>
+<li>
+<p>KB가 지정된 경우 관련 KB 문서에 설명된 프로세스를 완료합니다.</p>
+</li>
+<li>
+<p>클러스터 문제를 해결한 후 필요한 경우 다시 인증한 후 * Put} m./upgrades/{upgrade eId} * 를 선택합니다.</p>
+</li>
+<li>
+<p>체험하기 * 를 선택합니다.</p>
+</li>
+<li>
+<p>이전 단계의 업그레이드 ID를 * upgrade eId * 에 입력합니다.</p>
+</li>
+<li>
+<p>요청서에 액션이력서 입력</p>
+<div class="listingblock">
+<div class="content">
+<pre>{
+  "action": "resume"
+}</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Execute * 를 선택합니다.</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">유지 보수 기간이 종료되었거나 다른 이유로 업그레이드를 일시 중지해야 합니다.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>필요한 경우 재인증을 수행하고 * Put cer/upgrades/{upgrade eId} * 를 선택합니다.</p>
+</li>
+<li>
+<p>체험하기 * 를 선택합니다.</p>
+</li>
+<li>
+<p>이전 단계의 업그레이드 ID를 * upgrade eId * 에 입력합니다.</p>
+</li>
+<li>
+<p>요청 본문에 ""동작":"일시정지""를 입력합니다.</p>
+<div class="listingblock">
+<div class="content">
+<pre>{
+  "action": "pause"
+}</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Execute * 를 선택합니다.</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>필요한 경우 프로세스가 완료될 때까지 * Get 횟수/업그레이드/{upgrade eId} * API를 여러 번 실행합니다.</p>
+<div class="paragraph">
+<p>업그레이드 중에 오류가 발생하지 않으면 상태 는 실행 중(Running)을 나타냅니다. 각 노드가 업그레이드되면 'tep' 값이 'NodeFinished&#8217;로 변경됩니다.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>%가 100이고 '상태&#8217;가 '완료&#8217;로 표시되면 업그레이드가 성공적으로 완료된 것입니다.</p>
+</div>
+</li>
+</ol>
+</div>
+<h2 id="자세한-내용을-확인하십시오" class="discrete">자세한 내용을 확인하십시오</h2>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/vcp/index.html" target="_blank" rel="noopener">"vCenter Server용 NetApp Element 플러그인"</a></p>
+</li>
+<li>
+<p><a href="https://www.netapp.com/hybrid-cloud/hci-documentation/" target="_blank" rel="noopener">"NetApp HCI 리소스 페이지 를 참조하십시오"</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">이용 약관</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">개인 정보 보호 정책</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">쿠키 정책</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">쿠키 설정</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="n-footer__bottom-right">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <span class="n-footer__fine-print">웹 사이트에 대한 피드백이 있으십니까?</span>
+              <a target="_self" href="javascript:netapp_mailto()">의견을 공유해 주십시오</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://docs.netapp.com/ko-kr/announcements/">공지 사항</a>
+            </li>
+          </ul>
+        </div>
+        <div class="n-footer__social-links">
+          <ul class="n-footer__social-link-list">
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com"
+                target="_blank" title="blog" alt="blog">
+                <span class="n-footer__social-link-text">blog</span>
+                <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+                  <title>blog@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ko-kr/hci19/common/svg/sprite.svg#blog"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/"
+                target="_blank" title="community" alt="community">
+                <span class="n-footer__social-link-text">community</span>
+                <svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+                  <title>community@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ko-kr/hci19/common/svg/sprite.svg#comments"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp"
+                target="_blank" title="twitter" alt="twitter">
+                <span class="n-footer__social-link-text">twitter</span>
+                <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                  <title>twitter@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ko-kr/hci19/common/svg/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp"
+                target="_blank" title="facebook" alt="facebook">
+                <span class="n-footer__social-link-text">facebook</span>
+                <svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+                  <title>facebook@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ko-kr/hci19/common/svg/sprite.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-linkedin"
+                href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+                <span class="n-footer__social-link-text">linkedin</span>
+                <svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+                  <title>linkedin@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ko-kr/hci19/common/svg/sprite.svg#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-youtube"
+                href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+                <span class="n-footer__social-link-text">youtube</span>
+                <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+                  <title>youtube@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ko-kr/hci19/common/svg/sprite.svg#youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-slideshare"
+                href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+                <span class="n-footer__social-link-text">slideshare</span>
+                <svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+                  <title>slideshare@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/ko-kr/hci19/common/svg/sprite.svg#slideshare"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/ko-kr/hci19/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/ko-kr/hci19/js/prism.js'></script>
+      <script type="text/javascript" src='/ko-kr/hci19/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/ko-kr/hci19/js/www-ntap.js'></script>
+    <script src='/ko-kr/hci19/js/tabbed-blocks.js'></script>
+  </body></html>
