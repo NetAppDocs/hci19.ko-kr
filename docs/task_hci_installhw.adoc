@@ -1,0 +1,423 @@
+---
+sidebar: sidebar 
+permalink: docs/task_hci_installhw.html 
+summary: NetApp HCI를 사용하기 전에 스토리지 및 컴퓨팅 노드를 올바르게 설치해야 합니다. 
+keywords: netapp, hci, on premise, activeiq, active iq, cluster, performance, rails, h-series, nodes 
+---
+= H 시리즈 하드웨어를 설치합니다
+:allow-uri-read: 
+
+
+[role="lead"]
+NetApp HCI를 사용하기 전에 스토리지 및 컴퓨팅 노드를 올바르게 설치해야 합니다.
+
+
+TIP: 를 참조하십시오 link:../media/hseries-isi.pdf["포스터"^] 를 참조하십시오.
+
+* <<Workflow diagrams>>
+* <<Prepare for installation>>
+* <<Install the rails>>
+* <<Install the node/chassis>>
+* <<Install the switches>>
+* <<Cable the nodes>>
+* <<Power on the nodes>>
+* <<Configure NetApp HCI>>
+* <<Perform post-configuration tasks>>
+
+
+
+
+== 워크플로 다이어그램
+
+이 워크플로우 다이어그램은 설치 단계에 대한 개괄적인 개요를 제공합니다. H 시리즈 모델에 따라 단계가 약간 다릅니다.
+
+* <<H410C and H410S>>
+* <<H610C and H615C>>
+* <<H610S>>
+
+
+
+
+=== H410C 및 H410S
+
+image::workflow_h410c.PNG[H410C 및 H410S 설치 워크플로우]
+
+
+
+=== H610C 및 H615C
+
+
+NOTE: H610C 및 H615C의 경우 노드 및 섀시의 경우 2U 4노드 섀시의 경우와 달리 노드와 섀시가 별도의 구성 요소가 아니기 때문에 "노드"와 "섀시"라는 용어는 서로 바꿔서 사용할 수 있습니다.
+
+image::workflow_h610c.png[H610C 및 H615C 설치 워크플로우]
+
+
+
+=== H610S
+
+
+NOTE: H610C 및 H615C의 경우 노드 및 섀시의 경우 2U 4노드 섀시의 경우와 달리 노드와 섀시가 별도의 구성 요소가 아니기 때문에 "노드"와 "섀시"라는 용어는 서로 바꿔서 사용할 수 있습니다.
+
+image::workflow_h610s.png[H610S 설치 워크플로우]
+
+
+
+== 설치 준비
+
+설치 준비 과정에서 제공된 하드웨어의 인벤토리를 조사하고 누락된 항목이 있으면 NetApp 지원에 문의하십시오.
+
+설치 위치에 다음 항목이 있는지 확인합니다.
+
+* 시스템을 위한 랙 공간.
+
+
+[cols="2*"]
+|===
+| 노드 유형입니다 | 랙 공간 
+
+
+| H410C 및 H410S 노드 | 랙 유닛 2개(2U) 
+
+
+| H610C 노드 | 2U 
+
+
+| H615C 및 H610S 노드 | 랙 유닛 1개(1U) 
+|===
+* SFP28/SFP+ 직접 연결 케이블 또는 트랜시버
+* RJ45 커넥터가 있는 CAT5e 이상의 케이블
+* 시스템을 구성하기 위한 키보드, 비디오, 마우스(KVM) 스위치입니다
+* USB 스틱(옵션)
+
+
+
+TIP: 사용자에게 제공되는 하드웨어는 주문한 제품에 따라 다릅니다. 새로운 2U 4노드 주문에는 섀시, 베젤, 슬라이드 레일 키트, 스토리지 노드, 스토리지 및 컴퓨팅 노드, 전원 케이블(섀시당 2개)이 포함됩니다. H610S 스토리지 노드를 주문하는 경우 드라이브가 섀시에 설치됩니다.
+
+
+CAUTION: 하드웨어를 설치하는 동안, 모든 포장재를 제거하고 장치에서 포장해야 합니다. 이렇게 하면 노드의 과열 및 종료를 방지할 수 있습니다.
+
+
+
+== 레일을 설치합니다
+
+제공된 하드웨어 주문에는 슬라이드 레일 세트가 포함되어 있습니다. 레일 설치를 완료하려면 드라이버가 필요합니다. 설치 단계는 각 노드 모델에 따라 약간 다릅니다.
+
+
+TIP: 장비가 넘어지지 않도록 랙 하단에서 상단까지 하드웨어를 설치합니다. 랙에 고정 장치가 포함되어 있는 경우 하드웨어를 설치하기 전에 장치를 설치하십시오.
+
+* <<H410C and H410S>>
+* <<H610C>>
+* <<H610S and H615C>>
+
+
+
+
+=== H410C 및 H410S
+
+H410C 및 H410S 노드는 2개의 어댑터 세트와 함께 제공되는 2U, 4노드 H 시리즈 섀시에 설치됩니다. 둥근 구멍이 있는 랙에 섀시를 설치하려면 둥근 구멍이 있는 랙에 적합한 어댑터를 사용하십시오. H410C 및 H410S 노드의 레일은 깊이가 29in - 33.5인치 인 랙에 맞습니다. 레일이 완전히 수축되면 길이는 28인치이고 레일의 전면과 후면은 하나의 나사에 의해 함께 고정됩니다.
+
+
+CAUTION: 완전히 수축된 레일에 섀시를 설치하는 경우 레일의 전면 및 후면 섹션이 분리될 수 있습니다.
+
+.단계
+. 랙의 전면 포스트에 있는 구멍에 레일의 전면을 맞춥니다.
+. 레일 전면의 후크를 랙 전면 포스트의 구멍에 밀어 넣은 다음 스프링 장착 페그가 랙 구멍에 끼워질 때까지 아래로 누릅니다.
+. 나사를 사용하여 레일을 랙에 장착합니다. 다음은 랙 전면에 연결되는 왼쪽 레일의 그림입니다.
++
+image::h410c_rail.gif[2U 레일 설치]
+
+. 레일의 후면 섹션을 랙의 후면 포스트로 확장합니다.
+. 레일 후면의 후크를 후면 포스트의 적절한 구멍에 맞춰 정렬함으로써 레일의 전면과 후면이 같은 높이에 있도록 합니다.
+. 레일 후면을 랙에 장착하고 나사로 레일을 고정합니다.
+. 랙의 다른 쪽에 대해 위의 단계를 모두 수행합니다.
+
+
+
+
+=== H610C
+
+다음은 H61OC 컴퓨팅 노드의 레일 설치 그림입니다.
+
+image::h610c_rail.png[H610C 컴퓨팅 노드의 레일 설치]
+
+
+
+=== H610S 및 H615C
+
+다음은 H610S 스토리지 노드 또는 H615C 컴퓨팅 노드의 레일 설치 그림입니다.
+
+image::h610s_rail.gif[H610S 스토리지 노드 및 H615C 컴퓨팅 노드의 레일 설치]
+
+
+TIP: H610S 및 H615C에는 왼쪽과 오른쪽 레일이 있습니다. H610S/H615C 손잡이 나사가 섀시를 레일에 고정할 수 있도록 나사 구멍을 바닥 쪽으로 배치합니다.
+
+
+
+== 노드/섀시를 설치합니다
+
+2U 4노드 섀시에 H410C 컴퓨팅 노드 및 H410S 스토리지 노드를 설치합니다. H610C, H615C 및 H610S 의 경우 섀시/노드를 랙의 레일에 직접 설치합니다.
+
+
+TIP: NetApp HCI 1.8부터 스토리지 노드를 2개 또는 3개 설정하여 스토리지 클러스터를 설정할 수 있습니다.
+
+
+CAUTION: 모든 포장재를 제거하고 장치에서 포장합니다. 이렇게 하면 노드의 과열 및 종료를 방지할 수 있습니다.
+
+* <<H410C and H410S nodes>>
+* <<H610C node/chassis>>
+* <<H610S and H615C node/chassis>>
+
+
+
+
+=== H410C 및 H410S 노드
+
+.단계
+. 섀시에 H410C 및 H410S 노드를 설치합니다. 다음은 4개의 노드가 설치된 섀시의 후면 예입니다.
++
+image::hseries_2U_rear.gif[2U 후면]
+
+. H410S 스토리지 노드용 드라이브를 설치합니다.
++
+image::h410s_drives.png[드라이브가 설치된 H410S 스토리지 노드의 전면]
+
+
+
+
+
+=== H610C 노드/섀시
+
+H610C의 경우 2U 4노드 섀시의 경우와 달리 노드 및 섀시가 별도의 구성 요소가 아니기 때문에 "노드" 및 "섀시"라는 용어가 상호 교환하여 사용됩니다.
+
+다음은 랙에 노드/섀시를 설치하는 그림입니다.
+
+image::h610c_chassis.png[에서는 H610C 노드/섀시가 랙에 설치되어 있음을 보여 줍니다.]
+
+
+
+=== H610S 및 H615C 노드/섀시
+
+H615C 및 H610S의 경우 2U 4노드 섀시의 경우와 달리 노드 및 섀시가 별도의 구성 요소가 아니기 때문에 "노드" 및 "섀시"라는 용어가 상호 대체적으로 사용됩니다.
+
+다음은 랙에 노드/섀시를 설치하는 그림입니다.
+
+image::h610s_chassis.gif[에서는 랙에 설치된 H615C 또는 H610S 노드/섀시를 보여 줍니다.]
+
+
+
+== 스위치를 장착하십시오
+
+NetApp HCI 설치에서 Mellanox SN2010, SN2100 및 SN2700 스위치를 사용하려면 여기에 제공된 지침에 따라 스위치를 설치하고 케이블을 연결합니다.
+
+* link:https://docs.mellanox.com/pages/viewpage.action?pageId=6884619["Mellanox 하드웨어 사용자 설명서"^]
+* link:https://fieldportal.netapp.com/content/1075535?assetComponentId=1077676["TR-4836: Mellanox SN2100 및 SN2700 스위치 케이블 연결 가이드가 있는 NetApp HCI(로그인 필요)"^]
+
+
+
+
+== 노드를 케이블로 연결합니다
+
+기존 NetApp HCI 설치에 노드를 추가하는 경우 추가하는 노드의 케이블 연결 및 네트워크 구성이 기존 설치와 동일한지 확인합니다.
+
+
+CAUTION: 섀시 후면의 공기 환풍구가 케이블 또는 레이블에 의해 막히지 않았는지 확인합니다. 이로 인해 과열로 인해 구성 요소 고장이 조기에 발생할 수 있습니다.
+
+* <<H410C compute node and H410S storage node>>
+* <<H610C compute node>>
+* <<H615C compute node>>
+* <<H610S storage node>>
+
+
+
+
+=== H410C 컴퓨팅 노드 및 H410S 스토리지 노드
+
+H410C 노드의 케이블 연결에는 2개의 케이블 사용 또는 6개의 케이블 사용 옵션이 있습니다.
+
+2케이블 구성은 다음과 같습니다.
+
+image::HCI_ISI_compute_2cable.png[은 H410C 노드에 대한 2케이블 구성을 보여 줍니다.]
+
+image:blue circle.png["파란색 점"] 포트 D와 E의 경우 공유 관리, 가상 시스템 및 스토리지 연결을 위한 SFP28/SFP+ 케이블 또는 트랜시버 2개를 연결하십시오.
+
+image:purple circle.png["자주색 점"] (선택 사항, 권장) 대역외 관리 연결을 위해 IPMI 포트에 CAT5e 케이블을 연결합니다.
+
+6개 케이블 구성은 다음과 같습니다.
+
+image::HCI_ISI_compute_6cable.png[은 H410C 노드의 6개 케이블 구성을 보여 줍니다.]
+
+image:green circle.png["녹색 점"] 포트 A와 B의 경우, 관리 연결을 위해 포트 A와 B에 CAT5e 이상의 케이블 2개를 연결합니다.
+
+image:orange circle.png["주황색 점"] 포트 C 및 F의 경우 가상 머신 연결을 위한 SFP28/SFP+ 케이블 2개 또는 트랜시버를 연결합니다.
+
+image:blue circle.png["파란색 점"] 포트 D와 E의 경우 스토리지 연결을 위해 두 개의 SFP28/SFP+ 케이블 또는 트랜시버를 연결합니다.
+
+image:purple circle.png["자주색 점"] (선택 사항, 권장) 대역외 관리 연결을 위해 IPMI 포트에 CAT5e 케이블을 연결합니다.
+
+H410S 노드의 케이블 연결은 다음과 같습니다.
+
+image::HCI_ISI_storage_cabling.png[에는 H410S 노드의 케이블 연결이 나와 있습니다.]
+
+image:green circle.png["녹색 점"] 포트 A와 B의 경우, 관리 연결을 위해 포트 A와 B에 CAT5e 이상의 케이블 2개를 연결합니다.
+
+image:blue circle.png["파란색 점"] 포트 C 및 D의 경우 스토리지 연결을 위해 두 개의 SFP28/SFP+ 케이블 또는 트랜시버를 연결합니다.
+
+image:purple circle.png["자주색 점"] (선택 사항, 권장) 대역외 관리 연결을 위해 IPMI 포트에 CAT5e 케이블을 연결합니다.
+
+노드에 케이블을 연결한 후 전원 코드를 섀시당 2개의 전원 공급 장치에 연결하고 240V PDU 또는 전원 콘센트에 꽂습니다.
+
+
+
+=== H610C 컴퓨팅 노드
+
+H610C 노드의 케이블 연결은 다음과 같습니다.
+
+
+NOTE: H610C 노드는 2케이블 구성에만 구축됩니다. 모든 VLAN이 포트 C와 D에 있는지 확인합니다
+
+image::H610C_node-cabling.png[에서는 H610C 노드의 케이블 연결을 보여 줍니다.]
+
+image:dark green.png["진한 녹색 점"] 포트 C 및 D의 경우 두 개의 SFP28/SFP+ 케이블을 사용하여 노드를 10/25GbE 네트워크에 연결합니다.
+
+image:purple circle.png["자주색 점"] (선택 사항, 권장) IPMI 포트의 RJ45 커넥터를 사용하여 노드를 1GbE 네트워크에 연결합니다.
+
+image:light blue circle.png["연한 파란색 점"] 두 전원 케이블을 모두 노드에 연결하고 전원 케이블을 200‐240V 전원 콘센트에 연결합니다.
+
+
+
+=== H615C 컴퓨팅 노드
+
+H615C 노드의 케이블 연결은 다음과 같습니다.
+
+
+NOTE: H615C 노드는 2케이블 구성에만 구축됩니다. 포트 A와 B에 모든 VLAN이 있는지 확인합니다
+
+image::H615C_node_cabling.png[에서는 H615C 노드의 케이블 연결을 보여 줍니다.]
+
+image:dark green.png["진한 녹색 점"] 포트 A와 B의 경우 두 개의 SFP28/SFP+ 케이블을 사용하여 노드를 10/25GbE 네트워크에 연결합니다.
+
+image:purple circle.png["자주색 점"] (선택 사항, 권장) IPMI 포트의 RJ45 커넥터를 사용하여 노드를 1GbE 네트워크에 연결합니다.
+
+image:light blue circle.png["연한 파란색 점"] 두 전원 케이블을 모두 노드에 연결하고 110-140V 전원 콘센트에 전원 케이블을 꽂습니다.
+
+
+
+=== H610S 스토리지 노드
+
+H610S 노드의 케이블 연결은 다음과 같습니다.
+
+image::H600S_ISI_noderear.png[에서는 H610S 노드의 케이블 연결을 보여 줍니다.]
+
+image:purple circle.png["자주색 점"] IPMI 포트에 있는 2개의 RJ45 커넥터를 사용하여 노드를 1GbE 네트워크에 연결합니다.
+
+image:dark green.png["진한 녹색 점"] SFP28 또는 SFP+ 케이블 2개를 사용하여 10/25GbE 네트워크에 노드를 연결합니다.
+
+image:orange circle.png["주황색 점"] IPMI 포트의 RJ45 커넥터를 사용하여 노드를 1GbE 네트워크에 연결합니다.
+
+image:light blue circle.png["연한 파란색 점"] 두 전원 케이블을 노드에 연결합니다.
+
+
+
+== 노드의 전원을 켭니다
+
+노드가 부팅되려면 약 6분이 걸립니다.
+
+다음은 NetApp HCI 2U 섀시의 전원 단추를 보여 주는 그림입니다.
+
+image::H410c_poweron_ISG.png[에서는 H 시리즈 2U의 전원 단추를 보여 줍니다]
+
+다음은 H610C 노드의 전원 단추를 보여 주는 그림입니다.
+
+image::H610C_power-on.png[에서는 H610C 노드/섀시의 전원 단추를 보여 줍니다.]
+
+다음은 H615C 및 H610S 노드의 전원 단추를 보여 주는 그림입니다.
+
+image::H600S_ISI_nodefront.png[에서는 H610S/H615C 노드/섀시의 전원 단추를 보여 줍니다.]
+
+
+
+== NetApp HCI를 구성합니다
+
+다음 옵션 중 하나를 선택합니다.
+
+* <<New NetApp HCI installation>>
+* <<Expand an existing NetApp HCI installation>>
+
+
+
+
+=== 새 NetApp HCI 설치
+
+.단계
+. 하나의 NetApp HCI 스토리지 노드에서 관리 네트워크(Bond1G)에서 IPv4 주소를 구성합니다.
++
+
+NOTE: 관리 네트워크에서 DHCP를 사용하는 경우 스토리지 시스템의 DHCP에서 얻은 IPv4 주소에 연결할 수 있습니다.
+
++
+.. 키보드, 비디오, 마우스(KVM)를 하나의 스토리지 노드 뒷면에 연결합니다.
+.. 사용자 인터페이스에서 Bond1G의 IP 주소, 서브넷 마스크 및 게이트웨이 주소를 구성합니다. Bond1G 네트워크에 대한 VLAN ID를 구성할 수도 있습니다.
+
+
+. 지원되는 웹 브라우저(Mozilla Firefox, Google Chrome 또는 Microsoft Edge)를 사용하여 1단계에서 구성한 IPv4 주소에 연결하여 NetApp 배포 엔진 으로 이동합니다.
+. NetApp UI(Deployment Engine 사용자 인터페이스)를 사용하여 NetApp HCI를 구성합니다.
++
+
+NOTE: 다른 모든 NetApp HCI 노드는 자동으로 검색됩니다.
+
+
+
+
+
+=== 기존 NetApp HCI 설치를 확장합니다
+
+.단계
+. 웹 브라우저에서 관리 노드의 IP 주소를 엽니다.
+. NetApp 하이브리드 클라우드 제어에 NetApp HCI 스토리지 클러스터 관리자 자격 증명을 제공하여 로그인하십시오.
+. 마법사의 단계에 따라 NetApp HCI 설치에 스토리지 및/또는 컴퓨팅 노드를 추가합니다.
++
+
+TIP: H410C 컴퓨팅 노드를 추가하려면 기존 설치 환경에서 NetApp HCI 1.4 이상을 실행해야 합니다. H615C 컴퓨팅 노드를 추가하려면 기존 설치에서 NetApp HCI 1.7 이상을 실행해야 합니다.
+
++
+
+NOTE: 동일한 네트워크에 새로 설치된 NetApp HCI 노드가 자동으로 검색됩니다.
+
+
+
+
+
+== 구성 후 작업을 수행합니다
+
+사용 중인 노드의 유형에 따라 하드웨어를 설치하고 NetApp HCI를 구성한 후에 추가 단계를 수행해야 할 수 있습니다.
+
+* <<H610C node>>
+* <<H615C and H610S nodes>>
+
+
+
+
+=== H610C 노드
+
+설치한 각 H610C 노드에 대해 ESXi에서 GPU 드라이버를 설치하고 해당 기능을 검증합니다.
+
+
+
+=== H615C 및 H610S 노드
+
+.단계
+. 웹 브라우저를 사용하여 기본 BMC IP 주소 192.168.0.120으로 이동합니다
+. root라는 사용자 이름과 암호 calvin을 사용해 로그인합니다.
+. 노드 관리 화면에서 * 설정 > 네트워크 설정 * 으로 이동하고 대역외 관리 포트에 대한 네트워크 매개 변수를 구성합니다.
+
+
+H615C 노드에 GPU가 있는 경우 설치한 각 H615C 노드에 대해 ESXi에서 GPU 드라이버를 설치하고 해당 기능을 검증합니다.
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지를 참조하십시오"^]
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+* https://www.netapp.com/us/media/tr-4820.pdf["_TR-4820: NetApp HCI 네트워킹 빠른 계획 가이드 _"^]
+* https://mysupport.netapp.com/site/tools["NetApp 구성 어드바이저"^] 5.8.1 이상의 네트워크 유효성 검사 도구
+

@@ -1,0 +1,179 @@
+---
+sidebar: sidebar 
+permalink: docs/task_hcc_edit_bmc_info.html 
+summary: 'NetApp 하이브리드 클라우드 제어를 사용하여 NetApp HCI가 베이스보드 관리 컨트롤러(BMC) 연결 정보를 편집할 수 있습니다.' 
+keywords: netapp, hci, BMC, connection, credentials, monitor 
+---
+= 베이스보드 관리 컨트롤러 연결 정보를 편집합니다
+:allow-uri-read: 
+
+
+[role="lead"]
+NetApp 하이브리드 클라우드 제어에서 각 컴퓨팅 노드에 대한 BMC(Baseboard Management Controller) 관리자 자격 증명을 변경할 수 있습니다. BMC 펌웨어를 업그레이드하기 전에 자격 증명을 변경해야 하거나 NetApp 하이브리드 클라우드 제어에 지정된 '하드웨어 ID를 사용할 수 없음' 또는 '검색할 수 없음' 오류를 해결해야 할 수 있습니다.
+
+BMC 자격 증명을 변경하기 위한 클러스터 관리자 권한.
+
+
+NOTE: 상태 점검 중에 BMC 자격 증명을 설정하면 변경 사항이 * 노드 * 페이지에 반영되기 전에 최대 2분 정도 지연될 수 있습니다.
+
+다음 옵션 중 하나를 선택하여 BMC 자격 증명을 변경합니다.
+
+* <<Use NetApp Hybrid Cloud Control to edit BMC information>>
+* <<Use the REST API to edit BMC information>>
+
+
+
+
+== NetApp 하이브리드 클라우드 제어를 사용하여 BMC 정보를 편집합니다
+
+NetApp 하이브리드 클라우드 제어 대시보드를 사용하여 저장된 BMC 자격 증명을 편집할 수 있습니다.
+
+.단계
+. 웹 브라우저에서 관리 노드의 IP 주소를 엽니다. 예를 들면 다음과 같습니다.
++
+[listing]
+----
+https://<ManagementNodeIP>
+----
+. NetApp 하이브리드 클라우드 제어에 NetApp HCI 스토리지 클러스터 관리자 자격 증명을 제공하여 로그인하십시오.
+. 왼쪽 탐색 파란색 상자에서 NetApp HCI 설치를 선택합니다.
++
+NetApp 하이브리드 클라우드 제어 대시보드가 나타납니다.
+
+. 왼쪽 탐색 창에서 * 노드 * 를 클릭합니다.
+. 컴퓨팅 인벤토리 정보를 보려면 * Compute * 를 클릭합니다.
++
+컴퓨팅 노드 목록이 나타납니다. BMC Connection Status* 열에는 각 컴퓨팅 노드에 대한 BMC 연결 시도 결과가 표시됩니다. 컴퓨팅 노드에 대한 연결 시도가 실패하면 해당 노드에 대한 오류 메시지가 이 열에 표시됩니다.
+
+. BMC 연결 오류가 있는 컴퓨팅 노드에 대해 저장된 BMC 자격 증명을 추가하거나 편집하려면 오류 메시지 텍스트에서 * 연결 설정 편집 * 을 클릭합니다.
+. 나타나는 대화 상자에서 이 컴퓨팅 노드의 BMC에 대한 올바른 관리자 사용자 이름과 암호를 추가합니다.
+. 저장 * 을 클릭합니다.
+. 누락되거나 잘못된 저장된 BMC 자격 증명이 있는 모든 컴퓨팅 노드에 대해 6단계부터 8단계까지 반복합니다.
+
+
+
+NOTE: BMC 정보를 업데이트하면 인벤토리가 새로 고쳐지고 관리 노드 서비스가 업그레이드를 완료하는 데 필요한 모든 하드웨어 매개 변수를 인식하게 됩니다.
+
+
+
+== REST API를 사용하여 BMC 정보를 편집합니다
+
+NetApp 하이브리드 클라우드 제어 REST API를 사용하여 저장된 BMC 자격 증명을 편집할 수 있습니다.
+
+.단계
+. 컴퓨팅 노드 하드웨어 태그 및 BMC 정보를 찾습니다.
++
+.. 관리 노드에서 인벤토리 서비스 REST API UI를 엽니다.
++
+[listing]
+----
+https://<ManagementNodeIP>/inventory/1/
+----
+.. authorize * 를 클릭하고 다음을 완료합니다.
++
+... 클러스터 사용자 이름 및 암호를 입력합니다.
+... Client ID를 mnode-client로 입력한다.
+... 세션을 시작하려면 * authorize * 를 클릭합니다.
+... 인증 창을 닫습니다.
+
+
+.. REST API UI에서 * Get/Installations * 를 클릭합니다.
+.. 체험하기 * 를 클릭합니다.
+.. Execute * 를 클릭합니다.
+.. 응답에서 설치 자산 ID("id")를 복사합니다.
+.. REST API UI에서 * get/Installations/{id} * 를 클릭합니다.
+.. 체험하기 * 를 클릭합니다.
+.. 설치 자산 ID를 * id * 필드에 붙여 넣습니다.
+.. Execute * 를 클릭합니다.
+.. 응답에서 노드 자산 ID("id"), BMC IP 주소("bmcAddress") 및 노드 일련 번호("ChassisSerialNumber")를 복사하여 나중에 사용하십시오.
++
+[listing, subs="+quotes"]
+----
+"nodes": [
+  {
+    "bmcDetails": {
+      *"bmcAddress": "10.117.1.111",*
+      "credentialsAvailable": false,
+      "credentialsValidated": false
+    },
+    *"chassisSerialNumber": "221111019323",*
+    "chassisSlot": "C",
+    "hardwareId": null,
+    "hardwareTag": "00000000-0000-0000-0000-ac1f6ab4ecf6",
+    *"id": "8cd91e3c-1b1e-1111-b00a-4c9c4900b000",*
+----
+
+
+. 관리 노드에서 하드웨어 서비스 REST API UI를 엽니다.
++
+[listing]
+----
+https://<ManagementNodeIP>/hardware/2/
+----
+. authorize * 를 클릭하고 다음을 완료합니다.
++
+.. 클러스터 사용자 이름 및 암호를 입력합니다.
+.. 값이 아직 채워지지 않은 경우 클라이언트 ID를 mnode-client로 입력합니다.
+.. 세션을 시작하려면 * authorize * 를 클릭합니다.
+.. 창을 닫습니다.
+
+
+. Put/nodes/{hardware_id} * 를 클릭합니다.
+. 체험하기 * 를 클릭합니다.
+. "hardware_id" 매개 변수에 앞서 저장한 노드 자산 ID를 입력합니다.
+. 페이로드에 다음 정보를 입력합니다.
++
+|===
+| 매개 변수 | 설명 
+
+
+| 'assetId' | 1단계에서 저장한 설치 자산 ID('id')입니다(f). 
+
+
+| 'bmcIp'입니다 | 1단계에서 저장한 BMC IP 주소('bmcAddress')입니다(k). 
+
+
+| 'bmcPassword | 업데이트된 암호를 사용하여 BMC에 로그인합니다. 
+
+
+| 'bmcUsername'입니다 | 업데이트된 사용자 이름을 사용하여 BMC에 로그인합니다. 
+
+
+| '일련 번호' | 하드웨어의 섀시 일련 번호입니다. 
+|===
++
+페이로드 예:
+
++
+[listing]
+----
+{
+  "assetId": "7bb41e3c-2e9c-2151-b00a-8a9b49c0b0fe",
+  "bmcIp": "10.117.1.111",
+  "bmcPassword": "mypassword1",
+  "bmcUsername": "admin1",
+  "serialNumber": "221111019323"
+}
+----
+. BMC 자격 증명을 업데이트하려면 * 실행 * 을 클릭합니다. 결과가 성공적이면 다음과 유사한 응답이 반환됩니다.
++
+[listing]
+----
+{
+  "credentialid": "33333333-cccc-3333-cccc-333333333333",
+  "host_name": "hci-host",
+  "id": "8cd91e3c-1b1e-1111-b00a-4c9c4900b000",
+  "ip": "1.1.1.1",
+  "parent": "abcd01y3-ab30-1ccc-11ee-11f123zx7d1b",
+  "type": "BMC"
+}
+----
+
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/NetApp_HCI/Known_issues_and_workarounds_for_Compute_Node_upgrades["컴퓨팅 노드 업그레이드에 대한 알려진 문제 및 해결 방법"^]
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
+

@@ -1,0 +1,64 @@
+---
+sidebar: sidebar 
+permalink: docs/task_mnode_access_ui.html 
+summary: 관리 UI 또는 REST API UI에 액세스할 수 있습니다. 
+keywords: netapp, mnode, management node, api, hci 
+---
+= 관리 노드에 액세스합니다
+:allow-uri-read: 
+
+
+[role="lead"]
+NetApp Element 소프트웨어 버전 11.3부터 관리 노드에는 REST 기반 서비스를 관리하기 위한 UI와 네트워크 및 클러스터 설정과 운영 체제 테스트 및 유틸리티를 관리하기 위한 노드별 UI라는 두 개의 UI가 포함되어 있습니다.
+
+Element 소프트웨어 버전 11.3 이상을 실행하는 클러스터의 경우 다음 두 인터페이스 중 하나를 사용할 수 있습니다.
+
+* 관리 노드 UI('https://[mNode IP}:442')를 사용하면 네트워크 및 클러스터 설정을 변경하거나 시스템 테스트를 실행하거나 시스템 유틸리티를 사용할 수 있습니다.
+* 내장 REST API UI('https://[mNode ip}/mnode')를 사용하면 프록시 서버 구성, 서비스 수준 업데이트 또는 자산 관리 등 관리 노드 서비스와 관련된 API를 실행하거나 이해할 수 있습니다.
+
+
+
+
+== 노드별 관리 UI에 액세스합니다
+
+노드별 UI에서 네트워크 및 클러스터 설정에 액세스하고 시스템 테스트와 유틸리티를 사용할 수 있습니다.
+
+.단계
+. 관리 노드의 IP 주소 뒤에 442를 입력하여 관리 노드의 노드별 UI에 액세스합니다
++
+[listing]
+----
+https://[IP address]:442
+----
++
+image::mnode_per_node_442_ui.png[노드 별 관리 노드 UI]
+
+. 메시지가 표시되면 관리 노드 사용자 이름 및 암호를 입력합니다.
+
+
+
+
+== 관리 노드 REST API UI에 액세스합니다
+
+REST API UI에서 관리 노드의 관리 서비스를 제어하는 서비스 관련 API 메뉴에 액세스할 수 있습니다.
+
+.단계
+. 관리 서비스의 REST API UI에 액세스하려면 관리 노드의 IP 주소와 '/mnode'를 차례로 입력합니다.
++
+[listing]
+----
+https://[IP address]/mnode
+----
++
+image::mnode_swagger_ui.png[관리 노드 REST API UI]
+
+. authorize * 또는 임의의 잠금 아이콘을 클릭하고 API 사용 권한에 대한 클러스터 관리자 자격 증명을 입력합니다.
+
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* link:task_mnode_enable_activeIQ.html["Active IQ 및 NetApp HCI 모니터링을 활성화합니다"]
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
+

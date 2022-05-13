@@ -1,0 +1,278 @@
+---
+sidebar: sidebar 
+permalink: docs/task_hci_getstarted.html 
+summary: 다음 지침에 따라 NetApp HCI를 설치하고 배포합니다. 
+keywords: netapp, hci, install, deploy, get started 
+---
+= NetApp HCI 설치 및 구축 개요
+:allow-uri-read: 
+
+
+[role="lead"]
+다음 지침에 따라 NetApp HCI를 설치하고 배포합니다. 이 지침에는 자세한 내용을 볼 수 있는 링크가 포함되어 있습니다.
+
+다음은 프로세스에 대한 개요입니다.
+
+* <<Prepare for installation>>
+* <<Validate network readiness with NetApp Active IQ Config Advisor>>
+* <<Work with your NetApp team>>
+* <<Install NetApp HCI hardware>>
+* <<Complete optional tasks after installing hardware>>
+* <<Deploy NetApp HCI using the NetApp Deployment Engine (NDE)>>
+* <<Manage NetApp HCI using the vCenter Plug-in>>
+* <<Monitor or upgrade NetApp HCI with the Hybrid Cloud Control>>
+
+
+
+
+== 설치 준비
+
+설치를 시작하기 전에 하드웨어를 받기 전에 _NetApp HCI 설치 검색 워크북_비행 전 점검 목록을 작성하십시오.
+
+
+
+=== 네트워크 및 설치 사이트를 준비합니다
+
+다음은 단순화된 NetApp HCI 네트워크 토폴로지 설치입니다.
+
+image::hci_topology_simple_network.png[간소화된 NetApp HCI 네트워크 토폴로지 다이어그램]
+
+이는 단일 스토리지 노드 및 단일 컴퓨팅 노드에 대한 단순화된 네트워크 토폴로지입니다. NetApp HCI의 최소 클러스터는 스토리지 2개와 컴퓨팅 노드 2개입니다.
+
+
+NOTE: 네트워크 토폴로지는 여기에 표시된 것과 다를 수 있습니다. 이 예는 예제일 뿐입니다.
+
+이 설정은 모든 NetApp HCI 네트워크에 연결하기 위해 컴퓨팅 노드에서 두 개의 네트워크 케이블을 사용합니다. 
+
+다음 자료를 읽어 보십시오.
+
+* 설치 전에 _NetApp HCI 설치 검색 워크북_을 사용하여 네트워크를 구성하십시오.
+* 자세한 내용 및 기타 지원되는 구성은 를 참조하십시오 https://www.netapp.com/us/media/tr-4820.pdf["_TR-4820: NetApp HCI 네트워킹 빠른 계획 가이드 _"] 및 https://library.netapp.com/ecm/ecm_download_file/ECMLP2856176["_NetApp HCI 설치 및 설정 지침 _"].
+* 4개의 스토리지 노드보다 작은 NetApp HCI 구성에 대한 자세한 내용은 를 참조하십시오 https://www.netapp.com/us/media/tr-4823.pdf["_TR-4823:NetApp HCI 2-노드 스토리지 클러스터 _"^].
+* 각 스토리지 노드에 사용되는 스위치 포트에 LACP(Link Aggregation Control Protocol)를 구성하는 방법에 대한 자세한 내용은 을 참조하십시오 link:hci_prereqs_LACP_configuration.html["최적의 스토리지 성능을 위해 LCAP를 구성합니다"].
+
+
+이 설정은 모든 트래픽을 두 개의 물리적 중복 포트로 통합하여 케이블 연결을 줄이고 네트워크 구성을 간소화합니다. 이 구성에서는 스토리지, vMotion 및 모든 가상 머신 네트워크 세그먼트가 VLAN 태깅을 사용해야 합니다. 관리 네트워크 세그먼트에서는 네이티브 VLAN 또는 태그가 지정된 VLAN을 사용할 수 있지만, NDE(NetApp Deployment Engine)가 네트워크 리소스를 자동화된 방식으로 할당할 수 있도록 네이티브 VLAN이 기본 모드입니다(Zero Conf).
+
+이 모드를 사용하려면 VMware vSphere Enterprise Plus 라이센스가 필요한 VDS(vSphere Distributed Switch)가 필요합니다.
+
+
+
+=== 시작하기 전에 네트워킹 요구 사항
+
+다음은 필수 구성 요소의 주요 사항입니다.
+
+필수 구성 요소에 대한 자세한 내용은 을 참조하십시오 link:hci_prereqs_overview.html["NetApp HCI 구축 개요에 대한 요구 사항"].
+
+* Bond1G는 스토리지 노드의 1GbE 네트워크 포트와 컴퓨팅 노드의 관리 인터페이스를 결합하는 논리 인터페이스입니다. 이 네트워크는 NDE API 트래픽에 사용됩니다. 모든 노드는 동일한 L2 네트워크의 관리 인터페이스를 통해 통신할 수 있어야 합니다.
+* Bond10G는 10/25GbE 포트를 결합하는 논리 인터페이스이며 비컨 및 인벤토리에 NDE에서 사용됩니다. 모든 노드는 Bond10G 인터페이스를 통해 단편화되지 않은 점보 프레임과 통신할 수 있어야 합니다.
+* NDE를 사용하려면 한 스토리지 노드의 Bond1G 인터페이스에 수동으로 할당된 IP 주소가 하나 이상 필요합니다. NDE가 이 노드에서 실행됩니다.
+* 모든 노드에는 APIPA(Automatic Private IP Addressing)를 통해 NDE 검색을 통해 할당된 임시 IP 주소가 있습니다.
+
+
+
+NOTE: NDE 프로세스 중에 모든 노드에 영구 IP 주소가 할당되고 APIPA가 할당한 임시 IP가 해제됩니다.
+
+* NDE에는 스위치 네트워크에 사전 구성된 관리, iSCSI 및 vMotion을 위한 별도의 네트워크가 필요합니다.
+
+
+
+
+== NetApp Active IQ Config Advisor로 네트워크 준비를 검증합니다
+
+NetApp HCI에 대한 네트워크 준비를 위해 NetApp Active IQ Config Advisor 5.8.1 이상을 설치합니다. 이 네트워크 유효성 검사 도구는 다른 도구와 함께 제공됩니다 link:https://mysupport.netapp.com/site/tools/tool-eula/5ddb829ebd393e00015179b2["NetApp 지원 툴"^]. 이 툴을 사용하여 연결, VLAN ID, IP 주소 요구 사항, 스위치 연결 등을 확인할 수 있습니다.
+
+자세한 내용은 을 참조하십시오 link:hci_prereqs_task_validate_config_advisor.html["Active IQ Config Advisor로 환경을 검증합니다"]
+
+
+
+== NetApp 팀과 협력하십시오
+
+NetApp 팀은 NetApp Active IQ Config Advisor 보고서 및 _Discovery 워크북_을 사용하여 네트워크 환경이 준비되어 있는지 확인합니다.
+
+
+
+== NetApp HCI 하드웨어를 설치합니다
+
+NetApp HCI는 다양한 구성으로 설치할 수 있습니다.
+
+* H410C 컴퓨팅 노드: 2케이블 구성 또는 6케이블 구성
+* H610C 컴퓨팅 노드: 2케이블 구성
+* H615C 컴퓨팅 노드: 2케이블 구성
+* H410S 스토리지 노드
+* H610S 스토리지 노드
+
+
+
+CAUTION: 예방 조치 및 자세한 내용은 을 참조하십시오 link:task_hci_installhw.html["H 시리즈 하드웨어를 설치합니다"].
+
+.단계
+. 레일과 섀시를 설치합니다.
+. 섀시에 노드를 설치하고 스토리지 노드용 드라이브를 설치합니다. (NetApp H 시리즈 섀시에 H410C 및 H410S를 설치하는 경우에만 적용됩니다.)
+. 스위치를 장착하십시오.
+. 컴퓨팅 노드에 케이블을 연결합니다.
+. 스토리지 노드를 케이블로 연결합니다.
+. 전원 코드를 연결합니다.
+. NetApp HCI 노드의 전원을 켭니다.
+
+
+
+
+== 하드웨어 설치 후 옵션 작업을 완료합니다
+
+NetApp HCI 하드웨어를 설치한 후에는 선택 사항이지만 권장되는 작업을 수행해야 합니다.
+
+
+
+=== 모든 섀시에서 스토리지 용량을 관리할 수 있습니다
+
+스토리지 노드가 포함된 모든 섀시에 걸쳐 스토리지 용량이 균등하게 분산되도록 합니다.
+
+
+
+=== 각 노드에 대해 IPMI를 구성합니다
+
+NetApp HCI 하드웨어를 랙에 장착하고 케이블을 연결한 후 전원을 켠 후에는 각 노드에 대해 IPMI(Intelligent Platform Management Interface) 액세스를 구성할 수 있습니다. 각 IPMI 포트에 IP 주소를 할당하고 노드에 대한 원격 IPMI 액세스 권한이 있는 즉시 기본 관리자 IPMI 암호를 변경합니다.
+
+을 참조하십시오 link:hci_prereqs_final_prep.html["IPMI를 구성합니다"].
+
+
+
+== NDE(NetApp Deployment Engine)를 사용하여 NetApp HCI 구축
+
+NDE UI는 NetApp HCI 설치에 사용되는 소프트웨어 마법사 인터페이스입니다.
+
+
+
+=== NDE UI를 실행합니다
+
+NetApp HCI는 NDE에 대한 초기 액세스에 스토리지 노드 관리 네트워크 IPv4 주소를 사용합니다. 모범 사례로서 첫 번째 스토리지 노드에서 연결합니다.
+
+.필수 구성 요소
+* 초기 스토리지 노드 관리 네트워크 IP 주소를 수동으로 할당했거나 DHCP를 사용하여 이미 할당했습니다.
+* NetApp HCI 설치에 물리적으로 액세스할 수 있어야 합니다.
+
+
+.단계
+. 초기 스토리지 노드 관리 네트워크 IP를 모르는 경우, 스토리지 노드 또는 의 키보드와 모니터를 통해 액세스하는 TUI(터미널 사용자 인터페이스)를 사용합니다 link:task_nde_access_dhcp.html["USB 스틱을 사용하십시오"].
++
+자세한 내용은 을 참조하십시오 link:concept_nde_access_overview.html["_NetApp 배포 엔진 액세스 _"].
+
+. 웹 브라우저에서 IP 주소를 알고 있는 경우 HTTPS가 아닌 HTTP를 통해 기본 노드의 Bond1G 주소에 연결합니다.
++
+예 *:'http://<IP_address>:442/nde/`
+
+
+
+
+
+=== NDE UI로 NetApp HCI 구축
+
+. NDE에서 사전 요구 사항을 수락하고 Active IQ를 사용하도록 확인하고 사용권 계약에 동의합니다.
+. 선택적으로 ONTAP Select에서 Data Fabric 파일 서비스를 활성화하고 ONTAP Select 라이센스를 수락합니다.
+. 새 vCenter 구축을 구성합니다. 정규화된 도메인 이름을 사용하여 구성 * 을 클릭하고 vCenter Server 도메인 이름과 DNS 서버 IP 주소를 모두 입력합니다.
++
+
+NOTE: vCenter 설치에 FQDN 방식을 사용하는 것이 좋습니다.
+
+. 모든 노드의 인벤토리 평가가 성공적으로 완료되었는지 검토합니다.
++
+NDE를 실행 중인 스토리지 노드가 이미 선택되어 있습니다.
+
+. 모든 노드를 선택하고 * Continue * 를 클릭합니다.
+. 네트워크 설정을 구성합니다. 사용할 값은 _NetApp HCI 설치 검색 워크북_을 참조하십시오.
+. 파란색 상자를 클릭하여 간편 양식을 시작합니다.
++
+image::hci_nde_network_settings_ui.png[NDE 네트워크 설정 페이지]
+
+. 네트워크 설정 간편 양식:
++
+.. 이름 접두어를 입력합니다. (_NetApp HCI 설치 검색 워크북의 시스템 세부 정보 _ 를 참조하십시오.)
+.. VLAN ID를 할당하시겠습니까? 에서 * 아니요 * 를 클릭합니다. (나중에 기본 네트워크 설정 페이지에서 할당합니다.)
+.. 통합 문서에 따라 관리, vMotion 및 iSCI 네트워크의 서브넷 CIDR, 기본 게이트웨이 및 시작 IP 주소를 입력합니다. (이러한 값은 _NetApp HCI 설치 검색 워크북_의 IP 할당 방법 섹션을 참조하십시오.)
+.. 네트워크 설정에 적용 * 을 클릭합니다.
+
+
+. 에 참가합니다 link:task_nde_join_existing_vsphere.html["기존 vCenter"] (선택 사항).
+. NetApp HCI 설치 검색 워크북 _ 에 노드 일련 번호를 기록합니다.
+. vMotion Network 및 VLAN 태깅이 필요한 네트워크에 대한 VLAN ID를 지정합니다. NetApp HCI 설치 검색 워크북 _ 을(를) 참조하십시오.
+. 구성을 .csv 파일로 다운로드합니다.
+. 배포 시작 * 을 클릭합니다.
+. 나타나는 URL을 복사하여 저장합니다.
++
+
+NOTE: 구축을 완료하는 데 약 45분이 걸릴 수 있습니다.
+
+
+
+
+
+=== vSphere Web Client를 사용하여 설치를 확인합니다
+
+. vSphere Web Client를 시작하고 NDE 사용 중에 지정된 자격 증명을 사용하여 로그인합니다.
++
+사용자 이름에 '@vsphere.local'을 추가해야 합니다.
+
+. 알람이 없는지 확인합니다.
+. vCenter, mNode 및 ONTAP Select(선택 사항) 어플라이언스가 경고 아이콘 없이 실행되고 있는지 확인합니다.
+. 2개의 기본 데이터 저장소(NetApp-HCI - Datastore_01 및 02)가 생성되는지 확인합니다.
+. 각 데이터 저장소를 선택하고 모든 컴퓨팅 노드가 호스트 탭에 나열되는지 확인합니다.
+. vMotion 및 Datastore-02를 검증합니다.
++
+.. vCenter Server를 NetApp-HCI-Datastore-02로 마이그레이션합니다(스토리지만 vMotion).
+.. 각 컴퓨팅 노드로 vCenter Server를 마이그레이션합니다(컴퓨팅 전용 vMotion).
+
+
+. vCenter Server용 NetApp Element 플러그인으로 이동하여 클러스터가 표시되는지 확인합니다.
+. 대시보드에 경고가 나타나지 않는지 확인합니다.
+
+
+
+
+== vCenter 플러그인을 사용하여 NetApp HCI 관리
+
+NetApp HCI를 설치한 후 클러스터, 볼륨, 데이터 저장소, 로그, 액세스 그룹, vCenter Server용 NetApp Element 플러그인을 사용하여 이니시에이터 및 서비스 품질(QoS) 정책을 수립합니다.
+
+자세한 내용은 을 참조하십시오 https://docs.netapp.com/us-en/vcp/index.html["_NetApp Element Plug-in for vCenter Server 설명서 _"^].
+
+image::vcp_shortcuts_page.png[vSphere Client Shortcuts 페이지]
+
+
+
+== 하이브리드 클라우드 제어를 통해 NetApp HCI를 모니터링하거나 업그레이드합니다
+
+선택적으로 NetApp HCI 하이브리드 클라우드 제어를 사용하여 시스템을 모니터링, 업그레이드 또는 확장할 수 있습니다.
+
+NetApp Hybrid Cloud Control에 로그인하려면 관리 노드의 IP 주소로 이동합니다.
+
+하이브리드 클라우드 제어를 사용하면 다음을 수행할 수 있습니다.
+
+* link:task_hcc_dashboard.html["NetApp HCI 설치를 모니터링합니다"]
+* link:concept_hci_upgrade_overview.html["NetApp HCI 시스템을 업그레이드합니다"]
+* link:concept_hcc_expandoverview.html["NetApp HCI 스토리지 또는 컴퓨팅 리소스를 확장합니다"]
+
+
+* 단계 *
+
+. 웹 브라우저에서 관리 노드의 IP 주소를 엽니다. 예를 들면 다음과 같습니다.
++
+[listing]
+----
+https://<ManagementNodeIP>
+----
+. NetApp 하이브리드 클라우드 제어에 NetApp HCI 스토리지 클러스터 관리자 자격 증명을 제공하여 로그인하십시오.
++
+NetApp Hybrid Cloud Control 인터페이스가 나타납니다.
+
+
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지를 참조하십시오"^]
+* link:../media/hseries-isi.pdf["NetApp HCI 설치 및 설정 지침"^]
+* https://www.netapp.com/us/media/tr-4820.pdf["TR-4820: NetApp HCI 네트워킹 빠른 계획 가이드"^]
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인 설명서"^]
+* https://mysupport-beta.netapp.com/site/tools/tool-eula/5ddb829ebd393e00015179b2["NetApp 구성 어드바이저"^] 5.8.1 이상의 네트워크 유효성 검사 도구
+* https://help.monitoring.solidire.com["NetApp SolidFire Active IQ 문서"^]
+

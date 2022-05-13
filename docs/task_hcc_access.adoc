@@ -1,0 +1,47 @@
+---
+sidebar: sidebar 
+permalink: docs/task_hcc_access.html 
+summary: NetApp 하이브리드 클라우드 제어에 로그인할 수 있습니다. 
+keywords: netapp, hci, on premise, hybrid cloud control, hcc 
+---
+= NetApp HCI 하이브리드 클라우드 제어에 액세스
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp 하이브리드 클라우드 제어를 통해 NetApp HCI를 관리할 수 있습니다.
+
+NetApp Hybrid Cloud Control에 로그인하려면 관리 노드의 IP 주소로 이동합니다.
+
+하이브리드 클라우드 제어를 사용하면 다음을 수행할 수 있습니다.
+
+* link:task_hcc_dashboard.html["NetApp HCI 설치를 모니터링합니다"]
+* link:concept_hci_upgrade_overview.html["NetApp HCI 시스템을 업그레이드합니다"]
+* link:concept_hcc_expandoverview.html["NetApp HCI 스토리지 또는 컴퓨팅 리소스를 확장합니다"]
+
+
+* 단계 *
+
+. 웹 브라우저에서 관리 노드의 IP 주소를 엽니다. 예를 들면 다음과 같습니다.
++
+[listing]
+----
+https://<ManagementNodeIP>
+----
+. NetApp 하이브리드 클라우드 제어에 NetApp HCI 스토리지 클러스터 관리자 자격 증명을 제공하여 로그인하십시오.
++
+NetApp Hybrid Cloud Control 인터페이스가 나타납니다.
+
+
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지를 참조하십시오"^]
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+

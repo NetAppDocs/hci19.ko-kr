@@ -1,0 +1,81 @@
+---
+sidebar: sidebar 
+permalink: docs/task_mnode_enable_alerts.html 
+summary: NetApp HCI 시스템에서 경고를 모니터링하도록 설정을 구성할 수 있습니다. 
+keywords: netapp, element, management node, mnode, ui, alerts, alert monitoring 
+---
+= NetApp HCI에서 경고 모니터링을 구성합니다
+:allow-uri-read: 
+
+
+[role="lead"]
+NetApp HCI 시스템에서 경고를 모니터링하도록 설정을 구성할 수 있습니다.
+
+NetApp HCI 경고 모니터링은 NetApp HCI 스토리지 클러스터 시스템 알림을 vCenter Server에 전달하여 vSphere 웹 클라이언트 인터페이스에서 NetApp HCI에 대한 모든 알림을 볼 수 있도록 합니다.
+
+
+NOTE: 이러한 툴은 SolidFire All-Flash 스토리지와 같은 스토리지 전용 클러스터에 구성되거나 사용되지 않습니다. 이러한 클러스터에 대한 도구를 실행하면 다음 405 오류가 발생하며, 이 오류는 구성에 따라 발생합니다: "webUIParseError: Invalid response from server. 405년
+
+. 노드별 관리 노드 UI('https://[IP address]:442')를 엽니다.
+. Alert Monitor * 탭을 클릭합니다.
+. 경고 모니터링 옵션을 구성합니다.
+
+
+
+
+== 경고 모니터링 옵션
+
+[cols="2*"]
+|===
+| 옵션 | 설명 
+
+
+| 경고 모니터 테스트를 실행합니다  a| 
+모니터 시스템 테스트를 실행하여 다음을 확인합니다.
+
+* NetApp HCI 및 VMware vCenter 접속 구성
+* QoSSIOC 서비스에서 제공하는 데이터 저장소 정보를 통해 NetApp HCI와 VMware vCenter를 페어링합니다
+* 현재 NetApp HCI 알람 및 vCenter 알람 목록
+
+
+
+
+| 알림 수집 | vCenter에 NetApp HCI 스토리지 알람을 전달하거나 해제합니다. 드롭다운 목록에서 타겟 스토리지 클러스터를 선택할 수 있습니다. 이 옵션의 기본 설정은 "사용"입니다. 
+
+
+| 모범 사례 알림을 수집합니다 | NetApp HCI 스토리지 Best Practice 알림을 vCenter에 전달하도록 설정하거나 해제합니다. 모범 사례 경고는 하위 최적 시스템 구성에 의해 트리거되는 결함입니다. 이 옵션의 기본 설정은 '비활성화'입니다. 이 옵션을 해제하면 vCenter에 NetApp HCI 스토리지 Best Practice 알림이 나타나지 않습니다. 
+
+
+| AIQ로 지원 데이터를 전송합니다  a| 
+VMware vCenter에서 NetApp SolidFire Active IQ로 지원 및 모니터링 데이터의 흐름을 제어합니다.
+
+옵션은 다음과 같습니다.
+
+* Enabled(활성화): 모든 vCenter 알람, NetApp HCI 스토리지 알람 및 지원 데이터가 NetApp SolidFire Active IQ로 전송됩니다. 이를 통해 NetApp은 NetApp HCI 설치를 능동적으로 지원 및 모니터링하여 시스템에 영향을 미치기 전에 가능한 문제를 감지하고 해결할 수 있도록 합니다.
+* Disabled(비활성화): vCenter 알람, NetApp HCI 스토리지 알람 또는 지원 데이터가 NetApp SolidFire Active IQ로 전송되지 않습니다.
+
+
+
+NOTE: NetApp Deployment Engine을 사용하여 AIQ * 로 데이터 전송 옵션을 끈 경우 다음을 수행해야 합니다 link:task_mnode_enable_activeIQ.html["원격 측정을 활성화합니다"] 관리 노드 REST API를 사용하여 이 페이지에서 서비스를 구성합니다.
+
+
+
+| 컴퓨팅 노드 데이터를 AIQ로 전송합니다  a| 
+컴퓨팅 노드에서 NetApp SolidFire Active IQ으로 지원 및 모니터링 데이터 흐름 제어
+
+옵션은 다음과 같습니다.
+
+* Enabled(활성화): 컴퓨팅 노드에 대한 지원 및 모니터링 데이터를 NetApp SolidFire Active IQ로 전송하여 컴퓨팅 노드 하드웨어에 대한 사전 지원을 활성화합니다.
+* Disabled(비활성화): 컴퓨팅 노드에 대한 지원 및 모니터링 데이터가 NetApp SolidFire Active IQ로 전송되지 않습니다.
+
+
+
+NOTE: NetApp Deployment Engine을 사용하여 AIQ * 로 데이터 전송 옵션을 끈 경우 다음을 수행해야 합니다 link:task_mnode_enable_activeIQ.html["원격 측정을 활성화합니다"] 관리 노드 REST API를 사용하여 이 페이지에서 서비스를 구성합니다.
+
+|===
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
+

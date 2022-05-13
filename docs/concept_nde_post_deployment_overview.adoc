@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: docs/concept_nde_post_deployment_overview.html 
+summary: NetApp HCI 배포 후 수행해야 하는 배포 후 작업에 대해 알아봅니다. 
+keywords: netapp, hci, deployment, review, deploy 
+---
+= 구축 후 작업
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+배포 프로세스 중에 선택한 사항에 따라 NetApp HCI 시스템을 프로덕션 용도로 사용하기 전에 펌웨어 및 드라이버 업데이트, 필요한 최종 구성 변경 등 몇 가지 최종 작업을 완료해야 합니다.
+
+* link:task_nde_supported_net_changes.html["지원되는 네트워킹 변경 사항"]
+* link:task_nde_disable_smartd.html["NetApp HCI 컴퓨팅 노드에서 smartd 서비스를 비활성화합니다"]
+* link:task_nde_disable_lacp_individual.html["구성된 스위치에서 "LACP-Individual" 명령을 비활성화합니다"]
+* link:task_nde_update_vsphere.html["VMware vSphere를 최신 상태로 유지"]
+* link:task_nde_install_GPU_drivers.html["GPU 지원 컴퓨팅 노드용 GPU 드라이버를 설치합니다"]
+* link:task_nde_access_hcc.html["NetApp 하이브리드 클라우드 제어에 액세스"]
+* link:task_reduce_boot_media_wear.html["NetApp HCI 컴퓨팅 노드의 부팅 미디어 마모 감소"]
+
+
+
+
+== 자세한 내용을 확인하십시오
+
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+* https://www.netapp.com/us/documentation/hci.aspx["NetApp HCI 리소스 페이지를 참조하십시오"^]
+

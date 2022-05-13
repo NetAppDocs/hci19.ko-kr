@@ -1,0 +1,97 @@
+---
+sidebar: sidebar 
+permalink: docs/hci_prereqs_network_configuration.html 
+summary: NetApp HCI의 네트워크 구성 옵션에 대해 알아보십시오. 
+keywords: netapp, hci, cabling, network configuration 
+---
+= 네트워크 구성
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: netapp, hci, cabling, network configuration
+
+
+[role="lead"]
+NetApp HCI는 다양한 네트워크 케이블 연결 및 VLAN 구성을 활용할 수 있습니다. 성공적인 배포를 위해 네트워크 구성을 계획하는 것이 중요합니다.
+
+
+
+== 필요한 네트워크 세그먼트입니다
+
+NetApp HCI에는 관리, 스토리지 및 가상화 트래픽(가상 머신 및 VMware vMotion 트래픽 포함)의 최소 3개의 네트워크 세그먼트가 필요합니다. 가상 시스템과 vMotion 트래픽을 분리할 수도 있습니다. 이러한 네트워크 세그먼트는 일반적으로 NetApp HCI 네트워크 인프라에서 논리적으로 분리된 VLAN으로 존재합니다.
+
+컴퓨팅 및 스토리지 노드가 이러한 네트워크에 연결되는 방식은 네트워크를 설계하고 노드를 연결하는 방식에 따라 다릅니다. 본 가이드의 네트워크 그림은 다음과 같은 네트워크를 기준으로 합니다.
+
+|===
+| 네트워크 이름입니다 | VLAN ID입니다 
+
+
+| 관리 | 100 
+
+
+| 스토리지 | 105 
+
+
+| 마이그레이션 | 107 
+
+
+| 가상 머신 | 200, 201 
+|===
+NetApp 구축 엔진에서 NetApp HCI 노드를 자동으로 검색 및 구성하려면 노드의 SFP+/SFP28 인터페이스에 사용되는 모든 스위치 포트에서 태그되지 않은 VLAN 또는 네이티브 VLAN으로 사용할 수 있는 네트워크 세그먼트가 있어야 합니다. 이렇게 하면 검색 및 구축을 위해 모든 노드 간에 계층 2 통신이 제공됩니다. 네이티브 VLAN이 없으면 검색할 수 있도록 VLAN 및 IPv4 주소를 사용하여 모든 노드의 SFP+/SFP28 인터페이스를 수동으로 구성해야 합니다. 이 문서의 네트워크 구성 예에서 관리 네트워크(VLAN ID 100)가 이 용도로 사용됩니다.
+
+NetApp Deployment Engine을 사용하면 초기 구축 중에 컴퓨팅 및 스토리지 노드에 대한 네트워크를 빠르게 구성할 수 있습니다. vCenter 및 관리 노드와 같은 특정 기본 제공 관리 구성 요소를 자체 네트워크 세그먼트에 배치할 수 있습니다. 이러한 네트워크 세그먼트는 vCenter 및 관리 노드가 스토리지 및 컴퓨팅 관리 네트워크와 통신할 수 있도록 라우팅이 필요합니다. 대부분의 배포에서 이러한 구성 요소는 동일한 관리 네트워크를 사용합니다(이 예에서는 VLAN ID 100).
+
+
+NOTE: vCenter를 사용하여 가상 머신 네트워크를 구성합니다. NetApp HCI 배포의 기본 가상 시스템 네트워크(포트 그룹 "VM_Network")는 VLAN ID 없이 구성됩니다. 태그가 지정된 여러 가상 머신 네트워크(앞의 예에서 VLAN ID 200 및 201)를 사용하려는 경우 초기 네트워크 계획에 포함시키십시오.
+
+
+
+== 네트워크 구성 및 케이블 연결 옵션
+
+H410C 컴퓨팅 노드에 2케이블 네트워크 구성을 사용하여 케이블 라우팅을 간소화할 수 있습니다. 이 구성에서는 IPMI 통신을 위해 2개의 SFP+/SFP28 인터페이스와 옵션(권장)의 RJ45 인터페이스를 사용합니다. 또한 이러한 노드는 2개의 RJ45 및 4개의 SFP28/SFP+ 인터페이스를 갖춘 6개 케이블 구성을 사용할 수도 있습니다.
+
+H410S 및 H610S 스토리지 노드는 4개의 네트워크 포트(포트 A~D)를 사용하는 네트워크 토폴로지를 지원합니다.
+
+컴퓨팅 노드는 하드웨어 플랫폼에 따라 세 가지 네트워크 토폴로지를 지원합니다.
+
+|===
+| 구성 옵션 | H410C 노드의 케이블 연결 | H610C 노드의 케이블 연결 | H615C 노드의 케이블 연결 
+
+
+| 옵션 A | 포트 D와 E를 사용하는 케이블 2개 | 포트 C와 D를 사용하는 케이블 2개 | 포트 A와 B를 사용하는 케이블 2개 
+
+
+| 옵션 B | 포트 A ~ F를 사용하는 케이블 6개 | 사용할 수 없습니다 | 사용할 수 없습니다 
+
+
+| 옵션 C 3+| 옵션 B와 비슷하지만 관리, 스토리지 및 vMotion 네트워크용 스위치에서 기본 VLAN(또는 "액세스 포트")이 있습니다 
+|===
+올바른 수의 연결된 케이블이 없는 노드는 구축에 참여할 수 없습니다. 예를 들어, 포트 D와 E만 연결된 경우 6케이블 구성에 컴퓨팅 노드를 구축할 수 없습니다.
+
+
+NOTE: 구축 후 인프라 요구 사항에 맞게 NetApp HCI 네트워크 구성을 조정할 수 있습니다. 그러나 NetApp HCI 리소스를 확장할 때 새 노드의 케이블 구성은 기존 컴퓨팅 및 스토리지 노드와 동일해야 합니다.
+
+[NOTE]
+====
+네트워크에서 점보 프레임을 지원하지 않기 때문에 NetApp 배포 엔진이 실패하는 경우 다음 대안 중 하나를 수행할 수 있습니다.
+
+* 고정 IP 주소를 사용하고 Bond10G 네트워크에서 최대 전송 단위(MTU)를 9000바이트로 수동으로 설정합니다.
+* Bond10G 네트워크에서 9000바이트의 인터페이스 MTU를 보급하도록 동적 호스트 구성 프로토콜을 구성합니다.
+
+
+====
+.네트워크 구성 옵션
+* link:hci_prereqs_network_configuration_option_A.html["네트워크 구성 옵션 A"]
+* link:hci_prereqs_network_configuration_option_B.html["네트워크 구성 옵션 B"]
+* link:hci_prereqs_network_configuration_option_C.html["네트워크 구성 옵션 C"]
+
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지를 참조하십시오"^]
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+

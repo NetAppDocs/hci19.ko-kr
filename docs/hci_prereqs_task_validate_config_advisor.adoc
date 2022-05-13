@@ -1,0 +1,130 @@
+---
+sidebar: sidebar 
+permalink: docs/hci_prereqs_task_validate_config_advisor.html 
+summary: Active IQ Config Advisor를 사용하여 구축 전 구성을 검증하는 방법에 대해 알아보십시오. 
+keywords: netapp, hci, element, configuration, validation 
+---
+= Active IQ Config Advisor로 환경을 검증합니다
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: netapp, hci, element, configuration, validation
+
+
+[role="lead"]
+NetApp HCI 하드웨어를 랙에 장착하고 NetApp HCI를 설치하기 전에 해당 환경이 NetApp HCI 네트워킹 요구 사항을 충족하는지 확인해야 합니다. Active IQ Config Advisor는 네트워크, 스위치 및 VMware vSphere 구성을 검증하여 사용자 환경을 확인합니다. 이 도구는 문제를 해결하는 데 사용할 수 있는 보고서를 생성하고 보고서를 프로페셔널 서비스 엔지니어에게 전달함으로써 설치를 준비하고 예약할 수 있습니다.
+
+
+
+== Active IQ Config Advisor를 설치합니다
+
+NetApp HCI 네트워크에 액세스할 수 있는 PC에 Active IQ Config Advisor를 다운로드하고 설치합니다.
+
+.단계
+. 웹 브라우저의 NetApp 지원 메뉴에서 * 툴 * 을 선택하고 Active IQ Config Advisor을 검색한 후 툴을 다운로드하십시오.
++
+https://mysupport.netapp.com/site/tools/tool-eula/5ddb829ebd393e00015179b2["NetApp Support 사이트 및 GT, 툴"^].
+
++
+최종 사용자 사용권 계약(EULA)에 동의하면 다운로드 페이지가 나타납니다. Microsoft Windows, Linux 및 Mac 바이너리는 * 클라이언트 도구 * 창에서 사용할 수 있습니다.
+
+. 실행 파일을 실행합니다.
+. 언어를 선택하고 * OK * 를 클릭합니다.
+. 다음 * 을 클릭합니다.
+. EULA를 읽고 * I Agree * 를 클릭합니다.
+. 설치 * 를 클릭합니다.
+. Run Active IQ Config Advisor * 이 선택되었는지 확인하고 * Finish * 를 클릭합니다.
++
+잠시 후에 Active IQ Config Advisor UI가 새 브라우저 창 또는 탭에서 열립니다.
+
+
+
+
+
+== Active IQ Config Advisor를 사용합니다
+
+Active IQ Config Advisor는 브라우저 창에서 실행되고 네트워크 및 환경에 대한 정보를 수집하며 NetApp HCI 배포를 방해할 수 있는 네트워크 또는 구성 문제를 해결하는 데 사용할 수 있는 보고서를 생성합니다.
+
+관리 네트워크, VMware vCenter Server 네트워킹(기존 VMware 설치를 연결하는 경우) 및 NetApp HCI에 사용할 스위치를 액세스할 수 있는 디바이스에 Active IQ Config Advisor를 설치했습니다.
+
+
+NOTE: Mellanox 스위치를 사용하고 NetApp 전문 서비스를 통해 이러한 스위치를 구축 일부로 구성하는 경우에는 스위치 정보를 제공할 필요가 없습니다.
+
+Active IQ Config Advisor는 읽기 전용 검사만 수행하여 정보를 수집합니다. 컬렉션의 일부로 구성이 수정되지 않습니다.
+
+.단계
+. Active IQ Config Advisor를 엽니다.
++
+Config Advisor가 웹 브라우저에 * 기본 설정 * 창과 함께 나타납니다. 여기에서 전역 컬렉션 설정을 정의하고 컬렉션 결과를 암호화할 수 있습니다.
+
+. 암호화 설정 * 섹션에 암호를 입력하여 컬렉션 프로젝트를 암호화합니다.
++
+이렇게 하면 이 컬렉션 프로젝트를 만든 후에 해당 프로젝트를 로드할 수 있습니다.
+
+. 사용자 인증 * 섹션에 이름과 이메일 주소를 입력하여 이 수집 보고서를 귀하의 것으로 확인하십시오.
+. 저장 * 을 클릭합니다.
+. Create a new data collection * 을 클릭합니다.
+. 컬렉션 유형 * 드롭다운 메뉴에서 * 솔루션 기반 * 을 선택합니다.
+. 프로파일 * 드롭다운 메뉴에서 * NetApp HCI 사전 배포 * 를 선택합니다.
+. 유형 * 열의 각 장치 유형에 대해 * 작업 * 드롭다운 메뉴에서 NetApp HCI 네트워크의 해당 장치 유형을 선택합니다.
++
+예를 들어 Cisco 스위치가 3개 있는 경우 해당 행의 * Actions * 열 드롭다운 메뉴에서 3을 선택합니다. 식별된 각 Cisco 스위치당 하나씩 세 개의 행이 나타납니다.
+
++
+
+NOTE: Mellanox 스위치를 사용하고 NetApp 전문 서비스를 통해 이러한 스위치를 구축 일부로 구성하는 경우에는 스위치 정보를 제공할 필요가 없습니다.
+
+. 확인한 스위치에 대해 관리 IP 주소와 관리자 자격 증명을 입력합니다.
+. 확인한 VMware vCenter Server에 대해 다음 중 하나를 수행합니다.
++
+** 새 vCenter Server를 구축하는 경우 서버에 대해 계획된 IP 주소 또는 FQDN(정규화된 도메인 이름)을 제공합니다.
+** 기존 vCenter Server에 가입하는 경우 서버의 IP 주소 또는 FQDN과 관리자 자격 증명을 입력합니다.
+
+
+. 선택 사항: 스위치에 대한 정보를 추가한 경우 * 스위치 검증 * 섹션에 컴퓨팅 및 스토리지 노드의 수를 입력합니다.
+. 컴퓨팅 노드 네트워크* 섹션에서 사용할 컴퓨팅 노드 케이블 연결 구성을 선택합니다.
+. 컴퓨팅 노드 네트워크 * 섹션의 스위치에 대한 관리, vMotion 및 스토리지 네트워크에 사용할 개별 스위치 포트 및 VLAN 태그를 입력합니다.
+. 스토리지 노드 네트워크 * 섹션의 모든 스위치에 대해 관리 및 스토리지 네트워크에 사용할 개별 스위치 포트 및 VLAN 태그를 입력합니다.
+. 네트워크 설정 검사 * 섹션에서 관리 네트워크의 IP 주소 및 게이트웨이 IP 주소를 입력한 다음 DNS, NTP 및 vCenter Server용 서버 목록을 입력합니다(새 vCenter Server with NetApp HCI를 구축하는 경우).
++
+이 섹션에서는 Active IQ Config Advisor가 관리 네트워크를 사용할 수 있도록 하고 DNS 및 NTP와 같은 서비스가 제대로 작동하는지 확인할 수 있습니다.
+
+. 입력한 모든 IP 주소 정보와 자격 증명이 유효한지 확인하려면 * Validate * 를 클릭합니다.
+. 저장 또는 수집 * 을 클릭합니다.
++
+이렇게 하면 컬렉션 프로세스가 시작되고 컬렉션 명령의 실시간 로그와 함께 컬렉션이 실행될 때 진행률을 확인할 수 있습니다. Progress * (진행률 *) 열에는 각 수집 작업에 대해 색상으로 구분된 진행률 표시줄이 표시됩니다.
+
++
+image::config_advisor_job_progress_bar.png[Active IQ Config Advisor 작업 진행 표시줄]
+
++
+진행률 표시줄은 다음 색상을 사용하여 상태를 표시합니다.
+
++
+** * 녹색 *: 명령 실패 없이 수집이 완료되었습니다. 작업 * 메뉴에서 * 보기 및 분석 * 아이콘을 클릭하면 배포 위험 및 권장 사항을 확인할 수 있습니다.
+** * Yellow *: 일부 명령 오류로 인해 수집이 완료되었습니다. 작업 * 메뉴에서 * 보기 및 분석 * 아이콘을 클릭하면 배포 위험 및 권장 사항을 확인할 수 있습니다.
+** * Red *: 수집에 실패했습니다. 오류를 해결하고 컬렉션을 다시 실행해야 합니다.
+
+
+. 선택 사항: 수집이 완료되면 모든 수집 행의 양안 아이콘을 클릭하여 실행된 명령과 수집된 데이터를 확인할 수 있습니다.
+. 보기 및 분석 * 탭을 선택합니다.
++
+이 페이지에는 사용자 환경의 일반 상태 보고서가 표시됩니다. 원형 차트의 한 섹션을 선택하여 이러한 특정 문제 확인 또는 설명에 대한 자세한 내용과 성공적인 배포를 방해할 수 있는 문제를 해결하는 방법에 대한 권장 사항을 확인할 수 있습니다. 직접 이러한 문제를 해결하거나 NetApp 프로페셔널 서비스의 도움을 요청할 수 있습니다.
+
+. 컬렉션 보고서를 PDF 또는 Microsoft Word 문서로 내보내려면 * 내보내기 * 를 클릭합니다.
++
+
+NOTE: PDF 및 Microsoft Word 문서 출력에는 배포를 위한 스위치 구성 정보가 포함되어 있으며, 이 정보는 NetApp 전문 서비스에서 네트워크 설정을 확인하는 데 사용됩니다.
+
+. 내보낸 보고서 파일을 NetApp 프로페셔널 서비스 담당자에게 전송하십시오.
+
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지를 참조하십시오"^]
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+

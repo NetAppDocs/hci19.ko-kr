@@ -1,0 +1,193 @@
+---
+sidebar: sidebar 
+permalink: docs/rn_storage_firmware_2.27.html 
+summary: NetApp HCI 노드에 다운로드하여 적용할 수 있는 펌웨어 패키지의 릴리즈 노트에 대한 링크를 제공합니다. 
+keywords: netapp, hci, storage firmware 
+---
+= 스토리지 펌웨어 번들 2.27 릴리스 정보
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: hci, release notes, vcp, element, management services, firmware
+
+
+[role="lead"]
+Element 12.0 및 관리 서비스 버전 2.14부터 NetApp 하이브리드 클라우드 제어 UI 및 REST API를 사용하여 스토리지 노드에서 펌웨어 전용 업그레이드를 수행할 수 있습니다. 이 절차에서는 Element 소프트웨어를 업그레이드하지 않으며 주요 Element 릴리스 외부에서 스토리지 펌웨어를 업그레이드할 수 있습니다.
+
+
+IMPORTANT: Element 소프트웨어 버전 12.0을 실행하는 H610S 스토리지 노드의 경우 스토리지 펌웨어 번들 2.27로 업그레이드하기 전에 D-패치 SUST-909를 적용해야 합니다. 업그레이드하기 전에 NetApp Support에서 D-패치를 받으려면 먼저 NetApp Support에 문의하십시오.
+
+
+
+== 새로운 기능
+
+스토리지 펌웨어 번들 버전 2.27에는 보안 취약점 수정을 비롯한 다양한 버그 수정 및 새로운 기능이 포함되어 있습니다. 의 지침에 따라 스토리지 펌웨어를 업그레이드할 수 있습니다 link:task_hcc_upgrade_storage_firmware.html["스토리지 펌웨어를 업그레이드합니다"].
+
+
+
+=== 펌웨어 구성 요소가 업데이트되었습니다
+
+이 펌웨어 패키지에는 업데이트된 버전이 굵은 글꼴로 표시된 하드웨어 구성 요소에 대한 다음 펌웨어 버전이 포함되어 있습니다.
+
+|===
+| 구성 요소 | Dell R630 | H410S | H610S 
+
+
+| BIOS | 해당 없음 | NA2.1 | 3B03 
+
+
+| BMC | 해당 없음 | * 6.84.00 * | * 3.84.07 * 
+
+
+| NIC/Mellanox | - | 14.21.1000 | 14.22.1002 
+
+
+| RMS200 | ae3b8cc | 7d8422bc | - 
+
+
+| RMS300 | 7d8422bc | 7d8422bc | - 
+
+
+| NVDIMM, SMART | - | - | 3.1 
+
+
+| BPM, 스마트 | - | - | 2.16 
+
+
+| NVDIMM, Micron Gen1 | - | - | 26.2c 
+
+
+| NVDIMM, Micron Gen2 | - | - | 25.3c 
+
+
+| PGEM, 마이크론 | - | - | 1.40 
+
+
+| PM863, SED | GXT5404Q | GXT5404Q | - 
+
+
+| PM863, NSED | GXT5103Q | GXT5103Q | - 
+
+
+| PM883, SED | HXT7104Q | HXT7104Q | - 
+
+
+| Hawk-4, SED | 8ENP7101 | 8ENP7101 | - 
+
+
+| Hawk-4, NSED | 8ENP6101)을 참조하십시오 | 8ENP6101)을 참조하십시오 | - 
+
+
+| PM963, SED | - | - | CXV8202Q 
+
+
+| PM963, NSED | - | - | CXV8501Q 
+
+
+| PM983, SED | - | - | * EDA5302Q * 
+
+
+| PM983, NSED | - | - | * EDA5600Q * 
+
+
+| CD5, SED | - | - | 0108 
+
+
+| CD5, NSED | - | - | 0108 
+
+
+| CD5, FIPS | - | - | 0108 
+|===
+
+
+== 새로운 BMC 기능
+
+다음은 이 릴리스에 포함된 새로운 BMC 기능 및 변경 내용입니다.
+
+* (H610S) 부팅 시 초기 ramdisk를 로드하기 위해 initrd 지원을 활성화했습니다
+* (H610S) X.509 인증서에 대한 SSL 도움말 메시지를 업데이트했습니다
+* (H610S) 보안 취약점을 해결하기 위해 TLS 1.0 및 1.1 지원이 비활성화되었습니다
+* (H610S, H410S)에서는 Redfish API를 사용하여 원격 미디어를 마운트할 수 있는 기능이 추가되었습니다
+* (H610S) HTML5 웹 브라우저 BMC 관리에 대한 지원이 추가되었습니다
+* (H610S) 원격 syslog 지원을 추가하여 원격 데이터 센터 모니터링 및 관리를 지원합니다
+
+
+
+
+== 해결된 문제
+
+다음은 이 릴리즈에서 해결된 문제입니다.
+
+|===
+| 문제 | 설명 
+
+
+| 해당 없음 | 디버그 사용자 sysadmin은 BMC를 재설정한 후 SSH를 사용하여 로그인할 수 있습니다. 
+
+
+| 해당 없음 | 콘솔을 사용하여 BMC IP 주소를 ping할 때 BMC는 응답하지 않습니다. 
+
+
+| 해당 없음 | AC 전원 사이클 스트레스 테스트 중에 SOLSSH 구성 파일의 액세스 권한이 손실됩니다. 
+
+
+| CSESF-116 | AC 전원 사이클 스트레스 테스트 중에 BMC 로그에 "PROCHOT" CPU 열 경고가 나타납니다. 
+
+
+| CSESF-121 | 서비스 계정 API 생성 및 업데이트 시간이 예상보다 오래 걸립니다. 
+
+
+| CSD-3321/CSESF-129 | H610S BMC는 "BMC 자체 테스트 실패" 오류와 함께 중단되거나 액세스할 수 없게 될 수 있습니다. 
+
+
+| CSESF-197 | BMC 웹 UI 인벤토리 API가 잘못된 메모리 일련 번호 형식을 반환합니다. 
+|===
+
+
+== 보안 취약성 해결
+
+다음은 이 릴리스에서 해결된 보안 취약점입니다.
+
+
+
+=== H410S BMC 6.84.00
+
+* CVE-2019-16649
+* CVE-2019-16650
+* CVE-2019-6260
+
+
+
+
+=== H610S BMC 3.84.07
+
+* CVE-2019-1552
+* CVE-2019-1547, CVE-2019-1563
+* CVE-2019-5482
+* CVE-2019-15903
+* CVE-2018-20843
+* CVE-2019-14821, CVE-2019-15916, CVE-2019-16413
+* CVE-2019-10638, CVE-2019-10639
+* CVE-2019-11478, CVE-2019-11479, CVE-2019-11477
+* CVE-2019-12819
+* CVE-2019-14835, CVE-2019-14814, CVE-2019-14816, CVE-2019-16746
+* CVE-2019-19062
+* CVE-2019-19922, CVE-2019-20054
+* CVE-2019-19447, CVE-2019-19767, CVE-2019-10220
+
+
+
+
+== 알려진 문제
+
+이 릴리스에는 알려진 문제가 없습니다.
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
+

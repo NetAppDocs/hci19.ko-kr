@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: docs/task_rancher_config_anti_affinity.html 
+summary: Rancher VM에 대한 반유사성 규칙을 구성하여 호스트 복원력을 지원하는 방법에 대해 알아보십시오. 
+keywords: netapp, hci, rancher, deploy, cluster, kubernetes, anti, affinity, resiliency 
+---
+= Rancher VM 복구 성능 향상
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp HCI에 Rancher를 구축한 후에는 vSphere 환경에 Rancher 환경을 호스팅하는 가상 머신으로 3개의 새로운 노드가 포함됩니다. Rancher 웹 UI는 각 노드에서 사용할 수 있습니다. 완벽한 복구 성능을 위해 해당 가상 디스크와 함께 세 개의 가상 시스템은 전원 주기 및 장애 조치와 같은 이벤트가 발생한 후 서로 다른 물리적 호스트에 상주해야 합니다.
+
+각 VM과 해당 리소스가 다른 물리적 호스트에 유지되도록 VMware vSphere DRS(Distributed Resource Scheduler) 반유사성 규칙을 생성할 수 있습니다. 이 기능은 NetApp HCI 구축 환경의 Rancher의 일부로 자동화되지 않습니다.
+
+DRS 반유사성 규칙을 구성하는 방법에 대한 지침은 다음 VMware 설명서 리소스를 참조하십시오.
+
+https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.resmgmt.doc/GUID-FBE46165-065C-48C2-B775-7ADA87FF9A20.html["VM 반선호도 규칙을 생성합니다"]
+
+https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.avail.doc/GUID-E137A9F8-17E4-4DE7-B986-94A0999CF327.html["vSphere HA 및 DRS 선호도 규칙"]
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://rancher.com/docs/rancher/v2.x/en/overview/architecture/["아키텍처에 대한 Rancher 문서"^]
+* https://rancher.com/docs/rancher/v2.x/en/overview/concepts/["Rancher용 Kubernetes 용어"]
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+* https://www.netapp.com/us/documentation/hci.aspx["NetApp HCI 리소스 페이지를 참조하십시오"^]
+

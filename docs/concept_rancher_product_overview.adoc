@@ -1,0 +1,84 @@
+---
+sidebar: sidebar 
+permalink: docs/concept_rancher_product_overview.html 
+summary: NetApp HCI에 Rancher를 구축하면 Rancher 서버라고도 하는 Rancher Control Plane을 구축하여 사내 Kubernetes 클러스터를 생성할 수 있습니다. 
+keywords: netapp, hci, rancher, architecture, kubernetes, cluster 
+---
+= NetApp HCI의 Rancher 개요
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Rancher는 컨테이너를 채택하는 팀을 위한 완전한 소프트웨어 스택입니다. Rancher는 서로 다른 인프라에서 여러 Kubernetes 클러스터를 관리하는 데 따르는 운영 및 보안 문제를 해결하는 한편, DevOps 팀에 컨테이너식 워크로드 실행을 위한 통합 툴을 제공합니다.
+
+NetApp HCI에 Rancher를 구축하면 _rancher server_라고도 하는 Rancher 제어 플레인을 구축하고 온프레미스 Kubernetes 클러스터를 생성할 수 있습니다. NetApp 하이브리드 클라우드 제어를 사용하여 Rancher 제어 플레인을 배포합니다.
+
+구축 후에는 Rancher Control Plane을 사용하여 Dev 및 Ops 팀에서 사용하는 Kubernetes 클러스터를 프로비저닝, 관리, 모니터링할 수 있습니다. 개발 및 운영 팀은 Rancher를 사용하여 NetApp HCI 자체, 퍼블릭 클라우드 공급자 또는 Rancher가 지원하는 기타 인프라에 있는 사용자 클러스터에 대한 활동을 수행할 수 있습니다.
+
+
+
+== NetApp HCI 기반 Rancher의 이점
+
+* 간편한 설치: Rancher 설치 및 구성 방법을 배울 필요가 없습니다. NetApp HCI와 Rancher가 공동으로 개발한 템플릿 기반 구현을 구축할 수 있습니다.
+* 수명 주기 관리: 수동 목장 구현에서 Rancher 서버 애플리케이션 또는 RKE(Rancher Kubernetes Engine) 클러스터에 대한 업데이트는 자동화되지 않습니다. NetApp HCI의 Rancher는 Rancher 서버와 RKE를 포함하는 관리 클러스터에 대한 업데이트 기능을 제공합니다.
+
+
+
+
+== NetApp HCI의 Rancher와 함께 할 수 있는 일
+
+NetApp HCI에 Rancher가 있으면 다음과 같은 이점을 얻을 수 있습니다.
+
+* 클라우드 공급자와 프라이빗 클라우드 전반에 걸쳐 서비스 구축
+* 서비스 수준 계약에 영향을 주지 않으면서 클라우드 위치와 관계없이 하이브리드 클라우드 아키텍처 전반에서 앱과 데이터를 지원합니다.
+* 클라우드 네이티브 애플리케이션을 직접 사용
+* 여러 클러스터(신규 및 기존)의 관리를 중앙 집중화합니다.
+* 하이브리드 클라우드 Kubernetes 기반 애플리케이션의 오케스트레이션 수행
+
+
+
+
+== 기술 지원 옵션
+
+NetApp HCI 및 Kubernetes 오픈 소스 소프트웨어에서 Rancher를 사용하면 무료 구축 및 사용이 가능합니다. 라이센스 키는 필요하지 않습니다.
+
+NetApp Rancher 지원 옵션을 선택하면 코어 기반의 Rancher 엔터프라이즈 지원을 받을 수 있습니다.
+
+
+NOTE: Rancher 지원은 NetApp Support Edge 계약에 포함되지 않습니다. 옵션은 NetApp 세일즈 담당자 또는 리셀러에게 문의하십시오. NetApp에서 Rancher Support를 구입하면 지침이 포함된 이메일이 전송됩니다.
+
+
+
+== NetApp HCI 아키텍처 및 구성 요소에 대한 Rancher
+
+다음은 NetApp HCI의 Rancher의 다양한 구성 요소에 대한 개요입니다.
+
+image::rancher_architecture_diagram1.png[NetApp HCI 아키텍처 부문 Rancher]
+
+* * NetApp 하이브리드 클라우드 제어 *: 이 인터페이스를 통해 NetApp HCI 및 NetApp Element 소프트웨어에 Rancher를 구축할 수 있습니다. 이 소프트웨어는 NetApp HCI의 Rancher에 필요합니다.
++
+
+TIP: NetApp 하이브리드 클라우드 제어를 사용하면 관리 서비스를 업그레이드하고, 시스템을 확장하고, 로그를 수집하고, 설치를 모니터링할 수도 있습니다.
+
+* * 관리 서비스 *: 관리 서비스는 관리 노드에서 실행되며 NetApp 하이브리드 클라우드 제어를 사용하여 NetApp HCI에 Rancher를 구축할 수 있도록 지원합니다.
+* * 관리 클러스터 *: NetApp HCI의 Rancher는 NetApp 하이브리드 클라우드 제어, vCenter 서버 또는 Rancher 사용자 인터페이스를 사용하여 볼 수 있는 Rancher 관리 클러스터에 3개의 가상 머신을 구축합니다. 관리 클러스터 가상 머신은 Rancher 서버, RKE(Rancher Kubernetes Engine) 및 Linux OS를 호스팅합니다.
+
+
+
+TIP: 최상의 성능과 보안을 위해 Rancher 관리 서버에 전용 Kubernetes 클러스터를 사용하는 것이 좋습니다. 관리 클러스터에서 사용자 워크로드를 실행해서는 안 됩니다.
+
+* * 사용자 클러스터 *: 다운스트림 Kubernetes 사용자 클러스터가 앱 및 서비스를 실행합니다. Rancher에서 배포하거나 Rancher로 가져오는 모든 클러스터는 사용자 클러스터입니다.
+* * Trident *: NetApp HCI의 Rancher에서 Trident 카탈로그를 사용할 수 있으며 사용자 클러스터에서 실행됩니다. 이 카탈로그를 포함하면 사용자 클러스터에 대한 Trident 구축을 간소화할 수 있습니다.
+
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://rancher.com/docs/rancher/v2.x/en/overview/architecture/["아키텍처에 대한 Rancher 문서"^]
+* https://www.netapp.com/us/documentation/hci.aspx["NetApp HCI 리소스 페이지를 참조하십시오"^]
+

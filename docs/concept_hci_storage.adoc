@@ -1,0 +1,35 @@
+---
+sidebar: sidebar 
+permalink: docs/concept_hci_storage.html 
+summary: NetApp HCI은 컴퓨팅과 스토리지 모두에 대해 다양한 구성 옵션으로 제공됩니다. NetApp HCI 1.8 이상에서는 스토리지 2개와 컴퓨팅 노드 2개로 구성된 최소 시작 구성을 사용할 수 있습니다. 이전 버전의 경우 필요한 최소 구성은 스토리지 노드 4개와 컴퓨팅 노드 2개입니다. 
+keywords: netapp, hci, storage nodes, volumes 
+---
+= 스토리지
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp HCI은 컴퓨팅과 스토리지 모두에 대해 다양한 구성 옵션으로 제공됩니다. NetApp HCI 1.8부터 최소 2개의 스토리지 및 2개의 컴퓨팅 노드로 구성할 수 있습니다. NetApp HCI 1.8 이전에는 스토리지 노드 4개와 컴퓨팅 노드 2개가 최소 구성으로 필요했습니다.
+
+* NetApp HCI는 H300S, H500S, H700S 등의 다양한 H 시리즈 스토리지 노드 모델을 지원합니다. H410S 및 H610S
++
+을 참조하십시오 https://www.netapp.com/us/products/converged-systems/hyper-converged-infrastructure.aspx#modelsAndSpecs["NetApp HCI 모델 및 사양"]
+
+* NetApp HCI의 스토리지 계층은 NetApp Element 소프트웨어에 의해 제공되며 관리 계층은 vCenter Server용 NetApp Element 플러그인에서 제공됩니다.
+* 스토리지 노드는 Bond10G 네트워크 인터페이스를 통해 서로 통신하는 드라이브 모음이 포함된 서버입니다.
+* 각 스토리지 노드는 2개의 네트워크, 즉 스토리지와 관리에 연결되며 각 네트워크에는 중복성과 성능을 위한 2개의 독립적인 링크가 있습니다. 각 노드에는 각 네트워크의 IP 주소가 필요합니다.
+* 새 스토리지 노드로 클러스터를 생성하거나 기존 클러스터에 스토리지 노드를 추가하여 스토리지 용량과 성능을 높일 수 있습니다.
+* NetApp HCI 및 SolidFire 에코시스템에서 스토리지는 볼륨을 사용하여 프로비저닝됩니다.
+
+
+
+
+== 자세한 내용을 확인하십시오
+
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+

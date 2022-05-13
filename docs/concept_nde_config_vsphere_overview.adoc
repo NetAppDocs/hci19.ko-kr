@@ -1,0 +1,35 @@
+---
+sidebar: sidebar 
+permalink: docs/concept_nde_config_vsphere_overview.html 
+summary: NetApp HCI 구축 중에 VMware vSphere를 구성하는 방법을 알아보십시오. 
+keywords: netapp, hci, netapp deployment engine, deployment, vsphere 
+---
+= VMware vSphere 구성
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: netapp, hci, netapp deployment engine, deployment, vsphere
+
+
+[role="lead"]
+NetApp HCI는 VMware vSphere의 vCenter Server 및 ESXi 구성 요소를 사용합니다. vCenter Server는 각 컴퓨팅 노드에 설치된 VMware ESXi 하이퍼바이저를 관리하고 모니터링하는 데 사용됩니다. 새로운 vSphere 구축을 설치 및 구성하거나, vCenter Server용 NetApp Element 플러그인을 설치하거나, 기존 vSphere 구축을 가입 및 확장할 수 있습니다.
+
+NetApp Deployment Engine을 사용하여 새 vSphere 구축을 설치할 때 다음 사항에 주의하십시오.
+
+* NetApp Deployment Engine은 소규모 구축 크기 옵션을 사용하여 새 vCenter Server 어플라이언스를 설치합니다.
+* vCenter Server 라이센스는 임시 평가 라이센스입니다. 평가 기간 이후에 계속 작업하려면 VMware에서 새 라이센스 키를 받아 vCenter Server 라이센스 인벤토리에 추가해야 합니다.
+
+
+
+NOTE: vSphere 인벤토리 구성에서 폴더를 사용하여 vCenter 데이터 센터 내에 NetApp HCI 클러스터를 저장하는 경우 NetApp HCI 컴퓨팅 리소스 확장과 같은 일부 작업이 실패합니다. NetApp HCI 클러스터가 vSphere 웹 클라이언트 인벤토리 트리의 데이터 센터 바로 아래에 있고 폴더에 저장되지 않았는지 확인합니다. 자세한 내용은 NetApp 기술 자료 문서를 참조하십시오.
+
+새 vCenter Server를 설치하는 경우 네트워크 구성 중에 vSphere 표준 스위치 또는 VDS(vSphere Distributed Switch)를 설치할 수 있습니다. VDS를 사용하면 NetApp HCI 배포 후 가상 컴퓨터 네트워크 구성을 중앙에서 간편하게 관리할 수 있습니다. NetApp HCI의 클라우드 데이터 서비스 기능을 사용하려면 VDS가 필요합니다. vSphere 표준 스위치는 클라우드 데이터 서비스에 대해 지원되지 않습니다.
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/NetApp_HCI/Firmware_and_driver_versions_in_NetApp_HCI_and_NetApp_Element_software["NetApp HCI 및 NetApp Element 소프트웨어의 펌웨어 및 드라이버 버전"^]
+

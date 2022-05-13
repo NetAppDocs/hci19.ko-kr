@@ -1,0 +1,45 @@
+---
+sidebar: sidebar 
+permalink: docs/task_nde_hci_power_off_compute.html 
+summary: NetApp HCI 컴퓨팅 노드의 전원을 끄는 방법에 대해 알아보십시오. 
+keywords: netapp, hci, netapp deployment engine, deployment, vsphere 
+---
+= NetApp HCI 시스템의 컴퓨팅 리소스 전원을 끕니다
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: netapp, hci, netapp deployment engine, deployment, vsphere
+
+
+[role="lead"]
+NetApp HCI 컴퓨팅 리소스를 끄려면 특정 순서로 개별 VMware ESXi 호스트와 VMware vCenter Server 어플라이언스의 전원을 꺼야 합니다.
+
+.단계
+. NetApp HCI 시스템을 제어하는 vCenter 인스턴스에 로그인하고 vCenter Server vCSA(가상 어플라이언스)를 호스팅하는 ESXi 시스템을 확인합니다.
+. vCSA를 실행하는 ESXi 호스트를 확인한 후 다음과 같이 vCSA 이외의 다른 모든 가상 머신의 전원을 끕니다.
++
+.. 가상 머신을 선택합니다.
+.. 마우스 오른쪽 단추를 클릭하고 * 전원 > 게스트 OS 종료 * 를 선택합니다.
+
+
+. vCSA를 실행하는 ESXi 호스트가 아닌 모든 ESXi 호스트의 전원을 끕니다.
+. vCSA의 전원을 끕니다.
++
+그러면 전원 끄기 프로세스 중에 vCSA 연결이 끊기므로 vCenter 세션이 종료됩니다. 이제 ESXi 호스트가 한 개만 켜져 있는 상태에서 모든 가상 머신을 종료해야 합니다.
+
+. 실행 중인 ESXi 호스트에 로그인합니다.
+. 호스트의 모든 가상 머신 전원이 꺼져 있는지 확인합니다.
+. ESXi 호스트를 종료합니다.
++
+그러면 NetApp HCI 스토리지 클러스터에 열려 있는 모든 iSCSI 세션의 연결이 끊어집니다.
+
+
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/NetApp_HCI/Firmware_and_driver_versions_in_NetApp_HCI_and_NetApp_Element_software["NetApp HCI 및 NetApp Element 소프트웨어의 펌웨어 및 드라이버 버전"^]
+

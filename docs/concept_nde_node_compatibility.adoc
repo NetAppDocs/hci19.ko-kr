@@ -1,0 +1,57 @@
+---
+sidebar: sidebar 
+permalink: docs/concept_nde_node_compatibility.html 
+summary: 구축을 위한 NetApp HCI 노드 호환성 요구 사항에 대해 알아보십시오. 
+keywords: netapp, hci, deployment, compatibility, nodes 
+---
+= 인벤토리 선택 및 노드 호환성
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+구축 시 노드를 선택할 때는 동일한 구축 환경에서 결합할 수 있는 노드 구성에 몇 가지 제한 사항이 적용됩니다.
+
+
+
+== 스토리지 노드 호환성
+
+NetApp HCI는 SED(자체 암호화 드라이브) 및 FIPS 140-2 드라이브 암호화 기능을 통해 스토리지 노드 및 드라이브를 지원합니다. NetApp HCI를 구축 또는 확장할 때 보고된 암호화 수준이 서로 다른 노드를 혼합할 수 있지만, NetApp HCI는 이 상황에서 기본적인 암호화 형식만 지원합니다. 예를 들어 FIPS 암호화가 가능한 스토리지 노드를 SED 암호화만 지원하는 노드와 함께 사용하는 경우 SED 암호화가 이 구성에서 지원되지만 FIPS 드라이브 암호화는 지원되지 않습니다.
+
+
+NOTE: FIPS 드라이브 암호화를 지원하는 스토리지 노드를 스토리지 클러스터에 추가해도 FIPS 드라이브 암호화 기능이 자동으로 설정되지 않습니다. FIPS 지원 노드를 사용하여 설치를 구축하거나 확장한 후 FIPS 드라이브 암호화를 수동으로 설정해야 합니다. 를 참조하십시오 https://docs.netapp.com/us-en/element-software/index.html["Element 소프트웨어 설명서"^] 를 참조하십시오.
+
+모든 스토리지 노드는 동일한 구축 환경에서 호환되는 동일한 부 버전의 Element 소프트웨어를 실행해야 합니다. 예를 들어 Element 11.3.1을 실행하는 스토리지 노드를 Element 11.5를 실행하는 다른 스토리지 노드와 함께 사용할 수 없습니다.
+
+
+NOTE: 노드 하드웨어 구성에 따라 H410S 스토리지 노드가 H300S, H500S 또는 H700S 스토리지 노드로 표시된 인벤토리 목록에 표시될 수 있습니다.
+
+NetApp HCI는 2노드 스토리지 클러스터에서 특정 스토리지 노드 모델만 지원합니다. 자세한 내용은 을 참조하십시오 link:concept_hci_clusters.html#two-node-storage-clusters["2노드 스토리지 클러스터"] 또는 NetApp HCI 버전의 릴리즈 노트 를 참조하십시오.
+
+
+NOTE: 2노드 스토리지 클러스터를 구축할 경우 스토리지 노드 유형은 480GB 및 960GB 드라이브가 장착된 노드로 제한됩니다.
+
+
+
+== 컴퓨팅 노드 호환성
+
+컴퓨팅 노드를 인벤토리로 선택하려면 다음 요구 사항을 충족해야 합니다.
+
+* 모든 컴퓨팅 노드의 CPU 세대는 적절한 VMware vMotion 기능을 위해 일치해야 합니다. 인벤토리에서 컴퓨팅 노드를 선택한 후에는 CPU 세대가 다른 컴퓨팅 노드를 선택할 수 없습니다.
+* 동일한 컴퓨팅 클러스터에서 컴퓨팅 노드와 GPU 지원 컴퓨팅 노드를 혼합할 수 없습니다. GPU 지원 컴퓨팅 노드를 선택하면 CPU 전용 컴퓨팅 노드를 선택할 수 없으며 반대의 경우도 마찬가지입니다.
+* 컴퓨팅 노드에서 실행 중인 소프트웨어 버전은 배포를 호스팅하는 NetApp Deployment Engine의 주 버전과 부 버전이 일치해야 합니다. 그렇지 않은 경우 RTFI 프로세스를 사용하여 컴퓨팅 노드를 다시 이미징해야 합니다. 자세한 내용은 RTFI에 관한 NetApp 기술 자료 문서를 참조하십시오.
+* 컴퓨팅 노드에는 * 컴퓨팅 노드 * 목록에서 선택할 수 있도록 네트워크 토폴로지 페이지에서 선택한 케이블 연결 구성이 있어야 합니다.
+* 동일한 모델의 컴퓨팅 노드에 대한 네트워크 케이블 연결 구성은 단일 컴퓨팅 클러스터 내에서 일치해야 합니다.
+
+
+
+
+== 자세한 내용을 확인하십시오
+
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+* https://docs.netapp.com/us-en/element-software/index.html["SolidFire 및 Element 소프트웨어 설명서"^]
+

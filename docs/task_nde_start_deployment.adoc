@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: docs/task_nde_start_deployment.html 
+summary: NetApp HCI 구축을 시작합니다. 
+keywords: netapp, hci, netapp deployment engine, deployment, engine, deploy, access 
+---
+= 배포를 시작합니다
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: hci, release notes, vcp, element, management services, firmware
+
+
+[role="lead"]
+NetApp HCI 배포를 계속하기 전에 최종 사용자 사용권 계약을 읽고 이해해야 합니다.
+
+.단계
+. NetApp HCI * 시작 페이지에서 * 시작하기 * 를 클릭합니다.
+. 필수 구성 요소 * 페이지에서 다음을 수행합니다.
++
+.. 각 필수 구성 요소가 충족되었는지 확인하고 각 관련 확인란을 클릭하여 확인합니다.
+.. 계속 * 을 클릭합니다.
+
+
+. 최종 사용자 라이선스 * 페이지에서 다음을 수행합니다.
++
+.. NetApp 최종 사용자 라이센스 계약을 읽습니다.
+.. 약관에 동의하면 계약서 텍스트 하단에 있는 * 동의 * 를 클릭합니다.
+.. VMware 최종 사용자 라이센스 계약을 읽습니다.
+.. 약관에 동의하면 계약서 텍스트 하단에 있는 * 동의 * 를 클릭합니다.
+.. 계속 * 을 클릭합니다.
+
+
+
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/NetApp_HCI/Firmware_and_driver_versions_in_NetApp_HCI_and_NetApp_Element_software["NetApp HCI 및 NetApp Element 소프트웨어의 펌웨어 및 드라이버 버전"^]
+

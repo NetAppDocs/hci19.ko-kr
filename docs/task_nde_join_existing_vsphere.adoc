@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: docs/task_nde_join_existing_vsphere.html 
+summary: NetApp HCI 구축 중에 VMware vSphere를 구성하는 방법을 알아보십시오. 
+keywords: netapp, hci, netapp deployment engine, deployment, vsphere 
+---
+= 기존 VMware vSphere 구축 환경에 가입하십시오
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: netapp, hci, netapp deployment engine, deployment, vsphere
+
+
+[role="lead"]
+vCenter Server 네트워크 정보 및 자격 증명을 제공하여 기존 vSphere 구축을 활용하도록 NetApp HCI를 구성할 수 있습니다.
+
+.무엇을 &#8217;필요로 할거야
+* 기존 vSphere 6.7 구축에 참여하는 경우 vCenter Server가 버전 6.7 업데이트 1을 실행 중인지 확인합니다.
+* 기존 vSphere 6.5 배포에 참여하는 경우 vCenter Server에서 버전 6.5 업데이트 2 이상이 실행되고 있는지 확인합니다.
+* 기존 vSphere 구축에 대한 네트워크 세부 정보 및 관리자 자격 증명을 얻습니다.
+* vCenter Server용 NetApp Element 플러그인이 기존 vCenter 인스턴스에 등록되어 있는 경우 다음을 수행해야 합니다 https://docs.netapp.com/us-en/vcp/task_vcp_unregister.html["등록 취소"^] 계속하기 전에 확인하십시오. NetApp HCI 배포가 완료되면 플러그인이 다시 등록됩니다.
+
+
+vCenter 연결 모드를 사용하여 연결된 여러 vCenter Server 시스템에 연결된 경우 NetApp HCI는 vCenter Server 시스템 중 하나만 인식합니다.
+
+
+NOTE: vCenter Server용 NetApp Element 플러그인을 사용하여 를 사용하여 다른 vCenter Server의 클러스터 리소스를 관리합니다 link:https://docs.netapp.com/us-en/vcp/vcp_concept_linkedmode.html["vCenter 연결 모드"^] 로컬 스토리지 클러스터로만 제한됩니다.
+
+.단계
+. Join을 클릭하고 기존 vSphere 구축 * 을 확장합니다.
+. vCenter Server 도메인 이름 또는 IP 주소 * 필드에 도메인 이름 또는 IP 주소를 입력합니다. 도메인 이름을 입력하는 경우 표시되는 * DNS Server IP Address * 필드에 활성 DNS 서버의 IP 주소를 입력해야 합니다.
+. 사용자 이름 및 암호 * 필드에 vSphere 관리자의 자격 증명을 입력합니다.
+. 계속 * 을 클릭합니다.
+
+
+
+NOTE: 이 단계에서 vCenter Server용 NetApp Element 플러그인이 등록된 경우 사용자에게 이를 요청하는 오류 메시지가 나타납니다 https://docs.netapp.com/us-en/vcp/task_vcp_unregister.html["등록 취소"^] 플러그인입니다. NetApp HCI 배포를 계속하기 전에 이 작업을 수행하십시오. 배포가 완료되면 플러그인이 다시 등록됩니다.
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/NetApp_HCI/Firmware_and_driver_versions_in_NetApp_HCI_and_NetApp_Element_software["NetApp HCI 및 NetApp Element 소프트웨어의 펌웨어 및 드라이버 버전"^]
+

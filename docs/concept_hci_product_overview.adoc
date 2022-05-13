@@ -1,0 +1,90 @@
+---
+sidebar: sidebar 
+permalink: docs/concept_hci_product_overview.html 
+summary:  
+keywords: netapp, hci, on premise, cloud, 
+---
+= NetApp HCI 제품 개요
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: hci, cloud, onprem, documentation, help
+
+
+[role="lead"]
+NetApp HCI는 스토리지, 컴퓨팅, 네트워킹, 하이퍼바이저를 결합하고 퍼블릭 클라우드와 프라이빗 클라우드를 포괄하는 기능을 더해 주는 엔터프라이즈급 하이브리드 클라우드 인프라 설계입니다.
+
+NetApp의 분리확장형 하이브리드 클라우드 인프라를 사용하면 컴퓨팅과 스토리지를 독립적으로 확장하여 성능이 보장된 워크로드에 적응할 수 있습니다.
+
+* 하이브리드 멀티 클라우드 요구사항을 충족합니다
+* 컴퓨팅과 스토리지를 독립적으로 확장합니다
+* 하이브리드 멀티 클라우드에서 데이터 서비스 오케스트레이션을 간소화합니다
+
+
+
+
+== NetApp HCI의 구성 요소
+
+다음은 NetApp HCI 환경의 다양한 구성 요소에 대한 개요입니다.
+
+image::hci_prodoverview.png[이 이미지는 NetApp HCI 환경의 다양한 구성 요소를 보여 줍니다,such as the NetApp Deployment Engine,the storage and compute nodes]
+
+* NetApp HCI는 스토리지 및 컴퓨팅 리소스를 모두 제공합니다. NetApp HCI를 배포하려면 * NetApp Deployment Engine * 마법사를 사용합니다. 구축이 성공적으로 완료되면 컴퓨팅 노드가 ESXi 호스트로 표시되고 VMware vSphere Web Client에서 이를 관리할 수 있습니다.
+* * 관리 서비스 * 또는 마이크로서비스는 Active IQ Collector, vCenter 플러그인용 QoSSIOC 및 mNode 서비스를 포함하며 서비스 번들로 자주 업데이트됩니다. Element 11.3 릴리스 현재 * 관리 서비스 * 는 관리 노드에서 호스팅되므로 주요 릴리스 이외의 특정 소프트웨어 서비스를 더 빠르게 업데이트할 수 있습니다. mNode * (관리 노드 *)는 하나 이상의 Element 소프트웨어 기반 스토리지 클러스터와 병렬로 실행되는 가상 머신입니다. 이 툴을 사용하면 모니터링 및 원격 측정을 포함하여 시스템 서비스를 업그레이드 및 제공하고, 클러스터 자산 및 설정을 관리하고, 시스템 테스트 및 유틸리티를 실행하고, 문제 해결을 위해 NetApp Support 액세스를 지원할 수 있습니다.
++
+
+TIP: 에 대해 자세히 알아보십시오 link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Management_services_for_Element_Software_and_NetApp_HCI/Management_Services_Release_Notes["관리 서비스 릴리스"].
+
+* * NetApp 하이브리드 클라우드 제어 * 를 사용하여 NetApp HCI를 관리할 수 있습니다. NetApp SolidFire Active IQ를 사용하여 관리 서비스를 업그레이드하고, 시스템을 확장하고, 로그를 수집하고, 설치를 모니터링할 수 있습니다. NetApp Hybrid Cloud Control에 로그인하려면 관리 노드의 IP 주소로 이동합니다.
+* VCP(vCenter Server * 용 NetApp Element 플러그인)는 vSphere UI(사용자 인터페이스)와 통합된 웹 기반 툴입니다. 이 플러그인은 VMware vSphere를 위한 확장 가능하고 사용자 친화적인 인터페이스로 * NetApp Element 소프트웨어 * 를 실행하는 스토리지 클러스터를 관리하고 모니터링할 수 있습니다. 이 플러그인은 Element UI 대신 사용할 수 있습니다. 플러그인 사용자 인터페이스를 사용하여 클러스터를 검색 및 구성하고, 클러스터 용량의 스토리지를 관리, 모니터링 및 할당하여 데이터 저장소 및 가상 데이터 저장소(가상 볼륨용)를 구성할 수 있습니다. 클러스터는 호스트 및 관리자에게 가상 IP 주소로 표시되는 단일 로컬 그룹으로 네트워크에 표시됩니다. 또한 다양한 작업을 수행하는 동안 발생할 수 있는 이벤트에 대한 오류 및 경고 메시지를 포함하여 실시간 보고를 통해 클러스터 활동을 모니터링할 수 있습니다.
++
+
+TIP: 에 대해 자세히 알아보십시오 https://docs.netapp.com/us-en/vcp/concept_vcp_product_overview.html["VCP"].
+
+* 기본적으로 NetApp HCI는 성능 및 경고 통계를 * NetApp SolidFire Active IQ * 서비스로 보냅니다. 일반 지원 계약의 일부로서, NetApp Support는 이 데이터를 모니터링하고 성능 병목 현상 또는 잠재적인 시스템 문제를 경고합니다. 기존 SolidFire Active IQ 계정이 있더라도 NetApp Support 계정을 생성해야 하므로 서비스를 활용할 수 있습니다.
++
+
+TIP: 에 대해 자세히 알아보십시오 link:https://help.monitoring.solidfire.com/["NetApp SolidFire Active IQ를 참조하십시오"].
+
+
+
+
+
+== NetApp HCI URL
+
+NetApp HCI에서 사용하는 일반적인 URL은 다음과 같습니다.
+
+[cols="2*"]
+|===
+| URL | 설명 
+
+
+| "스토리지 노드의 Bond1G 인터페이스의 https://[IPv4 주소]" | NetApp 배포 엔진 마법사에 액세스하여 NetApp HCI를 설치 및 구성합니다. link:concept_nde_access_overview.html["자세한 정보."] 
+
+
+| "https://<ManagementNodeIP>` | NetApp 하이브리드 클라우드 제어에 액세스하여 NetApp HCI 설치를 업그레이드, 확장, 모니터링하고 관리 서비스를 업데이트합니다. link:task_nde_access_hcc.html["자세한 정보."] 
+
+
+| https://[IP 주소 : 442 | 노드별 UI에서 네트워크 및 클러스터 설정에 액세스하고 시스템 테스트 및 유틸리티를 활용합니다. https://docs.netapp.com/us-en/hci/docs/task_mnode_access_ui.html#access-the-management-node-per-node-ui["자세한 정보."] 
+
+
+| https://[management 노드 IP 주소]:9443 | vSphere Web Client에 vCenter 플러그인 패키지를 등록합니다. 
+
+
+| "https://activeiq.solidfire.com` | 데이터를 모니터링하고 성능 병목 현상 또는 잠재적인 시스템 문제에 대한 경고를 받습니다. 
+
+
+| "https://<ManagementNodeIP>/mnode` | 관리 노드의 REST API UI를 사용하여 관리 서비스를 수동으로 업데이트합니다. 
+
+
+| "https://[storage cluster mVIP address]" | NetApp Element 소프트웨어 UI에 액세스합니다. 
+|===
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+* https://www.netapp.com/us/documentation/hci.aspx["NetApp HCI 리소스 페이지를 참조하십시오"^]
+

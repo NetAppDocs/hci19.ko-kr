@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: docs/reference_earlier_versions.html 
+keywords: documentation, earlier, previous, versions 
+summary: 최신 버전을 실행하지 않는 경우 이전 버전의 NetApp HCI에 대한 설명서를 사용할 수 있습니다. 
+---
+= 이전 버전의 NetApp HCI 설명서
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: hci, earlier, documentation, versions
+
+
+[role="lead"]
+최신 버전을 실행하지 않는 경우 이전 버전의 NetApp HCI에 대한 설명서를 사용할 수 있습니다.
+
+* http://docs.netapp.com/us-en/hci18/docs/index.html["NetApp HCI 1.8P1"^]
+* https://docs.netapp.com/hci/index.jsp["NetApp HCI 1.8 및 이전 버전"^]
+

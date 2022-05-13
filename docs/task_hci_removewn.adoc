@@ -1,0 +1,47 @@
+---
+sidebar: sidebar 
+permalink: docs/task_hci_removewn.html 
+summary: 2노드 스토리지 클러스터를 4개 이상의 노드로 확장한 후 Witness 노드 쌍을 삭제하여 NetApp HCI 설치 시 컴퓨팅 리소스를 확보할 수 있습니다. 
+keywords: netapp, hci, witness nodes, two-node cluster, four-node cluster, compute nodes, virtual machine, vm 
+---
+= 클러스터를 확장한 후 Witness 노드를 제거합니다
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+2노드 스토리지 클러스터를 4개 이상의 노드로 확장한 후 Witness 노드 쌍을 삭제하여 NetApp HCI 설치 시 컴퓨팅 리소스를 확보할 수 있습니다. 스토리지 클러스터에서 이전에 사용된 Witness 노드는 vSphere Web Client에서 대기 가상 머신(VM)으로 계속 표시됩니다.
+
+감시 노드는 4개 이상의 스토리지 노드가 있는 클러스터에는 필요하지 않습니다. 2노드 클러스터를 4개 이상의 노드로 확장한 후 CPU와 메모리를 확보하려는 경우 이 절차는 선택 사항입니다.
+
+
+TIP: 클러스터 장애 또는 오류가 보고되지 않는지 확인합니다. vSphere의 NetApp Element 관리 확장 지점에서 * 보고 > 알림 * 을 클릭하여 시스템 알림에 대한 정보를 찾을 수 있습니다.
+
+.단계
+. vSphere의 경우 * Shortcuts * (바로 가기 *) 탭 또는 측면 패널에서 NetApp Element 관리 확장 지점에 액세스합니다.
+. NetApp Element 관리 > 클러스터 > 노드 * 를 선택합니다.
++
+image::vcp-witnessnode.gif[에는 노드가 나열된 NetApp Element 관리 > 클러스터 페이지가 나와 있습니다.]
+
+. 삭제할 Witness Node의 확인란을 선택하고 * Actions > Remove * 를 클릭합니다.
+. 프롬프트에서 작업을 확인합니다.
+. 호스트 및 클러스터 * 를 클릭합니다.
+. 앞서 제거한 Witness Node VM으로 이동합니다.
+. VM을 마우스 오른쪽 버튼으로 클릭하고 전원을 끕니다.
+. 전원을 끈 VM을 마우스 오른쪽 단추로 클릭하고 * 디스크에서 삭제 * 를 클릭합니다.
+. 프롬프트에서 작업을 확인합니다.
+
+
+
+
+== 자세한 내용을 확인하십시오
+
+* https://www.netapp.com/us/media/tr-4823.pdf["NetApp HCI 2노드 스토리지 클러스터 | TR-4823"]
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+* https://www.netapp.com/us/documentation/hci.aspx["NetApp HCI 리소스 페이지를 참조하십시오"^]
+* http://docs.netapp.com/sfe-122/index.jsp["SolidFire 및 Element 소프트웨어 설명서 센터"^]
+

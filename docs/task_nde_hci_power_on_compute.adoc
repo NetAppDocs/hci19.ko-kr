@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: docs/task_nde_hci_power_on_compute.html 
+summary: NetApp HCI 컴퓨팅 노드의 전원을 켜는 방법을 알아보십시오. 
+keywords: netapp, hci, netapp deployment engine, deployment, vsphere 
+---
+= NetApp HCI 시스템의 컴퓨팅 리소스 전원을 켭니다
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: netapp, hci, netapp deployment engine, deployment, vsphere
+
+
+[role="lead"]
+예약된 중단이 완료된 후 NetApp HCI 시스템에 대한 컴퓨팅 리소스의 전원을 켤 수 있습니다.
+
+.단계
+. 스토리지 노드의 전원을 켜기 위해 수행한 것과 동일한 단계를 사용하여 컴퓨팅 노드의 전원을 켭니다.
+. 모든 컴퓨팅 노드가 작동 중인 경우 vCSA를 실행 중인 ESXi 호스트에 로그인합니다.
+. 컴퓨팅 호스트에 로그인하여 모든 NetApp HCI 데이터 저장소가 표시되는지 확인합니다. 일반적인 NetApp HCI 시스템의 경우 모든 ESXi 로컬 데이터 저장소와 다음 공유 데이터 저장소가 표시됩니다.
+
+
+[listing]
+----
+NetApp-HCI-Datastore-[01,02]
+----
+. 모든 스토리지를 액세스할 수 있다고 가정하면 vCSA 및 기타 필요한 가상 머신의 전원을 다음과 같이 켭니다.
++
+.. 탐색기에서 가상 컴퓨터를 선택하고 전원을 켤 모든 가상 컴퓨터를 선택한 다음 * Power On * 버튼을 클릭합니다.
+
+
+. 가상 머신의 전원을 켠 후 약 5분 정도 기다린 다음 웹 브라우저를 사용하여 vCSA 애플리케이션의 IP 주소 또는 FQDN으로 이동합니다.
++
+충분히 기다리지 않으면 vSphere Client 웹 서버가 초기화되고 있다는 메시지가 나타납니다.
+
+. vSphere Client를 초기화한 후 로그인하여 모든 ESXi 호스트 및 가상 머신이 온라인 상태인지 확인합니다.
+
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/NetApp_HCI/Firmware_and_driver_versions_in_NetApp_HCI_and_NetApp_Element_software["NetApp HCI 및 NetApp Element 소프트웨어의 펌웨어 및 드라이버 버전"^]
+

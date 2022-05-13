@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: docs/task_hcc_nodes.html 
+summary: 하이브리드 클라우드 제어 노드 페이지를 사용하여 시스템의 스토리지 및 컴퓨팅 자산을 모두 볼 수 있습니다. 
+keywords: netapp, hci, on premise, cluster, inventory, nodes, storage, compute 
+---
+= 노드 페이지에서 재고를 확인합니다
+:allow-uri-read: 
+
+
+[role="lead"]
+시스템에서 스토리지 및 컴퓨팅 자산을 모두 보고 IP 주소, 이름 및 소프트웨어 버전을 확인할 수 있습니다.
+
+여러 노드 시스템과 2노드 또는 3노드 클러스터와 연결된 NetApp HCI Witness 노드의 스토리지 정보를 볼 수 있습니다. If(경우 link:concept_hcc_custom_protection_domains.html["사용자 지정 보호 도메인"^] 할당되면 특정 노드에 할당된 보호 도메인을 확인할 수 있습니다.
+
+감시 노드는 클러스터 내에서 쿼럼을 관리하므로 스토리지에 사용되지 않습니다. 감시 노드는 NetApp HCI에만 적용되고 All-Flash 스토리지 환경에는 적용되지 않습니다.
+
+Witness Node에 대한 자세한 내용은 를 참조하십시오 link:concept_hci_nodes.html["노드 정의"].
+
+SolidFire 엔터프라이즈 SDS 노드의 경우 스토리지 탭에서 인벤토리를 모니터링할 수 있습니다.
+
+.단계
+. 웹 브라우저에서 관리 노드의 IP 주소를 엽니다. 예를 들면 다음과 같습니다.
++
+[listing]
+----
+https://<ManagementNodeIP>
+----
+. NetApp 하이브리드 클라우드 제어에 NetApp HCI 스토리지 클러스터 관리자 자격 증명을 제공하여 로그인하십시오.
+. 왼쪽 탐색 창에서 * 노드 * 를 클릭합니다.
++
+image::hcc_nodes_storage_2nodes.png[하이브리드 클라우드 제어 노드 페이지 이미지]
+
++
+
+NOTE: 새로운 NetApp 하이브리드 클라우드 제어 세션을 처음 시작할 때 관리 노드가 여러 클러스터를 관리하고 있을 때 NetApp 하이브리드 클라우드 제어 노드 페이지를 로드하는 데 지연이 있을 수 있습니다. 로딩 시간은 관리 노드에서 능동적으로 관리하는 클러스터 수에 따라 다릅니다. 이후 실행 시 로딩 시간이 단축됩니다.
+
+. 노드 페이지의 * 스토리지 * 탭에서 다음 정보를 검토합니다.
++
+.. 2노드 클러스터: 스토리지 탭에 "2노드" 레이블이 표시되고 관련 Witness 노드가 나열됩니다.
+.. 3노드 클러스터: 스토리지 노드 및 관련 Witness 노드가 나열됩니다. 3노드 클러스터에는 노드 장애 시 고가용성을 유지하기 위해 Witness Node가 스탠바이에 구축되어 있습니다.
+.. 4개 이상의 노드가 있는 클러스터: 4개 이상의 노드가 있는 클러스터에 대한 정보가 나타납니다. 증명선 노드가 적용되지 않습니다. 2개 또는 3개의 스토리지 노드로 시작하고 노드를 더 추가한 경우에도 Witness 노드가 나타납니다. 그렇지 않으면 Witness Nodes 테이블이 나타나지 않습니다.
+.. 펌웨어 번들 버전: 관리 서비스 버전 2.14부터 시작합니다. Element 12.0 이상을 실행하는 클러스터가 있는 경우 이러한 클러스터의 펌웨어 번들 버전을 볼 수 있습니다. 클러스터의 노드에 다른 펌웨어 버전이 있는 경우 * 펌웨어 번들 버전 * 열에서 * 다중 * 를 볼 수 있습니다.
+.. 사용자 지정 보호 도메인: 클러스터에서 사용자 지정 보호 도메인을 사용 중인 경우 클러스터의 각 노드에 대해 사용자 지정 보호 도메인 할당을 확인할 수 있습니다. 사용자 지정 보호 도메인이 설정되어 있지 않으면 이 열이 표시되지 않습니다.
+
+
+. 컴퓨팅 인벤토리 정보를 보려면 * Compute * 를 클릭합니다.
+. 이러한 페이지의 정보는 여러 가지 방법으로 조작할 수 있습니다.
++
+.. 결과의 항목 목록을 필터링하려면 * 필터 * 아이콘을 클릭하고 필터를 선택합니다. 필터의 텍스트를 입력할 수도 있습니다.
+.. 열을 표시하거나 숨기려면 * 열 표시/숨기기 * 아이콘을 클릭합니다.
+.. 테이블을 다운로드하려면 * 다운로드 * 아이콘을 클릭합니다.
+.. BMC 연결 오류가 있는 컴퓨팅 노드에 대해 저장된 BMC 자격 증명을 추가하거나 편집하려면 * BMC Connection Status * 열의 오류 메시지 텍스트에서 * 연결 설정 편집 * 을 클릭합니다. 컴퓨팅 노드에 대한 연결 시도가 실패한 경우에만 해당 노드에 대한 오류 메시지가 이 열에 표시됩니다.
+
+
+
+
+
+TIP: 스토리지 및 컴퓨팅 리소스의 수를 보려면 NetApp HCC(하이브리드 클라우드 제어) 대시보드를 확인하십시오. 을 참조하십시오 link:task_hcc_dashboard.html["HCC 대시보드를 사용하여 스토리지 및 컴퓨팅 리소스를 모니터링합니다"].
+
+
+NOTE: NetApp 하이브리드 클라우드 제어에서 컴퓨팅 노드를 관리하려면 반드시 필요합니다 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Management_services_for_Element_Software_and_NetApp_HCI/How_to_set_up_compute_node_management_in_NetApp_Hybrid_Cloud_Control["vCenter 호스트 클러스터에 컴퓨팅 노드를 추가합니다"^].
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
+

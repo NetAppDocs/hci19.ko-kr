@@ -1,0 +1,80 @@
+---
+sidebar: sidebar 
+permalink: docs/reference_notices_hci.html 
+keywords: copyrights, notice, trademarks, patents, privacy, open source 
+summary: 법적 고지 사항은 저작권 선언, 상표, 특허 등에 대한 액세스를 제공합니다. 
+translate: false 
+---
+= 법적 고지
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+법적 고지 사항은 저작권 선언, 상표, 특허 등에 대한 액세스를 제공합니다.
+
+
+
+== 저작권
+
+http://www.netapp.com/us/legal/copyright.aspx[]
+
+
+
+== 상표
+
+NetApp, NetApp 로고, NetApp 상표 페이지에 나열된 마크는 NetApp Inc.의 상표입니다. 기타 회사 및 제품 이름은 해당 소유자의 상표일 수 있습니다.
+
+http://www.netapp.com/us/legal/netapptmlist.aspx[]
+
+
+
+== 특허
+
+NetApp 소유 특허 목록은 다음 사이트에서 확인할 수 있습니다.
+
+https://www.netapp.com/us/media/patents-page.pdf[]
+
+
+
+== 개인 정보 보호 정책
+
+https://www.netapp.com/us/legal/privacypolicy/index.aspx[]
+
+
+
+== 오픈 소스
+
+통지 파일은 NetApp 소프트웨어에 사용된 타사의 저작권 및 라이센스에 대한 정보를 제공합니다.
+
+* link:../media/ansible-products-notice.pdf["컴퓨팅 업그레이드를 위한 Ansible 역할에 대한 고지 사항"^]
+* link:../media/Ember_12.3_notice.pdf["Ember OS 12.3.1에 대한 고지 사항"^]
+* link:../media/Ember_12.3_notice.pdf["Ember OS 12.3에 대한 고지 사항"^]
+* link:../media/mNode_12.3_notice.pdf["관리 노드 12.3.1 공지"^]
+* link:../media/mNode_12.3_notice.pdf["관리 노드 12.3에 대한 고지 사항"^]
+* link:../media/NetApp_HCI_1.9_notice.pdf["NetApp HCI 1.9P1에 대한 고지 사항"^]
+* link:../media/NetApp_HCI_1.9_notice.pdf["NetApp HCI 1.9에 대한 고지 사항"^]
+* link:../media/storage_firmware_bundle_2.146_notices.pdf["스토리지 펌웨어 번들 2.146에 대한 고지 사항"^]
+* link:../media/compute_firmware_bundle_2.146_notices.pdf["Compute Firmware Bundle 2.146에 대한 고지 사항"^]
+* link:../media/storage_firmware_bundle_2.99_notices.pdf["스토리지 펌웨어 번들 2.99.2에 대한 고지 사항"^]
+* link:../media/compute_firmware_bundle_2.76_notices.pdf["Compute Firmware Bundle 2.76에 대한 고지 사항"^]
+* link:../media/storage_firmware_bundle_2.76_notices.pdf["스토리지 펌웨어 번들 2.76에 대한 고지 사항"^]
+* link:../media/compute_firmware_bundle_2.27_notices.pdf["Compute Firmware Bundle 2.27에 대한 고지 사항"^]
+* link:../media/storage_firmware_bundle_2.27_notices.pdf["스토리지 펌웨어 번들 2.27에 대한 고지 사항"^]
+* link:../media/compute_iso_notice.pdf["컴퓨팅 펌웨어 ISO에 대한 고지 사항"^]
+* link:../media/H610S_BMC_notice.pdf["H610S BMC에 대한 고지 사항"^]
+* link:../media/2.20_notice.pdf["관리 서비스 공지 2.20.69(VCP 4.9.14)"^]
+* link:../media/2.19_notice.pdf["관리 서비스 공지 2.19.48(VCP 4.8.34)"^]
+* link:../media/2.18_notice.pdf["관리 서비스 공지 2.18.91(VCP 4.7.10)"^]
+* link:../media/2.17.56_notice.pdf["관리 서비스 공지 2.17.56(VCP 4.6.32)"^]
+* link:../media/2.17_notice.pdf["관리 서비스 공지 2.17.52(VCP 4.6.29)"^]
+* link:../media/2.16_notice.pdf["관리 서비스 공지 2.16(VCP 4.6.29)"^]
+* link:../media/mgmt_svcs_2.14_notice.pdf["관리 서비스 공지 2.14(VCP 4.5.42)"^]
+* link:../media/2.13_notice.pdf["관리 서비스 참고 사항 2.13(VCP 4.5.42)"^]
+* link:../media/mgmt_svcs2.11_notice.pdf["관리 서비스 공지 2.11(VCP 4.4.72)"^]
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP2870307["NetApp HCI 1.8에 대한 고지 사항"^]
+

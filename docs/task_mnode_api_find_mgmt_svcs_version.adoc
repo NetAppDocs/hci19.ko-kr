@@ -1,0 +1,88 @@
+---
+sidebar: sidebar 
+permalink: docs/task_mnode_api_find_mgmt_svcs_version.html 
+summary: REST API를 사용하여 관리 노드에서 사용하는 관리 노드 OS 및 관리 서비스 버전을 찾을 수 있습니다. 
+keywords: netapp, hci, management node, management services, version, bundle version, what is 
+---
+= 관리 노드 OS 및 서비스 버전을 확인합니다
+:allow-uri-read: 
+
+
+[role="lead"]
+관리 노드의 REST API를 사용하여 관리 노드에서 실행되는 관리 노드 OS, 관리 서비스 번들 및 개별 서비스의 버전 번호를 확인할 수 있습니다.
+
+.무엇을 &#8217;필요로 할거야
+* 클러스터에서 NetApp Element 소프트웨어 11.3 이상이 실행 중입니다.
+* 버전 11.3 이상을 실행하는 관리 노드를 배포했습니다.
+
+
+.옵션
+* <<API commands>>
+* <<REST API UI steps>>
+
+
+
+
+== API 명령
+
+* 관리 노드 OS, 관리 서비스 번들 및 관리 노드에서 실행 중인 관리 노드 API(mnode-API) 서비스에 대한 버전 정보를 가져옵니다.
++
+[listing]
+----
+curl -X GET "https://<ManagementNodeIP>/mnode/about" -H  "accept: application/json"
+----
+* 관리 노드에서 실행 중인 개별 서비스에 대한 버전 정보를 가져옵니다.
++
+[listing]
+----
+curl -X GET "https://<ManagementNodeIP>/mnode/services?status=running" -H  "accept: */*" -H  "Authorization: Bearer ${TOKEN}"
+----
++
+
+NOTE: API 명령에서 사용하는 '${token}' 베어러를 찾을 수 있습니다 link:task_mnode_api_get_authorizationtouse.html["권한 부여"]. '${token}' 베어러가 curl 응답에 있습니다.
+
+
+
+
+
+== REST API UI 단계
+
+. 관리 노드의 IP 주소 뒤에 '/mnode/'를 입력하여 서비스의 REST API UI에 액세스합니다.
++
+[listing]
+----
+https://<ManagementNodeIP>/mnode/
+----
+. 다음 중 하나를 수행합니다.
++
+** 관리 노드 OS, 관리 서비스 번들 및 관리 노드에서 실행 중인 관리 노드 API(mnode-API) 서비스에 대한 버전 정보를 가져옵니다.
++
+... Get/About * 을 선택합니다.
+... 체험하기 * 를 선택합니다.
+... Execute * 를 선택합니다.
++
+관리 서비스 번들 버전("mnode_bundle_version"), 관리 노드 OS 버전(""OS_version"), 관리 노드 API 버전("" version")이 응답 본문에 표시됩니다.
+
+
+
+** 관리 노드에서 실행 중인 개별 서비스에 대한 버전 정보를 가져옵니다.
++
+... Get/services * 를 선택합니다.
+... 체험하기 * 를 선택합니다.
+... 상태를 * Running * 으로 선택합니다.
+... Execute * 를 선택합니다.
++
+관리 노드에서 실행 중인 서비스는 응답 본문에 표시됩니다.
+
+
+
+
+
+
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
+

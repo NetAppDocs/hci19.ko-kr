@@ -1,0 +1,184 @@
+---
+sidebar: sidebar 
+permalink: docs/rn_storage_firmware_2.76.html 
+summary: NetApp HCI 노드에 다운로드하여 적용할 수 있는 펌웨어 패키지의 릴리즈 노트에 대한 링크를 제공합니다. 
+keywords: netapp, hci, storage firmware 
+---
+= 스토리지 펌웨어 번들 2.76 릴리스 정보
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: hci, release notes, vcp, element, management services, firmware
+
+
+[role="lead"]
+Element 12.0 및 관리 서비스 버전 2.14부터 NetApp 하이브리드 클라우드 제어 UI 및 REST API를 사용하여 스토리지 노드에서 펌웨어 전용 업그레이드를 수행할 수 있습니다. 이 절차에서는 Element 소프트웨어를 업그레이드하지 않으며 주요 Element 릴리스 외부에서 스토리지 펌웨어를 업그레이드할 수 있습니다.
+
+
+
+== 새로운 기능
+
+스토리지 펌웨어 번들 버전 2.76에는 보안 취약점 수정을 비롯한 다양한 버그 수정 및 새로운 기능이 포함되어 있습니다. 의 지침에 따라 스토리지 펌웨어를 업그레이드할 수 있습니다 link:task_hcc_upgrade_storage_firmware.html["스토리지 펌웨어를 업그레이드합니다"].
+
+
+
+=== 펌웨어 구성 요소가 업데이트되었습니다
+
+이 펌웨어 패키지에는 업데이트된 버전이 굵은 글꼴로 표시된 하드웨어 구성 요소에 대한 다음 펌웨어 버전이 포함되어 있습니다.
+
+|===
+| 구성 요소 | SolidFire SF 시리즈 | H410S | H610S 
+
+
+| BIOS | 해당 없음 | NA2.1 | * 3B06 * 
+
+
+| BMC | 해당 없음 | 6.84.00 | * 3.86.07 * 
+
+
+| NIC/Mellanox | - | * 14.25.1020 * | * 14.25.1020 * 
+
+
+| RMS200 | ae3b8cc | ae3b8cc | - 
+
+
+| RMS300 | 7d8422bc | 7d8422bc | - 
+
+
+| NVDIMM, SMART | - | - | 3.1 
+
+
+| BPM, 스마트 | - | - | 2.16 
+
+
+| NVDIMM, Micron Gen1 | - | - | 26.2c 
+
+
+| NVDIMM, Micron Gen2 | - | - | 25.3c 
+
+
+| PGEM, 마이크론 | - | - | 1.40 
+
+
+| PM863, SED | GXT5404Q | GXT5404Q | - 
+
+
+| PM863, NSED | GXT5103Q | GXT5103Q | - 
+
+
+| PM883, SED | * HXT7904Q * | * HXT7904Q * | - 
+
+
+| Hawk-4, SED | 8ENP7101 | 8ENP7101 | - 
+
+
+| Hawk-4, NSED | 8ENP6101)을 참조하십시오 | 8ENP6101)을 참조하십시오 | - 
+
+
+| PM963, SED | - | - | CXV8202Q 
+
+
+| PM963, NSED | - | - | CXV8501Q 
+
+
+| PM983, SED | - | - | * EDA5402Q * 
+
+
+| PM983, NSED | - | - | * EDA5700Q * 
+
+
+| CD5, SED | - | - | * 0109 * 
+
+
+| CD5, NSED | - | - | * 0109 * 
+
+
+| CD5, FIPS | - | - | 0108 
+|===
+
+
+== 스토리지 펌웨어 구성 요소의 변경 사항
+
+|===
+
+
+| 구성 요소 | 개선/변경 
+
+
+| H610S BIOS 3B06  a| 
+* 메모리 오류 처리 개선
+* 마이크로 코드 버전을 MCU x6906으로 업데이트했습니다
+
+
+
+
+| H610S BMC 3.86.07  a| 
+* BMC SEL에 BIOS PPR 이벤트 로그 구문 분석을 추가했습니다
+* BMC가 정지할 때 시스템 과열을 방지합니다
+* LDAP의 그룹 도메인 길이를 64자에서 128자로 변경했습니다
+
+
+
+
+| H410S/H610S NIC, Mellanox 14.25.1020 | 해당 없음 
+
+
+| 다양한 드라이브 펌웨어 업데이트 | 해당 없음 
+|===
+
+
+== 해결된 알려진 문제입니다
+
+를 참조하십시오 https://mysupport.netapp.com/site/bugs-online/product["버그 온라인 도구"^] 해결된 문제 및 새로운 문제에 대한 자세한 내용은 를 참조하십시오.
+
+
+
+=== BOL 도구 액세스
+
+. 로 이동합니다  https://mysupport.netapp.com/site/bugs-online/product["BOL 도구"^] 드롭다운 목록에서 * Element Software * 를 선택합니다.
++
+image::bol_dashboard.png[스토리지 펌웨어 번들 릴리스 정보]
+
+. 키워드 검색 필드에 "스토리지 펌웨어 번들"을 입력하고 * 새 검색 * 을 클릭합니다.
++
+image::storage_firmware_bundle_choice.png[스토리지 펌웨어 번들 릴리스 정보]
+
+. 해결되었거나 열려 있는 버그 목록이 표시됩니다. 다음과 같이 결과를 더욱 세분화할 수 있습니다.
++
+image::bol_list_bugs_found.png[스토리지 펌웨어 번들 릴리스 정보]
+
+
+
+
+
+== 보안 취약성 해결
+
+다음은 이 릴리스에서 해결된 보안 취약점입니다.
+
+
+
+=== H410S BMC 6.84.00
+
+* CVE-2020-0542, CVE-2020-0532, CVE-2020-0538, CVE-2020-0534, CVE-2020-0541, CVE-2020-0533, CVE-2020-0537, CVE-2020-0531
+* CVE-2020-0535, CVE-2020-0536, CVE-2020-0545, CVE-2020-0540, CVE-2020-0566, CVE-2020-0539, CVE-2020-0586, CVE-2020-0594
+* CVE-2020-0595, CVE-2020-0596, CVE-2020-8674, CVE-2020-0597 CVE-2020-0543 CVE-2020-0548, CVE-2020-0549
+
+
+
+
+=== H610S BMC 3.86.07
+
+* CVE-2019-20636
+* CVE-2019-11599, CVE-2020-12826, CVE-2020-12464, CVE-2020-12114
+* CVE-2016-3706, CVE-2011-5320, CVE-2015-8984, CVE-2015-8983, CVE-2015-8982, CVE-2006-7254, CVE-2005-3590
+
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://docs.netapp.com/hci/index.jsp["NetApp HCI 문서 센터"^]
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
+

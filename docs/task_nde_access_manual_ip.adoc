@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: docs/task_nde_access_manual_ip.html 
+summary: NetApp HCI 노드에 IP 주소를 수동으로 할당하여 NetApp 구축 엔진에 액세스하는 방법을 알아보십시오. 
+keywords: netapp, hci, netapp deployment engine, deployment, engine, deploy, access 
+---
+= IP 주소를 수동으로 할당하여 NetApp Deployment Engine에 액세스합니다
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: hci, release notes, vcp, element, management services, firmware
+
+
+[role="lead"]
+모든 NetApp HCI 노드에서 Bond1G 및 Bond10G 인터페이스에 정적 IPv4 주소를 수동으로 할당하여 NetApp 배포 엔진에 액세스하고 NetApp HCI를 배포할 수 있습니다. 네트워크에 특별한 요구 사항이 없으면 이 방법을 사용하면 안 됩니다.
+
+.무엇을 &#8217;필요로 할거야
+* 사용자 또는 네트워크 관리자가 설치 및 설정 지침 문서의 작업을 완료했습니다.
+* NetApp HCI 노드에 물리적으로 액세스할 수 있습니다.
+* 모든 NetApp HCI 노드의 전원이 켜져 있습니다.
+* DHCP는 NetApp HCI 네트워크에 대해 활성화되지 않으며 NetApp HCI 노드는 DHCP 서버에서 IP 주소를 가져오지 않습니다. 참고: NetApp Deployment Engine을 사용하여 시스템을 구축하기 전에 수동으로 할당한 모든 IP 주소는 일시적이며 다시 사용할 수 없습니다. IP 주소를 수동으로 할당하도록 선택한 경우 최종 배포 중에 할당할 수 있는 사용되지 않은 두 번째 영구 IP 주소 세트를 따로 두어야 합니다.
+
+
+이 구성에서 컴퓨팅 및 스토리지 노드는 정적 IPv4 주소를 사용하여 배포 중에 다른 노드를 검색하고 통신할 수 있습니다. 이 구성은 권장되지 않습니다.
+
+.단계
+. KVM을 NetApp HCI 스토리지 노드 중 하나의 후면에 연결합니다(이 노드는 제어 스토리지 노드가 됨).
+. 사용자 인터페이스에서 Bond1G 및 Bond10G의 IP 주소, 서브넷 마스크 및 게이트웨이 주소를 구성합니다. 필요한 경우 각 네트워크에 대해 VLAN ID를 구성할 수도 있습니다.
+. 나머지 스토리지 및 컴퓨팅 노드에 대해 2단계를 반복합니다.
+. NetApp HCI 관리 네트워크에 액세스할 수 있는 컴퓨터에서 웹 브라우저를 엽니다.
+. 제어 스토리지 노드에 할당한 Bond1G IP 주소를 찾습니다. 예를 들면 다음과 같습니다.
++
+[listing]
+----
+http://<Bond1G IP address>
+----
++
+그러면 NetApp Deployment Engine 사용자 인터페이스가 표시됩니다.
+
+
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/NetApp_HCI/Firmware_and_driver_versions_in_NetApp_HCI_and_NetApp_Element_software["NetApp HCI 및 NetApp Element 소프트웨어의 펌웨어 및 드라이버 버전"^]
+

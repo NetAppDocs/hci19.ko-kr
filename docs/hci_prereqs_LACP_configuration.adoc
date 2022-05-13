@@ -1,0 +1,36 @@
+---
+sidebar: sidebar 
+permalink: docs/hci_prereqs_LACP_configuration.html 
+summary: 최상의 스토리지 성능을 위해 NetApp HCI를 구성하는 방법에 대해 알아보십시오. 
+keywords: netapp, hci, storage, performance, LACP 
+---
+= 최적의 스토리지 성능을 위해 LACP를 구성합니다
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: netapp, hci, storage, performance, LACP
+
+
+[role="lead"]
+최적의 NetApp HCI 스토리지 클러스터 성능을 위해서는 각 스토리지 노드에 사용되는 스위치 포트에 LACP(Link Aggregation Control Protocol)를 구성해야 합니다.
+
+.시작하기 전에
+* NetApp HCI 스토리지 노드의 10/25GbE 인터페이스에 연결된 스위치 포트를 LACP 포트 채널로 구성했습니다.
+* 스토리지 트래픽을 처리하는 스위치의 LACP 타이머를 "fast mode (1s)"로 설정하여 최적의 페일오버 감지 시간을 제공합니다. 구축하는 동안 모든 스토리지 노드의 Bond1G 인터페이스가 액티브/패시브 모드로 자동 구성됩니다.
+* 스토리지 네트워크를 처리하는 스위치에 대한 Cisco vPC(Virtual PortChannel) 또는 동급 스위치 스태킹 기술을 구성했습니다. 스위치 스태킹 기술은 LACP 및 포트 채널을 간편하게 구성하고 스토리지 노드의 10/25GbE 포트와 스위치 간에 루프 없이 토폴로지를 제공합니다.
+
+
+.단계
+. NetApp H-series 스토리지 노드에 사용되는 스위치 포트에 LACP를 설정하려면 스위치 공급업체의 권장 사항을 따르십시오.
+. NetApp HCI를 구축하기 전에 모든 스토리지 노드의 결합 모드를 노드 사용자 인터페이스(터미널 사용자 인터페이스 또는 TUI라고도 함)의 LACP로 변경하십시오.
+
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지를 참조하십시오"^]
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+

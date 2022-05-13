@@ -1,0 +1,30 @@
+---
+sidebar: sidebar 
+permalink: docs/hci_prereqs_environmental.html 
+summary: NetApp HCI 환경 요구 사항에 대해 알아보십시오. 
+keywords: netapp, hci, environment, requirements 
+---
+= 환경 요구 사항
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: netapp, hci, environment, requirements
+
+
+[role="lead"]
+NetApp HCI 설치에 사용되는 랙의 전원이 AC 전원 콘센트에 의해 공급되고 데이터 센터에서 NetApp HCI 설치 크기에 적합한 냉각 기능을 제공하는지 확인하십시오.
+
+NetApp HCI의 각 구성 요소에 대한 자세한 기능은 NetApp HCI를 참조하십시오 http://www.netapp.com/us/media/ds-3881.pdf["데이터시트"^].
+
+
+NOTE: H410C 컴퓨팅 노드는 고전압(200~240VAC)에서만 작동합니다. H410C 노드를 기존 NetApp HCI 설치에 추가할 때 전원 요구 사항이 충족되는지 확인해야 합니다.
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지를 참조하십시오"^]
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+

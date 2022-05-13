@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: docs/task_hcc_manage_storage_overview.html 
+summary: NetApp HCI을 사용하면 NetApp 하이브리드 클라우드 제어를 통해 스토리지 자산을 관리할 수 있습니다. 
+keywords: netapp, hci, on premise, cluster, element, account, user, volume, hybrid cloud control, hcc 
+---
+= NetApp HCI 스토리지 관리 개요
+:allow-uri-read: 
+
+
+[role="lead"]
+NetApp HCI을 사용하면 NetApp 하이브리드 클라우드 제어를 통해 이러한 스토리지 자산을 관리할 수 있습니다.
+
+* link:task_hcc_manage_accounts.html["사용자 계정을 만들고 관리합니다"]
+* link:task_hcc_manage_storage_clusters.html["스토리지 클러스터를 추가하고 관리합니다"]
+* link:task_hcc_manage_vol_management.html["볼륨 생성 및 관리"]
+* link:task_hcc_manage_vol_access_groups.html["볼륨 액세스 그룹을 생성하고 관리합니다"]
+* link:task_hcc_manage_initiators.html["이니시에이터를 생성 및 관리합니다"]
+* link:task_hcc_qos_policies.html["볼륨 QoS 정책 생성 및 관리"]
+
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
+

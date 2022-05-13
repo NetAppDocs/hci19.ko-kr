@@ -1,0 +1,82 @@
+---
+sidebar: sidebar 
+permalink: docs/task_upgrade_element_latest_healthtools.html 
+summary: 시스템 업그레이드의 일환으로 최신 HealthTools for NetApp Element 소프트웨어로 업그레이드해야 합니다. 
+keywords: netapp, HealthTools upgrade, sfupdate-healthtools, element 
+---
+= 최신 HealthTools로 업그레이드하십시오
+:allow-uri-read: 
+
+
+[role="lead"]
+11.1 이전 버전에서 요소 스토리지 업그레이드를 시작하기 전에 HealthTools 제품군을 업그레이드해야 합니다. HealthTools 업그레이드는 실행 중인 관리 노드 및 Element 소프트웨어가 11.1 이전 버전인 경우에만 필요합니다. HealthTools는 에 필요하지 않습니다 link:task_hcc_upgrade_element_software.html["NetApp 하이브리드 클라우드 제어를 사용하여 Element 업그레이드 수행"].
+
+
+IMPORTANT: Element 소프트웨어 12.3.2는 NetApp HealthTools를 사용하여 업그레이드할 수 있는 최종 버전입니다. Element 소프트웨어 11.3 이상을 실행 중인 경우 NetApp 하이브리드 클라우드 제어를 사용하여 Element 소프트웨어를 업그레이드해야 합니다. NetApp HealthTools를 사용하여 Element 버전 11.1 이하를 업그레이드할 수 있습니다.
+
+.무엇을 &#8217;필요로 할거야
+* 관리 노드 11.0, 11.1 이상을 실행하고 있습니다.
+* 관리 서비스를 버전 2.1.326으로 업그레이드했습니다.
++
+NetApp 하이브리드 클라우드 제어 업그레이드는 이전 서비스 번들 버전에서 사용할 수 없습니다.
+
+* 의 최신 버전을 다운로드했습니다 https://mysupport.netapp.com/site/products/all/details/element-healthtools/downloads-tab["상태 진단 도구"^] 설치 파일을 관리 노드에 복사했습니다.
++
+
+TIP: 'fsupdate-healthtools -v' 명령을 실행하여 로컬에 설치된 HealthTools 버전을 확인할 수 있습니다.
+
+* 어두운 장소에서 HealthTools를 사용하려면 다음 추가 단계를 수행해야 합니다.
++
+** 를 다운로드합니다 link:https://library.netapp.com/ecm/ecm_get_file/ECMLP2840740["JSON 파일"^] 관리 노드가 아닌 컴퓨터의 NetApp 지원 사이트에서 'metadata.json'으로 이름을 바꿉니다.
+** 관리 노드를 가동하여 어두운 사이트에서 실행되도록 합니다.
+
+
+
+
+HealthTools 제품군의 명령을 실행하려면 에스컬레이션된 권한이 필요합니다. 'SUDO'로 미리 정의된 명령을 사용하거나 사용자를 루트 권한으로 에스컬레이션합니다.
+
+
+NOTE: 사용하는 HealthTools 버전은 아래의 샘플 입력 및 응답보다 최신 버전일 수 있습니다.
+
+.단계
+. 새 HealthTools 소프트웨어를 설치하려면 'fupdate-healthtools <path to install file>' 명령을 실행합니다.
++
+샘플 입력:
+
++
+[listing]
+----
+sfupdate-healthtools /tmp/solidfire-healthtools-2020.03.01.09.tgz
+----
++
+샘플 반응:
+
++
+[listing]
+----
+Checking key signature for file /tmp/solidfirehealthtools-2020.03.01.09/components.tgz
+installing command sfupdate-healthtools
+Restarting on version 2020.03.01.09
+sfupdate-healthtools /sf/bin/sfupdate-healthtools -r 2020.03.01.09
+installing command sfupgradecheck
+installing command sfinstall
+installing command sfresetupgrade
+----
+. 설치된 버전이 업그레이드되었는지 확인하려면 'fsupdate-healthtools -v' 명령을 실행합니다.
++
+샘플 반응:
+
++
+[listing]
+----
+Currently installed version of HealthTools:
+2020.03.01.09
+----
+
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
+

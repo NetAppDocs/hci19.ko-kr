@@ -1,0 +1,106 @@
+---
+sidebar: sidebar 
+permalink: docs/hci_prereqs_final_prep.html 
+summary: NetApp HCI를 배포하기 전에 완료해야 하는 최종 준비 사항 및 구성에 대해 알아봅니다. 
+keywords: netapp, hci, final preparations, requirements 
+---
+= 각 노드에 대해 IPMI를 구성합니다
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: netapp, hci, final preparations, IPMI
+
+
+[role="lead"]
+NetApp HCI 하드웨어를 랙에 장착하고 케이블을 연결한 후 전원을 켠 후에는 각 노드에 대해 IPMI(Intelligent Platform Management Interface) 액세스를 구성할 수 있습니다. 각 IPMI 포트에 IP 주소를 할당하고 노드에 대한 원격 IPMI 액세스 권한이 있는 즉시 기본 IPMI 관리자 암호를 변경합니다.
+
+
+
+== 필수 구성 요소
+
+사용 중인 환경이 NetApp HCI를 지원할 준비가 되어 있고 잠재적인 문제가 해결되었는지 확인한 후에는 배포 전에 몇 가지 최종 작업을 완료해야 합니다.
+
+* Active IQ Config Advisor에서 보고서를 성공적으로 작성했는지 확인합니다.
+* 네트워크, 현재 또는 계획된 VMware 인프라스트럭처 및 계획된 사용자 자격 증명에 대한 모든 관련 정보를 수집합니다.
+* NetApp HCI 설치의 랙, 케이블 및 전원을 켭니다.
+
+
+
+
+== IPMI 포트 IP 주소를 수동으로 할당합니다
+
+동적 호스트 구성 프로토콜(DHCP)은 각 NetApp HCI 노드의 IPMI 포트에 대해 기본적으로 활성화됩니다. IPMI 네트워크에서 DHCP를 사용하지 않는 경우 IPMI 포트에 정적 IPv4 주소를 수동으로 할당할 수 있습니다.
+
+각 노드의 BIOS에 액세스하는 데 사용할 수 있는 키보드, 비디오 및 마우스(KVM) 스위치 또는 모니터와 키보드가 있는지 확인합니다.
+
+화살표 키를 사용하여 BIOS로 이동합니다. Enter를 눌러 탭이나 옵션을 선택합니다. ESC를 눌러 이전 화면으로 돌아갑니다.
+
+.단계
+. 노드의 전원을 켭니다.
+. 부팅 시 Del 키를 눌러 BIOS로 들어갑니다.
+. IPMI 탭을 선택합니다.
+. BMC Network Configuration * 을 선택하고 Enter 키를 누릅니다.
+. Yes * 를 선택하고 Enter 키를 누릅니다.
+. Configuration Address Source * 를 선택하고 Enter 키를 누릅니다.
+. Static * 을 선택하고 Enter를 누릅니다.
+. Station IP address * 를 선택하고 IPMI 포트의 새 IP 주소를 입력합니다. 완료되면 Enter를 누릅니다.
+. Subnet mask * 를 선택하고 IPMI 포트에 대한 새 서브넷 마스크를 입력합니다. 완료되면 Enter를 누릅니다.
+. 게이트웨이 IP 주소 * 를 선택하고 IPMI 포트의 새 게이트웨이 IP 주소를 입력합니다. 완료되면 Enter를 누릅니다.
+. 이더넷 케이블의 한쪽 끝을 IPMI 포트에 연결하고 다른 쪽 끝을 스위치에 연결합니다.
++
+이 노드의 IPMI 포트를 사용할 준비가 되었습니다.
+
+. 구성되지 않은 IPMI 포트가 있는 다른 NetApp HCI 노드에 대해 이 절차를 반복합니다.
+
+
+
+
+== H410C 및 H410S 노드의 기본 IPMI 암호를 변경합니다
+
+IPMI 네트워크 포트를 구성하는 즉시 각 컴퓨팅 및 스토리지 노드에서 IPMI 관리자 계정의 기본 암호를 변경해야 합니다.
+
+각 컴퓨팅 및 스토리지 노드에 대한 IPMI IP 주소를 구성했습니다.
+
+.단계
+. IPMI 네트워크에 연결할 수 있는 컴퓨터에서 웹 브라우저를 열고 해당 노드의 IPMI IP 주소를 찾습니다.
+. 로그인 프롬프트에 사용자 이름 admin과 암호 admin을 입력합니다.
+. 로그인 시 * 구성 * 탭을 클릭합니다.
+. 사용자 * 를 클릭합니다.
+. 'admin' 사용자를 선택하고 'Modify User'를 클릭합니다.
+. 암호 변경 * 확인란을 선택합니다.
+. 암호 * 및 * 암호 확인 * 필드에 새 암호를 입력합니다.
+. 수정 * 을 클릭한 다음 * 확인 * 을 클릭합니다.
+. 기본 IPMI 암호가 있는 다른 NetApp HCI H410C 및 H410S 노드에 대해 이 절차를 반복합니다.
+
+
+
+
+== H610C, H615C 및 H610S 노드의 기본 IPMI 암호를 변경합니다
+
+IPMI 네트워크 포트를 구성하는 즉시 각 컴퓨팅 및 스토리지 노드에서 IPMI 관리자 계정의 기본 암호를 변경해야 합니다.
+
+각 컴퓨팅 및 스토리지 노드에 대한 IPMI IP 주소를 구성했습니다.
+
+.단계
+. IPMI 네트워크에 연결할 수 있는 컴퓨터에서 웹 브라우저를 열고 해당 노드의 IPMI IP 주소를 찾습니다.
+. 로그인 프롬프트에 root라는 사용자 이름과 암호 calvin을 입력합니다.
+. 로그인하면 페이지 왼쪽 상단의 메뉴 탐색 아이콘을 클릭하여 측면 표시줄 서랍을 엽니다.
+. 설정 * 을 클릭합니다.
+. 사용자 관리 * 를 클릭합니다.
+. 목록에서 * Administrator * 사용자를 선택합니다.
+. 암호 변경 * 확인란을 활성화합니다.
+. 암호 * 및 * 암호 확인 * 필드에 강력한 새 암호를 입력합니다.
+. 페이지 하단의 * 저장 * 을 클릭합니다.
+. 기본 IPMI 암호가 있는 다른 NetApp HCI H610C, H615C 또는 H610S 노드에 대해 이 절차를 반복합니다.
+
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://help.monitoring.solidire.com["NetApp SolidFire Active IQ 문서"^]
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
+

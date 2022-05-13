@@ -1,0 +1,72 @@
+---
+sidebar: sidebar 
+permalink: docs/concept_cg_hci_security.html 
+summary: NetApp HCI를 사용하면 업계 표준 보안 프로토콜을 통해 데이터가 보호됩니다. 
+keywords: netapp, hci, security 
+---
+= NetApp HCI 보안
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp HCI를 사용하면 업계 표준 보안 프로토콜을 통해 데이터가 보호됩니다.
+
+
+
+== 스토리지 노드의 유휴 데이터 암호화
+
+NetApp HCI를 사용하면 스토리지 클러스터에 저장된 모든 데이터를 암호화할 수 있습니다.
+
+스토리지 노드의 모든 드라이브에서 암호화 가능한 AES 256비트 암호화를 드라이브 레벨에서 사용합니다. 각 드라이브에는 드라이브가 처음 초기화될 때 생성되는 자체 암호화 키가 있습니다. 암호화 기능을 설정하면 스토리지 클러스터 전체의 암호가 생성되고 암호 청크가 클러스터의 모든 노드로 배포됩니다. 전체 암호를 저장하는 단일 노드는 없습니다. 그런 다음 암호를 사용하여 드라이브에 대한 모든 액세스를 암호로 보호합니다. 드라이브의 잠금을 해제하려면 암호가 필요합니다. 드라이브에서 모든 데이터를 암호화하므로 항상 데이터가 안전하게 보호됩니다.
+
+저장된 데이터 암호화를 설정하면 스토리지 클러스터의 성능과 효율성이 영향을 받지 않습니다. 또한 Element API 또는 Element UI를 사용하여 스토리지 클러스터에서 암호화가 활성화된 드라이브 또는 노드를 제거하면 드라이브에서 저장된 암호화가 비활성화되고 드라이브는 안전하게 지워지고 이전에 해당 드라이브에 저장된 데이터가 보호됩니다. 드라이브를 제거한 후 'ecureEraseDrives' API 방식으로 드라이브를 안전하게 지울 수 있습니다. 스토리지 클러스터에서 드라이브 또는 노드를 강제로 제거하면 데이터가 클러스터 전체 암호와 드라이브의 개별 암호화 키에 의해 보호됩니다.
+
+저장된 암호화 활성화 및 비활성화에 대한 자세한 내용은 를 참조하십시오 http://docs.netapp.com/sfe-122/topic/com.netapp.doc.sfe-ug/GUID-EE404D52-B621-4DE5-B141-2559768FB1D0.html["클러스터에 대한 암호화 설정 및 해제"] SolidFire 및 요소 문서 센터에서
+
+
+
+== 저장된 소프트웨어 암호화
+
+저장 시 소프트웨어 암호화를 사용하면 스토리지 클러스터의 SSD에 기록된 모든 데이터를 암호화할 수 있습니다. SED(자체 암호화 드라이브)가 포함되지 않은 SolidFire 엔터프라이즈 SDS 노드에서 기본 암호화 계층을 제공합니다.
+
+
+
+== 외부 키 관리
+
+타사 KMIP 호환 키 관리 서비스(KMS)를 사용하여 스토리지 클러스터 암호화 키를 관리하도록 Element 소프트웨어를 구성할 수 있습니다. 이 기능을 활성화하면 스토리지 클러스터의 클러스터 전체 드라이브 액세스 암호 암호화 키가 사용자가 지정한 KMS에 의해 관리됩니다. 요소는 다음과 같은 주요 관리 서비스를 사용할 수 있습니다.
+
+* Gemalto SafeNet KeySecure를 참조하십시오
+* SafeNet AT KeySecure
+* HyTrust 키컨트롤
+* Vormetric Data Security Manager를 참조하십시오
+* IBM Security Key Lifecycle Manager를 참조하십시오
+
+
+외부 키 관리 구성에 대한 자세한 내용은 을 참조하십시오 http://docs.netapp.com/sfe-122/topic/com.netapp.doc.sfe-ug/GUID-057D852C-9C1C-458A-9161-328EDA349B00.html["외부 키 관리 시작"] SolidFire 및 요소 문서 센터에서
+
+
+
+== 다중 요소 인증
+
+다중 요소 인증(MFA)을 사용하면 사용자가 로그인할 때 NetApp Element 웹 UI 또는 스토리지 노드 UI를 사용하여 인증하기 위해 여러 유형의 증거를 제시하도록 할 수 있습니다. 기존 사용자 관리 시스템 및 ID 공급자와 통합되는 로그인에 대해 다중 요소 인증만 허용하도록 Element를 구성할 수 있습니다. 기존 SAML 2.0 ID 공급자와 통합되도록 Element를 구성할 수 있습니다. 이 공급자는 암호 및 텍스트 메시지, 암호 및 전자 메일 메시지 또는 기타 방법과 같은 여러 인증 체계를 적용할 수 있습니다.
+
+다중 요소 인증을 ADFS(Microsoft Active Directory Federation Services) 및 Shibboleth와 같은 일반적인 SAML 2.0 호환 ID 공급자(IdP)와 페어링할 수 있습니다.
+
+MFA를 구성하려면 를 참조하십시오 http://docs.netapp.com/sfe-122/topic/com.netapp.doc.sfe-ug/GUID-B1C8D8E2-CE95-41FD-9A3E-A0C424EC84F3.html["다중 요소 인증 활성화"] SolidFire 및 요소 문서 센터에서
+
+
+
+== FIPS 140-2 - HTTPS 및 유휴 데이터 암호화를 지원합니다
+
+NetApp SolidFire 스토리지 클러스터와 NetApp HCI 시스템은 암호화 모듈에 대한 FIPS(Federal Information Processing Standard) 140-2 요구사항을 준수하는 암호화를 지원합니다. SolidFire 또는 NetApp HCI 클러스터에서 FIPS 140-2 규정 준수를 활성화하여 HTTPS 통신과 드라이브 암호화를 모두 구현할 수 있습니다.
+
+클러스터에서 FIPS 140-2 운영 모드를 활성화하면 클러스터는 NetApp CSM(Cryptographic Security Module)을 활성화하고 HTTPS를 통해 NetApp Element UI 및 API에 연결되는 모든 통신에 FIPS 140-2 Level 1 인증 암호화를 사용합니다. FIPS 140-2 HTTPS 암호화를 사용하려면 "EnableFeature" Element API와 함께 "FIPS" 매개 변수를 사용합니다. FIPS 호환 하드웨어가 있는 스토리지 클러스터에서 "FipsDrives" 매개 변수가 있는 "EnableFeature" Element API를 사용하여 유휴 데이터에 대해 FIPS 드라이브 암호화를 설정할 수도 있습니다.
+
+FIPS 140-2 암호화를 위한 새 스토리지 클러스터를 준비하는 방법에 대한 자세한 내용은 을 참조하십시오 http://docs.netapp.com/sfe-122/topic/com.netapp.doc.sfe-ug/GUID-4645FF0D-3FCD-4440-91A9-A47F7BCC5C50.html["FIPS 드라이브를 지원하는 클러스터 생성"].
+
+미리 준비된 기존 클러스터에서 FIPS 140-2 를 사용하도록 설정하는 방법에 대한 자세한 내용은 을(를) 참조하십시오 http://docs.netapp.com/sfe-122/topic/com.netapp.doc.sfe-api/GUID-F2726BCA-D59C-47EE-B86C-DC465C96563B.html["EnableFeature 요소 API입니다"].

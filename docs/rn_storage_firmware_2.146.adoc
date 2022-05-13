@@ -1,0 +1,266 @@
+---
+sidebar: sidebar 
+permalink: docs/rn_storage_firmware_2.146.html 
+summary: NetApp HCI 노드에 다운로드하여 적용할 수 있는 펌웨어 패키지의 릴리즈 노트에 대한 링크를 제공합니다. 
+keywords: netapp, hci, storage firmware 
+---
+= 스토리지 펌웨어 번들 2.146 릴리스 정보
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: hci, release notes, vcp, element, management services, firmware
+
+
+[role="lead"]
+Element 12.0 및 관리 서비스 버전 2.14부터 NetApp 하이브리드 클라우드 제어 UI 및 REST API를 사용하여 스토리지 노드에서 펌웨어 전용 업그레이드를 수행할 수 있습니다. 이 절차에서는 Element 소프트웨어를 업그레이드하지 않으며 주요 Element 릴리스 외부에서 스토리지 펌웨어를 업그레이드할 수 있습니다.
+
+
+
+== 새로운 기능
+
+스토리지 펌웨어 번들 버전 2.146에는 보안 취약점 수정을 비롯한 다양한 버그 수정 및 새로운 기능이 포함되어 있습니다. 의 지침에 따라 스토리지 펌웨어를 업그레이드할 수 있습니다 link:task_hcc_upgrade_storage_firmware.html["스토리지 펌웨어를 업그레이드합니다"].
+
+
+
+=== 펌웨어 구성 요소가 업데이트되었습니다
+
+이 펌웨어 패키지에는 업데이트된 버전이 굵은 글꼴로 표시된 하드웨어 구성 요소에 대한 다음 펌웨어 버전이 포함되어 있습니다.
+
+
+
+==== H610S
+
+|===
+| 구성 요소 | H610S 
+
+
+| BIOS | * 3B11 * 
+
+
+| BMC | * 3.94.07 * 
+
+
+| NIC/Mellanox | 14.25.1020 
+
+
+| NVIDIMM, 스마트 Gen1 | 3.1 
+
+
+| NVIDIMM, Smart Gen2 | * 3.3 * 
+
+
+| BPM, 스마트 Gen1 | 2.16 
+
+
+| BPM, Smart Gen2 | 2.16 
+
+
+| NVIDIMM, Micron Gen1 | 26.2c 
+
+
+| NVIDIMM, Micron Gen2 | 25.3c 
+
+
+| PGEM, 마이크론 | 1.40 
+
+
+| PM963, SED | CXV8202Q 
+
+
+| PM963, N-SED | CXV8501Q 
+
+
+| PM983, SED | * EDA5602Q * 
+
+
+| PM983, N-SED | * EDA5900Q * 
+
+
+| * PM9A3, SED * | * GDC5502Q * 
+
+
+| CD5, SED | 0109 
+
+
+| CD5, N-SED | 0109 
+
+
+| CD5, FIPS | 0108 
+
+
+| * PE8010, SED * | * 11092A10 * 
+
+
+| * PE8010, N-SED * | * 110B2A10 * 
+|===
+
+
+==== H410S
+
+|===
+| 구성 요소 | H410S 
+
+
+| BIOS | * NAT3.4 * 
+
+
+| BMC | * 6.98.00 * 
+
+
+| NIC/Mellanox | 14.25.1020 
+
+
+| RMS200 | ae3b8cc 
+
+
+| RMS300 | 7d8422bc 
+
+
+| PM863, SED | GXT5404Q 
+
+
+| PM863, N-SED | GXT5103Q 
+
+
+| PM883, SED | * HXT7A04Q * 
+
+
+| Hawk-4, SED | 8ENP7101 
+
+
+| Hawk-4, N-SED | 8ENP6101)을 참조하십시오 
+|===
+
+
+==== SF38410, SF19210, SF9605 및 SF4805
+
+|===
+| 구성 요소 | SF38410, SF19210, SF9605 및 SF4805 
+
+
+| Broadcom NIC | 7.10.18 
+
+
+| RMS200 | ae3b8cc 
+
+
+| RMS300 | 7d8422bc 
+
+
+| SAS 어댑터 | 16.00.01.00 
+
+
+| PM863, SED | GXT5404Q 
+
+
+| PM863, N-SED | GXT5103Q 
+
+
+| PM883, SED | * HXT7A04Q * 
+
+
+| Hawk-4, SED | 8ENP7101 
+
+
+| Hawk-4, N-SED | 8ENP6101)을 참조하십시오 
+|===
+
+NOTE: 다음 표에는 SF38410, SFG19210, SF9605 및 SF4805용 스토리지 펌웨어 번들 릴리스에서 지원되는 구성 요소 펌웨어 버전이 나와 있습니다. 그러나 이러한 구성 요소 펌웨어는 스토리지 펌웨어 번들을 통해 업데이트할 수 없습니다.
+
+|===
+| 구성 요소 | SF38410, SF19210, SF9605 및 SF4805 
+
+
+| BIOS | 2.8.0 
+
+
+| iDRAC | 2.75.75.75 
+|===
+
+
+== 스토리지 펌웨어 구성 요소의 변경 사항
+
+|===
+| 구성 요소 | 개선/변경 
+
+
+| * H610S 3B11 *  a| 
+* IPU 2020.2 마이크로코드
+* SEL의 PPR 이벤트 로깅 향상
+* NVDIMM에서 UECC가 발생하면 NVDIMM을 해제하고 ADR을 비활성화합니다
+* SEL 로그에 NVDIMM ARM 상태를 보고합니다
+
+
+
+
+| * H610S 3.94.07 *  a| 
+* WebUI에 NVDIMM 로그 지원이 추가되었습니다
+* BMC SEL에서 BIOS PPR 이벤트 로그 구문 분석
+
+
+
+
+| * H410S NA3.4 *  a| 
+* PPR(사후 패킷 복구) 활성화
+* IPU 2020.2 마이크로코드
+
+
+
+
+| * H410S 6.98.00 *  a| 
+* LDAP 바인딩 ID 필드 길이는 128자입니다
+* TLS 1.0 및 TLS 1.1을 비활성화합니다
+
+
+|===
+
+
+== 해결된 알려진 문제입니다
+
+를 참조하십시오 https://mysupport.netapp.com/site/bugs-online/product["버그 온라인 도구"^] 해결된 문제 및 새로운 문제에 대한 자세한 내용은 를 참조하십시오.
+
+
+
+=== 버그 온라인 도구에 액세스
+
+. 로 이동합니다  https://mysupport.netapp.com/site/bugs-online/product["버그 온라인 도구"^] 드롭다운 목록에서 * Element Software * 를 선택합니다.
++
+image::bol_dashboard.png[스토리지 펌웨어 번들 릴리스 정보]
+
+. 키워드 검색 필드에 "스토리지 펌웨어 번들"을 입력하고 * 새 검색 * 을 클릭합니다.
++
+image::storage_firmware_bundle_choice.png[스토리지 펌웨어 번들 릴리스 정보]
+
+. 해결되었거나 열려 있는 버그 목록이 표시됩니다. 다음과 같이 결과를 더욱 세분화할 수 있습니다.
++
+image::bol_list_bugs_found.png[스토리지 펌웨어 번들 릴리스 정보]
+
+
+
+
+
+== 보안 취약성 해결
+
+다음은 이 릴리스에서 해결된 보안 취약점입니다.
+
+* CVE-2021-23840, CVE-2021-23841
+* CVE-2021-20265
+* CVE-2021-29650
+* CVE-2020-14386, CVE-2020-14314, CVE-2020-25641
+* CVE-2020-35508, CVE-2020-36312
+* CVE-2020-20811, CVE-2020-20812
+* CVE-2020-15436
+* CVE-2020-29372
+* CVE-2019-0151, CVE-2019-0123, CVE-2019-0117
+
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://docs.netapp.com/hci/index.jsp["NetApp HCI 문서 센터"^]
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Flash_Storage/SF_Series/How_to_update_iDRAC%2F%2FBIOS_firmware_on_SF_Series_nodes["KB: SF 시리즈 노드에서 iDRAC/BIOS 펌웨어를 업데이트하는 방법"^]
+

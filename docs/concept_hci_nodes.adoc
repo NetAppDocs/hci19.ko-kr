@@ -1,0 +1,67 @@
+---
+sidebar: sidebar 
+permalink: docs/concept_hci_nodes.html 
+summary: 노드는 블록 스토리지 또는 컴퓨팅 리소스로 액세스할 수 있도록 클러스터로 그룹화된 하드웨어입니다. 
+keywords: netapp, hci, storage nodes, volumes, compute nodes, witness nodes, management node 
+---
+= 노드
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+노드는 블록 스토리지 및 컴퓨팅 기능을 제공하기 위해 클러스터로 그룹화된 하드웨어 또는 가상 리소스입니다.
+
+NetApp HCI 및 Element 소프트웨어는 클러스터에 대한 다양한 노드 역할을 정의합니다. 노드 역할의 네 가지 유형은 * 관리 노드 *, * 스토리지 노드 *, * 컴퓨팅 노드 * 및 * NetApp HCI Witness 노드 * 입니다.
+
+
+
+== 관리 노드
+
+관리 노드(mNode로 약칭)는 스토리지 클러스터와 상호 작용하여 관리 작업을 수행하지만 스토리지 클러스터의 구성원이 아닙니다. 관리 노드는 API 호출을 통해 클러스터에 대한 정보를 정기적으로 수집하고 이 정보를 Active IQ에 보고하여 원격 모니터링을 수행합니다(활성화된 경우). 관리 노드도 클러스터 노드의 소프트웨어 업그레이드를 조정합니다.
+
+관리 노드는 하나 이상의 Element 소프트웨어 기반 스토리지 클러스터와 병렬로 실행되는 가상 머신(VM)입니다. 업그레이드 외에도 모니터링 및 원격 측정을 포함한 시스템 서비스를 제공하고, 클러스터 자산 및 설정을 관리하고, 시스템 테스트 및 유틸리티를 실행하고, 문제 해결을 위해 NetApp Support 액세스를 지원하는 데 사용됩니다. Element 11.3 릴리스 현재 관리 노드는 마이크로서비스 호스트로 작동하며, 주요 릴리스 이외의 특정 소프트웨어 서비스를 더 빠르게 업데이트할 수 있습니다. Active IQ Collector, vCenter 플러그인용 QoSSIOC, 관리 노드 서비스와 같은 이러한 마이크로서비스 또는 관리 서비스는 서비스 번들로 자주 업데이트됩니다.
+
+
+
+== 스토리지 노드
+
+NetApp HCI 스토리지 노드는 NetApp HCI 시스템에 대한 스토리지 리소스를 제공하는 하드웨어입니다. 노드의 드라이브에는 데이터 스토리지 및 데이터 관리를 위한 블록 및 메타데이터 공간이 포함되어 있습니다. 각 노드에는 NetApp Element 소프트웨어의 출하 시 이미지가 포함되어 있습니다. NetApp HCI 스토리지 노드는 NetApp Element 관리 확장 지점을 사용하여 관리할 수 있습니다.
+
+
+
+== 컴퓨팅 노드
+
+NetApp HCI 컴퓨팅 노드는 NetApp HCI 설치에서 가상화에 필요한 CPU, 메모리, 네트워킹 등의 컴퓨팅 리소스를 제공하는 하드웨어입니다. 각 서버에서 VMware ESXi를 실행하기 때문에 vSphere의 호스트 및 클러스터 메뉴 내의 플러그인 외부에서 NetApp HCI 컴퓨팅 노드 관리(호스트 추가 또는 제거)를 수행해야 합니다. 4노드 스토리지 클러스터인지 2노드 스토리지 클러스터인지에 관계없이 NetApp HCI 구축에서는 최소 컴퓨팅 노드 수가 2개입니다.
+
+
+
+== 증명선 노드
+
+NetApp HCI Witness Node는 Element 소프트웨어 기반 스토리지 클러스터와 병렬로 컴퓨팅 노드에서 실행되는 VM입니다. 감시 노드는 슬라이스 또는 블록 서비스를 호스팅하지 않습니다. Witness Node를 사용하면 스토리지 노드 장애 시 스토리지 클러스터를 사용할 수 있습니다. Witness 노드를 다른 스토리지 노드와 같은 방식으로 관리 및 업그레이드할 수 있습니다. 스토리지 클러스터는 최대 4개의 Witness 노드를 포함할 수 있습니다. 이들의 주된 목적은 유효한 앙상블 쿼럼을 형성하기에 충분한 클러스터 노드가 있는지 확인하는 것입니다.
+
+|===
+
+
+ a| 
+* 모범 사례: * Witness Node VM을 구성하여 컴퓨팅 노드의 로컬 데이터 저장소(NDE에 의해 기본 설정)를 사용하고, SolidFire 스토리지 볼륨과 같은 공유 스토리지에서는 이를 구성하지 마십시오. VM이 자동으로 마이그레이션되지 않도록 하려면 Witness Node VM의 DRS(Distributed Resource Scheduler) 자동화 수준을 * Disabled * 로 설정합니다. 이렇게 하면 Witness Node가 동일한 컴퓨팅 노드에서 실행되고 HA(Non-High Availability) 쌍 구성이 발생하지 않습니다.
+
+|===
+
+TIP: 에 대해 자세히 알아보십시오 link:hci_prereqs_witness_nodes.html["증인 노드 리소스 요구 사항"^] 및 link:hci_prereqs_ip_address.html["감시 노드 IP 주소 요구 사항"^].
+
+
+NOTE: 2노드 스토리지 클러스터에서는 Witness 노드 장애가 발생할 경우 이중화를 위해 최소 2개의 Witness 노드가 구축됩니다. NetApp HCI 설치 프로세스에서 Witness 노드를 설치하면 VMware vCenter에 VM 템플릿이 저장되며, Witness 노드가 실수로 제거, 손실 또는 손상된 경우 이를 다시 배포하는 데 사용할 수 있습니다. Witness Node를 호스팅하던 장애가 발생한 컴퓨팅 노드를 교체해야 하는 경우 이 템플릿을 사용하여 Witness Node를 재구축할 수도 있습니다. 자세한 내용은 2노드 및 3노드 스토리지 클러스터를 위한 * 재구축 Witness 노드 * 섹션을 참조하십시오 link:task_hci_h410crepl.html["여기"^].
+
+
+
+== 자세한 내용을 확인하십시오
+
+* https://www.netapp.com/us/media/tr-4823.pdf["NetApp HCI 2노드 스토리지 클러스터 | TR-4823"]
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+* http://docs.netapp.com/sfe-122/index.jsp["SolidFire 및 Element 소프트웨어 설명서 센터"^]
+

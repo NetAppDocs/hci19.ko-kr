@@ -1,0 +1,58 @@
+---
+sidebar: sidebar 
+permalink: docs/concept_hci_storage_maintenance_mode.html 
+summary: 소프트웨어 업그레이드 또는 호스트 복구 같이 유지보수를 위해 스토리지 노드를 오프라인 상태로 전환해야 하는 경우, 해당 노드에 대한 유지보수 모드를 지원하여 스토리지 클러스터의 나머지 부분에 대한 I/O 영향을 최소화할 수 있습니다. 유지보수 모드는 어플라이언스 노드와 SolidFire 엔터프라이즈 SDS 노드 모두에서 사용할 수 있습니다. 
+keywords: netapp, hci, storage nodes, maintenance, mode 
+---
+= 유지보수 모드
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+소프트웨어 업그레이드 또는 호스트 복구 같이 유지보수를 위해 스토리지 노드를 오프라인 상태로 전환해야 하는 경우, 해당 노드에 대한 유지보수 모드를 지원하여 스토리지 클러스터의 나머지 부분에 대한 I/O 영향을 최소화할 수 있습니다. 유지보수 모드는 어플라이언스 노드와 SolidFire 엔터프라이즈 SDS 노드 모두에서 사용할 수 있습니다.
+
+
+NOTE: 스토리지 노드의 전원이 꺼지면 HCC의 스토리지 페이지에 있는 노드 상태 열에 * 사용 불가 * 로 표시됩니다. 이 열에는 클러스터의 관점에서 노드의 상태가 표시됩니다. 노드의 전원 꺼짐 상태는 노드의 호스트 이름 옆에 * 오프라인 * 아이콘으로 표시됩니다.
+
+노드가 정상 상태(차단 클러스터 장애가 없음)이고 스토리지 클러스터가 단일 노드 장애를 허용하지 않는 경우에만 스토리지 노드를 유지보수 모드로 전환할 수 있습니다. 정상 및 허용 노드에 대해 유지보수 모드를 활성화하면 노드가 즉시 전환되지 않고 다음 조건이 충족될 때까지 노드가 모니터링됩니다.
+
+* 노드에서 호스팅되는 모든 볼륨이 페일오버되었습니다
+* 노드가 더 이상 모든 볼륨의 운영 노드로 호스팅되지 않습니다
+* 페일오버되는 모든 볼륨에 임시 대기 노드가 할당됩니다
+
+
+이러한 기준이 충족되면 노드는 유지보수 모드로 전환됩니다. 5분 이내에 이러한 조건이 충족되지 않으면 노드가 유지보수 모드로 전환되지 않습니다.
+
+스토리지 노드에 대해 유지보수 모드를 해제하면 다음 조건이 충족될 때까지 노드가 모니터링됩니다.
+
+* 모든 데이터가 노드에 완전히 복제됩니다
+* 모든 차단 클러스터 장애가 해결되었습니다
+* 노드에서 호스팅되는 볼륨에 대한 모든 임시 대기 노드 할당이 활성화되지 않았습니다
+
+
+이러한 기준이 충족되면 노드는 유지보수 모드에서 전환됩니다. 1시간 이내에 이러한 조건이 충족되지 않으면 노드가 유지보수 모드에서 전환되지 않습니다.
+
+Element API를 사용하여 유지보수 모드로 작업할 때 유지보수 모드 작업의 상태를 확인할 수 있습니다.
+
+* * 비활성화됨 *: 요청된 유지보수가 없습니다.
+* *FailedToRecover*: 노드가 유지 관리에서 복구되지 못했습니다.
+* * RecoveringFromMaintenance *: 노드가 유지 관리에서 복구 중입니다.
+* * PreparingForMaintenance *: 노드가 유지 관리를 수행할 수 있도록 조치를 취하는 중입니다.
+* *ReadyForMaintenance*: 노드를 유지 관리할 준비가 되었습니다.
+
+
+
+
+== 자세한 내용을 확인하십시오
+
+* https://docs.netapp.com/us-en/element-software/api/reference_element_api_enablemaintenancemode.html["Element API를 사용하여 유지보수 모드를 활성화합니다"^]
+* https://docs.netapp.com/us-en/element-software/api/reference_element_api_disablemaintenancemode.html["Element API를 사용하여 유지보수 모드를 비활성화합니다"^]
+* https://docs.netapp.com/us-en/element-software/api/concept_element_api_about_the_api.html["NetApp Element API 설명서"^]
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지를 참조하십시오"^]
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+

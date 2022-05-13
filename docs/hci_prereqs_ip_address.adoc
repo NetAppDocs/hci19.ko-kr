@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: docs/hci_prereqs_ip_address.html 
+summary: NetApp HCI IP 주소 요구 사항에 대해 알아보십시오. 
+keywords: netapp, hci, IP address, requirements 
+---
+= IP 주소 요구 사항
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: netapp, hci, IP address, requirements
+
+
+[role="lead"]
+NetApp HCI에는 구축 규모에 따라 달라지는 특정 IP 주소 요구 사항이 있습니다. 기본적으로 NetApp 구축 엔진을 사용하여 시스템을 구축하기 전에 각 노드에 할당한 초기 IP 주소는 일시적이며 다시 사용할 수 없습니다. 최종 배포 중에 할당할 수 있는 사용되지 않은 두 번째 영구 IP 주소 세트를 따로 두어야 합니다.
+
+
+
+== NetApp HCI 배포당 필요한 IP 주소 수입니다
+
+NetApp HCI 스토리지 네트워크 및 관리 네트워크는 각각 개별적인 인접한 IP 주소 범위를 사용해야 합니다. 다음 표를 참조하여 구축에 필요한 IP 주소 수를 확인하십시오.
+
+|===
+| 시스템 구성 요소 | 관리 네트워크 IP 주소가 필요합니다 | 스토리지 네트워크 IP 주소가 필요합니다 | VMotion 네트워크 IP 주소가 필요합니다 | 구성 요소당 필요한 총 IP 주소입니다 
+
+
+| 컴퓨팅 노드 | 1 | 2 | 1 | 4 
+
+
+| 스토리지 노드 | 1 | 1 |  | 2 
+
+
+| 스토리지 클러스터 | 1 | 1 |  | 2 
+
+
+| VMware vCenter를 참조하십시오 | 1 |  |  | 1 
+
+
+| 관리 노드 | 1 | 1 |  | 2 
+
+
+| 증인 노드 | 1 | 1 |  | Witness Node당 2개(2노드 또는 3노드 스토리지 클러스터당 2개의 Witness Node 구축) 
+|===
+
+
+== NetApp HCI에서 예약한 IP 주소입니다
+
+NetApp HCI는 시스템 구성 요소에 대해 다음과 같은 IP 주소 범위를 예약합니다. 네트워크를 계획할 때 다음 IP 주소를 사용하지 마십시오.
+
+|===
+| IP 주소 범위입니다 | 설명 
+
+
+| 10.0.0.0/24 | Docker 오버레이 네트워크 
+
+
+| 10.0.1.0/24 | Docker 오버레이 네트워크 
+
+
+| 10.255.0.0/16 | Docker Swarm 수신 네트워크 
+
+
+| 169.254.100.1/22 | Docker 브리지 네트워크 
+
+
+| 169.254.104.0/22 | Docker 브리지 네트워크 
+|===
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지를 참조하십시오"^]
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+

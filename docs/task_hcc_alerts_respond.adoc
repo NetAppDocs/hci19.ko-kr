@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: docs/hcc_dashboard.html 
+summary: 하이브리드 클라우드 제어 대시보드에서 알림에 응답할 수 있습니다. 
+keywords: netapp, hci, hcc, on premise, alerts, warnings 
+---
+= 하이브리드 클라우드 제어 대시보드의 알림에 응답
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+하이브리드 클라우드 제어 대시보드에서 경고를 확인하고 신속하게 대응할 수 있습니다.
+
+
+
+== 단계
+
+. 로 이동합니다 https://fabric.netapp.io["NetApp Fabric 오케스트레이터"^] 로그인 페이지.
+. Cloud Central 로그인 자격 증명을 입력하고 * 로그인 * 을 클릭합니다.
++
+
+TIP: 나열된 시스템이 없으면 NetApp HCI 관리자가 NetApp Cloud Central 계정에 추가되었는지 확인합니다.
+
+. Cloud Central 계정이 없는 경우 Cloud Central 로그인 페이지에서 * 가입 * 을 클릭합니다.
++
+Cloud Central을 사용하면 계정을 개별 계정 또는 연결된 계정으로 설정할 수 있습니다.
+
++
+.. 이름, 전자 메일 및 암호를 사용하여 새 계정을 만들면 로그인됩니다. 가장 간단한 계정 유형입니다.
+.. Cloud Central 페더레이션 조직의 일부인 경우 전자 메일을 입력하면 조직 로그인으로 라우팅됩니다.
+
+
+. 다른 Cloud Central 제품에서 * Products * > * NetApp Fabric Orchestrator * 를 선택합니다.
+
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://cloud.netapp.com/home["NetApp Cloud Central에서"^]
+* https://docs.netapp.com/us-en/cloud/["NetApp 클라우드 문서"^]
+

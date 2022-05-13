@@ -1,0 +1,178 @@
+---
+sidebar: sidebar 
+permalink: docs/rn_compute_firmware_2.146.html 
+summary: NetApp HCI 노드에 다운로드하여 적용할 수 있는 펌웨어 패키지의 릴리즈 노트에 대한 링크를 제공합니다. 
+keywords: netapp, hci, compute firmware 
+---
+= 컴퓨팅 펌웨어 번들 2.146 릴리스 정보
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: hci, release notes, vcp, element, management services, firmware
+
+
+[role="lead"]
+다운로드 가능한 컴퓨팅 노드 펌웨어 패키지에는 지원되는 모든 NetApp HCI 컴퓨팅 노드에 대한 최신 BIOS 및 BMC 기능 향상, 버그 수정 및 하드웨어 지원이 포함되어 있습니다.
+
+
+
+== 새로운 기능
+
+버전 2.146에는 일반적인 버그 수정이 포함되어 있습니다.
+
+
+
+=== 펌웨어 구성 요소가 업데이트되었습니다
+
+이 펌웨어 패키지에는 업데이트된 버전이 굵은 글꼴로 표시된 하드웨어 구성 요소에 대한 다음 펌웨어 버전이 포함되어 있습니다.
+
+|===
+| 구성 요소 | H300E, H500E, H700E | H410C | H610C | H615C 
+
+
+| BIOS | * NAT3.4 * | * NATP3.10 * | * 3B07 * | * 3B12.CO * 
+
+
+| BMC | * 6.98.00 * | 6.71.20 | * 4.04.07 * | * 4.72.07 * 
+
+
+| NIC/Mellanox | 14.25.10.20 | 14.25.10.20 | 14.25.10.20 | 14.25.10.20 
+|===
+
+
+=== 펌웨어 구성 요소의 변경
+
+다음은 각 새 펌웨어 구성 요소에 포함된 개선 사항 및 변경 사항에 대한 세부 정보입니다.
+
+|===
+| 노드 및 펌웨어 구성 요소입니다 | 개선 및 변경 
+
+
+| * H300E/H500E/H700E NA3.4 *  a| 
+* PPR(사후 패킷 복구) 활성화
+* IPU 2020.2 마이크로코드
+
+
+
+
+| * H410C NATP3.10 *  a| 
+* IPU 2020.2 마이크로코드
+
+
+
+
+| * H610C 3B07 *  a| 
+* SEL에서 PPR 이벤트 로깅 향상
+* IPU 2020.2 마이크로코드
+
+
+
+
+| * H615C 3B12.CO *  a| 
+* SEL에서 PPR 이벤트 로깅 향상
+* IPU 2020.2 마이크로코드
+
+
+
+
+| * H300E/H500E/H700E 6.98.00 *  a| 
+* LDAP 바인딩 ID 필드 길이는 128자입니다
+* TLS 1.0 및 TLS 1.1을 비활성화합니다
+
+
+
+
+| * H610C 4.04.07 *  a| 
+* BMC SEL에서 BIOS PPR 이벤트 로그 구문 분석
+* LDAP 바인딩 ID 필드 길이는 128자입니다
+* LDAP 길이의 그룹 도메인 - 128자
+
+
+
+
+| * H615C 4.72.07 *  a| 
+* BMC SEL에서 BIOS PPR 이벤트 로그 구문 분석
+* LDAP 길이의 그룹 도메인 - 128자
+
+
+|===
+
+
+=== Mellanox NIC 펌웨어 드라이버 호환성
+
+업데이트된 Mellanox 펌웨어 버전 14.25.1020 및 14.24.1000은 다음 버전의 VMware ESXi 드라이버와만 호환됩니다.
+
+* * ESXi 7.0 *: H300E/H500E/H700E/H410C: 버전 4.19.16.1
+* * ESXi 7.0 *: H610C/H615C: 버전 4.17.15.16
+* * ESXi 6.7 *: 버전 4.17.15.16
+* * ESXi 6.5 *: 버전 4.16.13.5
+
+
+
+NOTE: 버전 2.146으로 업그레이드하기 전에 현재 ESXi 드라이버 버전을 확인하십시오. 드라이버가 최신 버전이 아니면 먼저 드라이버를 업그레이드하십시오. 그런 다음 컴퓨팅 노드에 대해 컴퓨팅 펌웨어를 버전 2.146으로 업그레이드합니다. 를 방문하십시오 link:task_hcc_upgrade_compute_node_drivers.html["컴퓨팅 노드 드라이버를 업데이트합니다"^] ESXi 드라이버를 포함하는 컴퓨팅 노드 드라이버를 업데이트하는 방법은 를 참조하십시오.
+
+NetApp Deployment Engine 1.8P1은 ESXi 버전 7.0을 배포하지 않지만 ESXi 7.0은 자체 설치 또는 수동 업그레이드 옵션으로 지원됩니다. 호스트 OS를 수동으로 설치 또는 업그레이드할 때 NetApp은 이러한 OS에 대한 드라이버 및 펌웨어를 제어할 수 없습니다.
+
+
+
+== Compute Firmware Bundle 2.146을 다운로드합니다
+
+컴퓨팅 펌웨어 번들을 다운로드하려면 다음을 수행하십시오.
+
+. 로 이동합니다 https://mysupport.netapp.com/site/products/all/details/netapp-hci/downloads-tab["NetApp HCI 다운로드 페이지"^].
+. 드롭다운 목록에서 * Compute_Firmware_Bundle * 을 선택합니다.
+. Go * 를 클릭합니다.
+
+
+를 방문하십시오 link:task_hcc_upgrade_compute_node_firmware.html#use-the-baseboard-management-controller-bmc-user-interface-ui["컴퓨팅 노드 펌웨어를 업데이트합니다"^] 컴퓨팅 노드 펌웨어 업데이트에 대한 지침은 를 참조하십시오.
+
+
+
+== 보안 취약성 해결
+
+다음은 이 릴리스에서 해결된 보안 취약점입니다.
+
+* CVE-2019-20636
+* CVE-2019-11599, CVE-2020-12826, CVE-2020-12464, CVE-2020-12114
+* CVE-2019-0151, CVE-2019-0123, CVE-2019-0117
+* CVE-2016-3706, CVE-2011-5320, CVE-2015-8984, CVE-2015-8983, CVE-2015-8982, CVE-2006-7254, CVE-2005-3590
+* CVE-2020-20811, CVE-2020-20812
+* CVE-2020-25641
+* CVE-2020-14386, CVE-2020-14314, CVE-2020-25641, CVE-2020-1438, CVE-2020-14314, CVE-2020-25641
+* CVE-2020-8738, CVE-2020-8764, CVE-2020-0590, CVE-2020-8705
+* CVE-2020-0587, CVE-2020-0591, CVE-2020-0592, CVE-2020-8740
+* CVE-2020-0592, CVE-2020-0588, CVE-2020-8696
+
+
+
+
+== 해결된 알려진 문제입니다
+
+를 참조하십시오 https://mysupport.netapp.com/site/bugs-online/product["버그 온라인 도구"^] 해결된 문제 및 새로운 문제에 대한 자세한 내용은 를 참조하십시오.
+
+
+
+=== BOL 도구 액세스
+
+. 로 이동합니다  https://mysupport.netapp.com/site/bugs-online/product["BOL 도구"^] 드롭다운 목록에서 * Element Software * 를 선택합니다.
++
+image::bol_dashboard.png[스토리지 펌웨어 번들 릴리스 정보]
+
+. 키워드 검색 필드에 "Compute Firmware Bundle"을 입력하고 * New Search * 를 클릭합니다.
++
+image::compute_firmware_bundle_choice.png[스토리지 펌웨어 번들 릴리스 정보]
+
+. 해결되었거나 열려 있는 버그 목록이 표시됩니다. 다음과 같이 결과를 더욱 세분화할 수 있습니다.
++
+image::bol_list_bugs_found.png[스토리지 펌웨어 번들 릴리스 정보]
+
+
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/NetApp_HCI/Firmware_and_driver_versions_in_NetApp_HCI_and_NetApp_Element_software["NetApp HCI 및 NetApp Element 소프트웨어의 펌웨어 및 드라이버 버전"^]
+

@@ -1,0 +1,140 @@
+---
+sidebar: sidebar 
+permalink: docs/task_nde_supported_net_changes.html 
+summary: NetApp HCI 배포 후 수행해야 하는 배포 후 작업에 대해 알아봅니다. 
+keywords: netapp, hci, deployment, review, deploy 
+---
+= 지원되는 네트워킹 변경 사항
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp HCI를 배포한 후 기본 네트워킹 구성을 제한적으로 변경할 수 있습니다. 그러나 원활한 운영과 적절한 네트워크 감지를 위해서는 특정 설정이 필요합니다. 이러한 설정을 변경하면 예기치 않은 동작이 발생하여 컴퓨팅 및 스토리지 리소스가 확장되지 않을 수 있습니다.
+
+시스템을 구축한 후 네트워크 요구 사항에 따라 VMware vSphere의 기본 네트워크 구성을 다음과 같이 변경할 수 있습니다.
+
+* vSwitch 이름을 변경합니다
+* 포트 그룹 이름을 변경합니다
+* 추가 포트 그룹을 추가 및 제거합니다
+* 추가한 추가 포트 그룹에 대한 vmnic 인터페이스 페일오버 순서를 변경합니다
+
+
+
+
+== H300E, H500E, H700E 및 H410C 컴퓨팅 노드
+
+NetApp HCI는 H300E, H500E, H700E 및 H410C 노드에 대해 다음과 같은 네트워크 구성을 기대합니다.
+
+다음은 VMware VDS(vSphere Distributed Switching)를 사용하는 6개 인터페이스 구성입니다. 이 구성은 VMware vSphere 분산 스위치와 함께 사용할 때만 지원되며 VMware vSphere Enterprise Plus 라이센스가 필요합니다.
+
+|===
+| 네트워크 기능 | VMkernel | vmnic(물리적 인터페이스) 
+
+
+| 관리 | vmk0 | vmnic2(포트 A), vmnic3(포트 B) 
+
+
+| iSCSI-A | vmk1 | vmnic5(포트 E) 
+
+
+| iSCSI-B입니다 | vmk2 | vmnic1(포트 D) 
+
+
+| 마이그레이션 | vmk3 | vmnic4(포트 C), vmnic0(포트 F) 
+|===
+다음은 VMware vSphere 표준 스위칭(VSS)을 사용하는 6개 인터페이스 구성입니다. 이 구성에서는 VMware vSphere 표준 스위치(VSS)를 사용합니다.
+
+|===
+| 네트워크 기능 | VMkernel | vmnic(물리적 인터페이스) 
+
+
+| 관리 | vmk0 | vmnic2(포트 A), vmnic3(포트 B) 
+
+
+| iSCSI-A | vmk2 | vmnic1(포트 E) 
+
+
+| iSCSI-B입니다 | vmk3 | vmnic5(포트 D) 
+
+
+| 마이그레이션 | vmk1 | vmnic4(포트 C), vmnic0(포트 F) 
+|===
+다음은 2-인터페이스 구성입니다. 이 구성은 VMware VDS(vSphere Distributed Switch)와 함께 사용할 때만 지원되며 VMware vSphere Enterprise Plus 라이센스가 필요합니다.
+
+|===
+| 네트워크 기능 | VMkernel | vmnic(물리적 인터페이스) 
+
+
+| 관리 | vmk0 | vmnic1(포트 D), vmnic5(포트 E) 
+
+
+| iSCSI-A | vmk1 | vmnic1(포트 E) 
+
+
+| iSCSI-B입니다 | vmk2 | vmnic5(포트 D) 
+
+
+| 마이그레이션 | vmk3 | vmnic1(포트 C), vmnic5(포트 F) 
+|===
+
+
+== H610C 컴퓨팅 노드
+
+NetApp HCI는 H610C 노드에 대해 다음과 같은 네트워크 구성을 기대합니다.
+
+이 구성은 VMware VDS(vSphere Distributed Switch)와 함께 사용할 때만 지원되며 VMware vSphere Enterprise Plus 라이센스가 필요합니다.
+
+
+NOTE: H610C 에서는 포트 A 및 B가 사용되지 않습니다.
+
+|===
+| 네트워크 기능 | VMkernel | vmnic(물리적 인터페이스) 
+
+
+| 관리 | vmk0 | vmnic2(포트 C), vmnic3(포트 D) 
+
+
+| iSCSI-A | vmk1 | vmnic3(포트 D) 
+
+
+| iSCSI-B입니다 | vmk2 | vmnic2(포트 C) 
+
+
+| 마이그레이션 | vmk3 | vmnic2(포트 C), vmnic3(포트 D) 
+|===
+
+
+== H615C 컴퓨팅 노드
+
+NetApp HCI는 H615C 노드에 대해 다음과 같은 네트워크 구성을 기대합니다.
+
+이 구성은 VMware VDS(vSphere Distributed Switch)와 함께 사용할 때만 지원되며 VMware vSphere Enterprise Plus 라이센스가 필요합니다.
+
+|===
+| 네트워크 기능 | VMkernel | vmnic(물리적 인터페이스) 
+
+
+| 관리 | vmk0 | vmnic0(포트 A), vmnic1(포트 B) 
+
+
+| iSCSI-A | vmk1 | vmnic0(포트 B) 
+
+
+| iSCSI-B입니다 | vmk2 | vmnic1(포트 A) 
+
+
+| 마이그레이션 | vmk3 | vmnic0(포트 A), vmnic1(포트 B) 
+|===
+
+
+== 자세한 내용을 확인하십시오
+
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+* https://www.netapp.com/us/documentation/hci.aspx["NetApp HCI 리소스 페이지를 참조하십시오"^]
+* https://docs.netapp.com/us-en/element-software/index.html["SolidFire 및 Element 소프트웨어 설명서"^]
+

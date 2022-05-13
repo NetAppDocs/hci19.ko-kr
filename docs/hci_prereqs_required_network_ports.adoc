@@ -1,0 +1,243 @@
+---
+sidebar: sidebar 
+permalink: docs/hci_prereqs_required_network_ports.html 
+summary: NetApp HCI에서 사용하는 TCP 및 UDP 포트입니다. 
+keywords: netapp, hci, ports, tcp, udp 
+---
+= 네트워크 포트 요구 사항
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: netapp, hci, ports, tcp, udp
+
+
+[role="lead"]
+시스템을 원격으로 관리하고, 데이터 센터 외부의 클라이언트가 리소스에 연결하도록 하고, 내부 서비스가 제대로 작동할 수 있도록 데이터 센터의 에지 방화벽을 통해 다음 포트를 허용해야 할 수 있습니다. 시스템 사용 방법에 따라 이러한 포트, URL 또는 IP 주소 중 일부가 필요하지 않을 수 있습니다. 달리 명시되지 않는 한 모든 포트는 TCP입니다.
+
+[NOTE]
+====
+NetApp 하이브리드 클라우드 제어 웹 UI 및 API NetApp 온라인 소프트웨어 저장소에서 소프트웨어 패키지를 다운로드합니다. 이로 인해 일부 URL 또는 IP 주소는 콘텐츠 전송 네트워크를 기반으로 다른 URL 또는 IP 주소로 해결될 수 있습니다. 가능한 경우 네트워크 엔지니어와 협력하여 다음 일반 단계를 사용하여 이러한 URL 또는 IP 주소를 방화벽 규칙에 추가해야 합니다.
+
+.단계
+. wget 또는 curl 유틸리티를 사용하여 URL(예: support-sg-nawest.netapp.com 액세스합니다.
+. 다음 예에 표시된 것처럼 연결을 확인합니다.
++
+image::network_ports.PNG[포트 연결을 확인합니다]
+
+. URL에 액세스하지 못했습니다(support-sg-nawest.netapp.com 와는 다름).
+. 방화벽 규칙을 편집하여 새 URL을 허용합니다.
+. 액세스 시도가 성공할 때까지 위의 단계를 반복합니다.
+
+
+====
+표에 사용되는 약어는 다음과 같습니다.
+
+* MIP: 관리 IP 주소, 노드별 주소
+* SIP: 스토리지 IP 주소, 노드당 주소
+* MVIP: 관리 가상 IP 주소입니다
+* SVIP: 스토리지 가상 IP 주소입니다
+
+
+달리 명시되지 않은 한 테이블의 모든 포트는 TCP입니다.
+
+|===
+| 출처 | 목적지 | 포트 | 설명 
+
+
+| 컴퓨팅 노드 BMC/IPMI | 관리 노드 | 111 TCP/UDP | NetApp 하이브리드 클라우드 제어 API 통신 
+
+
+| 컴퓨팅 노드 BMC/IPMI | 관리 노드 | 137-138 UDP | NetApp 하이브리드 클라우드 제어 API 통신 
+
+
+| 컴퓨팅 노드 BMC/IPMI | 관리 노드 | 445 | NetApp 하이브리드 클라우드 제어 API 통신 
+
+
+| 컴퓨팅 노드 BMC/IPMI | 관리 노드 | 623 UDP | RMCP(원격 관리 제어 프로토콜) 포트. NetApp 하이브리드 Cloud Control 컴퓨팅 펌웨어 업그레이드에 필요 
+
+
+| 컴퓨팅 노드 BMC/IPMI | 관리 노드 | 2049 TCP/UDP | NetApp 하이브리드 클라우드 제어 API 통신 
+
+
+| iSCSI 클라이언트 | 스토리지 클러스터 MVIP | 443 | (선택 사항) UI 및 API 액세스 
+
+
+| iSCSI 클라이언트 | 스토리지 클러스터 SVIP | 3260 | 클라이언트 iSCSI 통신 
+
+
+| iSCSI 클라이언트 | 스토리지 노드 SIP | 3260 | 클라이언트 iSCSI 통신 
+
+
+| 관리 노드 | 'fsupport.solidfire.com'을 선택합니다 | 22 | 지원 액세스를 위한 역방향 SSH 터널 
+
+
+| 관리 노드 | 스토리지 노드 MIP | 22 | 지원을 위한 SSH 액세스 
+
+
+| 관리 노드 | DNS 서버 | 53 TCP/UDP | DNS 조회 
+
+
+| 관리 노드 | 컴퓨팅 노드 BMC/IPMI | 139 | NetApp 하이브리드 클라우드 제어 API 통신 
+
+
+| 관리 노드 | 스토리지 노드 MIP | 442 | 스토리지 노드 및 Element 소프트웨어 업그레이드에 대한 UI 및 API 액세스 
+
+
+| 관리 노드 | 스토리지 노드 MVIP | 442 | 스토리지 노드 및 Element 소프트웨어 업그레이드에 대한 UI 및 API 액세스 
+
+
+| 관리 노드 | 23.32.54.122 216.240.21.15 | 443 | Element 소프트웨어 업그레이드 
+
+
+| 관리 노드 | 베이스보드 관리 컨트롤러(BMC) | 443 | 하드웨어 모니터링 및 인벤토리 연결(Redfish 및 IPMI 명령) 
+
+
+| 관리 노드 | 컴퓨팅 노드 BMC/IPMI | 443 | NetApp 하이브리드 클라우드 제어 HTTPS 통신 
+
+
+| 관리 노드 | monitoring.solidfire.com | 443 | 스토리지 클러스터가 Active IQ에 보고됩니다 
+
+
+| 관리 노드  a| 
+새 릴리즈 알림:
+
+* "https://support.netapp.com/aods/`
+
+
+소프트웨어 다운로드:
+
+* "https://support-sg-emea.netapp.com`
+* "https://support-sg-naeast.netapp.com`
+* "https://support-sg-nawest.netapp.com`
+
+| 443 | 관리 노드 서비스 업그레이드 
+
+
+| 관리 노드 | 스토리지 클러스터 MVIP | 443 | 스토리지 노드 및 Element 소프트웨어 업그레이드에 대한 UI 및 API 액세스 
+
+
+| 관리 노드 | VMware vCenter를 참조하십시오 | 443 | NetApp 하이브리드 클라우드 제어 HTTPS 통신 
+
+
+| 관리 노드 | 컴퓨팅 노드 BMC/IPMI | 623 UDP | RMCP(원격 관리 제어 프로토콜) 포트. NetApp 하이브리드 Cloud Control 컴퓨팅 펌웨어 업그레이드에 필요 
+
+
+| 관리 노드 | VMware vCenter를 참조하십시오 | 5988-5989 | NetApp 하이브리드 클라우드 제어 HTTPS 통신 
+
+
+| 관리 노드 | 증인 노드 | 9442 | 노드별 구성 API 서비스 
+
+
+| 관리 노드 | vCenter Server를 선택합니다 | 9443 | vCenter 플러그인 등록. 등록이 완료되면 포트를 닫을 수 있습니다. 
+
+
+| SNMP 서버 | 스토리지 클러스터 MVIP | 161UDP | SNMP 폴링 
+
+
+| SNMP 서버 | 스토리지 노드 MIP | 161UDP | SNMP 폴링 
+
+
+| 스토리지 노드 MIP | DNS 서버 | 53 TCP/UDP | DNS 조회 
+
+
+| 스토리지 노드 MIP | 관리 노드 | 80 | Element 소프트웨어 업그레이드 
+
+
+| 스토리지 노드 MIP | S3/Swift 엔드포인트 | 80 | (선택 사항) 백업 및 복구를 위해 S3/Swift 엔드포인트에 대한 HTTP 통신 
+
+
+| 스토리지 노드 MIP | NTP 서버 | 123UDP | NTP 
+
+
+| 스토리지 노드 MIP | 관리 노드 | 162 UDP | (선택 사항) SNMP 트랩 
+
+
+| 스토리지 노드 MIP | SNMP 서버 | 162 UDP | (선택 사항) SNMP 트랩 
+
+
+| 스토리지 노드 MIP | LDAP 서버 | 389 TCP/UDP | (선택 사항) LDAP 조회 
+
+
+| 스토리지 노드 MIP | 관리 노드 | 443 | Element 소프트웨어 업그레이드 
+
+
+| 스토리지 노드 MIP | 원격 스토리지 클러스터 MVIP | 443 | 원격 복제 클러스터 페어링 통신 
+
+
+| 스토리지 노드 MIP | 원격 스토리지 노드 MIP | 443 | 원격 복제 클러스터 페어링 통신 
+
+
+| 스토리지 노드 MIP | S3/Swift 엔드포인트 | 443 | (선택 사항) 백업 및 복구를 위해 S3/Swift 엔드포인트에 대한 HTTPS 통신 
+
+
+| 스토리지 노드 MIP | LDAPS 서버 | 636 TCP/UDP | LDAPS 조회 
+
+
+| 스토리지 노드 MIP | 관리 노드 | 10514 TCP/UDP, 514 TCP/UDP | Syslog 전달 
+
+
+| 스토리지 노드 MIP | Syslog 서버 | 10514 TCP/UDP, 514 TCP/UDP | Syslog 전달 
+
+
+| 스토리지 노드 MIP | 원격 스토리지 노드 MIP | 2181 | 원격 복제를 위한 인터클러스터 통신 
+
+
+| 스토리지 노드 SIP | S3/Swift 엔드포인트 | 80 | (선택 사항) 백업 및 복구를 위해 S3/Swift 엔드포인트에 대한 HTTP 통신 
+
+
+| 스토리지 노드 SIP | 컴퓨팅 노드 SIP | 442 | 컴퓨팅 노드 API, 구성 및 검증, 소프트웨어 인벤토리 액세스 
+
+
+| 스토리지 노드 SIP | S3/Swift 엔드포인트 | 443 | (선택 사항) 백업 및 복구를 위해 S3/Swift 엔드포인트에 대한 HTTPS 통신 
+
+
+| 스토리지 노드 SIP | 원격 스토리지 노드 SIP | 2181 | 원격 복제를 위한 인터클러스터 통신 
+
+
+| 스토리지 노드 SIP | 스토리지 노드 SIP | 3260 | 노드 간 iSCSI 
+
+
+| 스토리지 노드 SIP | 원격 스토리지 노드 SIP | 4000 ~ 4020 | 원격 복제 노드-노드 데이터 전송 
+
+
+| 시스템 관리자 PC입니다 | 스토리지 노드 MIP | 80 | (NetApp HCI만 해당) NetApp 배포 엔진의 랜딩 페이지 
+
+
+| 시스템 관리자 PC입니다 | 관리 노드 | 442 | 관리 노드에 대한 HTTPS UI 액세스 
+
+
+| 시스템 관리자 PC입니다 | 스토리지 노드 MIP | 442 | NetApp 배포 엔진에서 스토리지 노드에 대한 HTTPS UI 및 API 액세스, (NetApp HCI만 해당) 구성 및 배포 모니터링 
+
+
+| 시스템 관리자 PC입니다 | 관리 노드 | 443 | 관리 노드에 대한 HTTPS UI 및 API 액세스 
+
+
+| 시스템 관리자 PC입니다 | 스토리지 클러스터 MVIP | 443 | 스토리지 클러스터에 대한 HTTPS UI 및 API 액세스 
+
+
+| 시스템 관리자 PC입니다 | 스토리지 노드 MIP | 443 | 스토리지 클러스터에 대한 HTTPS 스토리지 클러스터 생성, 구축 후 UI 액세스 
+
+
+| 시스템 관리자 PC입니다 | 증인 노드 | 8080 | 증인 노드/노드 웹 UI 
+
+
+| vCenter Server를 선택합니다 | 스토리지 클러스터 MVIP | 443 | vCenter 플러그인 API 액세스 
+
+
+| vCenter Server를 선택합니다 | 관리 노드 | 8443 | (선택 사항) vCenter 플러그인 QoSSIOC 서비스. 
+
+
+| vCenter Server를 선택합니다 | 스토리지 클러스터 MVIP | 8444)를 참조하십시오 | vCenter VASA 공급자 액세스(VVOL만 해당) 
+
+
+| vCenter Server를 선택합니다 | 관리 노드 | 9443 | vCenter 플러그인 등록. 등록이 완료되면 포트를 닫을 수 있습니다. 
+|===
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지를 참조하십시오"^]
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+

@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: docs/rn_firmware_12.2.109.html 
+summary: NetApp HCI 노드에 다운로드하여 적용할 수 있는 펌웨어 패키지의 릴리즈 노트에 대한 링크를 제공합니다. 
+keywords: netapp, hci, compute firmware 
+---
+= 컴퓨팅 펌웨어 번들 12.2.109 릴리스 정보
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: hci, release notes, vcp, element, management services, firmware
+
+
+[role="lead"]
+다운로드 가능한 컴퓨팅 노드 펌웨어 패키지에는 지원되는 모든 NetApp HCI 컴퓨팅 노드에 대한 최신 BIOS 및 BMC 기능 향상, 버그 수정 및 하드웨어 지원이 포함되어 있습니다.
+
+
+
+== 새로운 기능
+
+버전 12.2.109에는 DMTF Redfish API에 대한 BMC 지원이 도입되어 NetApp 하이브리드 클라우드 제어에 대한 향후 기능을 지원합니다. 펌웨어 업데이트에는 일반적인 버그 수정과 메모리 문제 해결도 포함되어 있습니다. H300E, H500E 및 H700E 컴퓨팅 노드에 대한 BMC 업데이트는 CVE-2019-16649, CVE-2019-16650 및 CVE-2019-6260을 포함한 여러 가지 보안 취약점을 해결합니다.
+
+이 펌웨어 패키지에는 업데이트된 버전이 굵은 글꼴로 표시된 하드웨어 구성 요소에 대한 다음 펌웨어 버전이 포함되어 있습니다.
+
+|===
+| 구성 요소 | H300E, H500E, H700E | H410C | H610C | H615C 
+
+
+| BIOS | NA2.1 | * NA3.7 * | * 3B01 * | 3B06.CO 
+
+
+| BMC | * 6.84.00 * | 6.71.06 | * 3.96.07 * | * 4.64.07 * 
+
+
+| NIC/Mellanox | 14.21.1000 | 14.21.1000 | 14.22.1002 | 14.23.1020 
+|===
+Compute Firmware Bundle을 다운로드하려면 로 이동합니다 https://mysupport.netapp.com/site/products/all/details/netapp-hci/downloads-tab/download/62542/Compute_Firmware_Bundle["NetApp HCI 컴퓨팅 펌웨어 번들"^] 페이지.
+
+를 방문하십시오 link:task_hcc_upgrade_compute_node_firmware.html#use-the-baseboard-management-controller-bmc-user-interface-ui["컴퓨팅 노드 펌웨어를 업데이트합니다"^] 컴퓨팅 노드 펌웨어 업데이트에 대한 지침은 를 참조하십시오.
+
+
+
+== 해결된 문제
+
+다음은 이 릴리즈에서 해결된 문제입니다.
+
+|===
+| 문제 | 설명 
+
+
+| PE-10306 | Element 11.8 스토리지 노드에서 BMC 소프트웨어를 업그레이드하면 BMC 사용자 자격 증명이 손실됩니다. 
+
+
+| CSESF-26 | 일부 상황에서는 H610C 노드가 간헐적인 팬 소음을 나타낼 수 있습니다. 
+
+
+| CSESF-293 | H410C, H610C, H300E, H500E 또는 H700E 노드에서 버전 12.2.92 컴퓨팅 노드 펌웨어로 업그레이드할 경우 Mellanox 네트워크 인터페이스 카드(NIC) 펌웨어의 버전 14.21.1000이 설치되어 있으며, 이전에 최신 버전이었던 경우에도 마찬가지입니다. 
+
+
+| CSESF-352 | TLS 버전 1.0 및 1.1은 보안 취약점을 악용합니다. 이 릴리즈에서는 H610C 및 H615C 컴퓨팅 노드에 대해 TLS 1.0 및 1.1을 사용하지 않습니다. 
+|===
+
+
+== 알려진 문제
+
+다음은 일부 환경에서 일상적인 작업에 영향을 줄 수 있는 알려진 문제입니다.
+
+|===
+| 문제 | 설명 | 해결 방법 
+
+
+| CSESF-295 | 다운로드 가능한 펌웨어 패키지를 사용하여 H410C 노드에서 펌웨어를 업데이트할 때 BIOS 업데이트 오류로 인해 컴퓨팅 노드 펌웨어 업데이트 프로세스가 실패합니다. | H410C 노드:1의 버전 NA3.7로 BIOS를 수동으로 업데이트합니다. 로 이동합니다 https://mysupport.netapp.com/site/products/all/details/netapp-hci/downloads-tab["NetApp HCI 다운로드 페이지"^]. 드롭다운 목록 텍스트 필드에 H410C_BIOS_3.7 을 입력합니다. 이동 * 을 클릭합니다. 업데이트 지침은 다운로드 페이지에서 PDF 형식으로 제공됩니다. BIOS 및 BMC를 업데이트한 후 컴퓨팅 펌웨어 12.2.109 패키지를 사용하여 H410C 노드 펌웨어를 업데이트하십시오. 
+|===

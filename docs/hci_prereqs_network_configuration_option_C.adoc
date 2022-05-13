@@ -1,0 +1,100 @@
+---
+sidebar: sidebar 
+permalink: docs/hci_prereqs_network_configuration_option_C.html 
+summary: NetApp HCI 네트워크 구성 옵션 C에 대해 알아보십시오 
+keywords: netapp, hci, cabling, network configuration 
+---
+= 네트워크 구성
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: netapp, hci, cabling, network configuration
+
+
+[role="lead"]
+NetApp HCI는 다양한 네트워크 케이블 연결 및 VLAN 구성을 활용할 수 있습니다. 세 번째 구성인 옵션 C에서는 기본 VLAN이 있는 각 컴퓨팅 노드에 대해 6개의 네트워크 케이블을 사용합니다.
+
+
+
+== 구성 옵션 C: 기본 VLAN이 있는 컴퓨팅 노드용 케이블 6개
+
+스토리지 및 가상화 트래픽에 태그가 지정된 VLAN을 사용하지 않고 NetApp HCI를 구축할 수 있으며, 대신 스위치 구성을 사용하여 네트워크 세그먼트를 분리할 수 있습니다. 이 구성을 vSphere 표준 스위치 또는 vSphere 분산 스위치(VMware vSphere Enterprise Plus 라이센스가 필요함)와 함께 사용할 수 있습니다.
+
+NetApp HCI 설명서에서는 H 시리즈 노드의 후면 패널에 있는 네트워크 포트를 지칭하기 위해 문자를 사용합니다.
+
+H410C 스토리지 노드의 네트워크 포트 및 위치는 다음과 같습니다.
+
+[#H35700E_H410C]
+image::HCI_ISI_compute_6cable.png[NetApp H410C 스토리지 노드 네트워크 포트]
+
+H410S 스토리지 노드의 네트워크 포트 및 위치는 다음과 같습니다.
+
+[#H410S]
+image::HCI_ISI_storage_cabling.png[NetApp H410S 스토리지 노드 네트워크 포트]
+
+H610S 스토리지 노드의 네트워크 포트 및 위치는 다음과 같습니다.
+
+[#H610S]
+image::H610S_back_panel_ports.png[NetApp H610S 스토리지 노드 네트워크 포트]
+
+
+
+=== H410C, H410S 및 H610S 노드의 VLAN 구성
+
+이 토폴로지 옵션은 H410C, H410S 및 H610S 노드에서 다음 VLAN 구성을 사용합니다.
+
+|===
+| 사용되는 노드 포트입니다 | 네트워크 이름입니다 | VLAN ID입니다 | 스위치 포트 구성이 연결되었습니다 
+
+
+| 컴퓨팅 및 스토리지 노드의 포트 A와 B | 관리 | 100 | 네이티브 
+
+
+| 컴퓨팅 노드의 포트 D와 E | 스토리지 | 105 | 네이티브 
+
+
+| 스토리지 노드의 포트 C와 D | 스토리지 | 105 | 네이티브 
+
+
+| 컴퓨팅 노드의 포트 C와 F입니다 | 마이그레이션 | 107 | 네이티브 
+
+
+| 컴퓨팅 노드의 포트 C와 F입니다 | 가상 머신 | 200, 201 | 태그 지정됨 
+|===
+
+CAUTION: 이 구성을 배포할 때 스위치 포트를 주의해서 구성해야 합니다. 이 네트워크 토폴로지의 구성 오류로 인해 배포 문제가 발생하여 진단하기 어려울 수 있습니다.
+
+다음 그림에서는 이 토폴로지 옵션에 대한 네트워크 구성 개요를 보여 줍니다. 이 예에서 개별 스위치 포트는 기본 네트워크로 적절한 네트워크 세그먼트로 구성됩니다.
+
+image::hci_networking_config_scenario_2.png[HCI 네트워킹 구성 옵션 C 이미지]
+
+
+
+=== 스위치 명령의 예
+
+다음 스위치 명령 예를 사용하여 NetApp HCI 노드에 사용되는 스위치 포트를 구성할 수 있습니다. 이러한 명령은 Cisco 구성을 기반으로 하지만 Mellanox 스위치에 적용하려면 최소한의 변경만 필요합니다. 이 구성을 구현하는 데 필요한 특정 명령은 스위치 설명서를 참조하십시오.
+
+다음 예제 명령을 사용하여 관리 네트워크에 사용되는 스위치 포트를 구성할 수 있습니다. 인터페이스 이름, 설명 및 VLAN을 구성 값으로 바꿉니다.
+
+''EthernetX/Y 또는 GigabitEthernetX/Y/Z' 등의 인터페이스 {interface name''description{NetApp-HCI-NodeX-Porta|B}''s witchport access vlan 100''s 패닝 트리 포트 유형 edge 등 원하는 설명
+
+다음 예제 명령을 사용하여 스토리지 네트워크에 사용되는 스위치 포트를 구성할 수 있습니다. 인터페이스 이름, 설명 및 VLAN을 구성 값으로 바꿉니다.
+
+인터페이스{EthernetX/Y 또는 GigabitEthernetX/Y/Z}""설명{원하는 설명(예: NetApp-HCI-NodeX-PortC|D}""mtu 9216"'switchport access vlan 105's 패닝 트리 포트 유형 에지")
+
+다음 예제 명령을 사용하여 vMotion 및 가상 머신 네트워크에 사용되는 스위치 포트를 구성할 수 있습니다. 인터페이스 이름, 설명 및 VLAN을 구성 값으로 바꿉니다.
+
+'EthernetX/Y 또는 GigabitEthernetX/Y/Z' 등의 인터페이스 {interface name}'description{NetApp-HCI-NodeX-PortC|F}'mtu 9216''s witchport mode trunk 'switchport trunk native VLAN 107''s witchport trunk alled VLAN 200,201's 패닝 트리 에지 트렁크 유형 등
+
+
+NOTE: 일부 스위치는 허용되는 VLAN 목록에 네이티브 VLAN을 포함해야 할 수 있습니다. 특정 스위치 모델 및 소프트웨어 버전에 대한 설명서를 참조하십시오.
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지를 참조하십시오"^]
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+

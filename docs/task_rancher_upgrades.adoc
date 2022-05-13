@@ -1,0 +1,335 @@
+---
+sidebar: sidebar 
+permalink: docs/task_rancher_upgrades.html 
+summary: NetApp 하이브리드 클라우드 제어를 사용하여 이전에 HCC를 사용하여 설치한 NetApp HCI에 Rancher 구축의 구성요소를 업그레이드할 수 있습니다. 
+keywords: netapp, hci, rancher, upgrade, hcc 
+---
+= NetApp HCI에서 Rancher를 업그레이드합니다
+:allow-uri-read: 
+
+
+[role="lead"]
+Rancher 소프트웨어를 업그레이드하려면 NetApp HCC(하이브리드 클라우드 제어) UI 또는 REST API를 사용할 수 있습니다. HCC는 Rancher 서버, RKE(Rancher Kubernetes Engine) 및 관리 클러스터의 노드 OS(보안 업데이트용)를 비롯한 Rancher 구축 구성 요소를 업그레이드하는 간편한 버튼 프로세스를 제공합니다. 또는 API를 사용하여 업그레이드를 자동화할 수도 있습니다.
+
+업그레이드는 누적 패키지 대신 구성 요소에서 사용할 수 있습니다. 따라서 Ubuntu OS와 같은 일부 구성 요소 업그레이드를 보다 빠른 속도로 이용할 수 있습니다. 업그레이드는 Rancher Server가 구축된 관리 클러스터와 Rancher 서버 인스턴스에만 영향을 미칩니다. 관리 클러스터 노드의 Ubuntu OS로의 업그레이드는 중요한 보안 패치에만 사용되며 운영 체제를 업그레이드하지 않습니다. NetApp 하이브리드 클라우드 제어에서 사용자 클러스터를 업그레이드할 수 없습니다.
+
+.무엇을 &#8217;필요로 할거야
+* * 관리자 권한 *: 업그레이드를 수행할 수 있는 스토리지 클러스터 관리자 권한이 있습니다.
+* * 관리 서비스 *: 관리 서비스 번들을 최신 버전으로 업데이트했습니다.
+
+
+
+IMPORTANT: Rancher 기능을 사용하려면 최신 관리 서비스 번들 2.17 이상으로 업그레이드해야 합니다.
+
+* * 시스템 포트 *: 업그레이드에 NetApp 하이브리드 클라우드 제어를 사용하는 경우 필요한 포트가 열려 있는지 확인했습니다. 을 참조하십시오 link:rancher_prereqs_overview.html#required-ports["네트워크 포트"] 를 참조하십시오.
+* * 최종 사용자 라이센스 계약(EULA) *: 관리 서비스 2.20부터 NetApp 하이브리드 클라우드 제어 UI 또는 API를 사용하여 Rancher 구축 환경을 업그레이드하기 전에 EULA에 동의하고 저장해야 합니다.
++
+.. 웹 브라우저에서 관리 노드의 IP 주소를 엽니다.
++
+[listing]
+----
+https://<ManagementNodeIP>
+----
+.. NetApp 하이브리드 클라우드 제어에 스토리지 클러스터 관리자 자격 증명을 제공하여 로그인하십시오.
+.. 인터페이스의 오른쪽 상단 근처에 있는 * Upgrade * 를 선택합니다.
+.. EULA가 나타납니다. 아래로 스크롤하여 * 현재 업데이트 및 향후 모든 업데이트에 동의함 * 을 선택하고 * 저장 * 을 선택합니다.
++
+
+NOTE: EULA에 동의하면 향후 모든 업데이트에 대해 기록되고 자동 다운로드 기능이 활성화됩니다. NetApp 소프트웨어 업데이트 및 업그레이드 관련 업데이트는 고유 권한으로 설치할 수 있습니다. NetApp 온라인 소프트웨어 저장소에 대한 네트워크 연결을 비활성화하여 자동 다운로드 기능을 비활성화할 수 있습니다.
+
+
+
+
+
+다음 업그레이드 프로세스 중 하나를 선택합니다.
+
+* <<Use NetApp Hybrid Cloud Control UI to upgrade a Rancher deployment>>
+* <<Use NetApp Hybrid Cloud Control API to upgrade a Rancher deployment>>
+
+
+
+
+== NetApp 하이브리드 클라우드 제어 UI를 사용하여 목장 구축 업그레이드
+
+NetApp 하이브리드 클라우드 제어 UI를 사용하여 Rancher 구현에서 다음 구성 요소를 업그레이드할 수 있습니다.
+
+* Rancher 서버
+* RKE(Rancher Kubernetes Engine)
+* 노드 OS 보안 업데이트
+
+
+.무엇을 &#8217;필요로 할거야
+* 인터넷 연결이 양호합니다. 다크 사이트 업그레이드(외부 연결이 없는 사이트의 업그레이드)는 사용할 수 없습니다.
+
+
+.단계
+. 웹 브라우저에서 관리 노드의 IP 주소를 엽니다.
++
+[listing]
+----
+https://<ManagementNodeIP>
+----
+. NetApp 하이브리드 클라우드 제어에 스토리지 클러스터 관리자 자격 증명을 제공하여 로그인하십시오.
+. 인터페이스의 오른쪽 상단 근처에 있는 * Upgrade * 를 선택합니다.
+. 업그레이드 * 페이지에서 * Rancher * 를 선택합니다.
+. 업그레이드하려는 소프트웨어의 * 작업 * 메뉴를 선택합니다.
++
+** Rancher 서버
+** RKE(Rancher Kubernetes Engine)
+** 노드 OS 보안 업데이트
+
+
+. Rancher 서버 또는 RKE 업그레이드용 * 업그레이드 * 또는 노드 OS 보안 업데이트용 * 업그레이드 * 를 선택합니다.
++
+
+NOTE: 노드 OS의 경우 보안 패치에 대한 무인 업그레이드가 매일 실행되지만 노드가 자동으로 재부팅되지는 않습니다. 업그레이드를 적용하면 보안 업데이트를 적용하기 위해 각 노드를 다시 부팅하게 됩니다.
+
+
+
+구성 요소 업그레이드가 성공했음을 나타내는 배너가 나타납니다. NetApp 하이브리드 클라우드 제어 UI에 업데이트된 버전 번호가 표시되기까지 최대 2분이 걸릴 수 있습니다.
+
+
+
+== NetApp 하이브리드 클라우드 제어 API를 사용하여 목장 구축 업그레이드
+
+API를 사용하여 Rancher 구축 시 다음 구성 요소를 업그레이드할 수 있습니다.
+
+* Rancher 서버
+* RKE(Rancher Kubernetes Engine)
+* 노드 OS(보안 업데이트용)
+
+
+선택한 자동화 툴을 사용하여 관리 노드에서 사용할 수 있는 API 또는 REST API UI를 실행할 수 있습니다.
+
+.옵션
+* <<Upgrade Rancher Server>>
+* <<Upgrade RKE>>
+* <<Apply node OS security updates>>
++
+
+NOTE: 노드 OS의 경우 보안 패치에 대한 무인 업그레이드가 매일 실행되지만 노드가 자동으로 재부팅되지는 않습니다. 업그레이드를 적용하면 보안 업데이트를 적용하기 위해 각 노드를 다시 부팅하게 됩니다.
+
+
+
+
+
+=== Rancher 서버를 업그레이드합니다
+
+.API 명령
+. 목록 업그레이드 버전 요청 시작:
++
+[listing]
+----
+curl -X POST "https://<managementNodeIP>/k8sdeployer/1/upgrade/rancher-versions" -H "accept: application/json" -H "Authorization: Bearer ${TOKEN}"
+----
++
+
+NOTE: API 명령에서 사용하는 '${token}' 베어러를 찾을 수 있습니다 link:task_mnode_api_get_authorizationtouse.html["권한 부여"]. '${token}' 베어러가 curl 응답에 있습니다.
+
+. 이전 명령의 작업 ID를 사용하여 작업 상태를 얻고 응답에서 최신 버전 번호를 복사합니다.
++
+[listing]
+----
+curl -X GET "https://<mNodeIP>/k8sdeployer/1/task/<taskID>" -H "accept: application/json" -H "Authorization: Bearer ${TOKEN}"
+----
+. Rancher 서버 업그레이드 요청 시작:
++
+[listing]
+----
+curl -X PUT "https://<mNodeIP>/k8sdeployer/1/upgrade/rancher/<version number>" -H "accept: application/json" -H "Authorization: Bearer"
+----
+. 업그레이드 명령 응답에서 작업 ID를 사용하여 작업 상태 가져오기:
++
+[listing]
+----
+curl -X GET "https://<mNodeIP>/k8sdeployer/1/task/<taskID>" -H "accept: application/json" -H "Authorization: Bearer ${TOKEN}"
+----
+
+
+.REST API UI 단계
+. 관리 노드에서 관리 노드 REST API UI를 엽니다.
++
+[listing]
+----
+https://<ManagementNodeIP>/k8sdeployer/api/
+----
+. authorize * 를 선택하고 다음을 완료합니다.
++
+.. 클러스터 사용자 이름 및 암호를 입력합니다.
+.. Client ID를 mnode-client로 입력한다.
+.. 세션을 시작하려면 * authorize * 를 선택합니다.
+.. 인증 창을 닫습니다.
+
+
+. 최신 업그레이드 패키지를 확인합니다.
++
+.. REST API UI에서 * POST/upgrade/rancher-versions * 를 실행합니다.
+.. 응답에서 작업 ID를 복사합니다.
+.. 이전 단계의 작업 ID로 * get/taskid/{taskID} * 를 실행합니다.
+
+
+. /taskh./{taskID} * 응답에서 업그레이드에 사용할 최신 버전 번호를 복사합니다.
+. Rancher Server 업그레이드 실행:
++
+.. REST API UI에서 이전 단계의 최신 버전 번호를 사용하여 * Put/upgradesth./ranchebsateName/ {version} * 을 실행합니다.
+.. 응답에서 작업 ID를 복사합니다.
+.. 이전 단계의 작업 ID로 * get/taskid/{taskID} * 를 실행합니다.
+
+
+
+
+PercentComplete가 100을 나타내고, result가 업그레이드된 버전 번호를 나타내면 업그레이드가 성공적으로 완료된 것입니다.
+
+
+
+=== RKE를 업그레이드합니다
+
+.API 명령
+. 목록 업그레이드 버전 요청 시작:
++
+[listing]
+----
+curl -X POST "https://<mNodeIP>/k8sdeployer/1/upgrade/rke-versions" -H "accept: application/json" -H "Authorization: Bearer ${TOKEN}"
+----
++
+
+NOTE: API 명령에서 사용하는 '${token}' 베어러를 찾을 수 있습니다 link:task_mnode_api_get_authorizationtouse.html["권한 부여"]. '${token}' 베어러가 curl 응답에 있습니다.
+
+. 이전 명령의 작업 ID를 사용하여 작업 상태를 얻고 응답에서 최신 버전 번호를 복사합니다.
++
+[listing]
+----
+curl -X GET "https://<mNodeIP>/k8sdeployer/1/task/<taskID>" -H "accept: application/json" -H "Authorization: Bearer ${TOKEN}"
+----
+. RKE 업그레이드 요청을 시작합니다
++
+[listing]
+----
+curl -X PUT "https://<mNodeIP>/k8sdeployer/1/upgrade/rke/<version number>" -H "accept: application/json" -H "Authorization: Bearer"
+----
+. 업그레이드 명령 응답에서 작업 ID를 사용하여 작업 상태 가져오기:
++
+[listing]
+----
+curl -X GET "https://<mNodeIP>/k8sdeployer/1/task/<taskID>" -H "accept: application/json" -H "Authorization: Bearer ${TOKEN}"
+----
+
+
+.REST API UI 단계
+. 관리 노드에서 관리 노드 REST API UI를 엽니다.
++
+[listing]
+----
+https://<ManagementNodeIP>/k8sdeployer/api/
+----
+. authorize * 를 선택하고 다음을 완료합니다.
++
+.. 클러스터 사용자 이름 및 암호를 입력합니다.
+.. Client ID를 mnode-client로 입력한다.
+.. 세션을 시작하려면 * authorize * 를 선택합니다.
+.. 인증 창을 닫습니다.
+
+
+. 최신 업그레이드 패키지를 확인합니다.
++
+.. REST API UI에서 * POST/upgrade/RKE-Versions * 를 실행합니다.
+.. 응답에서 작업 ID를 복사합니다.
+.. 이전 단계의 작업 ID로 * get/taskid/{taskID} * 를 실행합니다.
+
+
+. /taskh./{taskID} * 응답에서 업그레이드에 사용할 최신 버전 번호를 복사합니다.
+. RKE 업그레이드를 실행합니다.
++
+.. REST API UI에서 이전 단계의 최신 버전 번호로 * PUT/UPGRADE/RKE/{version} * 를 실행합니다.
+.. 응답에서 작업 ID를 복사합니다.
+.. 이전 단계의 작업 ID로 * get/taskid/{taskID} * 를 실행합니다.
+
+
+
+
+PercentComplete가 100을 나타내고, result가 업그레이드된 버전 번호를 나타내면 업그레이드가 성공적으로 완료된 것입니다.
+
+
+
+=== 노드 OS 보안 업데이트를 적용합니다
+
+.API 명령
+. 업그레이드 확인 요청 시작:
++
+[listing]
+----
+curl -X GET "https://<mNodeIP>/k8sdeployer/1/upgrade/checkNodeUpdates" -H "accept: application/json" -H "Authorization: Bearer ${TOKEN}"
+----
++
+
+NOTE: API 명령에서 사용하는 '${token}' 베어러를 찾을 수 있습니다 link:task_mnode_api_get_authorizationtouse.html["권한 부여"]. '${token}' 베어러가 curl 응답에 있습니다.
+
+. 이전 명령에서 작업 ID를 사용하여 작업 상태를 확인하고 응답에서 최신 버전 번호를 사용할 수 있는지 확인합니다.
++
+[listing]
+----
+curl -X GET "https://<mNodeIP>/k8sdeployer/1/task/<taskID>" -H "accept: application/json" -H "Authorization: Bearer ${TOKEN}"
+----
+. 노드 업데이트 적용:
++
+[listing]
+----
+curl -X POST "https://<mNodeIP>/k8sdeployer/1/upgrade/applyNodeUpdates" -H "accept: application/json" -H "Authorization: Bearer"
+----
++
+
+NOTE: 노드 OS의 경우 보안 패치에 대한 무인 업그레이드가 매일 실행되지만 노드가 자동으로 재부팅되지는 않습니다. 업그레이드를 적용하면 보안 업데이트를 적용하기 위해 각 노드를 순서대로 재부팅합니다.
+
+. 업그레이드 "applyNodeUpdates" 응답에서 작업 ID를 사용하여 작업 상태 가져오기:
++
+[listing]
+----
+curl -X GET "https://<mNodeIP>/k8sdeployer/1/task/<taskID>" -H "accept: application/json" -H "Authorization: Bearer ${TOKEN}"
+----
+
+
+.REST API UI 단계
+. 관리 노드에서 관리 노드 REST API UI를 엽니다.
++
+[listing]
+----
+https://<ManagementNodeIP>/k8sdeployer/api/
+----
+. authorize * 를 선택하고 다음을 완료합니다.
++
+.. 클러스터 사용자 이름 및 암호를 입력합니다.
+.. Client ID를 mnode-client로 입력한다.
+.. 세션을 시작하려면 * authorize * 를 선택합니다.
+.. 인증 창을 닫습니다.
+
+
+. 업그레이드 패키지를 사용할 수 있는지 확인합니다.
++
+.. REST API UI에서 * GET/UPGRADE/CheckNodeUpdates * 를 실행합니다.
+.. 응답에서 작업 ID를 복사합니다.
+.. 이전 단계의 작업 ID로 * get/taskid/{taskID} * 를 실행합니다.
+.. /taskh./{taskID} * 응답에서 현재 노드에 적용된 버전보다 최신 버전 번호가 있는지 확인합니다.
+
+
+. 노드 OS 업그레이드 적용:
++
+
+NOTE: 노드 OS의 경우 보안 패치에 대한 무인 업그레이드가 매일 실행되지만 노드가 자동으로 재부팅되지는 않습니다. 업그레이드를 적용하면 보안 업데이트를 적용하기 위해 각 노드를 순서대로 재부팅합니다.
+
++
+.. REST API UI에서 * POST/upgrade/applyNodeUpdates * 를 실행합니다.
+.. 응답에서 작업 ID를 복사합니다.
+.. 이전 단계의 작업 ID로 * get/taskid/{taskID} * 를 실행합니다.
+.. /taskh./{taskID} * 응답에서 업그레이드가 적용되었는지 확인합니다.
+
+
+
+
+PercentComplete가 100을 나타내고, result가 업그레이드된 버전 번호를 나타내면 업그레이드가 성공적으로 완료된 것입니다.
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
+

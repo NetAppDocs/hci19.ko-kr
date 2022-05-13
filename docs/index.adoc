@@ -1,0 +1,45 @@
+---
+sidebar: sidebar 
+permalink: docs/index.html 
+summary: NetApp HCI는 스토리지와 컴퓨팅 리소스를 결합하여 NetApp Element 소프트웨어의 기능을 기반으로 하는 VMware vSphere 환경을 구축합니다. 
+keywords: netapp, hci, on premise, hybrid cloud control, hcc, kubernetes 
+redirect: hci/index.html 
+---
+= NetApp HCI 구성 및 관리 문서
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp HCI는 스토리지와 컴퓨팅 리소스를 결합하여 NetApp Element 소프트웨어의 기능을 기반으로 하는 VMware vSphere 환경을 구축합니다.
+
+NetApp 하이브리드 클라우드 제어 인터페이스를 사용하여 시스템을 업그레이드, 확장, 모니터링하고, vCenter Server용 NetApp Element 플러그인을 통해 NetApp HCI 리소스를 관리할 수 있습니다.
+
+
+
+== 새로운 기능 알아보기
+
+* link:rn_whatsnew.html["NetApp HCI의 새로운 기능"]
+* https://docs.netapp.com/us-en/element-software/concepts/concept_rn_whats_new_element.html["NetApp Element 소프트웨어의 새로운 기능"^]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Management_services_for_Element_Software_and_NetApp_HCI/Management_Services_Release_Notes["Element 소프트웨어 및 NetApp HCI용 관리 서비스의 새로운 기능"^]
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP2866569["vCenter Server용 NetApp Element 플러그인의 새로운 기능"^]
+
+
+
+
+== NetApp HCI를 시작하십시오
+
+* link:task_hci_getstarted.html["NetApp HCI 설치 및 구축 개요"]
+* link:concept_hci_product_overview.html["기본 개념을 검토합니다"]
+
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+* https://www.netapp.com/us/documentation/hci.aspx["NetApp HCI 리소스 페이지를 참조하십시오"^]
+

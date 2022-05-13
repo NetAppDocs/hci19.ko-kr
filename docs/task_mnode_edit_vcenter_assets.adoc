@@ -1,0 +1,105 @@
+---
+sidebar: sidebar 
+permalink: docs/task_mnode_edit_vcenter_assets.html 
+summary: REST API UI를 사용하여 vCenter 관리 노드 컨트롤러를 편집할 수 있습니다. 
+keywords: netapp, mnode, management node, rest api, hci 
+---
+= 기존 컨트롤러 자산을 보거나 편집합니다
+:allow-uri-read: 
+
+
+[role="lead"]
+REST API를 사용하여 관리 노드 구성에서 기존 VMware vCenter 컨트롤러에 대한 정보를 보고 편집할 수 있습니다. 컨트롤러는 NetApp HCI 설치를 위해 관리 노드에 등록된 VMware vCenter 인스턴스입니다.
+
+.시작하기 전에
+* 클러스터 버전이 NetApp Element 소프트웨어 11.3 이상을 실행하고 있는지 확인합니다.
+* 버전 11.3 이상을 실행하는 관리 노드를 배포했는지 확인합니다.
+
+
+
+
+== 관리 서비스 REST API에 액세스
+
+.단계
+. 관리 노드의 IP 주소를 입력한 후 '/vcenter/1/'를 입력하여 관리 서비스를 위한 REST API UI에 액세스합니다.
++
+[listing]
+----
+https://<ManagementNodeIP>/vcenter/1/
+----
+. authorize * 또는 임의의 잠금 아이콘을 클릭하고 다음을 완료합니다.
++
+.. 클러스터 사용자 이름 및 암호를 입력합니다.
+.. Client ID를 mnode-client로 입력한다.
+.. 세션을 시작하려면 * authorize * 를 클릭합니다.
+.. 창을 닫습니다.
+
+
+
+
+
+
+== 기존 컨트롤러에 대한 저장된 정보를 봅니다
+
+관리 노드에 등록된 기존 vCenter 컨트롤러를 나열하고 REST API를 사용하여 해당 컨트롤러에 대한 저장된 정보를 볼 수 있습니다.
+
+.단계
+. get/compute/controllers * 를 클릭합니다.
+. 체험하기 * 를 클릭합니다.
+. Execute * 를 클릭합니다.
++
+API는 각 컨트롤러와 통신하는 데 사용되는 IP 주소, 컨트롤러 ID, 호스트 이름 및 사용자 ID와 함께 알려진 모든 vCenter 컨트롤러의 목록을 반환합니다.
+
+. 특정 컨트롤러의 연결 상태를 확인하려면 해당 컨트롤러의 "id" 필드에서 컨트롤러 ID를 클립보드로 복사하고 를 참조하십시오 <<View the status of an existing controller>>.
+
+
+
+
+== 기존 컨트롤러의 상태를 봅니다
+
+관리 노드에 등록된 기존 vCenter 컨트롤러의 상태를 볼 수 있습니다. API는 NetApp Hybrid Cloud Control이 vCenter 컨트롤러에 연결할 수 있는지 여부와 해당 상태에 대한 이유를 나타내는 상태를 반환합니다.
+
+.단계
+. Get/Compute/controller/{controller_id}/status * 를 클릭합니다.
+. 체험하기 * 를 클릭합니다.
+. 앞서 복사한 컨트롤러 ID를 controller_id 매개 변수에 입력합니다.
+. Execute * 를 클릭합니다.
++
+API는 이 특정 vCenter 컨트롤러의 상태와 해당 상태에 대한 이유를 반환합니다.
+
+
+
+
+
+== 컨트롤러의 저장된 속성을 편집합니다
+
+관리 노드에 등록된 기존 vCenter 컨트롤러의 저장된 사용자 이름 또는 암호를 편집할 수 있습니다. 기존 vCenter 컨트롤러의 저장된 IP 주소는 편집할 수 없습니다.
+
+.단계
+. Put/Compute/controller/{controller_id} * 를 클릭합니다.
+. "controller_id" 매개 변수에 vCenter 컨트롤러의 컨트롤러 ID를 입력합니다.
+. 체험하기 * 를 클릭합니다.
+. [요청 본문] * 필드에서 다음 매개 변수 중 하나를 변경합니다.
++
+|===
+| 매개 변수 | 유형 | 설명 
+
+
+| 'userId'입니다 | 문자열 | vCenter 컨트롤러와 통신하는 데 사용되는 사용자 ID를 변경합니다(사용자에게 관리자 권한이 있어야 함). 
+
+
+| "암호" | 문자열 | vCenter 컨트롤러와 통신하는 데 사용되는 암호를 변경합니다. 
+|===
+. Execute * 를 클릭합니다.
++
+API는 업데이트된 컨트롤러 정보를 반환합니다.
+
+
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* link:task_mnode_add_assets.html["컴퓨팅 및 컨트롤러 자산을 관리 노드에 추가합니다"]
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
+

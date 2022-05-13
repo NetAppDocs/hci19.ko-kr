@@ -1,0 +1,354 @@
+---
+sidebar: sidebar 
+permalink: docs/task_mnode_install.html 
+summary: NetApp Element 소프트웨어를 실행하는 클러스터의 관리 노드를 설치할 수 있습니다. 
+keywords: netapp, element, management node, mnode, storage, install 
+---
+= 관리 노드를 설치합니다
+:allow-uri-read: 
+
+
+[role="lead"]
+구성에 적합한 이미지를 사용하여 NetApp Element 소프트웨어를 실행하는 클러스터의 관리 노드를 수동으로 설치할 수 있습니다.
+
+이 수동 프로세스는 관리 노드 설치에 NetApp 배포 엔진을 사용하지 않는 SolidFire All-Flash 스토리지 관리자 및 NetApp HCI 관리자를 대상으로 합니다.
+
+.무엇을 &#8217;필요로 할거야
+* 클러스터 버전이 NetApp Element 소프트웨어 11.3 이상을 실행 중입니다.
+* 설치에 IPv4가 사용됩니다. 관리 노드 11.3은 IPv6을 지원하지 않습니다.
++
+
+NOTE: IPv6 지원이 필요한 경우 관리 노드 11.1을 사용할 수 있습니다.
+
+* NetApp Support 사이트에서 소프트웨어를 다운로드할 수 있는 권한이 있습니다.
+* 플랫폼에 맞는 관리 노드 이미지 유형을 확인했습니다.
++
+[cols="30,30"]
+|===
+| 플랫폼 | 설치 이미지 유형입니다 
+
+
+| Microsoft Hyper-V를 참조하십시오 | ISO 
+
+
+| KVM | ISO 
+
+
+| VMware vSphere를 참조하십시오 | ISO, .ova 
+
+
+| Citrix XenServer를 참조하십시오 | ISO 
+
+
+| 더 적합하였습니다 | ISO 
+|===
+* (프록시 서버가 있는 관리 노드 12.0 이상) NetApp 하이브리드 클라우드 제어를 관리 서비스 버전 2.16으로 업데이트한 후 프록시 서버를 구성하게 됩니다.
+
+
+Element 12.2 관리 노드는 선택적 업그레이드입니다. 기존 배포에는 필요하지 않습니다.
+
+이 절차를 수행하기 전에 에 대해 잘 알고 있어야 합니다 link:concept_hci_volumes.html#persistent-volumes["영구 볼륨"] 그리고 사용 여부를 결정합니다. 영구 볼륨은 선택 사항이지만 VM 손실 시 관리 노드 구성 데이터 복구에 권장됩니다.
+
+.단계
+. <<Download ISO or OVA and deploy the VM>>
+. <<Create the management node admin and configure the network>>
+. <<Configure time sync>>
+. <<Set up the management node>>
+. <<Configure controller assets>>
+. <<Configure compute node assets,(NetApp HCI만 해당) 컴퓨팅 노드 자산을 구성합니다>>
+
+
+
+
+== ISO 또는 OVA를 다운로드하고 VM을 배포합니다
+
+. 에서 설치에 대한 OVA 또는 ISO를 다운로드합니다 https://mysupport.netapp.com/site/products/all/details/netapp-hci/downloads-tab["NetApp HCI"^] NetApp Support 사이트의 페이지:
++
+.. 최신 릴리스 다운로드 * 를 선택하고 EULA에 동의합니다.
+.. 다운로드할 관리 노드 이미지를 선택합니다.
+
+
+. OVA를 다운로드한 경우 다음 단계를 수행하십시오.
++
+.. OVA를 배포합니다.
+.. 스토리지 클러스터가 관리 노드(eth0)와 별도의 서브넷에 있고 영구 볼륨을 사용하려는 경우 스토리지 서브넷(예: eth1)의 VM에 두 번째 네트워크 인터페이스 컨트롤러(NIC)를 추가하거나 관리 네트워크가 스토리지 네트워크로 라우팅될 수 있는지 확인합니다.
+
+
+. ISO를 다운로드한 경우 다음 단계를 따르십시오.
++
+.. 다음 구성을 사용하여 하이퍼바이저에서 새 64비트 가상 머신을 생성합니다.
++
+*** 가상 CPU 6개
+*** 24GB RAM
+*** 스토리지 어댑터 유형이 LSI Logic Parallel로 설정되어 있습니다
++
+
+IMPORTANT: 관리 노드의 기본값은 LSI Logic SAS입니다. New Virtual Machine * 창에서 * 하드웨어 사용자 정의 * > * 가상 하드웨어 * 를 선택하여 스토리지 어댑터 구성을 확인합니다. 필요한 경우 LSI Logic SAS를 * LSI Logic Parallel * 로 변경합니다.
+
+*** 400GB 가상 디스크, 씬 프로비저닝된 공간
+*** 인터넷 액세스 및 스토리지 MVIP에 대한 액세스를 제공하는 가상 네트워크 인터페이스 1개.
+*** (SolidFire All-Flash 스토리지의 경우 선택 사항) 스토리지 클러스터에 대한 관리 네트워크 액세스를 지원하는 단일 가상 네트워크 인터페이스 스토리지 클러스터가 관리 노드(eth0)와 별도의 서브넷에 있고 영구 볼륨을 사용하려는 경우 스토리지 서브넷(eth1)의 VM에 두 번째 네트워크 인터페이스 컨트롤러(NIC)를 추가하거나 관리 네트워크가 스토리지 네트워크로 라우팅될 수 있는지 확인합니다.
++
+
+IMPORTANT: 이 절차의 뒷부분에서 수행할 단계를 나타내는 단계 전에 가상 머신의 전원을 켜서는 안 됩니다.
+
+
+
+.. 가상 머신에 ISO를 연결하고 .iso 설치 이미지로 부팅합니다.
++
+
+NOTE: 이미지를 사용하여 관리 노드를 설치하면 시작 화면이 나타나기 전에 30초가 지연될 수 있습니다.
+
+
+
+. 설치가 완료된 후 관리 노드에 대한 가상 머신의 전원을 켭니다.
+
+
+
+
+== 관리 노드 admin을 생성하고 네트워크를 구성합니다
+
+. 터미널 사용자 인터페이스(TUI)를 사용하여 관리 노드 관리자 사용자를 생성합니다.
++
+
+TIP: 메뉴 옵션을 이동하려면 위쪽 또는 아래쪽 화살표 키를 누릅니다. 버튼 사이를 이동하려면 Tab 키를 누릅니다. 버튼에서 필드로 이동하려면 Tab 키를 누릅니다. 필드 사이를 이동하려면 위쪽 또는 아래쪽 화살표 키를 누릅니다.
+
+. 관리 노드 네트워크(eth0)를 구성합니다.
++
+
+NOTE: 스토리지 트래픽을 격리하기 위해 추가 NIC가 필요한 경우 다른 NIC 구성에 대한 지침을 참조하십시오. link:task_mnode_install_add_storage_NIC.html["스토리지 NIC(Network Interface Controller) 구성"].
+
+
+
+
+
+== 시간 동기화를 구성합니다
+
+. NTP를 사용하여 관리 노드와 스토리지 클러스터 간에 시간이 동기화되는지 확인합니다.
++
+
+NOTE: 요소 12.3.1부터 하위 단계(a)에서 (e)까지 자동으로 수행됩니다. 관리 노드 12.3.1의 경우 로 이동합니다 <<substep_f_install_config_time_sync,하위 단계 (f)>> 를 눌러 시간 동기화 구성을 완료합니다.
+
++
+.. SSH 또는 하이퍼바이저에서 제공하는 콘솔을 사용하여 관리 노드에 로그인합니다.
+.. NTPD 중지:
++
+[listing]
+----
+sudo service ntpd stop
+----
+.. NTP 구성 파일 '/etc/ntp.conf'를 편집합니다.
++
+... 각 서버 앞에 #(우물정자)를 추가하여 기본 서버('서버 0.gentoo.pool.ntp.org')를 언급합니다.
+... 추가할 각 기본 시간 서버에 대해 새 줄을 추가합니다. 기본 시간 서버는 에서 사용할 스토리지 클러스터에서 사용되는 NTP 서버와 같아야 합니다 link:task_mnode_install.html#set-up-the-management-node["나중에"].
++
+[listing]
+----
+vi /etc/ntp.conf
+
+#server 0.gentoo.pool.ntp.org
+#server 1.gentoo.pool.ntp.org
+#server 2.gentoo.pool.ntp.org
+#server 3.gentoo.pool.ntp.org
+server <insert the hostname or IP address of the default time server>
+----
+... 완료되면 구성 파일을 저장합니다.
+
+
+.. 새로 추가된 서버와 NTP 동기화를 강제로 수행합니다.
++
+[listing]
+----
+sudo ntpd -gq
+----
+.. NTPD를 다시 시작합니다.
++
+[listing]
+----
+sudo service ntpd start
+----
+.. [[substep_f_install_config_time_sync]] 하이퍼바이저를 통해 호스트와 시간 동기화를 비활성화합니다(VMware의 예).
++
+
+NOTE: 예를 들어, OpenStack 환경의 .iso 이미지에서 VMware 이외의 하이퍼바이저 환경에 mNode를 구축하는 경우 하이퍼바이저 설명서에서 해당 명령을 참조하십시오.
+
++
+... 주기적 시간 동기화 비활성화:
++
+[listing]
+----
+vmware-toolbox-cmd timesync disable
+----
+... 서비스의 현재 상태를 표시하고 확인합니다.
++
+[listing]
+----
+vmware-toolbox-cmd timesync status
+----
+... vSphere에서 VM 옵션의 '호스트와 게스트 시간 동기화' 확인란이 선택 취소되어 있는지 확인합니다.
++
+
+NOTE: 나중에 VM을 변경할 경우 이 옵션을 사용하지 마십시오.
+
+
+
+
+
+
+
+
+NOTE: 시간 동기화 구성을 완료한 후에는 NTP를 편집하지 마십시오. NTP는 를 실행할 때 NTP에 영향을 주기 때문입니다 link:task_mnode_install.html#set-up-the-management-node["설정 명령"] 관리 노드에서.
+
+
+
+== 관리 노드를 설정합니다
+
+. 관리 노드 setup 명령을 구성하고 실행합니다.
++
+
+NOTE: 보안 프롬프트에 암호를 입력하라는 메시지가 표시됩니다. 클러스터가 프록시 서버 뒤에 있는 경우 공용 네트워크에 연결할 수 있도록 프록시 설정을 구성해야 합니다.
+
++
+[listing]
+----
+/sf/packages/mnode/setup-mnode --mnode_admin_user [username] --storage_mvip [mvip] --storage_username [username] --telemetry_active [true]
+----
++
+.. 다음의 각 필수 매개 변수에 대해 [ ] 대괄호(대괄호 포함)의 값을 바꿉니다.
++
+
+NOTE: 명령 이름의 약식 형식은 괄호( )로 되어 있으며 전체 이름으로 대체할 수 있습니다.
+
++
+*** * - -mnode_admin_user(-MU) [username] *: 관리 노드 관리자 계정의 사용자 이름입니다. 관리 노드에 로그인하는 데 사용한 사용자 계정의 사용자 이름일 수 있습니다.
+*** * -- storage_mvip(-SM) [MVIP 주소] *: Element 소프트웨어를 실행하는 스토리지 클러스터의 관리 가상 IP 주소(MVIP)입니다. 관리 노드를 구성하는 동안 사용한 것과 동일한 스토리지 클러스터를 사용합니다 link:task_mnode_install.html#configure-time-sync["NTP 서버 구성"].
+*** * -- storage_username(-su) [username] *: "- storage_mvip" 매개 변수로 지정한 클러스터의 스토리지 클러스터 관리자 사용자 이름입니다.
+*** * -- telemetry_active(-t) [true] *: Active IQ의 분석을 위해 데이터를 수집할 수 있도록 하는 true 값을 유지합니다.
+
+
+.. (선택 사항): 명령에 Active IQ 끝점 매개 변수를 추가합니다.
++
+*** * -- remote_host(-RH) [AIQ_endpoint] *: Active IQ 원격 측정 데이터를 처리하기 위해 보내는 끝점입니다. 매개 변수가 포함되지 않은 경우 기본 끝점이 사용됩니다.
+
+
+.. (권장): 다음과 같은 영구 볼륨 매개 변수를 추가합니다. 영구 볼륨 기능을 위해 생성된 계정 및 볼륨을 수정하거나 삭제하지 마십시오. 그렇지 않으면 관리 기능이 손실됩니다.
++
+*** * -- use_persistent_volumes(-pv) [true/false, default:false] *: 영구 볼륨을 활성화 또는 비활성화합니다. 영구 볼륨 기능을 활성화하려면 true 값을 입력합니다.
+*** * -- persistent_volumes_account(-PVA) [account_name] *: "--use_persistent_volumes"가 true로 설정된 경우 이 매개변수를 사용하여 영구 볼륨에 사용할 스토리지 계정 이름을 입력합니다.
++
+
+NOTE: 클러스터의 기존 계정 이름과 다른 영구 볼륨의 경우 고유한 계정 이름을 사용합니다. 영구 볼륨의 계정을 나머지 환경과 별도로 유지하는 것이 매우 중요합니다.
+
+*** * -- persistent_volumes_mvip(-pvp) [mvip] *: 영구 볼륨과 함께 사용될 Element 소프트웨어를 실행하는 스토리지 클러스터의 관리 가상 IP 주소(MVIP)를 입력합니다. 여러 스토리지 클러스터가 관리 노드에서 관리되는 경우에만 필요합니다. 여러 클러스터를 관리하지 않으면 기본 클러스터 MVIP가 사용됩니다.
+
+
+.. 프록시 서버 구성:
++
+*** * -- use_proxy(-up)[true/false, default:false] *: 프록시 사용을 활성화 또는 비활성화합니다. 프록시 서버를 구성하려면 이 매개 변수가 필요합니다.
+*** * -- proxy_hostname_or_ip(-pi) [host] *: 프록시 호스트 이름 또는 IP 프록시를 사용하려면 이 옵션을 사용해야 합니다. 이 옵션을 지정하면 '--proxy_port'를 입력하라는 메시지가 표시됩니다.
+*** * -- proxy_username(-pu) [username] *: 프록시 사용자 이름입니다. 이 매개 변수는 선택 사항입니다.
+*** * -- proxy_password(-pp) [password] *: 프록시 암호입니다. 이 매개 변수는 선택 사항입니다.
+*** * -- proxy_port(-PQ) [port, default:0] *: 프록시 포트. 이 옵션을 지정하면 프록시 호스트 이름 또는 IP("--proxy_hostname_or_ip")를 입력하라는 메시지가 표시됩니다.
+*** * -- proxy_ssh_port(-ps) [port, default:443] *: SSH 프록시 포트입니다. 이 기본값은 포트 443입니다.
+
+
+.. (선택 사항) 각 매개 변수에 대한 추가 정보가 필요한 경우 매개 변수 도움말을 사용합니다.
++
+*** * -- help(-h) *: 각 매개 변수에 대한 정보를 반환합니다. 매개 변수는 초기 구축을 기반으로 필수 또는 선택 사항으로 정의됩니다. 업그레이드 및 재배포 매개 변수 요구 사항은 다를 수 있습니다.
+
+
+.. 셋업 -mnode 명령을 실행합니다.
+
+
+
+
+
+
+== 컨트롤러 자산을 구성합니다
+
+. 설치 ID를 찾습니다.
++
+.. 브라우저에서 관리 노드 REST API UI에 로그인합니다.
+.. 스토리지 MVIP로 이동하여 로그인합니다. 이 작업을 수행하면 다음 단계에서 인증서가 수락됩니다.
+.. 관리 노드에서 인벤토리 서비스 REST API UI를 엽니다.
++
+[listing]
+----
+https://<ManagementNodeIP>/inventory/1/
+----
+.. authorize * 를 선택하고 다음을 완료합니다.
++
+... 클러스터 사용자 이름 및 암호를 입력합니다.
+... Client ID를 mnode-client로 입력한다.
+... 세션을 시작하려면 * authorize * 를 선택합니다.
+
+
+.. REST API UI에서 * Get Windows/Installations * 를 선택합니다.
+.. 체험하기 * 를 선택합니다.
+.. Execute * 를 선택합니다.
+.. 코드 200 응답 본문에서 설치 ID를 복사하여 나중에 사용할 수 있도록 저장합니다.
++
+설치 또는 업그레이드 중에 생성된 기본 자산 구성을 설치하였습니다.
+
+
+
+. (NetApp HCI만 해당) vSphere에서 컴퓨팅 노드의 하드웨어 태그를 찾습니다.
++
+.. vSphere Web Client 탐색기에서 호스트를 선택합니다.
+.. 모니터 * 탭을 선택하고 * 하드웨어 상태 * 를 선택합니다.
+.. 노드 BIOS 제조업체 및 모델 번호가 나열됩니다. 나중 단계에서 사용할 'tag'의 값을 복사하여 저장합니다.
+
+
+. NetApp HCI 모니터링을 위한 vCenter 컨트롤러 자산(NetApp HCI 설치만 해당) 및 하이브리드 클라우드 제어(모든 설치의 경우)를 관리 노드의 알려진 자산에 추가합니다.
++
+.. 관리 노드의 IP 주소 뒤에 '/mnode'를 입력하여 관리 노드의 mnode service API UI에 접근한다.
++
+[listing]
+----
+https:/<ManagementNodeIP>/mnode
+----
+.. authorize * 또는 임의의 잠금 아이콘을 선택하고 다음을 완료합니다.
++
+... 클러스터 사용자 이름 및 암호를 입력합니다.
+... Client ID를 mnode-client로 입력한다.
+... 세션을 시작하려면 * authorize * 를 선택합니다.
+... 창을 닫습니다.
+
+
+.. 컨트롤러 하위 자산을 추가하려면 * POST/ASSET/{ASSET_ID}/컨트롤러 * 를 선택합니다.
++
+
+NOTE: 컨트롤러 하위 자산을 추가하려면 vCenter에서 새로운 NetApp HCC 역할을 생성하는 것이 좋습니다. 이러한 새로운 NetApp HCC 역할은 관리 노드 서비스 뷰를 NetApp 전용 자산으로 제한합니다. 을 참조하십시오 link:task_mnode_create_netapp_hcc_role_vcenter.html["vCenter에서 NetApp HCC 역할을 생성합니다"].
+
+.. 체험하기 * 를 선택합니다.
+.. 클립보드에 복사한 상위 기본 자산 ID를 * asset_id * 필드에 입력합니다.
+.. 유형 'vCenter'와 vCenter 자격 증명을 사용하여 필요한 페이로드 값을 입력합니다.
+.. Execute * 를 선택합니다.
+
+
+
+
+
+
+== (NetApp HCI만 해당) 컴퓨팅 노드 자산을 구성합니다
+
+. (NetApp HCI에만 해당) 컴퓨팅 노드 자산을 관리 노드의 알려진 자산에 추가합니다.
++
+.. 컴퓨팅 노드 자산에 대한 자격 증명이 있는 컴퓨팅 노드 하위 자산을 추가하려면 * POST/ASSET/{ASSET_ID}/컴퓨팅 노드 * 를 선택합니다.
+.. 체험하기 * 를 선택합니다.
+.. 클립보드에 복사한 상위 기본 자산 ID를 * asset_id * 필드에 입력합니다.
+.. 페이로드에서 Model(모델) 탭에 정의된 대로 필요한 페이로드 값을 입력합니다. type로 ESXi Host를 입력하고 이전 단계에서 저장한 hardware_tag의 하드웨어 태그를 입력합니다.
+.. Execute * 를 선택합니다.
+
+
+
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* link:concept_hci_volumes.html#persistent-volumes["영구 볼륨"]
+* link:task_mnode_add_assets.html["컴퓨팅 및 컨트롤러 자산을 관리 노드에 추가합니다"]
+* link:task_mnode_install_add_storage_NIC.html["스토리지 NIC를 구성합니다"]
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
+

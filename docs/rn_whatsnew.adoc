@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: docs/rn_whatsnew.html 
+summary: 이 NetApp HCI 버전의 새로운 기능에 대해 알아보십시오. 
+keywords: netapp, hci, element, new, whatsnew 
+---
+= NetApp HCI의 새로운 기능
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: hci, cloud, onprem, documentation, help, element
+
+
+[role="lead"]
+NetApp은 새로운 기능, 개선 사항 및 버그 수정을 제공하기 위해 NetApp HCI을 정기적으로 업데이트합니다. NetApp HCI 1.9P1에는 스토리지 클러스터에 대한 Element 12.3.2가 포함됩니다.
+
+* 를 클릭합니다 <<NetApp HCI 1.9P1>> 섹션에서는 NetApp HCI 버전 1.9P1의 새로운 기능과 업데이트에 대해 설명합니다.
+* 를 클릭합니다 <<Element 12.3.2>> NetApp Element 12.3.2의 새로운 기능 및 업데이트에 대해 설명합니다.
+
+
+
+
+== NetApp HCI 1.9P1
+
+NetApp HCI 1.9P1에는 보안 및 안정성 향상이 포함되어 있습니다.
+
+
+
+== 요소 12.3.2
+
+Element 소프트웨어 12.3.2 릴리스에는 Apache log4j 취약점에 대한 Element 소프트웨어 노출을 종료하는 완화 요소가 포함되어 있습니다. VVOL(가상 볼륨) 기능을 활성화한 NetApp SolidFire 스토리지 클러스터가 이 취약점에 노출됩니다.
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Management_services_for_Element_Software_and_NetApp_HCI/Management_Services_Release_Notes["NetApp 하이브리드 클라우드 제어 및 관리 서비스 릴리즈 노트"^]
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+* https://www.netapp.com/us/documentation/hci.aspx["NetApp HCI 리소스 페이지를 참조하십시오"^]
+* https://docs.netapp.com/us-en/element-software/index.html["SolidFire 및 Element 소프트웨어 설명서"^]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/NetApp_HCI/Firmware_and_driver_versions_in_NetApp_HCI_and_NetApp_Element_software["NetApp HCI 및 NetApp Element 소프트웨어용 펌웨어 및 드라이버 버전"^]
+

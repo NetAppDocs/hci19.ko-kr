@@ -1,0 +1,56 @@
+---
+sidebar: sidebar 
+permalink: docs/task_hci_2noderepl.html 
+summary: '2노드 클러스터의 일부인 노드를 교체하기 전에 먼저 세 번째 스토리지 노드(새 IP 주소 세트가 필요함)를 추가하고 동기화를 완료한 다음 결함이 있는 노드를 제거해야 합니다. 4노드 클러스터 추가 MIP 및 SIP가 필요합니다.' 
+keywords: netapp, hci, H610C, H615C, chassis replacement, node replacement 
+---
+= 2노드 클러스터의 스토리지 노드를 교체합니다
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+2노드 클러스터의 일부인 스토리지 노드를 교체하기 전에 먼저 세 번째 스토리지 노드(새 IP 주소 세트가 필요함)를 추가하고 동기화를 완료한 다음 결함이 있는 노드를 제거해야 합니다. 교체 노드가 클러스터에 연결될 때까지 클러스터는 성능 저하 상태로 유지됩니다.
+
+.무엇을 &#8217;필요로 할거야
+* 새로운 관리 IP 및 스토리지 IP 주소가 있습니다.
+* 노드가 오프라인이 된 후 클러스터에 'ClusterCannotSync' 경고가 표시됨을 확인했습니다. 따라서 새 노드가 클러스터에 다시 추가될 때 클러스터가 전체 재동기화를 수행합니다. 이 알림은 스토리지 노드가 오프라인이 된 후 약 6분 후에 표시됩니다.
+* NetApp 지원에 문의했습니다. 교체를 주문하는 경우 NetApp Support에 케이스를 접수해야 합니다.
+* 교체 노드를 확보했습니다.
+* 정전기 방전(ESD) 손목 보호대가 있거나 다른 정전기 방지 보호 장치를 착용하고 있습니다.
+
+
+VMware vSphere Web Client의 알람은 호스트에 장애가 발생할 경우 사용자에게 경고합니다. VMware vSphere Web Client에서 장애가 발생한 호스트의 일련 번호와 노드 뒷면의 스티커에 있는 일련 번호가 일치해야 합니다.
+
+.단계
+. 랙에서 결함이 있는 노드를 물리적으로 분리합니다. 이 단계는 사용 중인 스토리지 노드의 유형에 따라 다릅니다. 을 참조하십시오 link:task_hci_h410srepl.html["H410S 노드를 교체합니다"^] 및 link:task_hci_h610srepl.html["H610S 노드를 교체합니다"^].
++
+
+NOTE: 이 시점에서는 클러스터에서 노드를 제거하지 마십시오.
+
+. 동일한 슬롯에 교체 노드를 설치합니다.
+. 노드에 케이블을 연결합니다.
+. 노드의 전원을 켭니다.
+. 키보드와 모니터를 노드에 연결합니다.
+. 구성 단계를 수행합니다.
++
+.. IPMI/BMC IP 주소를 구성합니다.
+.. 새 관리 IP 및 스토리지 IP 주소와 클러스터 이름으로 새 노드를 구성합니다.
+
+
+. 노드가 클러스터에 추가된 후 드라이브를 추가합니다.
+. 동기화가 완료되면 장애가 발생한 드라이브와 장애가 발생한 노드를 클러스터에서 제거합니다.
+. NetApp 하이브리드 클라우드 제어를 사용하여 새로 추가한 스토리지 노드를 구성합니다. 을 참조하십시오 link:https://docs.netapp.com/us-en/hci/docs/task_hcc_expand_storage.html["NetApp HCI 스토리지 리소스를 확장합니다"].
+
+
+
+
+== 자세한 내용을 확인하십시오
+
+* http://docs.netapp.com/hci/index.jsp["NetApp HCI 문서 센터"^]
+* http://docs.netapp.com/sfe-122/index.jsp["SolidFire 및 Element 소프트웨어 설명서 센터"^]
+

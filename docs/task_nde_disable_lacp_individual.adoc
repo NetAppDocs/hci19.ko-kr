@@ -1,0 +1,57 @@
+---
+sidebar: sidebar 
+permalink: docs/task_nde_disable_lacp_individual.html 
+summary: 'NetApp HCI를 구축한 후 구성된 스위치에서 "LACP-Individual" 명령을 비활성화하는 방법에 대해 알아보십시오.' 
+keywords: netapp, hci, deployment, review, deploy 
+---
+= 구성된 스위치에서 LACP-Individual 명령을 비활성화합니다
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+기본적으로 Mellanox switch의 lacp-individual 명령과 Cisco switch의 lacp suspend-individual 명령은 구축 후 구성된 상태로 유지됩니다. 이 명령은 설치 후 필요하지 않습니다. 구성이 남아 있으면 스위치를 문제 해결하거나 재부팅할 때 볼륨 액세스 문제가 발생할 수 있습니다. 구축 후 각 Mellanox 스위치와 Cisco 스위치 구성을 확인하고 'LACP-Individual' 또는 'LACP suspend-individual' 명령을 제거해야 합니다.
+
+.단계
+. SSH를 사용하여 스위치에 대한 세션을 엽니다.
+. 실행 중인 구성을 표시합니다.
++
+'show running-config'를 선택합니다
+
+. 'LACP-Individual' 또는 'LACP suspend-individual' 명령에 대한 스위치 구성 출력을 확인한다.
++
+
+NOTE: xxx-xxx는 사용자가 제공한 인터페이스 번호입니다. 필요한 경우 멀티 섀시 Link Aggregation Group 인터페이스 'How MLAG Interfaces'를 표시하여 인터페이스 번호에 액세스할 수 있습니다
+
++
+.. Mellanox 스위치의 경우 출력에 다음 줄이 포함되어 있는지 확인합니다.
++
+'interface MLAG-port-channel xxx-xxx LACP - individual enable force'
+
+.. Cisco 스위치의 경우 출력에 다음 줄이 포함되어 있는지 확인합니다.
++
+'interface MLAG-port-channel xxx-xxx LACP suspend-individual enable force'를 선택합니다
+
+
+
+. 명령이 있는 경우 구성에서 제거합니다.
++
+.. Mellanox 스위치의 경우:
++
+"인터페이스 MLAG-PORT-CHANNEL xxx-xxx LACP - 개별 ENABLE FORCE가 없습니다.
+
+.. Cisco 스위치의 경우 'no interface MLAG-port-channel xxx-xxx LACP suspend-individual enable force'를 사용합니다
+
+
+. 구성의 각 스위치에 대해 이 단계를 반복합니다.
+
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://kb.netapp.com/Advice_and_Troubleshooting/Flash_Storage/SF_Series/SolidFire_Bond10G_goes_down_when_flapping_an_interface_during_troubleshooting["문제 해결 중에 스토리지 노드가 다운됩니다"^]
+

@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: docs/task_nde_update_vsphere.html 
+summary: NetApp HCI를 구축한 후 VMware vSphere를 최신 상태로 유지하는 방법에 대해 알아보십시오. 
+keywords: netapp, hci, deployment, review, deploy 
+---
+= VMware vSphere를 최신 상태로 유지
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp HCI를 구축한 후에는 VMware vSphere Lifecycle Manager를 사용하여 NetApp HCI와 함께 사용되는 VMware vSphere 버전에 대한 최신 보안 패치를 적용해야 합니다.
+
+를 사용합니다 https://mysupport.netapp.com/matrix/#welcome["상호 운용성 매트릭스 툴"] 모든 소프트웨어 버전이 호환되는지 확인합니다. 를 참조하십시오 https://docs.vmware.com/en/VMware-vSphere/index.html["VMware vSphere Lifecycle Manager 설명서"] 를 참조하십시오.
+
+
+
+== 자세한 내용을 확인하십시오
+
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+* https://www.netapp.com/us/documentation/hci.aspx["NetApp HCI 리소스 페이지를 참조하십시오"^]
+* https://docs.netapp.com/us-en/element-software/index.html["SolidFire 및 Element 소프트웨어 설명서"^]
+

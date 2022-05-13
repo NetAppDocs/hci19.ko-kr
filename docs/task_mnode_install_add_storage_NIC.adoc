@@ -1,0 +1,119 @@
+---
+sidebar: sidebar 
+permalink: docs/task_mnode_install_add_storage_NIC.html 
+summary: 스토리지에 추가 NIC를 사용하는 경우 태그가 지정되지 않은 네트워크 인터페이스 또는 태그가 지정된 네트워크 인터페이스를 설정해야 합니다. 
+keywords: netapp, element, management node, mnode, network, nic, storage nic 
+---
+= 스토리지 NIC(Network Interface Controller) 구성
+:allow-uri-read: 
+
+
+[role="lead"]
+스토리지에 추가 NIC를 사용하는 경우 관리 노드에 SSH를 연결하거나 vCenter 콘솔을 사용하여 curl 명령을 실행하여 태그가 지정되거나 태그가 지정되지 않은 네트워크 인터페이스를 설정할 수 있습니다.
+
+.시작하기 전에
+* eth0 IP 주소를 알고 있습니다.
+* 클러스터 버전이 NetApp Element 소프트웨어 11.3 이상을 실행 중입니다.
+* 관리 노드 11.3 이상을 배포했습니다.
+
+
+사용자 환경과 관련된 옵션을 선택합니다.
+
+* <<Configure a storage Network Interface Controller (NIC) for an untagged network interface>>
+* <<Configure a storage Network Interface Controller (NIC) for a tagged network interface>>
+
+
+
+
+== 태그 없는 네트워크 인터페이스에 대한 스토리지 NIC(Network Interface Controller)를 구성합니다
+
+.단계
+. SSH 또는 vCenter 콘솔을 엽니다.
+. 다음 명령 템플릿의 값을 바꾸고 명령을 실행합니다.
++
+
+NOTE: 값은 새 스토리지 네트워크 인터페이스에 필요한 각 매개 변수에 대해 '$'로 표시됩니다. 다음 템플릿의 "클러스터" 개체는 필수이며 관리 노드 호스트 이름 이름 변경에 사용할 수 있습니다. `-- 안전하지 않은 '- 또는 '-k' 옵션은 생산 환경에서 사용해서는 안 됩니다.
+
++
+[listing]
+----
+curl -u $mnode_user_name:$mnode_password --insecure -X POST \
+https://$mnode_IP:442/json-rpc/10.0 \
+-H 'Content-Type: application/json' \
+-H 'cache-control: no-cache' \
+-d ' {
+     "params": {
+               "network": {
+                          "$eth1": {
+                                   "#default" : false,
+                                   "address" : "$storage_IP",
+                                   "auto" : true,
+                                   "family" : "inet",
+                                   "method" : "static",
+                                   "mtu" : "9000",
+                                   "netmask" : "$subnet_mask",
+                                   "status" : "Up"
+                                   }
+                          },
+               "cluster": {
+                         "name": "$mnode_host_name"
+                         }
+             },
+    "method": "SetConfig"
+}
+'
+----
+
+
+
+
+== 태그가 지정된 네트워크 인터페이스에 대한 스토리지 NIC(Network Interface Controller)를 구성합니다
+
+.단계
+. SSH 또는 vCenter 콘솔을 엽니다.
+. 다음 명령 템플릿의 값을 바꾸고 명령을 실행합니다.
++
+
+NOTE: 값은 새 스토리지 네트워크 인터페이스에 필요한 각 매개 변수에 대해 '$'로 표시됩니다. 다음 템플릿의 "클러스터" 개체는 필수이며 관리 노드 호스트 이름 이름 변경에 사용할 수 있습니다. `-- 안전하지 않은 '- 또는 '-k' 옵션은 생산 환경에서 사용해서는 안 됩니다.
+
++
+[listing]
+----
+curl -u $mnode_user_name:$mnode_password --insecure -X POST \
+https://$mnode_IP:442/json-rpc/10.0 \
+-H 'Content-Type: application/json' \
+-H 'cache-control: no-cache' \
+-d ' {
+     "params": {
+               "network": {
+                          "$eth1": {
+                                   "#default" : false,
+                                   "address" : "$storage_IP",
+                                   "auto" : true,
+                                   "family" : "inet",
+                                   "method" : "static",
+                                   "mtu" : "9000",
+                                   "netmask" : "$subnet_mask",
+                                   "status" : "Up",
+                                   "virtualNetworkTag" : "$vlan_id"
+                                   }
+                          },
+               "cluster": {
+                         "name": "$mnode_host_name",
+                         "cipi": "$eth1.$vlan_id",
+                         "sipi": "$eth1.$vlan_id"
+                         }
+             },
+    "method": "SetConfig"
+}
+'
+----
+
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* link:task_mnode_add_assets.html["컴퓨팅 및 컨트롤러 자산을 관리 노드에 추가합니다"]
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
+

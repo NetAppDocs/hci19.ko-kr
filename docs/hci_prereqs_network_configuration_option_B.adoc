@@ -1,0 +1,74 @@
+---
+sidebar: sidebar 
+permalink: docs/hci_prereqs_network_configuration_option_B.html 
+summary: NetApp HCI 네트워크 구성 옵션 B에 대해 알아보십시오 
+keywords: netapp, hci, cabling, network configuration 
+---
+= 네트워크 구성
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: netapp, hci, cabling, network configuration
+
+
+[role="lead"]
+NetApp HCI는 다양한 네트워크 케이블 연결 및 VLAN 구성을 활용할 수 있습니다. 첫 번째 구성인 옵션 B는 각 컴퓨팅 노드에 대해 6개의 네트워크 케이블을 사용합니다.
+
+
+
+== 구성 옵션 B: 컴퓨팅 노드용 케이블 6개
+
+보조 네트워크 구성 옵션으로서 H410C 컴퓨팅 노드는 6개의 네트워크 케이블을 사용하여 모든 NetApp HCI 네트워크에 연결할 수 있도록 지원합니다. 이 구성을 위해서는 스토리지, vMotion 및 모든 가상 머신 네트워크에서 VLAN 태깅을 사용해야 합니다. 이 구성을 vSphere 표준 스위치 또는 vSphere 분산 스위치(VMware vSphere Enterprise Plus 라이센스가 필요함)와 함께 사용할 수 있습니다.
+
+NetApp HCI 설명서에서는 H 시리즈 노드의 후면 패널에 있는 네트워크 포트를 지칭하기 위해 문자를 사용합니다.
+
+H410C 컴퓨팅 노드의 네트워크 포트 및 위치는 다음과 같습니다.
+
+[#H35700E_H410C]
+image::HCI_ISI_compute_6cable.png[NetApp H410C 컴퓨팅 노드 네트워크 포트]
+
+
+
+=== VLAN 구성
+
+4개의 케이블을 사용하여 6개의 케이블 및 스토리지 노드를 사용하여 컴퓨팅 노드를 구축하는 것이 가장 좋습니다. 따라서 노드가 사용 중인 모든 스위치 포트에서 필요한 네트워크 세그먼트를 구성해야 합니다. 예를 들면 다음과 같습니다.
+
+|===
+| 네트워크 이름입니다 | VLAN ID입니다 | 스위치 포트 구성 
+
+
+| 관리 | 100 | 네이티브 
+
+
+| 스토리지 | 105 | 태그 지정됨 
+
+
+| 마이그레이션 | 107 | 태그 지정됨 
+
+
+| 가상 머신 | 200, 201 | 태그 지정됨 
+|===
+다음 그림에서는 6개의 케이블 컴퓨팅 노드와 4개의 케이블 스토리지 노드에 대한 권장 케이블 연결 구성을 보여 줍니다. 이 예제의 모든 스위치 포트는 동일한 구성을 공유합니다.
+
+image::hci_networking_config_scenario_2.png[HCI 네트워킹 구성 옵션 B 이미지]
+
+
+
+=== 스위치 명령의 예
+
+다음 예제 명령을 사용하여 NetApp HCI 노드에 사용되는 모든 스위치 포트를 구성할 수 있습니다. 이러한 명령은 Cisco 구성을 기반으로 하지만 Mellanox 스위치에 적용하려면 약간의 변경만 필요합니다. 이 구성을 구현하는 데 필요한 특정 명령은 스위치 설명서를 참조하십시오. 인터페이스 이름, 설명 및 VLAN을 사용자 환경의 값으로 바꿉니다.
+
+인터페이스 {인터페이스 이름(예: EthernetX/Y 또는 GigabitEthernetX/Y/Z}) NetApp-HCI-NodeX-PortY}, mtu 9216's witchport 모드 트렁크(스치포트 트렁크 네이티브 VLAN 100)의 인터페이스 {인터페이스 이름(예: EthernetX/Y 또는 GigabitEthernetX/Y/Z)}은 VLAN 105,107,200,201의 패닝-포트 트렁크 유형(TRUNK-Panning-TRY)과 같은 원하는 설명을 제공합니다
+
+
+NOTE: 일부 스위치는 허용되는 VLAN 목록에 네이티브 VLAN을 포함해야 할 수 있습니다. 특정 스위치 모델 및 소프트웨어 버전에 대한 설명서를 참조하십시오.
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지를 참조하십시오"^]
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+

@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: docs/concept_nde_access_overview.html 
+summary: 환경에 따라 다양한 방법 중 하나를 사용하여 NetApp HCI를 구축하기 전에 NetApp 배포 엔진에 액세스하십시오. 
+keywords: netapp, hci, netapp deployment engine, deployment, engine, deploy, access 
+---
+= NetApp 배포 엔진 액세스 옵션 개요
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: hci, release notes, vcp, element, management services, firmware
+
+
+[role="lead"]
+NetApp HCI를 구축하려면 스토리지 노드의 포트 A와 B를 결합하는 논리 인터페이스인 Bond1G 인터페이스에 할당된 IPv4 주소를 통해 NetApp H-Series 스토리지 노드 중 하나에서 NetApp 구축 엔진에 액세스해야 합니다. 이 스토리지 노드는 구축 프로세스를 위한 제어 스토리지 노드가 됩니다. 환경에 따라 IPv4 주소를 구성하거나 스토리지 노드 중 하나에서 검색해야 합니다.
+
+
+NOTE: 스토리지 노드의 Bond1G 인터페이스를 통해서만 NetApp 구축 엔진에 액세스할 수 있습니다. Bond10G 인터페이스를 사용하면 스토리지 노드에 대해 포트 C와 D를 결합하는 논리 인터페이스가 지원되지 않습니다.
+
+네트워크 환경을 가장 잘 설명하는 다음 방법 중 하나를 사용하여 NetApp 배포 엔진에 액세스합니다.
+
+|===
+| 시나리오 | 방법 
+
+
+| 사용자 환경에 DHCP가 없습니다 | link:task_nde_access_no_dhcp.html["DHCP를 사용하지 않는 환경에서 NetApp 배포 엔진에 액세스합니다"] 
+
+
+| 작업 환경에 DHCP가 있습니다 | link:task_nde_access_dhcp.html["DHCP를 사용하는 환경에서 NetApp 배포 엔진에 액세스합니다"] 
+
+
+| 모든 IP 주소를 수동으로 할당하려고 합니다 | link:task_nde_access_manual_ip.html["IP 주소를 수동으로 할당하여 NetApp Deployment Engine에 액세스합니다"] 
+|===
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* link:task_nde_access_ui_fqdn.html["정규화된 도메인 이름 웹 UI 액세스를 구성합니다"^]
+

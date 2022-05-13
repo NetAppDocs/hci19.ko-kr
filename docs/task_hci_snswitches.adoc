@@ -1,0 +1,294 @@
+---
+sidebar: sidebar 
+permalink: docs/task_hci_snswitches.html 
+summary: NetApp에서 제공하는 모범 사례 및 단계에 따라 장애가 발생한 SN2000 시리즈 스위치를 중단 없이 교체할 수 있습니다. 
+keywords: netapp, hci, SSDs, drives, replace drives, H410S, H610S 
+---
+= SN2010, SN2100 및 SN2700 스위치를 교체합니다
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp에서 제공하는 모범 사례 및 단계에 따라 장애가 발생한 SN2000 시리즈 스위치를 중단 없이 교체할 수 있습니다.
+
+.무엇을 &#8217;필요로 할거야
+* Putty가 노트북에 설치되어 있고 출력을 캡처했는지 확인합니다. 출력 세션을 캡처하도록 Putty를 구성하는 방법을 알아보려면 이 비디오를 참조하십시오.
+
+
+video::2LZfWH8HffA[youtube, ]
+* 교체 전후에 NetApp Config Advisor를 실행해야 합니다. 이렇게 하면 유지 관리를 시작하기 전에 다른 문제를 식별할 수 있습니다. Config Advisor를 다운로드 및 설치하고 에서 빠른 시작 가이드에 액세스합니다 link:https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor/download["여기(로그인 필요)"^].
+* 전원 케이블, 기본 수공구 및 라벨을 준비합니다.
+* 2-4시간 유지 보수 기간을 계획했는지 확인합니다.
+* 아래의 스위치 포트를 숙지하십시오.
+
+
+[#img-sn2010]
+.SN2010 스위치 페이스플레이트 및 포트
+image::sn2010.png[SN2010,600,400]
+
+[#img-sn2100]
+.SN2100 스위치 페이스플레이트 및 포트
+image::sn2100.png[SN2100,600,400]
+
+[#img-sn2010/2100]
+.SN2010 및 SN2100 스위치 후면
+image::sn2010_rear.png[SN2010 및 SN2100 후면,600,400]
+
+[#img-sn2700]
+.SN2700 스위치 프론트 및 리어
+image::SN2700.png[SN2700 전면 및 후면,600,400]
+
+이 절차의 단계를 아래 순서대로 수행해야 합니다. 이는 스위치 교체 전에 가동 중지 시간이 최소화되고 교체 스위치가 사전 구성되도록 하기 위한 것입니다.
+
+
+NOTE: 지침이 필요한 경우 NetApp 지원에 문의하십시오.
+
+다음은 절차의 단계에 대한 개요입니다.<<Prepare to replace the faulty switch>>
+<<Create the configuration file>>
+<<Remove the faulty switch and install the replacement>>
+<<Verify the operating system version on the switch>>
+<<Configure the replacement switch>>
+<<Complete the replacement>>
+
+
+
+== 결함이 있는 스위치를 교체할 준비를 합니다
+
+결함이 있는 스위치를 교체하기 전에 다음 단계를 수행하십시오.
+
+.단계
+. 교체 스위치가 결함이 있는 스위치와 동일한 모델인지 확인합니다.
+. 결함이 있는 스위치에 연결된 모든 케이블에 레이블을 부착합니다.
+. 스위치 구성 파일이 저장된 외부 파일 서버를 식별합니다.
+. 다음 정보를 획득했는지 확인하십시오.
++
+.. 초기 구성에 사용되는 인터페이스: RJ-45 포트 또는 직렬 터미널 인터페이스.
+.. 스위치 액세스에 필요한 자격 증명: 결함이 없는 스위치의 관리 포트의 IP 주소 및 결함이 있는 스위치.
+.. 관리 액세스를 위한 암호.
+
+
+
+
+
+
+== 구성 파일을 생성합니다
+
+생성한 구성 파일을 사용하여 스위치를 구성할 수 있습니다. 다음 옵션 중 하나를 선택하여 스위치에 대한 구성 파일을 생성합니다.
+
+[cols="2*"]
+|===
+| 옵션을 선택합니다 | 단계 
+
+
+| 결함이 있는 스위치에서 백업 구성 파일을 생성합니다  a| 
+. 다음 예에서와 같이 SSH를 사용하여 스위치에 원격으로 연결합니다.
++
+[listing]
+----
+ssh admin@<switch_IP_address
+----
+. 다음 예에 표시된 대로 구성 모드로 들어갑니다.
++
+[listing]
+----
+switch > enable
+switch # configure terminal
+----
+. 다음 예제와 같이 사용 가능한 구성 파일을 찾습니다.
++
+[listing]
+----
+switch (config) #
+switch (config) # show configuration files
+----
+. 활성 bin 구성 파일을 외부 서버에 저장합니다.
++
+[listing]
+----
+switch (config) # configuration upload my-filename scp://myusername@my-server/path/to/my/<file>
+----
+
+
+
+
+| 다른 스위치에서 파일을 수정하여 백업 구성 파일을 생성합니다  a| 
+. 다음 예에서와 같이 SSH를 사용하여 스위치에 원격으로 연결합니다.
++
+[listing]
+----
+ssh admin@<switch_IP_address
+----
+. 다음 예에 표시된 대로 구성 모드로 들어갑니다.
++
+[listing]
+----
+switch > enable
+switch # configure terminal
+----
+. 다음 예와 같이 스위치에서 외부 서버로 텍스트 기반 구성 파일을 업로드합니다.
++
+[listing]
+----
+switch (config) #
+switch (config) # configuration text file my-filename upload scp://root@my-server/root/tmp/my-filename
+----
+. 텍스트 파일에서 다음 필드를 수정하여 결함이 있는 스위치와 일치시킵니다.
++
+[listing]
+----
+## Network interface configuration
+##
+no interface mgmt0 dhcp
+   interface mgmt0 ip address XX.XXX.XX.XXX /22
+
+##
+## Other IP configuration
+##
+   hostname oldhostname
+----
+
+
+|===
+
+
+== 결함이 있는 스위치를 탈거하고 교체품을 장착하십시오
+
+결함이 있는 스위치를 제거하고 교체 스위치를 설치하는 단계를 수행하십시오.
+
+.단계
+. 결함이 있는 스위치에서 전원 케이블을 찾습니다.
+. 스위치를 재부팅한 후 전원 케이블에 레이블을 지정하고 전원 케이블을 뽑습니다.
+. 결함이 있는 스위치에서 모든 케이블을 레이블 지정하고 분리한 다음 스위치 교체 시 손상되지 않도록 고정합니다.
+. 랙에서 스위치를 분리합니다.
+. 랙에 교체용 스위치를 설치합니다.
+. 전원 케이블 및 관리 포트 케이블을 연결합니다.
++
+
+NOTE: AC 전원이 공급되면 스위치가 자동으로 켜집니다. 전원 단추가 없습니다. 시스템 상태 LED가 녹색으로 켜지는 데 최대 5분이 걸릴 수 있습니다.
+
+. RJ-45 관리 포트 또는 직렬 터미널 인터페이스를 사용하여 스위치에 연결합니다.
+
+
+
+
+== 스위치의 운영 체제 버전을 확인합니다
+
+스위치의 OS 소프트웨어 버전을 확인합니다. 결함이 있는 스위치와 정상 스위치의 버전이 일치해야 합니다.
+
+.단계
+. SSH를 사용하여 스위치에 원격으로 연결합니다.
+. 구성 모드로 들어갑니다.
+. 'show version' 명령어를 실행한다. 다음 예를 참조하십시오.
++
+[listing]
+----
+SFPS-HCI-SW02-A (config) #show version
+Product name:      Onyx
+Product release:   3.7.1134
+Build ID:          #1-dev
+Build date:        2019-01-24 13:38:57
+Target arch:       x86_64
+Target hw:         x86_64
+Built by:          jenkins@e4f385ab3f49
+Version summary:   X86_64 3.7.1134 2019-01-24 13:38:57 x86_64
+
+Product model:     x86onie
+Host ID:           506B4B3238F8
+System serial num: MT1812X24570
+System UUID:       27fe4e7a-3277-11e8-8000-506b4b891c00
+
+Uptime:            307d 3h 6m 33.344s
+CPU load averages: 2.40 / 2.27 / 2.21
+Number of CPUs:    4
+System memory:     3525 MB used / 3840 MB free / 7365 MB total
+Swap:              0 MB used / 0 MB free / 0 MB total
+
+----
+. 버전이 일치하지 않으면 OS를 업그레이드해야 합니다. 를 참조하십시오 link:https://community.mellanox.com/s/article/howto-upgrade-switch-os-software-on-mellanox-switch-systems["Mellanox 소프트웨어 업그레이드 가이드"^] 를 참조하십시오.
+
+
+
+
+== 교체 스위치를 구성합니다
+
+교체 스위치를 구성하는 단계를 수행하십시오. 을 참조하십시오 link:https://docs.mellanox.com/display/MLNXOSv381000/Configuration+Management["Mellanox 구성 관리"^] 를 참조하십시오.
+
+.단계
+. 귀하에게 적용되는 옵션 중에서 선택하십시오.
+
+
+[cols="2*"]
+|===
+| 옵션을 선택합니다 | 단계 
+
+
+| 를 선택합니다  a| 
+. 다음 예와 같이 bin 구성 파일을 가져옵니다.
++
+[listing]
+----
+switch (config) # configuration fetch scp://myusername@my-server/path/to/my/<file>
+----
+. 다음 예와 같이 이전 단계에서 가져온 bin 구성 파일을 로드합니다.
++
+[listing]
+----
+switch (config) # configuration switch-to my-filename
+----
+. 재부팅을 확인하려면 yes를 입력합니다.
+
+
+
+
+| 텍스트 파일에서  a| 
+. 스위치를 공장 출하 시 기본값으로 재설정합니다.
++
+[listing]
+----
+switch (config) # reset factory keep-basic
+----
+. 텍스트 기반 구성 파일을 적용합니다.
++
+[listing]
+----
+switch (config) # configuration text file my-filename apply
+----
+. 다음 예와 같이 스위치에서 외부 서버로 텍스트 기반 구성 파일을 업로드합니다.
++
+[listing]
+----
+switch (config) #
+switch (config) # configuration text file my-filename upload scp://root@my-server/root/tmp/my-filename
+----
++
+
+NOTE: 텍스트 파일을 적용할 때는 재부팅할 필요가 없습니다.
+
+
+
+|===
+
+
+== 교체를 완료하십시오
+
+교체 절차를 완료하는 단계를 수행하십시오.
+
+.단계
+. 레이블을 사용하여 케이블을 삽입합니다.
+. NetApp Config Advisor 실행: 에서 빠른 시작 가이드에 액세스합니다 link:https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor/download["여기(로그인 필요)"^].
+. 스토리지 환경을 확인합니다.
+. 결함이 있는 스위치를 NetApp으로 되돌리십시오.
+
+
+
+
+== 자세한 내용을 확인하십시오
+
+* https://www.netapp.com/us/documentation/hci.aspx["NetApp HCI 리소스 페이지를 참조하십시오"^]
+* http://docs.netapp.com/sfe-122/index.jsp["SolidFire 및 Element 소프트웨어 설명서 센터"^]
+

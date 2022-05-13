@@ -1,0 +1,45 @@
+---
+sidebar: sidebar 
+permalink: docs/task_mnode_remove_assets.html 
+summary: REST API를 사용하여 시스템에서 컴퓨팅 노드 자산을 제거하는 방법에 대해 알아보십시오. 
+keywords: netapp, hci, api, REST, remove, compute, asset 
+---
+= 관리 노드에서 자산을 제거합니다
+:allow-uri-read: 
+
+
+[role="lead"]
+컴퓨팅 노드를 물리적으로 교체하거나 NetApp HCI 클러스터에서 제거해야 하는 경우 관리 노드 API를 사용하여 컴퓨팅 노드 자산을 제거해야 합니다.
+
+.무엇을 &#8217;필요로 할거야
+* 스토리지 클러스터에서 NetApp Element 소프트웨어 11.3 이상이 실행 중입니다.
+* 버전 11.3 이상을 실행하는 관리 노드를 배포했습니다.
+
+
+.단계
+. 관리 노드의 IP 주소를 입력한 후 '/mnode/1/' 입력:
++
+[listing]
+----
+https://<ManagementNodeIP>/mnode/1/
+----
+. authorize * 또는 임의의 잠금 아이콘을 클릭하고 API 사용 권한에 대한 클러스터 관리자 자격 증명을 입력합니다.
++
+.. 클러스터 사용자 이름 및 암호를 입력합니다.
+.. 값이 아직 선택되지 않은 경우 유형 드롭다운 목록에서 * Request body * 를 선택합니다.
+.. 값이 아직 채워지지 않은 경우 클라이언트 ID를 mnode-client로 입력합니다.
+.. 클라이언트 암호 값을 입력하지 마십시오.
+.. 세션을 시작하려면 * authorize * 를 클릭합니다.
+.. 창을 닫습니다.
+
+
+. Available authorization * 대화 상자를 닫습니다.
+. Get/Assets * 를 클릭합니다.
+. 체험하기 * 를 클릭합니다.
+. Execute * 를 클릭합니다.
+. 응답 본문을 아래로 스크롤하여 * Compute * 섹션으로 이동한 다음 실패한 계산 노드에 대한 'parent' 및 'id' 값을 복사합니다.
+. delete/assets/{asset_id}/compute-nodes/{compute_id} * 를 클릭합니다.
+. 체험하기 * 를 클릭합니다.
+. 이전 단계에서 복사한 '부모' 및 'id' 값을 입력합니다.
+. Execute * 를 클릭합니다.
+

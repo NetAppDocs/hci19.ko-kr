@@ -1,0 +1,129 @@
+---
+sidebar: sidebar 
+permalink: docs/rn_compute_firmware_2.76.10.html 
+summary: NetApp HCI 노드에 다운로드하여 적용할 수 있는 펌웨어 패키지의 릴리즈 노트에 대한 링크를 제공합니다. 
+keywords: netapp, hci, compute firmware 
+---
+= 컴퓨팅 펌웨어 번들 2.76.10 릴리스 정보
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: hci, release notes, vcp, element, management services, firmware
+
+
+[role="lead"]
+다운로드 가능한 컴퓨팅 노드 펌웨어 패키지에는 지원되는 모든 NetApp HCI 컴퓨팅 노드에 대한 최신 BIOS 및 BMC 기능 향상, 버그 수정 및 하드웨어 지원이 포함되어 있습니다.
+
+
+
+== 새로운 기능
+
+버전 2.76.10에는 일반적인 버그 수정이 포함되어 있습니다.
+
+
+
+=== 펌웨어 구성 요소가 업데이트되었습니다
+
+이 펌웨어 패키지에는 업데이트된 버전이 굵은 글꼴로 표시된 하드웨어 구성 요소에 대한 다음 펌웨어 버전이 포함되어 있습니다.
+
+|===
+| 구성 요소 | H300E, H500E, H700E | H410C | H610C | H615C 
+
+
+| BIOS | NA2.1 | NATP3.9 | 3B03 | 3B08.CO 
+
+
+| BMC | 6.84.00 | * 6.71.20 * | 4.00.07 | 4.68.07 
+
+
+| NIC/Mellanox | 14.25.1020 | 14.25.1020 | 14.25.1020 | 14.24.1000 
+|===
+
+
+=== 펌웨어 구성 요소의 변경
+
+다음은 각 새 펌웨어 구성 요소에 포함된 개선 사항 및 변경 사항에 대한 세부 정보입니다.
+
+|===
+| 노드 및 펌웨어 구성 요소입니다 | 개선 및 변경 
+
+
+| NATP3.9  a| 
+* CSESF-284 Tatooine + BMC 6.71.18은 PPR 함수 작업 성공 이벤트를 보고하지 않습니다.
+* CSESF-289 NA3.7 BIOS에는 hPPR(hard PPR)에 대한 성공 보고 기능이 없습니다.
+* SKX ucode를 0x6906 및 CLX ucode를 0x2F01로 업데이트했습니다.
+
+
+|===
+
+
+=== Mellanox NIC 펌웨어 드라이버 호환성
+
+업데이트된 Mellanox 펌웨어 버전 14.25.1020 및 14.24.1000은 다음 버전의 VMware ESXi 드라이버와만 호환됩니다.
+
+* * ESXi 7.0 *: H300E/H500E/H700E/H410C: 버전 4.19.16.1
+* * ESXi 7.0 *: H610C/H615C: 버전 4.17.15.16
+* * ESXi 6.7 *: 버전 4.17.15.16
+* * ESXi 6.5 *: 버전 4.16.13.5
+
+
+
+NOTE: 버전 2.76.10으로 업그레이드하기 전에 현재 ESXi 드라이버 버전을 확인하십시오. 드라이버가 최신 버전이 아니면 먼저 드라이버를 업그레이드하십시오. 그런 다음 컴퓨팅 노드에서 컴퓨팅 펌웨어를 버전 2.99로 업그레이드합니다. 를 방문하십시오 link:task_hcc_upgrade_compute_node_drivers.html["컴퓨팅 노드 드라이버를 업데이트합니다"^] ESXi 드라이버를 포함하는 컴퓨팅 노드 드라이버를 업데이트하는 방법은 를 참조하십시오.
+
+NetApp Deployment Engine 1.8P1은 ESXi 버전 7.0을 배포하지 않지만 ESXi 7.0은 자체 설치 또는 수동 업그레이드 옵션으로 지원됩니다. 호스트 OS를 수동으로 설치 또는 업그레이드할 때 NetApp은 이러한 OS에 대한 드라이버 및 펌웨어를 제어할 수 없습니다.
+
+
+
+== Compute Firmware Bundle 2.76.10을 다운로드합니다
+
+Compute Firmware Bundle을 다운로드하려면 로 이동합니다 https://mysupport.netapp.com/site/products/all/details/netapp-hci/downloads-tab/download/62542/Compute_Firmware_Bundle["NetApp HCI 컴퓨팅 펌웨어 번들"^] 페이지.
+
+를 방문하십시오 link:task_hcc_upgrade_compute_node_firmware.html#use-the-baseboard-management-controller-bmc-user-interface-ui["컴퓨팅 노드 펌웨어를 업데이트합니다"^] 컴퓨팅 노드 펌웨어 업데이트에 대한 지침은 를 참조하십시오.
+
+
+
+== 보안 취약성 해결
+
+다음은 이 릴리스에서 해결된 보안 취약점입니다.
+
+
+
+=== H410C BMC 6.71.20
+
+* CVE-2019-1010022, CVE-2019-9169, CVE-2017-15804, CVE-2018-11236, CVE-2017-15670, CVE-2019-1010023, CVE-2015-8982, CVE-2015-8983, CVE-2017-16997, CVE-2019-20838,
+* CVE-2017-1000408, CVE-2017-1000409, CVE-2018-1000001, CVE-2018-19591, CVE-2009-5155, CVE-2018-20796, CVE-2016-3706, CVE-2020-1752, CVE-2019-1010024, CVE-2019-1010025,
+* CVE-2017-15671, CVE-2015-8985, CVE-2016-4429, CVE-2016-10739, CVE-2018-6485, CVE-2020-10029, CVE-2020-14155
+
+
+
+
+== 해결된 알려진 문제입니다
+
+를 참조하십시오 https://mysupport.netapp.com/site/bugs-online/product["버그 온라인 도구"^] 해결된 문제 및 새로운 문제에 대한 자세한 내용은 를 참조하십시오.
+
+
+
+=== BOL 도구 액세스
+
+. 로 이동합니다  https://mysupport.netapp.com/site/bugs-online/product["BOL 도구"^] 드롭다운 목록에서 * Element Software * 를 선택합니다.
++
+image::bol_dashboard.png[스토리지 펌웨어 번들 릴리스 정보]
+
+. 키워드 검색 필드에 "Compute Firmware Bundle"을 입력하고 * New Search * 를 클릭합니다.
++
+image::compute_firmware_bundle_choice.png[스토리지 펌웨어 번들 릴리스 정보]
+
+. 해결되었거나 열려 있는 버그 목록이 표시됩니다. 다음과 같이 결과를 더욱 세분화할 수 있습니다.
++
+image::bol_list_bugs_found.png[스토리지 펌웨어 번들 릴리스 정보]
+
+
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/NetApp_HCI/Firmware_and_driver_versions_in_NetApp_HCI_and_NetApp_Element_software["NetApp HCI 및 NetApp Element 소프트웨어의 펌웨어 및 드라이버 버전"^]
+

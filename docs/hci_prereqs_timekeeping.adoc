@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: docs/hci_prereqs_timekeeping.html 
+summary: NetApp HCI의 DNS 및 시간 표시 요구 사항에 대해 알아보십시오. 
+keywords: netapp, hci, timekeeping, NTP, DNS 
+---
+= DNS 및 시간 표시 요구 사항
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: netapp, hci, timekeeping, NTP, DNS
+
+
+[role="lead"]
+구축하기 전에 NetApp HCI 시스템에 대한 DNS(Domain Name System) 레코드를 준비하고 NTP 서버 정보를 수집해야 합니다. NetApp HCI를 성공적으로 구축하려면 올바른 DNS 항목이 있는 DNS 서버와 NTP 서버가 필요합니다.
+
+NetApp HCI를 배포하기 전에 다음 DNS 및 시간 서버를 준비해야 합니다.
+
+* 호스트에 필요한 DNS 항목(예: 개별 컴퓨팅 또는 스토리지 노드)을 생성하고 호스트 항목이 해당 IP 주소에 매핑되는 방식을 문서화합니다. 구축하는 동안 각 호스트에 적용할 스토리지 클러스터에 접두사를 할당해야 합니다. 혼동을 방지하려면 접두사를 선택할 때 DNS 명명 계획을 염두에 두어야 합니다.
+* 정규화된 도메인 이름을 사용하여 새 VMware vSphere 설치와 함께 NetApp HCI를 구축하는 경우 구축 전에 사용 중인 모든 DNS 서버에서 하나의 포인터(PTR) 레코드와 하나의 주소(A) 레코드를 생성해야 합니다.
+* IP 주소만 사용하여 새로운 vSphere 설치를 통해 NetApp HCI를 구축하는 경우 vCenter에 대한 새 DNS 레코드를 생성할 필요가 없습니다.
+* 시간 표시를 위해 NetApp HCI에 유효한 NTP 서버가 필요합니다. 환경에 공용 시간 서버가 없는 경우 공용 시간 서버를 사용할 수 있습니다.
+* 모든 스토리지 및 컴퓨팅 노드 클록이 서로 동기화되어 있고 NetApp HCI에 로그인하는 데 사용하는 디바이스의 클록이 NetApp HCI 노드와 동기화되어 있는지 확인합니다.
+
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지를 참조하십시오"^]
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+

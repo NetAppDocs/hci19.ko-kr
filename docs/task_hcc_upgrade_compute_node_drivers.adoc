@@ -1,0 +1,63 @@
+---
+sidebar: sidebar 
+permalink: docs/task_hcc_upgrade_compute_node_drivers.html 
+summary: NetApp HCI 시스템 업그레이드의 일부로 컴퓨팅 노드 드라이버를 업그레이드합니다. 
+keywords: netapp, hci, on premise, cluster, element, compute node 
+---
+= 컴퓨팅 노드 드라이버를 업데이트합니다
+:allow-uri-read: 
+
+
+[role="lead"]
+모든 H 시리즈 컴퓨팅 노드에 대해 VMware Update Manager를 사용하여 노드에 사용된 드라이버를 업데이트할 수 있습니다.
+
+의 하드웨어 펌웨어 및 드라이버 매트릭스를 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/NetApp_HCI/Firmware_and_driver_versions_in_NetApp_HCI_and_NetApp_Element_software["이 NetApp KB 문서를 참조하십시오"^] (로그인 필요).
+
+이러한 업데이트 작업 중 하나만 한 번에 수행합니다.
+
+컴퓨팅 펌웨어 업그레이드를 시도하기 전에 현재 ESXi 드라이버 버전을 확인해야 합니다. 드라이버가 최신 버전이 아니면 먼저 드라이버를 업그레이드하십시오. 그런 다음 컴퓨팅 노드의 컴퓨팅 펌웨어를 업그레이드합니다.
+
+.단계
+. 로 이동합니다 https://mysupport.netapp.com/site/products/all/details/netapp-hci/downloads-tab["NetApp HCI 소프트웨어 다운로드"^] 페이지를 방문하여 올바른 버전의 NetApp HCI에 대한 다운로드 링크를 선택합니다.
+. 드롭다운 목록에서 * ESXi_drivers * 를 선택합니다.
+. 최종 사용자 사용권 계약에 동의합니다.
+. 해당 노드 유형 및 ESXi 버전에 대한 드라이버 패키지를 다운로드합니다.
+. 로컬 컴퓨터에서 다운로드한 드라이버 번들의 압축을 풉니다.
++
+
+NOTE: NetApp 드라이버 번들에는 하나 이상의 VMware 오프라인 번들 ZIP 파일이 포함되어 있으므로 이러한 ZIP 파일을 추출하지 마십시오.
+
+. VMware vCenter에서 * VMware Update Manager * 로 이동합니다.
+. 컴퓨팅 노드의 드라이버 오프라인 번들 파일을 * 패치 저장소 * 로 가져옵니다.
++
+** VMware ESXi 7.0의 경우 NetApp H610C, H615C, H410C 및 Hx00E 컴퓨팅 노드 및 빌드-인 시스템 구성 요소에 필요한 모든 드라이버가 표준 VMware ESXi 7.0 설치 ISO 이미지에 포함되어 있습니다. VMware ESXi 7.0(및 업데이트)을 실행하는 NetApp HCI 컴퓨팅 노드에 대해 추가 또는 업데이트된 드라이버가 필요하지 않습니다.
+** VMware ESXi 6.x의 경우 다음 단계를 수행하여 드라이버 오프라인 번들 파일을 가져옵니다.
++
+... 업데이트 * 탭을 선택합니다.
+... 파일에서 * 업로드 * 를 선택합니다.
+... 이전에 다운로드한 오프라인 번들을 찾아 * import * 를 선택합니다.
+
+
+
+
+. 컴퓨팅 노드의 새 호스트 기준을 생성합니다.
+. 이름 및 유형 으로 * Host Extension * 을 선택하고 가져온 드라이버 패키지를 모두 선택하여 새 기준에 포함합니다.
+. vCenter의 * Host and Clusters * 메뉴에서 업데이트할 컴퓨팅 노드가 있는 클러스터를 선택하고 * Update Manager * 탭으로 이동합니다.
+. Remediate * 를 선택하고 새로 생성된 호스트 기준선을 선택합니다. 기준에 포함된 드라이버가 선택되었는지 확인합니다.
+. 마법사를 통해 * 호스트 수정 옵션 * 으로 이동하고 드라이버 업데이트 중에 가상 시스템을 온라인 상태로 유지하기 위해 * VM 전원 상태 변경 안 함 * 옵션이 선택되어 있는지 확인합니다.
++
+
+NOTE: 클러스터에서 VMware DRS(Distributed Resource Scheduler)가 활성화된 경우(NetApp HCI 설치의 기본 구성 요소) 가상 머신은 클러스터의 다른 노드로 자동 마이그레이션됩니다.
+
+. 마법사의 * Ready to Complete * 페이지로 이동한 후 * Finish * 를 선택합니다.
++
+클러스터의 모든 컴퓨팅 노드에 대한 드라이버는 가상 머신이 온라인 상태일 때 한 번에 한 노드씩 업데이트됩니다.
+
+
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
+

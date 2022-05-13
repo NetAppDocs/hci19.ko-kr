@@ -1,0 +1,36 @@
+---
+sidebar: sidebar 
+permalink: docs/concept_hci_volume_access_groups.html 
+summary: 볼륨 액세스 그룹 및 이러한 그룹을 사용하여 볼륨에 액세스하고 볼륨을 관리하는 방법에 대해 알아보십시오. 
+keywords: netapp, hci, storage volume, solidfire volume, element volume, persistent volume, access group 
+---
+= 볼륨 액세스 그룹
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+볼륨 액세스 그룹은 사용자가 iSCSI 또는 파이버 채널 이니시에이터를 사용하여 액세스할 수 있는 볼륨의 모음입니다.
+
+볼륨 액세스 그룹을 생성 및 사용하면 볼륨 세트에 대한 액세스를 제어할 수 있습니다. 볼륨 집합 및 이니시에이터 집합을 볼륨 액세스 그룹에 연결하면 액세스 그룹은 해당 이니시에이터 액세스 권한을 해당 볼륨 집합에 부여합니다.
+
+볼륨 액세스 그룹은 다음과 같은 제한 사항이 있습니다.
+
+* 볼륨 액세스 그룹당 최대 128개의 이니시에이터
+* 볼륨당 최대 64개의 액세스 그룹
+* 액세스 그룹은 최대 2000개의 볼륨으로 구성할 수 있습니다.
+* IQN 또는 WWPN은 하나의 볼륨 액세스 그룹에만 속할 수 있습니다.
+
+
+
+
+== 자세한 내용을 확인하십시오
+
+* link:task_hcc_manage_vol_access_groups.html["볼륨 액세스 그룹을 관리합니다"^]
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+* http://docs.netapp.com/sfe-122/index.jsp["SolidFire 및 Element 소프트웨어 설명서 센터"^]
+

@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: docs/hci_prereqs_network_cables.html 
+summary: NetApp HCI 네트워크 케이블 요구 사항에 대해 알아보십시오. 
+keywords: netapp, hci, network, cable, requirements 
+---
+= 네트워크 케이블 요구 사항
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: netapp, hci, network, cable, requirements
+
+
+[role="lead"]
+다음 지침을 사용하여 배포 규모에 맞는 올바른 유형의 네트워크 케이블이 있는지 확인할 수 있습니다. RJ45 포트의 경우 Cat 5e 또는 Cat 6 정격 케이블을 사용해야 합니다.
+
+* 2케이블 컴퓨팅 노드 구성: 각 컴퓨팅 노드는 2개의 SFP+/SFP28 인터페이스를 통해 10/25GbE 네트워크에 연결되어야 합니다(대역 외 관리를 위해 하나의 추가 Cat 5e/6 케이블은 선택 사항).
+* 6케이블 컴퓨팅 노드 구성: 각 컴퓨팅 노드는 4개의 SFP+/SFP28 인터페이스를 통해 10/25GbE 네트워크에 연결하고 2개의 Cat 5e/6 케이블을 통해 1/10GbE 네트워크에 연결해야 합니다(대역 외 관리를 위해 1개의 추가 Cat 5e/6 케이블이 선택 사항).
+* 각 스토리지 노드는 2개의 SFP+/SFP28 인터페이스를 통해 10/25GbE 네트워크에 연결하고 2개의 Cat 5e/6 케이블을 통해 1/10GbE 네트워크에 연결해야 합니다(대역 외 관리를 위해 1개의 추가 Cat 5e/6 케이블은 선택 사항).
+* NetApp HCI 시스템을 네트워크에 연결하는 데 사용하는 네트워크 케이블이 스위치에 편안하게 닿을 수 있을 만큼 충분히 길지 확인합니다.
+
+
+예를 들어, 4개의 스토리지 노드와 3개의 컴퓨팅 노드(6개 케이블 구성 사용)를 포함하는 구축 시 다음과 같은 수의 네트워크 케이블이 필요합니다.
+
+* (14) RJ45 커넥터가 있는 Cat 5e/6 케이블(필요한 경우 IPMI 트래픽용 케이블 7개 포함)
+* (20) SFP28/SFP+ 커넥터가 있는 Twinax 케이블
+
+
+그 이유는 다음과 같습니다.
+
+* 4개의 스토리지 노드에는 8개의 Cat 5e/6 케이블과 8개의 Twinax 케이블이 필요합니다.
+* 6케이블 구성을 사용하는 3개의 컴퓨팅 노드에는 6개의 Cat 5e/6 케이블과 12개의 Twinax 케이블이 필요합니다.
+
+
+
+NOTE: 6케이블 구성에서는 VMware ESXi용으로 2개의 포트가 예약되어 NetApp Deployment Engine에서 설정 및 관리합니다. Element TUI 또는 Element 웹 GUI를 사용하여 이러한 ESXi 전용 포트에 액세스하거나 관리할 수 없습니다.
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지를 참조하십시오"^]
+* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
+
