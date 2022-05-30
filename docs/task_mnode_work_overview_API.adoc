@@ -15,14 +15,14 @@ REST API로 수행할 수 있는 작업:
 
 
 
-=== 권한 부여
+== 권한 부여
 
 * link:task_mnode_api_get_authorizationtouse.html["REST API 사용 인증 획득"]
 
 
 
 
-=== 자산 구성
+== 자산 구성
 
 * link:task_mnode_enable_activeIQ.html["Active IQ 및 NetApp HCI 모니터링을 활성화합니다"]
 * link:task_mnode_configure_proxy_server.html["관리 노드에 대한 프록시 서버를 구성합니다"]
@@ -33,7 +33,7 @@ REST API로 수행할 수 있는 작업:
 
 
 
-=== 자산 관리
+== 자산 관리
 
 * link:task_mnode_edit_vcenter_assets.html["기존 컨트롤러 자산을 보거나 편집합니다"]
 * link:task_mnode_manage_storage_cluster_assets.html["스토리지 클러스터 자산을 생성하고 관리합니다"]

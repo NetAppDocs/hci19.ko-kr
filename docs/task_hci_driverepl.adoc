@@ -20,7 +20,7 @@ keywords: netapp, hci, SSDs, drives, replace drives, H410S, H610S
 
 
 
-=== 드라이브 처리를 위한 모범 사례
+== 드라이브 처리를 위한 모범 사례
 
 드라이브 처리를 위한 다음과 같은 모범 사례를 따라야 합니다.
 
@@ -35,7 +35,7 @@ keywords: netapp, hci, SSDs, drives, replace drives, H410S, H610S
 
 
 
-=== 드라이브 추가 및 제거에 대한 모범 사례
+== 드라이브 추가 및 제거에 대한 모범 사례
 
 클러스터에 드라이브를 추가하고 클러스터에서 드라이브를 제거하는 다음 모범 사례를 따라야 합니다.
 
