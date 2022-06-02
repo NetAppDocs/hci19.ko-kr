@@ -15,7 +15,7 @@ keywords: netapp, hci, compute firmware
 
 
 [role="lead"]
-다운로드 가능한 컴퓨팅 노드 펌웨어 패키지에는 지원되는 모든 NetApp HCI 컴퓨팅 노드에 대한 최신 BIOS 및 BMC 기능 향상, 버그 수정 및 하드웨어 지원이 포함되어 있습니다.
+다운로드할 수 있는 컴퓨팅 펌웨어 번들에는 지원되는 모든 NetApp HCI 컴퓨팅 노드에 대한 최신 BIOS 및 BMC 기능 향상, 버그 픽스 및 하드웨어 지원이 포함되어 있습니다.
 
 
 

@@ -79,7 +79,7 @@ NOTE: 업그레이드하기 전에 현재 ESXi 드라이버 버전을 확인하�
 
 * <<Use NetApp Hybrid Cloud Control UI to upgrade a compute node>> (권장)
 * <<Use NetApp Hybrid Cloud Control API to upgrade a compute node>>
-* <<Use a USB drive imaged with the latest compute node firmware bundle ISO>>
+* <<Use a USB drive imaged with the latest compute firmware bundle>>
 * <<Use the Baseboard Management Controller (BMC) user interface (UI)>>
 
 
@@ -93,19 +93,19 @@ NOTE: 업그레이드하기 전에 현재 ESXi 드라이버 버전을 확인하�
 TIP: 성공적인 업그레이드를 위해서는 vSphere 클러스터의 상태 점검이 성공했는지 확인하십시오.
 
 
-TIP: 다크 사이트 업그레이드의 경우 업그레이드 패키지와 관리 노드가 모두 로컬인 경우 업로드 시간을 줄일 수 있습니다.
+TIP: 다크 사이트 업그레이드의 경우 컴퓨팅 펌웨어 번들과 관리 노드가 모두 로컬인 경우 업로드 시간을 줄일 수 있습니다.
 
 
 NOTE: 관리 노드와 BMC 호스트 간의 네트워크 연결 속도에 따라 NIC, BIOS 및 BMC를 업그레이드하는 데 노드당 약 60분이 걸릴 수 있습니다.
 
 
-NOTE: NetApp 하이브리드 클라우드 제어 UI를 사용하여 H300E/H500E/H700E 컴퓨팅 노드에서 컴퓨팅 펌웨어를 업그레이드하는 것은 더 이상 지원되지 않습니다. 업그레이드하려면 를 사용하는 것이 좋습니다 <<manual_method_USB,USB 드라이브>> 또는 을 누릅니다 <<manual_method_BMC,BMC UI>> 컴퓨팅 펌웨어 ISO를 마운트합니다.
+NOTE: NetApp 하이브리드 클라우드 제어 UI를 사용하여 H300E/H500E/H700E 컴퓨팅 노드에서 컴퓨팅 펌웨어를 업그레이드하는 것은 더 이상 지원되지 않습니다. 업그레이드하려면 를 사용하는 것이 좋습니다 <<manual_method_USB,USB 드라이브>> 또는 을 누릅니다 <<manual_method_BMC,BMC UI>> 컴퓨팅 펌웨어 번들을 마운트합니다.
 
 .무엇을 &#8217;필요로 할거야
-* 관리 노드가 인터넷에 연결되어 있지 않은 경우 에서 컴퓨팅 노드 펌웨어 패키지를 다운로드했습니다 https://mysupport.netapp.com/site/products/all/details/netapp-hci/downloads-tab/download/62542/Compute_Firmware_Bundle["NetApp Support 사이트"^].
+* 관리 노드가 인터넷에 연결되어 있지 않은 경우 에서 컴퓨팅 펌웨어 번들을 다운로드했습니다 https://mysupport.netapp.com/site/products/all/details/netapp-hci/downloads-tab/download/62542/Compute_Firmware_Bundle["NetApp Support 사이트"^].
 +
 
-NOTE: TAR.GZ 파일을 TAR 파일로 추출한 다음 ISO에 TAR 파일을 추출해야 합니다.
+NOTE: TAR.GZ 파일을 TAR 파일로 추출하여 TAR 파일을 컴퓨팅 펌웨어 번들에 추출해야 합니다.
 
 
 
@@ -131,7 +131,7 @@ https://<ManagementNodeIP>
 +
 업그레이드할 수 있는 경우 클러스터에 있는 노드가 현재 펌웨어 버전 및 최신 버전과 함께 표시됩니다.
 
-.. 업그레이드 패키지를 선택합니다.
+.. 컴퓨팅 펌웨어 번들을 선택합니다.
 .. 업그레이드 시작 * 을 선택합니다.
 +
 업그레이드 시작 * 을 선택하면 창에 실패한 상태 검사가 표시됩니다(있는 경우).
@@ -147,7 +147,7 @@ CAUTION: 시작한 후에는 업그레이드를 일시 중지할 수 없습니�
 NOTE: 업그레이드가 진행되는 동안 페이지를 종료하고 나중에 다시 돌아와 진행 상황을 계속 모니터링할 수 있습니다. 업그레이드 중에 UI에 업그레이드 상태에 대한 다양한 메시지가 표시됩니다.
 
 
-CAUTION: H610C 및 H615S 컴퓨팅 노드에서 펌웨어를 업그레이드하는 동안 BMC 웹 UI를 통해 SOL(Serial-over-LAN) 콘솔을 열지 마십시오. 이로 인해 업그레이드에 실패할 수 있습니다.
+CAUTION: H610C 및 H615C 컴퓨팅 노드에서 펌웨어를 업그레이드하는 동안 BMC 웹 UI를 통해 SOL(Serial-over-LAN) 콘솔을 열지 마십시오. 이로 인해 업그레이드에 실패할 수 있습니다.
 
 업그레이드가 완료된 후 UI에 메시지가 표시됩니다. 업그레이드가 완료된 후 로그를 다운로드할 수 있습니다.
 
@@ -155,7 +155,7 @@ CAUTION: H610C 및 H615S 컴퓨팅 노드에서 펌웨어를 업그레이드하�
 
 | 관리 노드는 외부 연결이 없는 어두운 사이트 내에 있습니다.  a| 
 .. 업그레이드할 클러스터를 선택합니다.
-.. 에서 다운로드한 업그레이드 패키지를 업로드하려면 * 찾아보기 * 를 선택합니다https://mysupport.netapp.com/site/products/all/details/netapp-hci/downloads-tab["NetApp Support 사이트"^].
+.. 에서 다운로드한 컴퓨팅 펌웨어 번들을 업로드하려면 * 찾아보기 * 를 선택합니다https://mysupport.netapp.com/site/products/all/details/netapp-hci/downloads-tab["NetApp Support 사이트"^].
 .. 업로드가 완료될 때까지 기다립니다. 진행률 표시줄에 업로드 상태가 표시됩니다.
 
 
@@ -205,7 +205,7 @@ TIP: 업그레이드 중에 장애가 발생할 경우 NetApp 하이브리드 �
 API를 사용하여 클러스터의 각 컴퓨팅 노드를 최신 펌웨어 버전으로 업그레이드할 수 있습니다. 원하는 자동화 툴을 사용하여 API를 실행할 수 있습니다. 여기에 설명된 API 워크플로에서는 관리 노드에서 사용할 수 있는 REST API UI를 예로 사용합니다.
 
 
-NOTE: NetApp 하이브리드 클라우드 제어 UI를 사용하여 H300E/H500E/H700E 컴퓨팅 노드에서 컴퓨팅 펌웨어를 업그레이드하는 것은 더 이상 지원되지 않습니다. 업그레이드하려면 를 사용하는 것이 좋습니다 <<manual_method_USB,USB 드라이브>> 또는 을 누릅니다 <<manual_method_BMC,BMC UI>> 컴퓨팅 펌웨어 ISO를 마운트합니다.
+NOTE: NetApp 하이브리드 클라우드 제어 UI를 사용하여 H300E/H500E/H700E 컴퓨팅 노드에서 컴퓨팅 펌웨어를 업그레이드하는 것은 더 이상 지원되지 않습니다. 업그레이드하려면 를 사용하는 것이 좋습니다 <<manual_method_USB,USB 드라이브>> 또는 을 누릅니다 <<manual_method_BMC,BMC UI>> 컴퓨팅 펌웨어 번들을 마운트합니다.
 
 vCenter 및 하드웨어 자산을 비롯한 컴퓨팅 노드 자산을 관리 노드 자산이라고 합니다. 재고 서비스 API를 사용하여 자산을 확인할 수 있습니다('https://<ManagementNodeIP>/inventory/1/`).
 
@@ -240,12 +240,12 @@ https://<ManagementNodeIP>/package-repository/1/
 ... 코드 200이 반환되는 경우 다음 단계로 이동합니다. 원격 리포지토리에 연결되지 않은 경우 연결을 설정하거나 다크 사이트 옵션을 사용합니다.
 
 
-.. 업그레이드 패키지 ID 찾기:
+.. 컴퓨팅 펌웨어 번들 ID 찾기:
 +
 ... REST API UI에서 * GET/packages * 를 선택한다.
 ... 체험하기 * 를 선택합니다.
 ... Execute * 를 선택합니다.
-... 응답에서 업그레이드 패키지 이름(""packageName"")과 패키지 버전(""packageVersion")을 복사하여 나중에 사용할 수 있도록 저장합니다.
+... 응답에서 나중에 사용할 수 있도록 컴퓨팅 펌웨어 번들 이름(""packageName") 및 버전(""packageVersion"")을 복사하여 저장합니다.
 
 
 
@@ -253,12 +253,12 @@ https://<ManagementNodeIP>/package-repository/1/
 
 
 | 관리 노드는 외부 연결이 없는 어두운 사이트 내에 있습니다.  a| 
-.. NetApp HCI 소프트웨어로 이동합니다 https://mysupport.netapp.com/site/products/all/details/netapp-hci/downloads-tab/download/62542/Compute_Firmware_Bundle["다운로드 페이지"^] 최신 컴퓨팅 노드 펌웨어 이미지를 관리 노드에서 액세스할 수 있는 디바이스에 다운로드합니다.
+.. NetApp HCI 소프트웨어로 이동합니다 https://mysupport.netapp.com/site/products/all/details/netapp-hci/downloads-tab/download/62542/Compute_Firmware_Bundle["다운로드 페이지"^] 그리고 최신 컴퓨팅 펌웨어 번들을 관리 노드에서 액세스할 수 있는 장치로 다운로드합니다.
 +
 
-TIP: 다크 사이트 업그레이드의 경우 업그레이드 패키지와 관리 노드가 모두 로컬인 경우 업로드 시간을 줄일 수 있습니다.
+TIP: 다크 사이트 업그레이드의 경우 컴퓨팅 펌웨어 번들과 관리 노드가 모두 로컬인 경우 업로드 시간을 줄일 수 있습니다.
 
-.. 컴퓨팅 펌웨어 업그레이드 패키지를 관리 노드에 업로드합니다.
+.. 컴퓨팅 펌웨어 번들을 관리 노드에 업로드합니다.
 +
 ... 관리 노드에서 관리 노드 REST API UI를 엽니다.
 +
@@ -276,9 +276,9 @@ https://<ManagementNodeIP>/package-repository/1/
 
 ... REST API UI에서 * POST/packages * 를 선택합니다.
 ... 체험하기 * 를 선택합니다.
-... Browse * 를 선택하고 업그레이드 패키지를 선택합니다.
+... Browse * 를 선택하고 컴퓨팅 펌웨어 번들을 선택합니다.
 ... 업로드를 시작하려면 * 실행 * 을 선택합니다.
-... 응답에서 패키지 ID(""id"")를 복사하여 나중에 사용할 수 있도록 저장합니다.
+... 응답에서 나중에 사용할 수 있도록 컴퓨팅 펌웨어 번들 ID("" id")를 복사하여 저장합니다.
 
 
 .. 업로드 상태를 확인합니다.
@@ -290,7 +290,7 @@ https://<ManagementNodeIP>/package-repository/1/
 +
 완료했을 때 '성공'이라는 응답이 나타납니다.
 
-... 응답에서 업그레이드 패키지 이름("이름")과 패키지 버전("버전")을 복사하여 나중에 사용할 수 있도록 저장합니다.
+... 응답에서 컴퓨팅 펌웨어 번들 이름("이름")과 버전("버전")을 복사하여 나중에 사용할 수 있도록 저장합니다.
 
 
 
@@ -374,7 +374,7 @@ https://<ManagementNodeIP>/hardware/2/
 +
 ... 노드에서 상태 점검이 수행되고 ESXi 호스트가 유지 보수 모드로 설정되도록 값 ""force":false" 및 ""maintenanceMode":true""를 유지합니다.
 ... 이전 단계에서 저장한 클러스터 컨트롤러 ID("controllerId")를 입력합니다.
-... 이전 단계에서 저장한 패키지 이름 및 패키지 버전을 입력합니다.
+... 이전 단계에서 저장한 컴퓨팅 펌웨어 번들 이름 및 버전을 입력합니다.
 +
 [listing]
 ----
@@ -462,15 +462,20 @@ https://<ManagementNodeIP>/hardware/2/
 
 
 
-== 최신 컴퓨팅 노드 펌웨어 번들 ISO로 이미지화된 USB 드라이브를 사용합니다
+== 최신 컴퓨팅 펌웨어 번들과 함께 이미지화된 USB 드라이브를 사용하십시오
 
-최신 컴퓨팅 노드 펌웨어 ISO가 다운로드된 USB 드라이브를 컴퓨팅 노드의 USB 포트에 삽입할 수 있습니다. 이 절차에서 설명하는 USB 썸 드라이브 방법을 사용하는 대신 BMC(베이스보드 관리 컨트롤러) 인터페이스의 가상 콘솔에 있는 * 가상 CD/DVD * 옵션을 사용하여 컴퓨팅 노드에 ISO를 마운트할 수 있습니다. BMC 방법은 USB 썸 드라이브 방식보다 훨씬 오래 걸립니다. 워크스테이션 또는 서버에 필요한 네트워크 대역폭이 있는지, 그리고 BMC와 브라우저 세션이 시간 초과되지 않는지 확인합니다.
+최신 컴퓨팅 펌웨어 번들이 다운로드된 USB 드라이브를 컴퓨팅 노드의 USB 포트에 삽입할 수 있습니다. 이 절차에서 설명하는 USB 썸 드라이브 방법을 사용하는 대신 BMC(Baseboard Management Controller) 인터페이스의 가상 콘솔에 있는 * 가상 CD/DVD * 옵션을 사용하여 컴퓨팅 노드에 컴퓨팅 펌웨어 번들을 마운트할 수 있습니다. BMC 방법은 USB 썸 드라이브 방식보다 훨씬 오래 걸립니다. 워크스테이션 또는 서버에 필요한 네트워크 대역폭이 있는지, 그리고 BMC와 브라우저 세션이 시간 초과되지 않는지 확인합니다.
+
+.무엇을 &#8217;필요로 할거야
+* 관리 노드가 인터넷에 연결되어 있지 않은 경우 에서 컴퓨팅 펌웨어 번들을 다운로드했습니다 https://mysupport.netapp.com/site/products/all/details/netapp-hci/downloads-tab/download/62542/Compute_Firmware_Bundle["NetApp Support 사이트"^].
++
+
+NOTE: TAR.GZ 파일을 TAR 파일로 추출하여 TAR 파일을 컴퓨팅 펌웨어 번들에 추출해야 합니다.
+
+
 
 .단계
-. 로 이동합니다 https://mysupport.netapp.com/site/downloads["NetApp 소프트웨어 다운로드"^] 페이지에서 * NetApp HCI * 를 선택하고 올바른 버전의 NetApp HCI에 대한 다운로드 링크를 선택합니다.
-. 최종 사용자 사용권 계약에 동의합니다.
-. 컴퓨팅 및 스토리지 노드 * 섹션에서 컴퓨팅 노드 이미지를 다운로드합니다.
-. Etcher 유틸리티를 사용하여 컴퓨팅 노드 펌웨어 ISO를 USB 드라이브로 플래시합니다.
+. Etcher 유틸리티를 사용하여 컴퓨팅 펌웨어 번들을 USB 드라이브로 플래시합니다.
 . VMware vCenter를 사용하여 컴퓨팅 노드를 유지 관리 모드로 전환하고 호스트에서 모든 가상 머신을 비우십시오.
 +
 
@@ -492,7 +497,7 @@ NOTE: 클러스터에서 VMware DRS(Distributed Resource Scheduler)가 활성화
 
 == 베이스보드 관리 컨트롤러(BMC) 사용자 인터페이스(UI) 사용
 
-순차적 단계를 수행하여 컴퓨팅 노드 펌웨어 ISO를 로드하고 ISO로 노드를 재부팅하여 업그레이드가 성공적인지 확인해야 합니다. ISO는 웹 브라우저를 호스팅하는 시스템 또는 가상 머신(VM)에 있어야 합니다. 프로세스를 시작하기 전에 ISO를 다운로드했는지 확인하십시오.
+순차적 단계를 수행하여 컴퓨팅 펌웨어 번들을 로드하고 컴퓨팅 펌웨어 번들로 노드를 재부팅하여 업그레이드가 성공했는지 확인해야 합니다. 컴퓨팅 펌웨어 번들은 웹 브라우저를 호스팅하는 시스템 또는 가상 머신(VM)에 있어야 합니다. 프로세스를 시작하기 전에 컴퓨팅 펌웨어 번들을 다운로드했는지 확인합니다.
 
 
 TIP: 시스템 또는 VM과 노드를 동일한 네트워크에 연결하는 것이 좋습니다.
@@ -536,13 +541,13 @@ NOTE: Java를 설치하거나 업데이트해야 할 수 있습니다.
 . 콘솔이 열리면 * 가상 미디어 > 가상 스토리지 * 를 선택합니다.
 . Virtual Storage * 화면에서 * Logical Drive Type * 을 선택하고 * ISO File * 을 선택합니다.
 +
-image:BIOS_H410C_iso.png["ISO 파일을 선택할 수 있는 탐색 경로를 표시합니다."]
+image:BIOS_H410C_iso.png["에는 컴퓨팅 펌웨어 번들 파일을 선택할 수 있는 탐색 경로가 나와 있습니다."]
 
-. 이미지 열기 * 를 선택하여 ISO 파일을 다운로드한 폴더를 찾은 다음 ISO 파일을 선택합니다.
+. Open Image * 를 선택하여 컴퓨팅 펌웨어 번들 파일을 다운로드한 폴더로 이동한 다음 컴퓨팅 펌웨어 번들 파일을 선택합니다.
 . 플러그인 * 을 선택합니다.
 . 연결 상태가 Device#: VM Plug-in OK!!"로 표시되면 * OK * 를 선택합니다.
 . F12 * 를 누르고 * 재시작 * 을 선택하거나 * 전원 제어 > 전원 재설정 설정 * 을 선택하여 노드를 재부팅합니다.
-. 재부팅 중에 * F11 * 을 눌러 부팅 옵션을 선택하고 ISO를 로드합니다. 부팅 메뉴가 표시되기 전에 F11 키를 여러 번 눌러야 할 수 있습니다.
+. 재부팅 중에 * F11 * 을 눌러 부팅 옵션을 선택하고 컴퓨팅 펌웨어 번들을 로드합니다. 부팅 메뉴가 표시되기 전에 F11 키를 여러 번 눌러야 할 수 있습니다.
 +
 다음 화면이 표시됩니다.
 
@@ -572,7 +577,7 @@ NOTE: BIOS 버전은 노드가 완전히 부팅될 때까지 업그레이드된 
 
 === H610C/H615C 노드에서 펌웨어를 업그레이드합니다
 
-이 단계는 노드가 독립 실행형인지 또는 클러스터의 일부인지에 따라 다릅니다. 이 절차는 약 25분 정도 소요될 수 있으며, 노드 전원을 끄고, ISO를 업로드하고, 장치를 플래싱하고, 업그레이드 후 노드 전원을 다시 켜는 작업이 포함됩니다.
+이 단계는 노드가 독립 실행형인지 또는 클러스터의 일부인지에 따라 다릅니다. 이 절차는 약 25분 정도 소요되며, 노드 전원 끄기, 컴퓨팅 펌웨어 번들 업로드, 디바이스 플래싱, 업그레이드 후 노드 전원 켜기 등이 포함됩니다.
 
 .단계
 . 노드가 클러스터의 일부인 경우 다음과 같이 유지보수 모드로 전환합니다. 그렇지 않으면 2단계로 건너뜁니다.
@@ -599,7 +604,7 @@ image::bmc_wizard.gif[BMC UI에서 가상 미디어 마법사를 시작합니다
 image::virtual_med_popup.gif[ISO 업로드 성공을 보여주는 팝업 창.]
 
 . F12 * 를 누르고 * 재시작 * 을 선택하거나 * 전원 제어 > 전원 재설정 설정 * 을 선택하여 노드를 재부팅합니다.
-. 재부팅 중에 * F11 * 을 눌러 부팅 옵션을 선택하고 ISO를 로드합니다.
+. 재부팅 중에 * F11 * 을 눌러 부팅 옵션을 선택하고 컴퓨팅 펌웨어 번들을 로드합니다.
 . 표시된 목록에서 * AMI Virtual CDROM * 을 선택하고 * Enter * 를 선택합니다. 목록에 AMI 가상 CDROM이 표시되지 않으면 BIOS로 이동하여 부팅 목록에서 활성화하십시오. 저장한 후에 노드가 재부팅됩니다. 재부팅 중에 * F11 * 을 누릅니다.
 +
 image::boot_device.gif[부팅 장치를 선택할 수 있는 창이 표시됩니다.]
