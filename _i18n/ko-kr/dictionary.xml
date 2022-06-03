@@ -6229,4 +6229,5 @@
   <block id="df8bcceb7ddee511e9494f0afd8c95a7" category="list-text">재부팅 중에 * F11 * 을 눌러 부팅 옵션을 선택하고 컴퓨팅 펌웨어 번들을 로드합니다. 부팅 메뉴가 표시되기 전에 F11 키를 여러 번 눌러야 할 수 있습니다.</block>
   <block id="b56a80b47ffbf4eda21aa52a14a1c0d9" category="paragraph">이 단계는 노드가 독립 실행형인지 또는 클러스터의 일부인지에 따라 다릅니다. 이 절차는 약 25분 정도 소요되며, 노드 전원 끄기, 컴퓨팅 펌웨어 번들 업로드, 디바이스 플래싱, 업그레이드 후 노드 전원 켜기 등이 포함됩니다.</block>
   <block id="94accfc9ce60fbdbc6b912533ff89998" category="list-text">재부팅 중에 * F11 * 을 눌러 부팅 옵션을 선택하고 컴퓨팅 펌웨어 번들을 로드합니다.</block>
+  <block id="baac2557431cefc749efdd1d5a826b20" category="sidebar">NetApp HCI 1.9 설명서</block>
 </blocks>
