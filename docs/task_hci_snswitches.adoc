@@ -20,7 +20,7 @@ NetApp에서 제공하는 모범 사례 및 단계에 따라 장애가 발생한
 * Putty가 노트북에 설치되어 있고 출력을 캡처했는지 확인합니다. 출력 세션을 캡처하도록 Putty를 구성하는 방법을 알아보려면 이 비디오를 참조하십시오.
 
 
-video::2LZfWH8HffA[youtube, ]
+video::2LZfWH8HffA[youtube]
 * 교체 전후에 NetApp Config Advisor를 실행해야 합니다. 이렇게 하면 유지 관리를 시작하기 전에 다른 문제를 식별할 수 있습니다. Config Advisor를 다운로드 및 설치하고 에서 빠른 시작 가이드에 액세스합니다 link:https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor/download["여기(로그인 필요)"^].
 * 전원 케이블, 기본 수공구 및 라벨을 준비합니다.
 * 2-4시간 유지 보수 기간을 계획했는지 확인합니다.
