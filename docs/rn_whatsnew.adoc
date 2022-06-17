@@ -15,10 +15,21 @@ keywords: netapp, hci, element, new, whatsnew
 
 
 [role="lead"]
-NetApp은 새로운 기능, 개선 사항 및 버그 수정을 제공하기 위해 NetApp HCI을 정기적으로 업데이트합니다. NetApp HCI 1.9P1에는 스토리지 클러스터에 대한 Element 12.3.2가 포함됩니다.
+NetApp은 새로운 기능, 개선 사항 및 버그 수정을 제공하기 위해 NetApp HCI을 정기적으로 업데이트합니다. NetApp HCI 1.9P1에는 스토리지 클러스터용 NetApp Element 소프트웨어 12.3.1이 포함되어 있습니다.
 
+[NOTE]
+====
+Element 12.3.2 에는 Apache log4j 취약점에 대한 Element 소프트웨어 노출을 종료하는 완화 요소가 포함되어 있습니다. VVOL(가상 볼륨) 기능을 활성화한 NetApp SolidFire 스토리지 클러스터가 이 취약점에 노출됩니다.
+
+스토리지 클러스터가 Element 12.3.1 에 있고 VVol 기능이 활성화된 경우 Element 소프트웨어 12.3.2 로 업그레이드하는 것이 좋습니다.
+
+스토리지 클러스터가 Element 12.3.1 에 있고 VVol 기능이 비활성화된 경우 Element 소프트웨어 12.3.2 로 업그레이드하는 것은 선택 사항입니다.
+
+업그레이드 기간을 제외하고 클러스터에서 혼합 요소 버전을 실행하는 것은 권장되지 않습니다.
+
+====
 * 를 클릭합니다 <<NetApp HCI 1.9P1>> 섹션에서는 NetApp HCI 버전 1.9P1의 새로운 기능과 업데이트에 대해 설명합니다.
-* 를 클릭합니다 <<Element 12.3.2>> NetApp Element 12.3.2의 새로운 기능 및 업데이트에 대해 설명합니다.
+* 를 클릭합니다 <<Element 12.3.1>> NetApp Element 12.3.1의 새로운 기능 및 업데이트에 대해 설명합니다.
 
 
 
@@ -29,9 +40,32 @@ NetApp HCI 1.9P1에는 보안 및 안정성 향상이 포함되어 있습니다.
 
 
 
-== 요소 12.3.2
+== 요소 12.3.1
 
-Element 소프트웨어 12.3.2 릴리스에는 Apache log4j 취약점에 대한 Element 소프트웨어 노출을 종료하는 완화 요소가 포함되어 있습니다. VVOL(가상 볼륨) 기능을 활성화한 NetApp SolidFire 스토리지 클러스터가 이 취약점에 노출됩니다.
+NetApp HCI 1.9P1에는 스토리지 클러스터에 대한 Element 12.3.1이 포함됩니다.
+
+
+
+=== 스토리지 펌웨어 번들 2.99.2
+
+Element 12.3.1 릴리스는 스토리지 펌웨어 번들 버전 2.99.2를 포함합니다. 스토리지 클러스터가 이미 Element 12.3에 있는 경우 새 2.99.2 펌웨어 번들을 설치할 수 있습니다.
+
+
+
+=== 온라인에서 제공되는 NetApp 버그는 알려진 문제와 해결된 문제를 포함합니다
+
+알려지고 해결된 문제가 NetApp 버그 온라인 툴 에 나와 있습니다. 에서 Element 및 기타 제품에 대한 이러한 문제를 찾아볼 수 있습니다 https://mysupport.netapp.com/site/products/all/details/element-software/bugsonline-tab["NetApp 온라인 버그"^].
+
+.단계
+. 로 이동합니다 https://mysupport.netapp.com/site/products/all/details/element-software/bugsonline-tab["NetApp 온라인 버그"^].
+. [키워드로 검색] * 필드에 제품 이름(예: "요소")을 입력합니다.
+. 를 선택합니다 image:icon_plus.PNG["더하기 아이콘"]에서 * 버전 * 고정 필터를 선택하고 * 확인 * 을 선택합니다.
++
+image:bol_filters.PNG["BOL 필터 정렬 = \"중심\""]
+
+. 새 검색 * 을 선택합니다.
+. 버전 * 필드에 릴리스 버전을 입력합니다.
+
 
 [discrete]
 == 자세한 내용을 확인하십시오
