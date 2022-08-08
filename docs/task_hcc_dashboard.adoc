@@ -5,7 +5,12 @@ summary: NetApp 하이브리드 클라우드 제어 대시보드에서 스토리
 keywords: netapp, hci, on premise, hcc, hybrid cloud control, storage, compute, storage performance, utilization, capacity 
 ---
 = 하이브리드 클라우드 제어 대시보드에서 스토리지 및 컴퓨팅 리소스를 모니터링합니다
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -115,7 +120,7 @@ NOTE: 총 효율성은 (maxUsedSpace * 효율성 계수)/2와 같습니다. 여�
 
 
 
-. 추가 분석 및 기록 컨텍스트를 보려면 을 참조하십시오 https://activeiq.solidfire.com/["NetApp SolidFire Active IQ 세부 정보"].
+. 추가 분석 및 기록 컨텍스트를 보려면 을 참조하십시오 https://activeiq.solidfire.com/["NetApp SolidFire Active IQ 세부 정보"^].
 
 
 
@@ -173,7 +178,7 @@ image::hcc_dashboard_compute_util_cpu.png[사용량 창을 계산합니다]
 .. * 메모리 * 탭: 컴퓨팅 클러스터의 현재 평균 메모리 사용량을 확인합니다.
 
 
-. 컴퓨팅 정보에 대한 자세한 내용은 을 참조하십시오 https://activeiq.solidfire.com["기간별 데이터를 위한 NetApp SolidFire Active IQ"].
+. 컴퓨팅 정보에 대한 자세한 내용은 을 참조하십시오 https://activeiq.solidfire.com["기간별 데이터를 위한 NetApp SolidFire Active IQ"^].
 
 
 [discrete]

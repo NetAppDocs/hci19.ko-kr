@@ -44,7 +44,7 @@ NetApp 하이브리드 클라우드 제어로 사용자를 관리할 수 있습�
 
 NetApp HCI 1.8부터 스토리지 노드 2개로 스토리지 클러스터를 설정할 수 있습니다.
 
-* 특정 유형의 노드를 사용하여 2노드 스토리지 클러스터를 구성할 수 있습니다. 을 참조하십시오 https://library.netapp.com/ecm/ecm_download_file/ECMLP2865021["NetApp HCI 1.8 릴리스 정보"].
+* 특정 유형의 노드를 사용하여 2노드 스토리지 클러스터를 구성할 수 있습니다. 을 참조하십시오 https://library.netapp.com/ecm/ecm_download_file/ECMLP2865021["NetApp HCI 1.8 릴리스 정보"^].
 +
 
 NOTE: 2노드 클러스터의 스토리지 노드는 480GB 및 960GB 드라이브가 있는 노드로 제한되며 노드는 동일한 모델 유형이어야 합니다.
@@ -87,7 +87,7 @@ Witness Node에 장애가 발생하면 나머지 Witness Node가 앙상블에 �
 
 == 자세한 내용을 확인하십시오
 
-* https://www.netapp.com/us/media/tr-4823.pdf["NetApp HCI 2노드 스토리지 클러스터 | TR-4823"]
+* https://www.netapp.com/us/media/tr-4823.pdf["NetApp HCI 2노드 스토리지 클러스터 | TR-4823"^]
 * https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
 * http://docs.netapp.com/sfe-122/index.jsp["SolidFire 및 Element 소프트웨어 설명서 센터"^]
 

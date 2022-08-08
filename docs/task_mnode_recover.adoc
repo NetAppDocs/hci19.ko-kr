@@ -5,7 +5,12 @@ summary: NetApp Element 소프트웨어를 실행하는 클러스터의 관리 �
 keywords: netapp, element, management node, mnode, disaster recovery, redeploy, VM 
 ---
 = 관리 노드를 복구합니다
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -238,7 +243,7 @@ NOTE: 보안 프롬프트에 암호를 입력하라는 메시지가 표시됩니
 NOTE: 사용자 이름을 추가하거나 스크립트에서 정보를 묻는 메시지를 표시하도록 허용할 수 있습니다.
 
 .. redeploy-mnode 명령을 실행합니다. 재구축이 완료되면 스크립트에 성공 메시지가 표시됩니다.
-.. 시스템의 FQDN(정규화된 도메인 이름)을 사용하여 Element 또는 NetApp HCI 웹 인터페이스(예: 관리 노드 또는 NetApp 하이브리드 클라우드 제어)에 액세스하는 경우 link:task_hcc_upgrade_management_node.html#reconfigure-authentication-using-the-management-node-rest-api["관리 노드에 대한 인증을 다시 구성하십시오"^].
+.. 시스템의 FQDN(정규화된 도메인 이름)을 사용하여 Element 또는 NetApp HCI 웹 인터페이스(예: 관리 노드 또는 NetApp 하이브리드 클라우드 제어)에 액세스하는 경우 link:task_hcc_upgrade_management_node.html#reconfigure-authentication-using-the-management-node-rest-api["관리 노드에 대한 인증을 다시 구성하십시오"].
 
 
 

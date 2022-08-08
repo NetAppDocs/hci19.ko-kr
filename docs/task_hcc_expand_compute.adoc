@@ -5,7 +5,12 @@ summary: NetApp HCI 구축을 마친 후에는 NetApp 하이브리드 클라우�
 keywords: netapp, hci, on premise, expand, compute, cluster 
 ---
 = NetApp HCI 컴퓨팅 리소스를 확장합니다
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]

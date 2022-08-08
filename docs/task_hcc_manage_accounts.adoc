@@ -5,7 +5,12 @@ summary: 사용자 계정을 만들고 볼륨과 연결하는 방법에 대해 �
 keywords: netapp, hci, on premise, cluster, element, account, user, volume, hybrid cloud control, hcc 
 ---
 = NetApp 하이브리드 클라우드 제어를 사용하여 사용자 계정을 만들고 관리합니다
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]

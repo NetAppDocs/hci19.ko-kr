@@ -17,7 +17,7 @@ keywords: netapp, hci, Rancher, install, installation, requirements
 NetApp HCI에 Rancher를 설치하기 전에 환경 및 NetApp HCI 시스템이 이러한 요구 사항을 충족하는지 확인하십시오.
 
 
-NOTE: 잘못된 정보(예: 잘못된 Rancher 서버 FQDN)로 NetApp HCI에 Rancher를 실수로 배포하는 경우, Rancher 서버를 제거하고 다시 배포하지 않고도 배포를 수정할 수 없습니다. NetApp HCI 인스턴스에서 Rancher를 제거한 다음 NetApp 하이브리드 클라우드 제어 UI에서 NetApp HCI에 Rancher를 재배포해야 합니다. 을 참조하십시오 link:task_rancher_remove_deployment.html["NetApp HCI에서 목장 설치를 제거합니다"^] 를 참조하십시오.
+NOTE: 잘못된 정보(예: 잘못된 Rancher 서버 FQDN)로 NetApp HCI에 Rancher를 실수로 배포하는 경우, Rancher 서버를 제거하고 다시 배포하지 않고도 배포를 수정할 수 없습니다. NetApp HCI 인스턴스에서 Rancher를 제거한 다음 NetApp 하이브리드 클라우드 제어 UI에서 NetApp HCI에 Rancher를 재배포해야 합니다. 을 참조하십시오 link:task_rancher_remove_deployment.html["NetApp HCI에서 목장 설치를 제거합니다"] 를 참조하십시오.
 
 
 

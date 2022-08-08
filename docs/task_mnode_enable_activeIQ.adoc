@@ -5,7 +5,12 @@ summary: '관리 노드(mNode)를 사용하여 NetApp Active IQ 및 NetApp HCI �
 keywords: netapp, hci, api, enable, active iq, activeiq, hci monitoring 
 ---
 = Active IQ 및 NetApp HCI 모니터링을 활성화합니다
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]

@@ -46,7 +46,7 @@ Rancher UI를 사용하면 NetApp HCI 관리 클러스터 및 사용자 클러�
 TIP: Rancher UI에서는 관리 클러스터를 "로컬 클러스터"라고 합니다.
 
 . Rancher 구축 종료 시 제공된 URL을 사용하여 Rancher UI에 액세스합니다.
-. 을 참조하십시오 https://rancher.com/docs/rancher/v2.x/en/monitoring-alerting/v2.5/["Rancher v2.5에서 모니터링"].
+. 을 참조하십시오 https://rancher.com/docs/rancher/v2.x/en/monitoring-alerting/v2.5/["Rancher v2.5에서 모니터링"^].
 
 
 
@@ -69,7 +69,7 @@ vCenter Server를 사용하여 Rancher 가상 머신을 모니터링할 수 있�
 == 자세한 내용을 확인하십시오
 
 * https://rancher.com/docs/rancher/v2.x/en/overview/architecture/["아키텍처에 대한 Rancher 문서"^]
-* https://rancher.com/docs/rancher/v2.x/en/overview/concepts/["Rancher용 Kubernetes 용어"]
+* https://rancher.com/docs/rancher/v2.x/en/overview/concepts/["Rancher용 Kubernetes 용어"^]
 * https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
 * https://www.netapp.com/us/documentation/hci.aspx["NetApp HCI 리소스 페이지를 참조하십시오"^]
 

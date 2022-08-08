@@ -5,7 +5,12 @@ summary: 시스템 FQDN 웹 UI 액세스를 구성, 제거 및 해결하는 방�
 keywords: netapp, hci, fqdn, ui, access, web, administration 
 ---
 = 정규화된 도메인 이름 웹 UI 액세스를 구성합니다
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]

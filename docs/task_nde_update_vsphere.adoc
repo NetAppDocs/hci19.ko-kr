@@ -16,7 +16,7 @@ keywords: netapp, hci, deployment, review, deploy
 [role="lead"]
 NetApp HCI를 구축한 후에는 VMware vSphere Lifecycle Manager를 사용하여 NetApp HCI와 함께 사용되는 VMware vSphere 버전에 대한 최신 보안 패치를 적용해야 합니다.
 
-를 사용합니다 https://mysupport.netapp.com/matrix/#welcome["상호 운용성 매트릭스 툴"] 모든 소프트웨어 버전이 호환되는지 확인합니다. 를 참조하십시오 https://docs.vmware.com/en/VMware-vSphere/index.html["VMware vSphere Lifecycle Manager 설명서"] 를 참조하십시오.
+를 사용합니다 https://mysupport.netapp.com/matrix/#welcome["상호 운용성 매트릭스 툴"^] 모든 소프트웨어 버전이 호환되는지 확인합니다. 를 참조하십시오 https://docs.vmware.com/en/VMware-vSphere/index.html["VMware vSphere Lifecycle Manager 설명서"^] 를 참조하십시오.
 
 
 

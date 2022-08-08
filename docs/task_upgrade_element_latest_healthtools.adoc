@@ -5,7 +5,12 @@ summary: 시스템 업그레이드의 일환으로 최신 HealthTools for NetApp
 keywords: netapp, HealthTools upgrade, sfupdate-healthtools, element 
 ---
 = 최신 HealthTools로 업그레이드하십시오
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]

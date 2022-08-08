@@ -24,6 +24,6 @@ L4 로드 밸런싱은 애플리케이션을 호스팅하는 가상 머신 또�
 == 자세한 내용을 확인하십시오
 
 * https://rancher.com/docs/rancher/v2.x/en/overview/architecture/["아키텍처에 대한 Rancher 문서"^]
-* https://rancher.com/docs/rancher/v2.x/en/overview/concepts/["Rancher용 Kubernetes 용어"]
+* https://rancher.com/docs/rancher/v2.x/en/overview/concepts/["Rancher용 Kubernetes 용어"^]
 * https://www.netapp.com/us/documentation/hci.aspx["NetApp HCI 리소스 페이지를 참조하십시오"^]
 

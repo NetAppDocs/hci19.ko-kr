@@ -5,7 +5,12 @@ summary: REST API를 사용하여 관리 ndoe에서 실행 중인 서비스에�
 keywords: netapp, element, management node, management services, mnode, logs 
 ---
 = 관리 서비스에서 로그를 가져오는 중입니다
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]

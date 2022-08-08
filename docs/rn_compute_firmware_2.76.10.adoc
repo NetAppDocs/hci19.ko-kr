@@ -71,7 +71,7 @@ keywords: netapp, hci, compute firmware
 
 
 
-NOTE: 버전 2.76.10으로 업그레이드하기 전에 현재 ESXi 드라이버 버전을 확인하십시오. 드라이버가 최신 버전이 아니면 먼저 드라이버를 업그레이드하십시오. 그런 다음 컴퓨팅 노드에서 컴퓨팅 펌웨어를 버전 2.99로 업그레이드합니다. 를 방문하십시오 link:task_hcc_upgrade_compute_node_drivers.html["컴퓨팅 노드 드라이버를 업데이트합니다"^] ESXi 드라이버를 포함하는 컴퓨팅 노드 드라이버를 업데이트하는 방법은 를 참조하십시오.
+NOTE: 버전 2.76.10으로 업그레이드하기 전에 현재 ESXi 드라이버 버전을 확인하십시오. 드라이버가 최신 버전이 아니면 먼저 드라이버를 업그레이드하십시오. 그런 다음 컴퓨팅 노드에서 컴퓨팅 펌웨어를 버전 2.99로 업그레이드합니다. 를 방문하십시오 link:task_hcc_upgrade_compute_node_drivers.html["컴퓨팅 노드 드라이버를 업데이트합니다"] ESXi 드라이버를 포함하는 컴퓨팅 노드 드라이버를 업데이트하는 방법은 를 참조하십시오.
 
 NetApp Deployment Engine 1.8P1은 ESXi 버전 7.0을 배포하지 않지만 ESXi 7.0은 자체 설치 또는 수동 업그레이드 옵션으로 지원됩니다. 호스트 OS를 수동으로 설치 또는 업그레이드할 때 NetApp은 이러한 OS에 대한 드라이버 및 펌웨어를 제어할 수 없습니다.
 
@@ -81,7 +81,7 @@ NetApp Deployment Engine 1.8P1은 ESXi 버전 7.0을 배포하지 않지만 ESXi
 
 Compute Firmware Bundle을 다운로드하려면 로 이동합니다 https://mysupport.netapp.com/site/products/all/details/netapp-hci/downloads-tab/download/62542/Compute_Firmware_Bundle["NetApp HCI 컴퓨팅 펌웨어 번들"^] 페이지.
 
-를 방문하십시오 link:task_hcc_upgrade_compute_node_firmware.html#use-the-baseboard-management-controller-bmc-user-interface-ui["컴퓨팅 노드 펌웨어를 업데이트합니다"^] 컴퓨팅 노드 펌웨어 업데이트에 대한 지침은 를 참조하십시오.
+를 방문하십시오 link:task_hcc_upgrade_compute_node_firmware.html#use-the-baseboard-management-controller-bmc-user-interface-ui["컴퓨팅 노드 펌웨어를 업데이트합니다"] 컴퓨팅 노드 펌웨어 업데이트에 대한 지침은 를 참조하십시오.
 
 
 

@@ -5,7 +5,12 @@ summary: REST API를 사용하여 관리 노드에서 사용하는 관리 노드
 keywords: netapp, hci, management node, management services, version, bundle version, what is 
 ---
 = 관리 노드 OS 및 서비스 버전을 확인합니다
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]

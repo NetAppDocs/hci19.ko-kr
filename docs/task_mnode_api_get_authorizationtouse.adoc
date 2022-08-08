@@ -5,7 +5,12 @@ summary: REST API UI에서 관리 서비스에 API를 사용하려면 먼저 권
 keywords: netapp, hci, management node, mnode, api, token 
 ---
 = REST API 사용 인증 획득
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]

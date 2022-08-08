@@ -5,7 +5,12 @@ summary: NetApp Element 소프트웨어를 실행하는 클러스터의 관리 �
 keywords: netapp, element, management node, mnode, storage, install 
 ---
 = 관리 노드를 설치합니다
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]

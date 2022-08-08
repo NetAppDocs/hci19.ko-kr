@@ -5,7 +5,12 @@ summary: 노드 교체, 스토리지 노드의 드라이브 교체, 전원 공�
 keywords: netapp, hci, on premise, activeiq, active iq, cluster, performance, rails, h-series, nodes 
 ---
 = H 시리즈 하드웨어 유지 관리 개요
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -13,17 +18,17 @@ keywords: netapp, hci, on premise, activeiq, active iq, cluster, performance, ra
 
 다음은 하드웨어 유지 관리 작업에 대한 링크입니다.
 
-* link:task_hci_hserieschassisrepl.html["2U H 시리즈 섀시를 교체합니다"^]
-* link:task_hci_dcpsurepl.html["H615C 및 H610S 노드의 DC 전원 공급 장치를 교체합니다"^]
-* link:task_hci_dimmcomputerepl.html["컴퓨팅 노드의 DIMM을 교체합니다"^]
-* link:task_hci_driverepl.html["스토리지 노드의 드라이브를 교체합니다"^]
-* link:task_hci_h410crepl.html["H410C 노드를 교체합니다"^]
-* link:task_hci_h410srepl.html["H410S 노드를 교체합니다"^]
-* link:task_hci_h610ch615crepl.html["H610C 및 H615C 노드를 교체합니다"^]
-* link:task_hci_h610srepl.html["H610S 노드를 교체합니다"^]
-* link:task_hci_psurepl.html["전원 공급 장치를 교체합니다"^]
+* link:task_hci_hserieschassisrepl.html["2U H 시리즈 섀시를 교체합니다"]
+* link:task_hci_dcpsurepl.html["H615C 및 H610S 노드의 DC 전원 공급 장치를 교체합니다"]
+* link:task_hci_dimmcomputerepl.html["컴퓨팅 노드의 DIMM을 교체합니다"]
+* link:task_hci_driverepl.html["스토리지 노드의 드라이브를 교체합니다"]
+* link:task_hci_h410crepl.html["H410C 노드를 교체합니다"]
+* link:task_hci_h410srepl.html["H410S 노드를 교체합니다"]
+* link:task_hci_h610ch615crepl.html["H610C 및 H615C 노드를 교체합니다"]
+* link:task_hci_h610srepl.html["H610S 노드를 교체합니다"]
+* link:task_hci_psurepl.html["전원 공급 장치를 교체합니다"]
 * link:task_hci_snswitches.html["SN2010, SN2100 및 SN2700 스위치를 교체합니다"]
-* link:task_hci_2noderepl.html["2노드 클러스터의 스토리지 노드를 교체합니다"^]
+* link:task_hci_2noderepl.html["2노드 클러스터의 스토리지 노드를 교체합니다"]
 
 
 [discrete]

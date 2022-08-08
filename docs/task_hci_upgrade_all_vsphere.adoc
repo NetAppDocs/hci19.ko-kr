@@ -5,7 +5,12 @@ summary: NetApp HCI용 VMware 구성 요소를 업그레이드하고 vCenter 플
 keywords: netapp, hci, vSphere components, upgrade, vCenter, ESXi 
 ---
 = vCenter Server용 Element 플러그인을 사용하여 NetApp HCI 시스템용 vSphere 구성 요소를 업그레이드합니다
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -21,7 +26,7 @@ IMPORTANT: VMware vCenter Server 7.0 U3으로 업그레이드하면 vCenter Serv
 
 +
 
-NOTE: 의 컴퓨팅 노드에 대해 ESXi를 업그레이드할 때 https://www.netapp.com/us/media/tr-4823.pdf["2노드 클러스터"], 한 번에 하나의 컴퓨팅 노드만 업그레이드하여 하나의 감시 노드만 일시적으로 사용할 수 없고 클러스터 쿼럼을 유지할 수 있습니다.
+NOTE: 의 컴퓨팅 노드에 대해 ESXi를 업그레이드할 때 https://www.netapp.com/us/media/tr-4823.pdf["2노드 클러스터"^], 한 번에 하나의 컴퓨팅 노드만 업그레이드하여 하나의 감시 노드만 일시적으로 사용할 수 없고 클러스터 쿼럼을 유지할 수 있습니다.
 
 . https://docs.netapp.com/us-en/vcp/vcp_task_getstarted.html#register-the-plug-in-with-vcenter["등록"^] vCenter를 사용하여 vCenter Server용 Element Plug-in을 다시 사용할 수 있습니다.
 . https://docs.netapp.com/us-en/vcp/vcp_task_getstarted.html#add-storage-clusters-for-use-with-the-plug-in["클러스터 추가"^] 플러그인 사용

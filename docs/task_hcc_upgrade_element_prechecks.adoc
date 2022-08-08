@@ -5,7 +5,12 @@ summary: NetApp HCI 시스템 업그레이드의 일부로 NetApp Element 소프
 keywords: netapp, storage prechecks, element upgrade, healthtools, sfupgradecheck 
 ---
 = 스토리지를 업그레이드하기 전에 Element 스토리지 상태 점검을 실행합니다
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]

@@ -52,16 +52,16 @@ NetApp HCI Witness Node는 Element 소프트웨어 기반 스토리지 클러스
 
 |===
 
-TIP: 에 대해 자세히 알아보십시오 link:hci_prereqs_witness_nodes.html["증인 노드 리소스 요구 사항"^] 및 link:hci_prereqs_ip_address.html["감시 노드 IP 주소 요구 사항"^].
+TIP: 에 대해 자세히 알아보십시오 link:hci_prereqs_witness_nodes.html["증인 노드 리소스 요구 사항"] 및 link:hci_prereqs_ip_address.html["감시 노드 IP 주소 요구 사항"].
 
 
-NOTE: 2노드 스토리지 클러스터에서는 Witness 노드 장애가 발생할 경우 이중화를 위해 최소 2개의 Witness 노드가 구축됩니다. NetApp HCI 설치 프로세스에서 Witness 노드를 설치하면 VMware vCenter에 VM 템플릿이 저장되며, Witness 노드가 실수로 제거, 손실 또는 손상된 경우 이를 다시 배포하는 데 사용할 수 있습니다. Witness Node를 호스팅하던 장애가 발생한 컴퓨팅 노드를 교체해야 하는 경우 이 템플릿을 사용하여 Witness Node를 재구축할 수도 있습니다. 자세한 내용은 2노드 및 3노드 스토리지 클러스터를 위한 * 재구축 Witness 노드 * 섹션을 참조하십시오 link:task_hci_h410crepl.html["여기"^].
+NOTE: 2노드 스토리지 클러스터에서는 Witness 노드 장애가 발생할 경우 이중화를 위해 최소 2개의 Witness 노드가 구축됩니다. NetApp HCI 설치 프로세스에서 Witness 노드를 설치하면 VMware vCenter에 VM 템플릿이 저장되며, Witness 노드가 실수로 제거, 손실 또는 손상된 경우 이를 다시 배포하는 데 사용할 수 있습니다. Witness Node를 호스팅하던 장애가 발생한 컴퓨팅 노드를 교체해야 하는 경우 이 템플릿을 사용하여 Witness Node를 재구축할 수도 있습니다. 자세한 내용은 2노드 및 3노드 스토리지 클러스터를 위한 * 재구축 Witness 노드 * 섹션을 참조하십시오 link:task_hci_h410crepl.html["여기"].
 
 
 
 == 자세한 내용을 확인하십시오
 
-* https://www.netapp.com/us/media/tr-4823.pdf["NetApp HCI 2노드 스토리지 클러스터 | TR-4823"]
+* https://www.netapp.com/us/media/tr-4823.pdf["NetApp HCI 2노드 스토리지 클러스터 | TR-4823"^]
 * https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
 * http://docs.netapp.com/sfe-122/index.jsp["SolidFire 및 Element 소프트웨어 설명서 센터"^]
 

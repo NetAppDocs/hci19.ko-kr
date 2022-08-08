@@ -5,7 +5,12 @@ summary: REST API UI를 사용하여 관리 노드 구성에 컴퓨팅 및 컨�
 keywords: netapp, mnode, management node, rest api, hci 
 ---
 = 컴퓨팅 및 컨트롤러 자산을 관리 노드에 추가합니다
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]

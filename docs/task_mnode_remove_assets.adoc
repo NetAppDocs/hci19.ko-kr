@@ -5,7 +5,12 @@ summary: REST API를 사용하여 시스템에서 컴퓨팅 노드 자산을 제
 keywords: netapp, hci, api, REST, remove, compute, asset 
 ---
 = 관리 노드에서 자산을 제거합니다
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]

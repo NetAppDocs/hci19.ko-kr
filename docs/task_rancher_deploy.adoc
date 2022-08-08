@@ -155,8 +155,8 @@ IMPORTANT: 구축을 완료한 후에는 Rancher 서버 가상 머신 클러스�
 [discrete]
 == 자세한 내용을 확인하십시오
 
-* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Management_services_for_Element_Software_and_NetApp_HCI/NetApp_HCI_and_Rancher_troubleshooting["Rancher 배포 문제 해결"]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Management_services_for_Element_Software_and_NetApp_HCI/NetApp_HCI_and_Rancher_troubleshooting["Rancher 배포 문제 해결"^]
 * https://rancher.com/docs/rancher/v2.x/en/overview/architecture/["아키텍처에 대한 Rancher 문서"^]
-* https://rancher.com/docs/rancher/v2.x/en/overview/concepts/["Rancher용 Kubernetes 용어"]
+* https://rancher.com/docs/rancher/v2.x/en/overview/concepts/["Rancher용 Kubernetes 용어"^]
 * https://www.netapp.com/us/documentation/hci.aspx["NetApp HCI 리소스 페이지를 참조하십시오"^]
 

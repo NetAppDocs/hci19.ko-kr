@@ -5,7 +5,12 @@ summary: NetApp HCI 시스템에서 경고를 모니터링하도록 설정을 �
 keywords: netapp, element, management node, mnode, ui, alerts, alert monitoring 
 ---
 = NetApp HCI에서 경고 모니터링을 구성합니다
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]

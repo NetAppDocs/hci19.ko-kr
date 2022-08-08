@@ -16,13 +16,13 @@ keywords: netapp, hci, rancher, deploy, cluster, kubernetes, telemetry, monitori
 [role="lead"]
 NetApp HCI에 Rancher를 구축한 후 설치 또는 업그레이드 중에 NetApp HCI 스토리지 모니터링(SolidFire All-Flash 스토리지 및 NetApp HCI용) 및 NetApp HCI 컴퓨팅 모니터링(Active IQ 전용)을 아직 설정하지 않은 경우 설정할 수 있습니다.
 
-모니터링을 활성화하는 방법에 대한 지침은 을(를) 참조하십시오 link:task_mnode_enable_activeIQ.html["Active IQ 및 NetApp HCI 모니터링을 활성화합니다"^].
+모니터링을 활성화하는 방법에 대한 지침은 을(를) 참조하십시오 link:task_mnode_enable_activeIQ.html["Active IQ 및 NetApp HCI 모니터링을 활성화합니다"].
 
 [discrete]
 == 자세한 내용을 확인하십시오
 
 * https://rancher.com/docs/rancher/v2.x/en/overview/architecture/["아키텍처에 대한 Rancher 문서"^]
-* https://rancher.com/docs/rancher/v2.x/en/overview/concepts/["Rancher용 Kubernetes 용어"]
+* https://rancher.com/docs/rancher/v2.x/en/overview/concepts/["Rancher용 Kubernetes 용어"^]
 * https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
 * https://www.netapp.com/us/documentation/hci.aspx["NetApp HCI 리소스 페이지를 참조하십시오"^]
 

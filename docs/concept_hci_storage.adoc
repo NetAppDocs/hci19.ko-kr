@@ -18,7 +18,7 @@ NetApp HCI은 컴퓨팅과 스토리지 모두에 대해 다양한 구성 옵션
 
 * NetApp HCI는 H300S, H500S, H700S 등의 다양한 H 시리즈 스토리지 노드 모델을 지원합니다. H410S 및 H610S
 +
-을 참조하십시오 https://www.netapp.com/us/products/converged-systems/hyper-converged-infrastructure.aspx#modelsAndSpecs["NetApp HCI 모델 및 사양"]
+을 참조하십시오 https://www.netapp.com/us/products/converged-systems/hyper-converged-infrastructure.aspx#modelsAndSpecs["NetApp HCI 모델 및 사양"^]
 
 * NetApp HCI의 스토리지 계층은 NetApp Element 소프트웨어에 의해 제공되며 관리 계층은 vCenter Server용 NetApp Element 플러그인에서 제공됩니다.
 * 스토리지 노드는 Bond10G 네트워크 인터페이스를 통해 서로 통신하는 드라이브 모음이 포함된 서버입니다.

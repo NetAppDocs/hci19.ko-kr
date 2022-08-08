@@ -5,7 +5,12 @@ summary: NetApp 하이브리드 클라우드 제어를 사용하여 NetApp HCI �
 keywords: netapp, hci, logs, collection, troubleshooting, monitor 
 ---
 = 문제 해결을 위해 로그를 수집합니다
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]

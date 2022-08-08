@@ -5,7 +5,12 @@ summary: NetApp HCI를 사용하기 전에 스토리지 및 컴퓨팅 노드를 
 keywords: netapp, hci, on premise, activeiq, active iq, cluster, performance, rails, h-series, nodes 
 ---
 = H 시리즈 하드웨어를 설치합니다
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]

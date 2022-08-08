@@ -5,7 +5,12 @@ summary: 스토리지에 추가 NIC를 사용하는 경우 태그가 지정되�
 keywords: netapp, element, management node, mnode, network, nic, storage nic 
 ---
 = 스토리지 NIC(Network Interface Controller) 구성
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]

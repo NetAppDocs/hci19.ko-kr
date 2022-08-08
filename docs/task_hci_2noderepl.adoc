@@ -27,7 +27,7 @@ keywords: netapp, hci, H610C, H615C, chassis replacement, node replacement
 VMware vSphere Web Client의 알람은 호스트에 장애가 발생할 경우 사용자에게 경고합니다. VMware vSphere Web Client에서 장애가 발생한 호스트의 일련 번호와 노드 뒷면의 스티커에 있는 일련 번호가 일치해야 합니다.
 
 .단계
-. 랙에서 결함이 있는 노드를 물리적으로 분리합니다. 이 단계는 사용 중인 스토리지 노드의 유형에 따라 다릅니다. 을 참조하십시오 link:task_hci_h410srepl.html["H410S 노드를 교체합니다"^] 및 link:task_hci_h610srepl.html["H610S 노드를 교체합니다"^].
+. 랙에서 결함이 있는 노드를 물리적으로 분리합니다. 이 단계는 사용 중인 스토리지 노드의 유형에 따라 다릅니다. 을 참조하십시오 link:task_hci_h410srepl.html["H410S 노드를 교체합니다"] 및 link:task_hci_h610srepl.html["H610S 노드를 교체합니다"].
 +
 
 NOTE: 이 시점에서는 클러스터에서 노드를 제거하지 마십시오.
@@ -44,7 +44,7 @@ NOTE: 이 시점에서는 클러스터에서 노드를 제거하지 마십시오
 
 . 노드가 클러스터에 추가된 후 드라이브를 추가합니다.
 . 동기화가 완료되면 장애가 발생한 드라이브와 장애가 발생한 노드를 클러스터에서 제거합니다.
-. NetApp 하이브리드 클라우드 제어를 사용하여 새로 추가한 스토리지 노드를 구성합니다. 을 참조하십시오 link:https://docs.netapp.com/us-en/hci/docs/task_hcc_expand_storage.html["NetApp HCI 스토리지 리소스를 확장합니다"].
+. NetApp 하이브리드 클라우드 제어를 사용하여 새로 추가한 스토리지 노드를 구성합니다. 을 참조하십시오 link:task_hcc_expand_storage.html["NetApp HCI 스토리지 리소스를 확장합니다"].
 
 
 

@@ -5,7 +5,12 @@ summary: NetApp HCI 시스템 업그레이드의 일부로 관리 서비스를 �
 keywords: netapp, hci, on premise, cluster, management services 
 ---
 = 관리 서비스를 업데이트합니다
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -18,7 +23,7 @@ Element 11.3 관리 노드 릴리즈부터 개별 서비스를 제공하는 새�
 
 
 
-NOTE: 주요 서비스, 새로운 기능, 버그 수정 사항 및 각 서비스 번들에 대한 대안을 설명하는 최신 관리 서비스 릴리즈 노트는 를 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Management_services_for_Element_Software_and_NetApp_HCI/Management_Services_Release_Notes["관리 서비스 릴리즈 노트"^]
+NOTE: 주요 서비스, 새로운 기능, 버그 수정 사항 및 각 서비스 번들에 대한 대안을 설명하는 최신 관리 서비스 릴리즈 노트는 를 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Management_services_for_Element_Software_and_NetApp_HCI/Management_Services_Release_Notes["관리 서비스 릴리즈 노트"^].
 
 관리 서비스 2.20부터 NetApp 하이브리드 클라우드 제어 UI 또는 API를 사용하여 관리 서비스를 업그레이드하기 전에 최종 사용자 라이센스 계약(EULA)에 동의해야 합니다.
 
@@ -90,6 +95,9 @@ NOTE: 설치가 인터넷에 액세스할 수 없는 경우 현재 소프트웨�
 +
 .. 페이지의 지침에 따라 관리 서비스 업그레이드 패키지를 다운로드하여 컴퓨터에 저장합니다.
 .. 저장한 패키지를 찾아 업로드하려면 * 찾아보기 * 를 선택합니다.
++
+패키지를 업로드하면 업그레이드가 자동으로 시작됩니다.
+
 
 
 

@@ -5,7 +5,12 @@ summary: NetApp HCI 시스템 업그레이드의 일부로 첫 번째 업그레�
 keywords: netapp, compute prechecks, compute node upgrade, netapp hci 
 ---
 = 컴퓨팅 펌웨어를 업그레이드하기 전에 컴퓨팅 노드 상태 점검을 실행합니다
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]

@@ -5,7 +5,12 @@ summary: 관리 노드를 사용하여 문제 해결을 위해 NetApp Support �
 keywords: netapp, mnode, management node, connect to support, support tunnel, rst 
 ---
 = 원격 NetApp 지원 세션을 시작합니다
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]

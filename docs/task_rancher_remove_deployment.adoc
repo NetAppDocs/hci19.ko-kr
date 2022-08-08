@@ -5,7 +5,12 @@ summary: NetApp HCI 구축 시 Rancher 설치를 제거하여 다시 배포하�
 keywords: netapp, hci, api, REST, remove, Rancher, redeploy 
 ---
 = NetApp HCI에서 목장 설치를 제거합니다
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -85,7 +90,7 @@ https://[IP address]/k8sdeployer/api/
 [discrete]
 == 자세한 내용을 확인하십시오
 
-* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Management_services_for_Element_Software_and_NetApp_HCI/NetApp_HCI_and_Rancher_troubleshooting["Rancher 배포 문제 해결"]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Management_services_for_Element_Software_and_NetApp_HCI/NetApp_HCI_and_Rancher_troubleshooting["Rancher 배포 문제 해결"^]
 * https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
 * https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
 

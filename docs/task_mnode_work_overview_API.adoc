@@ -5,7 +5,12 @@ summary: '관리 노드(mNode) API를 사용하여 시스템 서비스를 업그
 keywords: netapp, mnode api, management node api, rest api 
 ---
 = 관리 노드 REST API UI 개요
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]

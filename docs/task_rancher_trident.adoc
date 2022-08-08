@@ -22,11 +22,11 @@ TIP: Trident에 대한 자세한 내용은 를 참조하십시오 https://netapp
 .무엇을 &#8217;필요로 할거야
 * NetApp HCI에 Rancher를 설치했습니다.
 * 사용자 클러스터를 구축했습니다.
-* Trident를 위한 사용자 클러스터 네트워크를 구성했습니다. 을 참조하십시오 link:task_trident_configure_networking.html["사용자 클러스터에 대한 Trident 지원을 활성화합니다"^] 를 참조하십시오.
-* Trident를 위한 작업 노드 준비에 필요한 필수 필수 단계를 완료했습니다. 를 참조하십시오 https://netapp-trident.readthedocs.io/en/stable-v20.10/kubernetes/operations/tasks/worker.html["Trident 문서"].
+* Trident를 위한 사용자 클러스터 네트워크를 구성했습니다. 을 참조하십시오 link:task_trident_configure_networking.html["사용자 클러스터에 대한 Trident 지원을 활성화합니다"] 를 참조하십시오.
+* Trident를 위한 작업 노드 준비에 필요한 필수 필수 단계를 완료했습니다. 를 참조하십시오 https://netapp-trident.readthedocs.io/en/stable-v20.10/kubernetes/operations/tasks/worker.html["Trident 문서"^].
 
 
-Trident 설치 프로그램 카탈로그는 NetApp 하이브리드 클라우드 제어를 사용하여 Rancher 설치의 일부로 설치됩니다. 이 작업에서는 설치 관리자 카탈로그를 사용하여 Trident를 설치 및 구성합니다. Rancher 설치의 일부로 NetApp이 노드 템플릿을 제공합니다. NetApp에서 제공하는 노드 템플릿을 사용하지 않고 RHEL 또는 CentOS에서 프로비저닝하려는 경우 추가 요구사항이 있을 수 있습니다. 작업자 노드를 RHEL 또는 CentOS로 변경할 경우 몇 가지 필수 구성 요소를 충족해야 합니다. 를 참조하십시오 https://netapp-trident.readthedocs.io/en/stable-v20.10/kubernetes/operations/tasks/worker.html["Trident 문서"].
+Trident 설치 프로그램 카탈로그는 NetApp 하이브리드 클라우드 제어를 사용하여 Rancher 설치의 일부로 설치됩니다. 이 작업에서는 설치 관리자 카탈로그를 사용하여 Trident를 설치 및 구성합니다. Rancher 설치의 일부로 NetApp이 노드 템플릿을 제공합니다. NetApp에서 제공하는 노드 템플릿을 사용하지 않고 RHEL 또는 CentOS에서 프로비저닝하려는 경우 추가 요구사항이 있을 수 있습니다. 작업자 노드를 RHEL 또는 CentOS로 변경할 경우 몇 가지 필수 구성 요소를 충족해야 합니다. 를 참조하십시오 https://netapp-trident.readthedocs.io/en/stable-v20.10/kubernetes/operations/tasks/worker.html["Trident 문서"^].
 
 .단계
 . Rancher UI에서 사용자 클러스터의 프로젝트를 선택합니다.
@@ -44,7 +44,7 @@ image::rancher-trident.jpg[Rancher의 카탈로그 페이지에 있는 Trident �
 
 +
 
-NOTE: 열리는 페이지에서 * 상세 설명 * 화살표를 선택하여 Trident 앱에 대해 자세히 알아보고 에 대한 링크를 찾을 수도 있습니다 https://netapp-trident.readthedocs.io/en/stable-v20.10/introduction.html["Trident 문서"].
+NOTE: 열리는 페이지에서 * 상세 설명 * 화살표를 선택하여 Trident 앱에 대해 자세히 알아보고 에 대한 링크를 찾을 수도 있습니다 https://netapp-trident.readthedocs.io/en/stable-v20.10/introduction.html["Trident 문서"^].
 
 . 구성 옵션 * 화살표를 선택하고 자격 증명 및 스토리지 구성 정보를 입력합니다.
 +
@@ -74,7 +74,7 @@ NOTE: 세 가지 스토리지 클래스는 * solidfire-gold *, * solidfire-silve
 
 * link:task_trident_configure_networking.html["사용자 클러스터에 대한 Trident 지원을 활성화합니다"]
 * https://rancher.com/docs/rancher/v2.x/en/overview/architecture/["아키텍처에 대한 Rancher 문서"^]
-* https://rancher.com/docs/rancher/v2.x/en/overview/concepts/["Rancher용 Kubernetes 용어"]
+* https://rancher.com/docs/rancher/v2.x/en/overview/concepts/["Rancher용 Kubernetes 용어"^]
 * https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
 * https://www.netapp.com/us/documentation/hci.aspx["NetApp HCI 리소스 페이지를 참조하십시오"^]
 

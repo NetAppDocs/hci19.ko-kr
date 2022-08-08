@@ -5,7 +5,12 @@ summary: NetApp HCI 시스템 업그레이드의 일부로 컴퓨팅 노드 드�
 keywords: netapp, hci, on premise, cluster, element, compute node 
 ---
 = 컴퓨팅 노드 드라이버를 업데이트합니다
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]

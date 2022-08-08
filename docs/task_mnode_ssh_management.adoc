@@ -5,7 +5,12 @@ summary: NetApp 하이브리드 클라우드 제어 UI 또는 REST API UI를 사
 keywords: netapp, mnode, management node, ssh, disable, enable, rest api, hybrid, cloud, control, hcc 
 ---
 = 관리 노드에서 SSH 기능을 관리합니다
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]

@@ -5,7 +5,12 @@ summary: 하이브리드 클라우드 제어 볼륨 페이지를 사용하여 �
 keywords: netapp, hci, on premise, volumes, storage, access groups, initiators, capacity, data protection, QoS 
 ---
 = 스토리지 클러스터의 볼륨을 모니터링합니다
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]

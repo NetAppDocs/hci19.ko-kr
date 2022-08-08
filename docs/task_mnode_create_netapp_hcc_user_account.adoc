@@ -5,7 +5,12 @@ summary: vCenter 자산 또는 컴퓨팅 노드를 관리 노드에 추가하기
 keywords: netapp, mnode, management node, vcenter, hci, role 
 ---
 = vCenter에서 NetApp HCC 역할을 생성합니다
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]

@@ -39,7 +39,7 @@ keywords: netapp, hci, compute firmware
 |===
 Compute Firmware Bundle을 다운로드하려면 로 이동합니다 https://mysupport.netapp.com/site/products/all/details/netapp-hci/downloads-tab/download/62542/Compute_Firmware_Bundle["NetApp HCI 컴퓨팅 펌웨어 번들"^] 페이지.
 
-를 방문하십시오 link:task_hcc_upgrade_compute_node_firmware.html#use-the-baseboard-management-controller-bmc-user-interface-ui["컴퓨팅 노드 펌웨어를 업데이트합니다"^] 컴퓨팅 노드 펌웨어 업데이트에 대한 지침은 를 참조하십시오.
+를 방문하십시오 link:task_hcc_upgrade_compute_node_firmware.html#use-the-baseboard-management-controller-bmc-user-interface-ui["컴퓨팅 노드 펌웨어를 업데이트합니다"] 컴퓨팅 노드 펌웨어 업데이트에 대한 지침은 를 참조하십시오.
 
 
 

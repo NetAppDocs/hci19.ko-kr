@@ -20,15 +20,15 @@ NetApp HCI에 Rancher를 구축한 후에는 vSphere 환경에 Rancher 환경을
 
 DRS 반유사성 규칙을 구성하는 방법에 대한 지침은 다음 VMware 설명서 리소스를 참조하십시오.
 
-https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.resmgmt.doc/GUID-FBE46165-065C-48C2-B775-7ADA87FF9A20.html["VM 반선호도 규칙을 생성합니다"]
+https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.resmgmt.doc/GUID-FBE46165-065C-48C2-B775-7ADA87FF9A20.html["VM 반선호도 규칙을 생성합니다"^]
 
-https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.avail.doc/GUID-E137A9F8-17E4-4DE7-B986-94A0999CF327.html["vSphere HA 및 DRS 선호도 규칙"]
+https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.avail.doc/GUID-E137A9F8-17E4-4DE7-B986-94A0999CF327.html["vSphere HA 및 DRS 선호도 규칙"^]
 
 [discrete]
 == 자세한 내용을 확인하십시오
 
 * https://rancher.com/docs/rancher/v2.x/en/overview/architecture/["아키텍처에 대한 Rancher 문서"^]
-* https://rancher.com/docs/rancher/v2.x/en/overview/concepts/["Rancher용 Kubernetes 용어"]
+* https://rancher.com/docs/rancher/v2.x/en/overview/concepts/["Rancher용 Kubernetes 용어"^]
 * https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
 * https://www.netapp.com/us/documentation/hci.aspx["NetApp HCI 리소스 페이지를 참조하십시오"^]
 

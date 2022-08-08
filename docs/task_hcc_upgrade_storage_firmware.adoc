@@ -5,7 +5,12 @@ summary: NetApp HCI 시스템 업그레이드의 일환으로 스토리지 노�
 keywords: netapp, element, hcc, firmware, storage firmware 
 ---
 = 스토리지 펌웨어를 업그레이드합니다
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -20,7 +25,7 @@ Element 12.0 및 관리 서비스 버전 2.14부터 NetApp 하이브리드 클�
 
 
 
-IMPORTANT: Element 소프트웨어 버전 12.0을 실행하는 H610S 스토리지 노드의 경우 스토리지 펌웨어 번들 2.27로 업그레이드하기 전에 D-패치 SUST-909를 적용해야 합니다. 업그레이드하기 전에 NetApp Support에서 D-패치를 받으려면 먼저 NetApp Support에 문의하십시오. 을 참조하십시오 link:http://docs.netapp.com/us-en/hci/docs/rn_storage_firmware_2.27.html["스토리지 펌웨어 번들 2.27 릴리스 정보"^].
+IMPORTANT: Element 소프트웨어 버전 12.0을 실행하는 H610S 스토리지 노드의 경우 스토리지 펌웨어 번들 2.27로 업그레이드하기 전에 D-패치 SUST-909를 적용해야 합니다. 업그레이드하기 전에 NetApp Support에서 D-패치를 받으려면 먼저 NetApp Support에 문의하십시오. 을 참조하십시오 link:rn_storage_firmware_2.27.html["스토리지 펌웨어 번들 2.27 릴리스 정보"].
 
 
 IMPORTANT: 스토리지 노드의 펌웨어를 업그레이드하기 전에 최신 관리 서비스 번들로 업그레이드해야 합니다. Element 소프트웨어를 버전 12.2 이상으로 업데이트하는 경우 계속하려면 관리 서비스 2.14.60 이상이 필요합니다.
@@ -29,7 +34,7 @@ IMPORTANT: 스토리지 노드의 펌웨어를 업그레이드하기 전에 최�
 IMPORTANT: iDRAC/BIOS 펌웨어를 업데이트하려면 NetApp 지원 에 문의하십시오. 자세한 내용은 다음을 참조하십시오 link:https://kb.netapp.com/Advice_and_Troubleshooting/Flash_Storage/SF_Series/How_to_update_iDRAC%2F%2FBIOS_firmware_on_SF_Series_nodes["KB 문서를 참조하십시오"^].
 
 * * 클러스터 상태 *: 상태 점검을 실행하였습니다. 을 참조하십시오 link:task_hcc_upgrade_element_prechecks.html["스토리지를 업그레이드하기 전에 Element 스토리지 상태 점검을 실행합니다"].
-* * H610S 노드의 업데이트된 BMC *: H610S 노드의 BMC 버전을 업그레이드했습니다. 을 참조하십시오 link:rn_H610S_BMC_3.84.07.html["릴리스 정보 및 업그레이드 지침"^].
+* * H610S 노드의 업데이트된 BMC *: H610S 노드의 BMC 버전을 업그레이드했습니다. 을 참조하십시오 link:rn_H610S_BMC_3.84.07.html["릴리스 정보 및 업그레이드 지침"].
 
 
 

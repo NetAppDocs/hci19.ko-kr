@@ -5,7 +5,12 @@ summary: NetApp HCI 시스템 업그레이드의 일부로 vCenter Server용 Ele
 keywords: netapp, vcp, vCenter plug-in, upgrade, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9 
 ---
 = vCenter Server용 Element 플러그인을 업그레이드합니다
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -81,9 +86,9 @@ image::vcp_shortcuts_page_accessing_plugin.png[에서는 업그레이드 또는 
 +
 [NOTE]
 ====
-vCenter 플러그인 아이콘이 표시되지 않으면 를 참조하십시오 link:https://review.docs.netapp.com/us-en/vcp_2.19_vcp4.8_release_vcp_repo/vcp_reference_troubleshoot_vcp.html#plug-in-registration-successful-but-icons-do-not-appear-in-web-client["vCenter Server용 Element 플러그인"^] 플러그인 문제 해결에 대한 문서
+vCenter 플러그인 아이콘이 표시되지 않으면 를 참조하십시오 link:https://docs.netapp.com/us-en/vcp/vcp_reference_troubleshoot_vcp.html#plug-in-registration-successful-but-icons-do-not-appear-in-web-client["vCenter Server용 Element 플러그인"^] 플러그인 문제 해결에 대한 문서
 
-VMware vCenter Server 6.7U1을 사용하여 VCP 4.8 이상으로 업그레이드한 후 스토리지 클러스터가 나열되지 않거나 NetApp Element 구성의 * 클러스터 * 및 * QoSSIOC 설정 * 섹션에 서버 오류가 나타나는 경우 을 참조하십시오 link:https://review.docs.netapp.com/us-en/vcp_2.19_vcp4.8_release_vcp_repo/vcp_reference_troubleshoot_vcp.html#errors-after-vcp-4-8-upgrade-with-vmware-vcenter-server-6-7u1["vCenter Server용 Element 플러그인"^] 이러한 오류 문제 해결에 대한 문서.
+VMware vCenter Server 6.7U1을 사용하여 vCenter Server 4.8 이상용 NetApp Element 플러그인으로 업그레이드한 후 스토리지 클러스터가 나열되지 않거나 NetApp Element 구성의 * 클러스터 * 및 * QoSSIOC 설정 * 섹션에 서버 오류가 나타나는 경우 을 참조하십시오 link:https://docs.netapp.com/us-en/vcp/vcp_reference_troubleshoot_vcp.html#error_vcp48_67u1["vCenter Server용 Element 플러그인"^] 이러한 오류 문제 해결에 대한 문서.
 
 ====
 . 플러그인의 * NetApp Element 구성 * 확장 지점의 * 정보 * 탭에서 버전 변경을 확인합니다.

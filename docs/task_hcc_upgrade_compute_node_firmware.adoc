@@ -5,7 +5,12 @@ summary: NetApp HCI 시스템 업그레이드의 일부로 컴퓨팅 노드 펌�
 keywords: netapp, hci, on premise, cluster, element, compute node, vmware, upgrade firmware 
 ---
 = 컴퓨팅 노드 펌웨어를 업그레이드합니다
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]

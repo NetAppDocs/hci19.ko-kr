@@ -159,7 +159,7 @@ OpenStack Swift 또는 Amazon S3에서 볼륨을 복원할 때 원래 백업 프
 
 
 
-수동으로 할 수 있습니다 https://docs.netapp.com/us-en/vcp/vcp_task_clusters_manage.html#set-protection-domain-monitoring["보호 도메인 모니터링을 활성화합니다"] vCenter Server용 NetApp Element 플러그인 사용 노드 또는 섀시 도메인에 따라 보호 도메인 임계값을 선택할 수 있습니다.
+수동으로 할 수 있습니다 https://docs.netapp.com/us-en/vcp/vcp_task_clusters_manage.html#set-protection-domain-monitoring["보호 도메인 모니터링을 활성화합니다"^] vCenter Server용 NetApp Element 플러그인 사용 노드 또는 섀시 도메인에 따라 보호 도메인 임계값을 선택할 수 있습니다.
 
 새 클러스터를 생성할 때 공유 섀시에 있는 스토리지 노드를 사용하는 경우 보호 도메인 기능을 사용하여 섀시 레벨 장애 보호를 설계할 수 있습니다.
 
