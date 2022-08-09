@@ -68,7 +68,7 @@ NetApp HCI에서 사용하는 일반적인 URL은 다음과 같습니다.
 | "https://<ManagementNodeIP>` | NetApp 하이브리드 클라우드 제어에 액세스하여 NetApp HCI 설치를 업그레이드, 확장, 모니터링하고 관리 서비스를 업데이트합니다. link:task_nde_access_hcc.html["자세한 정보."] 
 
 
-| https://[IP 주소 : 442 | 노드별 UI에서 네트워크 및 클러스터 설정에 액세스하고 시스템 테스트 및 유틸리티를 활용합니다. link:task_mnode_access_ui.html#access-the-management-node-per-node-ui["자세한 정보."^] 
+| https://[IP 주소 : 442 | 노드별 UI에서 네트워크 및 클러스터 설정에 액세스하고 시스템 테스트 및 유틸리티를 활용합니다. link:task_mnode_access_ui.html#access-the-management-node-per-node-ui["자세한 정보."] 
 
 
 | https://[management 노드 IP 주소]:9443 | vSphere Web Client에 vCenter 플러그인 패키지를 등록합니다. 
