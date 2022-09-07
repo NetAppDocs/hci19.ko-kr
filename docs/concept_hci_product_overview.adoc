@@ -47,7 +47,7 @@ TIP: 에 대해 자세히 알아보십시오 https://docs.netapp.com/us-en/vcp/c
 * 기본적으로 NetApp HCI는 성능 및 경고 통계를 * NetApp SolidFire Active IQ * 서비스로 보냅니다. 일반 지원 계약의 일부로서, NetApp Support는 이 데이터를 모니터링하고 성능 병목 현상 또는 잠재적인 시스템 문제를 경고합니다. 기존 SolidFire Active IQ 계정이 있더라도 NetApp Support 계정을 생성해야 하므로 서비스를 활용할 수 있습니다.
 +
 
-TIP: 에 대해 자세히 알아보십시오 link:https://help.monitoring.solidfire.com/["NetApp SolidFire Active IQ를 참조하십시오"^].
+TIP: 에 대해 자세히 알아보십시오 link:https://docs.netapp.com/us-en/solidfire-active-iq/index.html["NetApp SolidFire Active IQ를 참조하십시오"^].
 
 
 
