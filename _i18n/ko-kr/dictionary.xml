@@ -6249,4 +6249,8 @@
   <block id="8656c1812e255a290a0e3fb243bf9237" category="list-text">SolidFire Active IQ에 대한 자세한 내용은 를 참조하십시오<block ref="605461d6a442322fca0bcd236d381ac0" category="inline-link-rx"></block>.</block>
   <block id="5de7b59e7468f72110ca5bd9b20f7d50" category="paragraph">오른쪽 상단의 메뉴 아이콘을 선택하고 * Documentation * 을 선택하여 대시보드에서 SolidFire Active IQ 설명서에 액세스할 수도 있습니다.</block>
   <block id="b742a27bbb38b6f0482e473afd7caf8e" category="list-text">NetApp HCI를 둘 이상 설치한 경우 * 클러스터 선택 * 을 선택하고 목록에서 클러스터를 선택합니다.</block>
+  <block id="3d57c700c41601cb011883231fb4e5b8" category="summary">NetApp HCI을 사용하면 여러 퍼블릭 클라우드 공급자와 온프레미스 전반에서 클라우드 서비스를 구축할 수 있습니다. NetApp HCI를 사용하면 IT 부서의 개입 없이 셀프 서비스 모드에서 클라우드 공급자와 유사한 방식으로 서비스를 구축할 수 있습니다.</block>
+  <block id="4f8fc3e1fce78186b06dfda99cdedd17" category="paragraph">NetApp HCI 솔루션을 사용하면 동일한 인프라에서 마찰 없이 여러 워크로드를 동시에 처리할 수 있으므로 규모 대비 성능을 높일 수 있습니다.</block>
+  <block id="921c0975b352bf1530a52271d2abf5c6" category="inline-link">NetApp HCI 솔루션 설명서</block>
+  <block id="705d4d08d5af2e9dd1c4616188dd681f" category="paragraph">NetApp HCI 솔루션에 대한 자세한 내용은 를 참조하십시오<block ref="80564718f738f8f02fcd8afb2a3d09de" category="inline-link-rx"></block>.</block>
 </blocks>

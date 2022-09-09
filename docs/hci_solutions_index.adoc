@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: docs/hci_solutions_index.html 
+summary: NetApp HCI을 사용하면 여러 퍼블릭 클라우드 공급자와 온프레미스 전반에서 클라우드 서비스를 구축할 수 있습니다. NetApp HCI를 사용하면 IT 부서의 개입 없이 셀프 서비스 모드에서 클라우드 공급자와 유사한 방식으로 서비스를 구축할 수 있습니다. 
+keywords: netapp, hci, solutions, performance, scale, multiple, workloads 
+---
+= NetApp HCI 솔루션
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp HCI 솔루션을 사용하면 동일한 인프라에서 마찰 없이 여러 워크로드를 동시에 처리할 수 있으므로 규모 대비 성능을 높일 수 있습니다.
+
+NetApp HCI을 사용하면 여러 퍼블릭 클라우드 공급자와 온프레미스 전반에서 클라우드 서비스를 구축할 수 있습니다. NetApp HCI를 사용하면 IT 부서의 개입 없이 셀프 서비스 모드에서 클라우드 공급자와 유사한 방식으로 서비스를 구축할 수 있습니다.
+
+NetApp HCI 솔루션에 대한 자세한 내용은 를 참조하십시오 https://docs.netapp.com/us-en/hci-solutions/index.html["NetApp HCI 솔루션 설명서"^].
+
+[discrete]
+== 자세한 내용을 확인하십시오
+
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지를 참조하십시오"^]
+
