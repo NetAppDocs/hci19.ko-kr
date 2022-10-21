@@ -38,8 +38,8 @@ NOTE: H610C 및 H615C의 경우 노드와 섀시가 별도의 구성 요소가 �
 
 컴퓨팅 노드에서 DIMM을 교체하는 단계는 다음과 같습니다.
 
-* <<Prepare to replace the DIMM>>
-* <<Replace the DIMM from the chassis>>
+*  to replace the DIMM
+*  the DIMM from the chassis
 
 
 

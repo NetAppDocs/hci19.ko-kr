@@ -25,8 +25,8 @@ keywords: netapp, hci, chassis replacement,2U chassis replacement, h-series
 * 장애가 발생한 섀시의 일부인 컴퓨팅 노드를 제거할 때 가상 머신(VM) 및 ESXi 클러스터에서 워크로드를 처리할 수 있습니까?
 
 
-다음 옵션 중 하나를 선택합니다.<<Replace the chassis when additional unused space is available in the rack>>
-<<Replace the chassis when additional unused space is not available in the rack>>
+다음 옵션 중 하나를 선택합니다. the chassis when additional unused space is available in the rack
+ the chassis when additional unused space is not available in the rack
 
 
 
@@ -198,7 +198,7 @@ NOTE: 마이그레이션 단계는 VMware 설명서를 참조하십시오.
 
 === 스토리지 노드를 종료합니다
 
-단계를 참조하십시오 <<move a storage node,여기>>.
+단계를 참조하십시오  a storage node,여기.
 
 
 

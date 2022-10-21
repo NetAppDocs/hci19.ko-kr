@@ -25,7 +25,7 @@ Element 11.3 관리 노드 릴리즈부터 개별 서비스를 제공하는 새�
 
 NOTE: 주요 서비스, 새로운 기능, 버그 수정 사항 및 각 서비스 번들에 대한 대안을 설명하는 최신 관리 서비스 릴리즈 노트는 를 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Management_services_for_Element_Software_and_NetApp_HCI/Management_Services_Release_Notes["관리 서비스 릴리즈 노트"^].
 
-관리 서비스 2.20부터 NetApp 하이브리드 클라우드 제어 UI 또는 API를 사용하여 관리 서비스를 업그레이드하기 전에 최종 사용자 라이센스 계약(EULA)에 동의해야 합니다.
+관리 서비스 2.20.69부터 NetApp 하이브리드 클라우드 제어 UI 또는 API를 사용하여 관리 서비스를 업그레이드하기 전에 최종 사용자 라이센스 계약(EULA)에 동의해야 합니다.
 
 . 웹 브라우저에서 관리 노드의 IP 주소를 엽니다.
 +
@@ -44,9 +44,9 @@ NOTE: EULA에 동의하면 향후 모든 업데이트에 대해 기록되고 자
 
 NetApp 하이브리드 클라우드 제어 UI 또는 관리 노드 REST API를 사용하여 관리 서비스를 업데이트할 수 있습니다.
 
-* <<Update management services using Hybrid Cloud Control>> (권장 방법)
-* <<Update management services using the management node API>>
-* <<Update management services using the management node API for dark sites>>
+*  management services using Hybrid Cloud Control (권장 방법)
+*  management services using the management node API
+*  management services using the management node API for dark sites
 
 
 

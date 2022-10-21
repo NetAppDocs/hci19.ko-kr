@@ -36,11 +36,11 @@ NOTE: vCenter Plug-in 4.4 이상에서는 모듈식 아키텍처를 사용하여
 
 NOTE: NDE를 사용하여 배포된 관리 노드 12.3에서 업그레이드를 진행하도록 선택하면 12.3.x로 업그레이드가 완료됩니다. 그러나 다시 시작하는 동안 업그레이드에 오류가 발생할 수 있습니다. 이 경우 관리 노드를 재부팅하여 12.3.x가 올바르게 표시되도록 합니다
 
-* 관리 노드 12.2에서 업그레이드하는 경우:<<Upgrade a management node to version 12.3.x from 12.2>>
-* 관리 노드 12.0에서 업그레이드하는 경우:<<Upgrade a management node to version 12.3.x from 12.0>>
-* 관리 노드 11.3, 11.5, 11.7 또는 11.8에서 업그레이드하는 경우:<<Upgrade a management node to version 12.3.x from 11.3 through 11.8>>
-* 관리 노드 11.0 또는 11.1에서 업그레이드하는 경우:<<Upgrade a management node to version 12.3.x from 11.1 or 11.0>>
-* 관리 노드 버전 10.x에서 업그레이드하는 경우:<<Migrating from management node version 10.x to 11.x>>
+* 관리 노드 12.2에서 업그레이드하는 경우: a management node to version 12.3.x from 12.2
+* 관리 노드 12.0에서 업그레이드하는 경우: a management node to version 12.3.x from 12.0
+* 관리 노드 11.3, 11.5, 11.7 또는 11.8에서 업그레이드하는 경우: a management node to version 12.3.x from 11.3 through 11.8
+* 관리 노드 11.0 또는 11.1에서 업그레이드하는 경우: a management node to version 12.3.x from 11.1 or 11.0
+* 관리 노드 버전 10.x에서 업그레이드하는 경우: from management node version 10.x to 11.x
 
 
 관리 서비스 버전(1) 및 (2) 요소 스토리지 버전을 * 순차적으로 * 업데이트하고 * 기존 관리 노드를 * 유지하려면 다음 옵션을 선택합니다.
@@ -48,7 +48,7 @@ NOTE: NDE를 사용하여 배포된 관리 노드 12.3에서 업그레이드를 
 
 NOTE: 관리 서비스를 Element 스토리지 뒤에 순차적으로 업데이트하지 않으면 이 절차를 사용하여 재인증을 재구성할 수 없습니다. 대신 적절한 업그레이드 절차를 따르십시오.
 
-* 기존 관리 노드를 유지하는 경우:<<Reconfigure authentication using the management node REST API>>
+* 기존 관리 노드를 유지하는 경우: authentication using the management node REST API
 
 
 

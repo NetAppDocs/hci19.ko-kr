@@ -23,11 +23,11 @@ Element 12.2부터 를 사용할 수 있습니다 link:concept_hci_storage_maint
 
 
 .옵션
-* <<Add a storage cluster>>
-* <<Confirm storage cluster status>>
-* <<Edit storage cluster credentials>>
-* <<Remove a storage cluster>>
-* <<Enable and disable maintenance mode>>
+*  a storage cluster
+*  storage cluster status
+*  storage cluster credentials
+*  a storage cluster
+*  and disable maintenance mode
 
 
 
@@ -111,7 +111,7 @@ CAUTION: Yes * NEXT를 클릭하면 클러스터에서 설치가 제거됩니다
 [discrete]
 == 유지보수 모드를 설정 및 해제합니다
 
-여기 link:concept_hci_storage_maintenance_mode.html["유지보수 모드"] 기능 옵션은 에 대한 기능을 제공합니다 <<enable_main_mode,활성화>> 및 <<disable_main_mode,사용 안 함>> 스토리지 클러스터 노드의 유지보수 모드입니다.
+여기 link:concept_hci_storage_maintenance_mode.html["유지보수 모드"] 기능 옵션은 에 대한 기능을 제공합니다 ,활성화 및 ,사용 안 함 스토리지 클러스터 노드의 유지보수 모드입니다.
 
 .무엇을 &#8217;필요로 할거야
 * Element 소프트웨어 *: 스토리지 클러스터 버전이 NetApp Element 소프트웨어 12.2 이상을 실행하고 있습니다.

@@ -33,9 +33,9 @@ H410S 노드가 있는 4노드 섀시의 전면은 각 노드에 해당하는 �
 
 image::h410s_ssd_bays.png[에는 H410S 노드가 있는 4노드 섀시의 각 노드에 연결된 베이가 나와 있습니다.]
 
-다음은 이 절차의 단계에 대한 개괄적인 개요입니다.<<Prepare to replace the storage node>>
-<<Replace the storage node in the chassis>>
-<<Add the storage node to the cluster>>
+다음은 이 절차의 단계에 대한 개괄적인 개요입니다. to replace the storage node
+ the storage node in the chassis
+ the storage node to the cluster
 
 
 

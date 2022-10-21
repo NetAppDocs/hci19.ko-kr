@@ -51,7 +51,7 @@ NOTE: 하드웨어의 펌웨어 및 드라이버 펌웨어의 전체 매트릭�
 * * KVM ESXi 콘솔 *: 컴퓨팅 노드 업그레이드를 시작하기 전에 BMC UI에서 열려 있는 SOL(Serial-over-LAN) 세션과 활성 KVM 세션을 모두 닫습니다.
 * * Witness 노드 요구 사항 *: 2노드 및 3노드 스토리지 클러스터의 경우 1개 link:concept_hci_nodes.html["증인 노드"] 항상 NetApp HCI 설치에서 실행되어야 합니다.
 * * 컴퓨팅 노드 상태 점검 *: 노드를 업그레이드할 준비가 되었는지 확인했습니다. 을 참조하십시오 link:task_upgrade_compute_prechecks.html["컴퓨팅 펌웨어를 업그레이드하기 전에 컴퓨팅 노드 상태 점검을 실행합니다"].
-* * 최종 사용자 라이센스 계약(EULA) *: 관리 서비스 2.20부터 NetApp 하이브리드 클라우드 제어 UI 또는 API를 사용하여 컴퓨팅 노드 펌웨어를 업그레이드하기 전에 EULA에 동의하고 저장해야 합니다.
+* * 최종 사용자 라이센스 계약(EULA) *: 관리 서비스 2.20.69부터 NetApp 하이브리드 클라우드 제어 UI 또는 API를 사용하여 컴퓨팅 노드 펌웨어를 업그레이드하기 전에 EULA에 동의하고 저장해야 합니다.
 +
 .. 웹 브라우저에서 관리 노드의 IP 주소를 엽니다.
 +
@@ -82,10 +82,10 @@ NOTE: 업그레이드하기 전에 현재 ESXi 드라이버 버전을 확인하�
 
 업그레이드 시나리오와 관련된 옵션을 선택합니다.
 
-* <<Use NetApp Hybrid Cloud Control UI to upgrade a compute node>> (권장)
-* <<Use NetApp Hybrid Cloud Control API to upgrade a compute node>>
-* <<Use a USB drive imaged with the latest compute firmware bundle>>
-* <<Use the Baseboard Management Controller (BMC) user interface (UI)>>
+*  NetApp Hybrid Cloud Control UI to upgrade a compute node (권장)
+*  NetApp Hybrid Cloud Control API to upgrade a compute node
+*  a USB drive imaged with the latest compute firmware bundle
+*  the Baseboard Management Controller (BMC) user interface (UI)
 
 
 
@@ -104,7 +104,7 @@ TIP: 다크 사이트 업그레이드의 경우 컴퓨팅 펌웨어 번들과 �
 NOTE: 관리 노드와 BMC 호스트 간의 네트워크 연결 속도에 따라 NIC, BIOS 및 BMC를 업그레이드하는 데 노드당 약 60분이 걸릴 수 있습니다.
 
 
-NOTE: NetApp 하이브리드 클라우드 제어 UI를 사용하여 H300E/H500E/H700E 컴퓨팅 노드에서 컴퓨팅 펌웨어를 업그레이드하는 것은 더 이상 지원되지 않습니다. 업그레이드하려면 를 사용하는 것이 좋습니다 <<manual_method_USB,USB 드라이브>> 또는 을 누릅니다 <<manual_method_BMC,BMC UI>> 컴퓨팅 펌웨어 번들을 마운트합니다.
+NOTE: NetApp 하이브리드 클라우드 제어 UI를 사용하여 H300E/H500E/H700E 컴퓨팅 노드에서 컴퓨팅 펌웨어를 업그레이드하는 것은 더 이상 지원되지 않습니다. 업그레이드하려면 를 사용하는 것이 좋습니다 ,USB 드라이브 또는 을 누릅니다 ,BMC UI 컴퓨팅 펌웨어 번들을 마운트합니다.
 
 .무엇을 &#8217;필요로 할거야
 * 관리 노드가 인터넷에 연결되어 있지 않은 경우 에서 컴퓨팅 펌웨어 번들을 다운로드했습니다 https://mysupport.netapp.com/site/products/all/details/netapp-hci/downloads-tab/download/62542/Compute_Firmware_Bundle["NetApp Support 사이트"^].
@@ -167,7 +167,7 @@ CAUTION: H610C 및 H615C 컴퓨팅 노드에서 펌웨어를 업그레이드하�
 
 TIP: 브라우저 창에서 멀리 이동하면 백그라운드에서 파일 업로드가 수행됩니다.
 
-파일이 성공적으로 업로드 및 확인되면 화면에 메시지가 표시됩니다. 정품 확인에 몇 분 정도 걸릴 수 있습니다. 업그레이드가 완료된 후 로그를 다운로드할 수 있습니다. 다양한 업그레이드 상태 변경에 대한 자세한 내용은 을 참조하십시오 <<Upgrade status changes>>.
+파일이 성공적으로 업로드 및 확인되면 화면에 메시지가 표시됩니다. 정품 확인에 몇 분 정도 걸릴 수 있습니다. 업그레이드가 완료된 후 로그를 다운로드할 수 있습니다. 다양한 업그레이드 상태 변경에 대한 자세한 내용은 을 참조하십시오  status changes.
 
 |===
 
@@ -210,7 +210,7 @@ TIP: 업그레이드 중에 장애가 발생할 경우 NetApp 하이브리드 �
 API를 사용하여 클러스터의 각 컴퓨팅 노드를 최신 펌웨어 버전으로 업그레이드할 수 있습니다. 원하는 자동화 툴을 사용하여 API를 실행할 수 있습니다. 여기에 설명된 API 워크플로에서는 관리 노드에서 사용할 수 있는 REST API UI를 예로 사용합니다.
 
 
-NOTE: NetApp 하이브리드 클라우드 제어 UI를 사용하여 H300E/H500E/H700E 컴퓨팅 노드에서 컴퓨팅 펌웨어를 업그레이드하는 것은 더 이상 지원되지 않습니다. 업그레이드하려면 를 사용하는 것이 좋습니다 <<manual_method_USB,USB 드라이브>> 또는 을 누릅니다 <<manual_method_BMC,BMC UI>> 컴퓨팅 펌웨어 번들을 마운트합니다.
+NOTE: NetApp 하이브리드 클라우드 제어 UI를 사용하여 H300E/H500E/H700E 컴퓨팅 노드에서 컴퓨팅 펌웨어를 업그레이드하는 것은 더 이상 지원되지 않습니다. 업그레이드하려면 를 사용하는 것이 좋습니다 ,USB 드라이브 또는 을 누릅니다 ,BMC UI 컴퓨팅 펌웨어 번들을 마운트합니다.
 
 vCenter 및 하드웨어 자산을 비롯한 컴퓨팅 노드 자산을 관리 노드 자산이라고 합니다. 재고 서비스 API를 사용하여 자산을 확인할 수 있습니다('https://<ManagementNodeIP>/inventory/1/`).
 
@@ -510,8 +510,8 @@ TIP: 시스템 또는 VM과 노드를 동일한 네트워크에 연결하는 것
 
 NOTE: BMC UI를 통해 업그레이드하는 데 약 25-30분이 소요됩니다.
 
-* <<Upgrade firmware on H410C and H300E/H500E/H700E nodes>>
-* <<Upgrade firmware on H610C/H615C nodes>>
+*  firmware on H410C and H300E/H500E/H700E nodes
+*  firmware on H610C/H615C nodes
 
 
 

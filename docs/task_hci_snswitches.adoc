@@ -48,12 +48,12 @@ image::SN2700.png[SN2700 전면 및 후면,600,400]
 
 NOTE: 지침이 필요한 경우 NetApp 지원에 문의하십시오.
 
-다음은 절차의 단계에 대한 개요입니다.<<Prepare to replace the faulty switch>>
-<<Create the configuration file>>
-<<Remove the faulty switch and install the replacement>>
-<<Verify the operating system version on the switch>>
-<<Configure the replacement switch>>
-<<Complete the replacement>>
+다음은 절차의 단계에 대한 개요입니다. to replace the faulty switch
+ the configuration file
+ the faulty switch and install the replacement
+ the operating system version on the switch
+ the replacement switch
+ the replacement
 
 
 

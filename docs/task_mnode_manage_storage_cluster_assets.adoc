@@ -23,10 +23,10 @@ keywords: netapp, mnode, management node, rest api, hci, assets
 
 다음 옵션 중 하나를 선택합니다.
 
-* <<Retrieve the installation ID and cluster ID of a storage cluster asset>>
-* <<Add a new storage cluster asset>>
-* <<Edit the stored credentials for a storage cluster asset>>
-* <<Delete a storage cluster asset>>
+*  the installation ID and cluster ID of a storage cluster asset
+*  a new storage cluster asset
+*  the stored credentials for a storage cluster asset
+*  a storage cluster asset
 
 
 
@@ -102,7 +102,7 @@ API는 이 설치에서 알려진 모든 스토리지 클러스터의 목록을 
 REST API를 사용하여 관리 노드 인벤토리에 하나 이상의 새 스토리지 클러스터 자산을 추가할 수 있습니다. 새 스토리지 클러스터 자산을 추가하면 관리 노드에 자동으로 등록됩니다.
 
 .무엇을 &#8217;필요로 할거야
-* 을 복사했습니다 <<Retrieve the installation ID and cluster ID of a storage cluster asset,스토리지 클러스터 ID 및 설치 ID입니다>> 추가할 모든 스토리지 클러스터의 경우
+* 을 복사했습니다  the installation ID and cluster ID of a storage cluster asset,스토리지 클러스터 ID 및 설치 ID입니다 추가할 모든 스토리지 클러스터의 경우
 * 둘 이상의 스토리지 노드를 추가하는 경우 의 제한 사항을 읽고 이해해야 합니다 link:concept_hci_clusters.html#authoritative-storage-clusters["권한 있는 클러스터"] 및 여러 스토리지 클러스터를 지원합니다.
 +
 
@@ -167,7 +167,7 @@ API는 이름, 버전 및 IP 주소 정보와 같이 새로 추가된 스토리�
 관리 노드가 스토리지 클러스터에 로그인하는 데 사용하는 저장된 자격 증명을 편집할 수 있습니다. 선택하는 사용자는 클러스터 관리자 액세스 권한이 있어야 합니다.
 
 
-NOTE: 의 단계를 따랐는지 확인합니다 <<Retrieve the installation ID and cluster ID of a storage cluster asset>> 계속하기 전에.
+NOTE: 의 단계를 따랐는지 확인합니다  the installation ID and cluster ID of a storage cluster asset 계속하기 전에.
 
 .단계
 . 관리 노드의 IP 주소를 입력한 후 '/storage/1/'를 입력하여 스토리지 서비스의 REST API UI에 액세스합니다.
@@ -216,7 +216,7 @@ https://<ManagementNodeIP>/storage/1/
 스토리지 클러스터가 더 이상 서비스 상태가 아니면 스토리지 클러스터 자산을 삭제할 수 있습니다. 스토리지 클러스터 자산을 제거하면 관리 노드에서 자동으로 등록이 취소됩니다.
 
 
-NOTE: 의 단계를 따랐는지 확인합니다 <<Retrieve the installation ID and cluster ID of a storage cluster asset>> 계속하기 전에.
+NOTE: 의 단계를 따랐는지 확인합니다  the installation ID and cluster ID of a storage cluster asset 계속하기 전에.
 
 .단계
 . 관리 노드의 IP 주소를 입력한 후 '/storage/1/'를 입력하여 스토리지 서비스의 REST API UI에 액세스합니다.

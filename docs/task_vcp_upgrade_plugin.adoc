@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: docs/task_vcp_upgrade_plugin.html 
 summary: NetApp HCI 시스템 업그레이드의 일부로 vCenter Server용 Element 플러그인을 업그레이드할 수 있습니다. 
-keywords: netapp, vcp, vCenter plug-in, upgrade, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9 
+keywords: netapp, vcp, vCenter plug-in, upgrade, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 4.10 
 ---
 = vCenter Server용 Element 플러그인을 업그레이드합니다
 :hardbreaks:
@@ -20,7 +20,7 @@ vCenter Server용 NetApp Element 플러그인이 등록된 기존 vSphere 환경
 
 이 업그레이드 절차에서는 다음 업그레이드 시나리오에 대해 설명합니다.
 
-* VMware vCenter Server 4.9, 4.8, 4.7, 4.6, 4.5 또는 4.4용 Element 플러그인으로 업그레이드하려는 경우
+* VMware vCenter Server 4.10, 4.9, 4.8, 4.7, 4.6용 Element 플러그인으로 업그레이드하려는 경우 4.5 또는 4.4.
 * 7.0, 6.7 또는 6.5 HTML5 vSphere Web Client로 업그레이드하는 중입니다.
 +
 
@@ -99,8 +99,8 @@ VMware vCenter Server 6.7U1을 사용하여 vCenter Server 4.8 이상용 NetApp 
 
 [listing]
 ----
-NetApp Element Plug-in Version: 4.9
-NetApp Element Plug-in Build Number: 14
+NetApp Element Plug-in Version: 4.10
+NetApp Element Plug-in Build Number: 12
 ----
 
 NOTE: vCenter 플러그인에는 온라인 도움말 콘텐츠가 포함되어 있습니다. 도움말에 최신 콘텐츠가 포함되어 있는지 확인하려면 플러그인을 업그레이드한 후 브라우저 캐시를 지웁니다.

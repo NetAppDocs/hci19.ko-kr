@@ -40,7 +40,7 @@ IMPORTANT: iDRAC/BIOS 펌웨어를 업데이트하려면 NetApp 지원 에 문�
 
 NOTE: 하드웨어에 대한 펌웨어 및 드라이버 펌웨어의 전체 매트릭스를 보려면 다음을 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/NetApp_HCI/Firmware_and_driver_versions_in_NetApp_HCI_and_NetApp_Element_software["KB 문서를 참조하십시오"^] (로그인 필요).
 
-* * 최종 사용자 라이센스 계약(EULA) *: 관리 서비스 2.20부터 NetApp 하이브리드 클라우드 제어 UI 또는 API를 사용하여 스토리지 펌웨어를 업그레이드하기 전에 EULA에 동의하고 저장해야 합니다.
+* * 최종 사용자 라이센스 계약(EULA) *: 관리 서비스 2.20.69부터 NetApp 하이브리드 클라우드 제어 UI 또는 API를 사용하여 스토리지 펌웨어를 업그레이드하기 전에 EULA에 동의하고 저장해야 합니다.
 +
 .. 웹 브라우저에서 관리 노드의 IP 주소를 엽니다.
 +
@@ -61,8 +61,8 @@ NOTE: EULA에 동의하면 향후 모든 업데이트에 대해 기록되고 자
 
 다음 스토리지 펌웨어 업그레이드 옵션 중 하나를 선택합니다.
 
-* <<Use NetApp Hybrid Cloud Control UI to upgrade storage firmware>>
-* <<Use NetApp Hybrid Cloud Control API to upgrade storage firmware>>
+*  NetApp Hybrid Cloud Control UI to upgrade storage firmware
+*  NetApp Hybrid Cloud Control API to upgrade storage firmware
 
 
 
@@ -107,7 +107,7 @@ NOTE: Storage * 탭에는 설치에 포함된 스토리지 클러스터가 나�
 
 
 
-TIP: 업그레이드 중 * 업그레이드 상태 * 는 프로세스 상태를 반영하기 위해 변경됩니다. 또한 업그레이드를 일시 중지하거나 업그레이드가 오류를 반환하는 경우와 같이 수행한 작업에 대한 응답으로 변경됩니다. 을 참조하십시오 <<Upgrade status changes>>.
+TIP: 업그레이드 중 * 업그레이드 상태 * 는 프로세스 상태를 반영하기 위해 변경됩니다. 또한 업그레이드를 일시 중지하거나 업그레이드가 오류를 반환하는 경우와 같이 수행한 작업에 대한 응답으로 변경됩니다. 을 참조하십시오  status changes.
 
 
 NOTE: 업그레이드가 진행되는 동안 페이지를 종료하고 나중에 다시 돌아와 진행 상황을 계속 모니터링할 수 있습니다. 클러스터 행이 축소되어 있는 경우 이 페이지는 상태 및 현재 버전을 동적으로 업데이트하지 않습니다. 테이블을 업데이트하거나 페이지를 새로 고치려면 클러스터 행을 확장해야 합니다.
@@ -125,7 +125,7 @@ NOTE: 업그레이드가 진행되는 동안 페이지를 종료하고 나중에
 
 CAUTION: 브라우저 창에서 이동하면 파일 업로드가 손실됩니다.
 
-파일이 성공적으로 업로드 및 확인되면 화면에 메시지가 표시됩니다. 정품 확인에 몇 분 정도 걸릴 수 있습니다. 이 단계에서 브라우저 창에서 다른 곳으로 이동하면 파일 업로드가 유지됩니다. 업그레이드가 완료된 후 로그를 다운로드할 수 있습니다. 다양한 업그레이드 상태 변경에 대한 자세한 내용은 을 참조하십시오 <<Upgrade status changes>>.
+파일이 성공적으로 업로드 및 확인되면 화면에 메시지가 표시됩니다. 정품 확인에 몇 분 정도 걸릴 수 있습니다. 이 단계에서 브라우저 창에서 다른 곳으로 이동하면 파일 업로드가 유지됩니다. 업그레이드가 완료된 후 로그를 다운로드할 수 있습니다. 다양한 업그레이드 상태 변경에 대한 자세한 내용은 을 참조하십시오  status changes.
 
 |===
 

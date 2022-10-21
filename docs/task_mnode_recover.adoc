@@ -48,10 +48,10 @@ keywords: netapp, element, management node, mnode, disaster recovery, redeploy, 
 
 
 .단계
-. <<Download ISO or OVA and deploy the VM>>
-. <<Configure the network>>
-. <<Configure time sync>>
-. <<Configure the management node>>
+.  ISO or OVA and deploy the VM
+.  the network
+.  time sync
+.  the management node
 
 
 
@@ -119,7 +119,7 @@ NOTE: 스토리지 트래픽을 격리하기 위해 추가 NIC가 필요한 경�
 
 
 
-NOTE: 요소 12.3.1부터 하위 단계(a)에서 (e)까지 자동으로 수행됩니다. 관리 노드 12.3.1의 경우 로 이동합니다 <<substep_f_recover_config_time_sync,하위 단계 (f)>> 를 눌러 시간 동기화 구성을 완료합니다.
+NOTE: 요소 12.3.1부터 하위 단계(a)에서 (e)까지 자동으로 수행됩니다. 관리 노드 12.3.1의 경우 로 이동합니다 ,하위 단계 (f) 를 눌러 시간 동기화 구성을 완료합니다.
 
 . SSH 또는 하이퍼바이저에서 제공하는 콘솔을 사용하여 관리 노드에 로그인합니다.
 . NTPD 중지:
@@ -186,7 +186,7 @@ NOTE: 나중에 VM을 변경할 경우 이 옵션을 사용하지 마십시오.
 
 
 
-NOTE: 시간 동기화 구성을 완료한 후에는 NTP를 편집하지 마십시오. NTP는 를 실행할 때 NTP에 영향을 주기 때문입니다 <<step_6_recover_mnode_redeploy,재구축 명령>> 관리 노드에서.
+NOTE: 시간 동기화 구성을 완료한 후에는 NTP를 편집하지 마십시오. NTP는 를 실행할 때 NTP에 영향을 주기 때문입니다 ,재구축 명령 관리 노드에서.
 
 
 

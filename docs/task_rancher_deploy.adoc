@@ -42,9 +42,9 @@ NOTE: Rancher 지원은 NetApp Support Edge 계약에 포함되지 않습니다.
 
 == NetApp HCI에 Rancher를 구축하는 단계
 
-* <<Access the NetApp Hybrid Cloud Control>>
-* <<Deploy Rancher on NetApp HCI>>
-* <<Verify your deployment by using vCenter Server>>
+*  the NetApp Hybrid Cloud Control
+*  Rancher on NetApp HCI
+*  your deployment by using vCenter Server
 
 
 

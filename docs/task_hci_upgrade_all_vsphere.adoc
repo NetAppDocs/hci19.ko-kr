@@ -22,7 +22,7 @@ NetApp HCI 설치의 VMware vSphere 구성 요소를 업그레이드할 때 vCen
 . https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vcenter.upgrade.doc/GUID-7AFB6672-0B0B-4902-B254-EE6AE81993B2.html["vCenter Server, ESXi, VM 및 기타 VMware 구성 요소를 비롯한 vSphere를 업그레이드합니다"^].
 +
 
-IMPORTANT: VMware vCenter Server 7.0 U3으로 업그레이드하면 vCenter Server용 NetApp Element 플러그인의 모든 버전이 배포되지 않습니다. 이 문제를 해결하려면 을 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/NetApp_HCI/vCenter_plug-in_deployment_fails_after_upgrading_vCenter_to_version_7.0_U3["이 KB 문서를 참조하십시오"^].
+IMPORTANT: VMware vCenter Server 7.0 U3으로 업그레이드하면 Element 플러그인이 배포되지 않습니다. Spring Framework 4를 사용하여 이 문제를 해결하려면 을 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/NetApp_HCI/vCenter_plug-in_deployment_fails_after_upgrading_vCenter_to_version_7.0_U3["이 KB 문서를 참조하십시오"^].
 
 +
 

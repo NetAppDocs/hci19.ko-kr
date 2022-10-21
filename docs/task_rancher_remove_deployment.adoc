@@ -22,8 +22,8 @@ keywords: netapp, hci, api, REST, remove, Rancher, redeploy
 TIP: 사용자 클러스터를 보존할 수 있습니다. 이러한 데이터를 보존하면 나중에 다른 Rancher 구현으로 마이그레이션할 수 있습니다. 사용자 클러스터를 삭제하려면 먼저 Rancher 서버를 삭제하기 전에 사용자 클러스터를 삭제해야 합니다. 그렇지 않으면 Rancher 서버를 삭제한 후 사용자 클러스터를 삭제하는 것이 더 어렵습니다.
 
 .옵션
-* <<Remove Rancher on NetApp HCI using NetApp Hybrid Cloud Control>> (권장)
-* <<Remove Rancher on NetApp HCI using the REST API>>
+*  Rancher on NetApp HCI using NetApp Hybrid Cloud Control (권장)
+*  Rancher on NetApp HCI using the REST API
 
 
 

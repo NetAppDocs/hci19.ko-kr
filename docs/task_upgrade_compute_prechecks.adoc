@@ -20,7 +20,7 @@ keywords: netapp, compute prechecks, compute node upgrade, netapp hci
 * * 관리 서비스 *: 최신 관리 서비스 번들(2.11 이상)으로 업데이트되었습니다.
 * * 관리 노드 *: 관리 노드 11.3 이상을 실행하고 있습니다.
 * * Element 소프트웨어 *: 스토리지 클러스터에서 NetApp Element 소프트웨어 11.3 이상이 실행 중입니다.
-* * 최종 사용자 라이센스 계약(EULA) *: 관리 서비스 2.20부터 NetApp 하이브리드 클라우드 제어 UI 또는 API를 사용하여 컴퓨팅 노드 상태 점검을 실행하기 전에 EULA에 동의하고 저장해야 합니다.
+* * 최종 사용자 라이센스 계약(EULA) *: 관리 서비스 2.20.69부터 NetApp 하이브리드 클라우드 제어 UI 또는 API를 사용하여 컴퓨팅 노드 상태 점검을 실행하기 전에 EULA에 동의하고 저장해야 합니다.
 +
 .. 웹 브라우저에서 관리 노드의 IP 주소를 엽니다.
 +
@@ -41,13 +41,13 @@ NOTE: EULA에 동의하면 향후 모든 업데이트에 대해 기록되고 자
 
 NetApp 하이브리드 클라우드 제어 UI 또는 NetApp 하이브리드 클라우드 제어 API를 사용하여 상태 점검을 실행할 수 있습니다.
 
-* <<Use NetApp Hybrid Cloud Control to run compute node health checks prior to upgrading firmware>> (선호 방법)
-* <<Use API to run compute node health checks prior to upgrading firmware>>
+*  NetApp Hybrid Cloud Control to run compute node health checks prior to upgrading firmware (선호 방법)
+*  API to run compute node health checks prior to upgrading firmware
 
 
 서비스에서 실행되는 컴퓨팅 노드 상태 검사에 대한 자세한 내용을 확인할 수도 있습니다.
 
-* <<Compute node health checks made by the service>>
+*  node health checks made by the service
 
 
 

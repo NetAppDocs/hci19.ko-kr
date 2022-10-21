@@ -39,15 +39,15 @@ H410C 컴퓨팅 노드를 교체할 때 다음 사항을 고려하십시오.
 * H410C 컴퓨팅 노드는 고전압(200~240VAC)에서만 작동합니다. H410C 노드를 기존 NetApp HCI 시스템에 추가할 때 전원 요구 사항이 충족되는지 확인해야 합니다.
 
 
-다음은 이 절차의 단계에 대한 개괄적인 개요입니다.<<Prepare to replace the compute node>>
-<<Replace the compute node in the chassis>>
-<<Remove the compute node asset in NetApp HCI 1.7 and later>>
-<<Add the compute node to the cluster>>
-<<Redeploy Witness Nodes for two and three-node storage clusters>>
+다음은 이 절차의 단계에 대한 개괄적인 개요입니다. to replace the compute node
+ the compute node in the chassis
+ the compute node asset in NetApp HCI 1.7 and later
+ the compute node to the cluster
+ Witness Nodes for two and three-node storage clusters
 
 다음은 시스템에 적용되는 특정 조건이 있는 경우 수행해야 할 몇 가지 추가 작업입니다.link:task_hci_removewn.html["Witness 노드를 제거하여 컴퓨팅 리소스를 확보합니다"]
-<<Change the password if you received a replacement node with a non-standard BMC password>>
-<<Upgrade the BMC firmware on your node>>
+ the password if you received a replacement node with a non-standard BMC password
+ the BMC firmware on your node
 
 
 

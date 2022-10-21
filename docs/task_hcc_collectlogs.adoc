@@ -23,8 +23,8 @@ NetApp HCI 또는 SolidFire All-Flash 스토리지 설치에 문제가 있을 �
 
 다음 옵션 중 하나를 선택합니다.
 
-* <<Use NetApp Hybrid Cloud Control to collect logs>>
-* <<Use the REST API to collect logs>>
+*  NetApp Hybrid Cloud Control to collect logs
+*  the REST API to collect logs
 
 
 

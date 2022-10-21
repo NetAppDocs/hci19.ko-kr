@@ -138,7 +138,6 @@
   <block id="fc78a25a814125bdaeb01b28be02a19d" category="list-text">클러스터 버전이 NetApp Element 소프트웨어 11.3 이상을 실행 중입니다.</block>
   <block id="d95dde96d5f37c05bba91d1bff6d1a55" category="list-text">버전 11.3 이상을 실행하는 관리 노드를 배포했습니다.</block>
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">단계</block>
-  <block id="4ac581155f2c6a4a3a056078e2b122a1" category="list-text">관리 노드에서 REST API UI를 엽니다.</block>
   <block id="1fca2b4a66eca3cc3857ef2cc620c7a4" category="list-text">authorize * 또는 임의의 잠금 아이콘을 선택하고 다음을 완료합니다.</block>
   <block id="e70cbab1a499d9b8977a700c05be8d8b" category="list-text">클러스터 사용자 이름 및 암호를 입력합니다.</block>
   <block id="fe5314e1f2b52008d7c6c1dc49232535" category="list-text">값이 아직 채워지지 않은 경우 클라이언트 ID를 mnode-client로 입력합니다.</block>
@@ -206,7 +205,6 @@
   <block id="f6a63a9052785a40e6a7b718acb627b9" category="list-text">* 관리 서비스 *: 최신 관리 서비스 번들(2.11 이상)으로 업데이트되었습니다.</block>
   <block id="2ce38f720dba5ff083bfe1933d11eacc" category="list-text">* 관리 노드 *: 관리 노드 11.3 이상을 실행하고 있습니다.</block>
   <block id="a141fe1c6179ed3e09aa6043ad364ac6" category="list-text">* Element 소프트웨어 *: 스토리지 클러스터에서 NetApp Element 소프트웨어 11.3 이상이 실행 중입니다.</block>
-  <block id="53b9f06d2f4963cb4351ee247eee6fc1" category="list-text">* 최종 사용자 라이센스 계약(EULA) *: 관리 서비스 2.20부터 NetApp 하이브리드 클라우드 제어 UI 또는 API를 사용하여 컴퓨팅 노드 상태 점검을 실행하기 전에 EULA에 동의하고 저장해야 합니다.</block>
   <block id="c3dfd82361c52d5d3d1551c20c83f1a6" category="list-text">웹 브라우저에서 관리 노드의 IP 주소를 엽니다.</block>
   <block id="d64a6336a39c9f27c33956f187d79c87" category="list-text">NetApp 하이브리드 클라우드 제어에 스토리지 클러스터 관리자 자격 증명을 제공하여 로그인하십시오.</block>
   <block id="1f760966967601f6feb32cc62bb11ca3" category="list-text">인터페이스의 오른쪽 상단 근처에 있는 * Upgrade * 를 선택합니다.</block>
@@ -1331,7 +1329,6 @@
   <block id="4a7821cd3898fc74659163d0e111cd38" category="paragraph">Element 11.3 관리 노드 릴리즈부터 개별 서비스를 제공하는 새로운 모듈식 아키텍처에 따라 관리 노드 설계가 변경되었습니다. 이러한 모듈식 서비스는 NetApp HCI 시스템을 위한 중앙 집중식 및 확장 관리 기능을 제공합니다. 관리 서비스에는 시스템 원격 측정, 로깅 및 업데이트 서비스, vCenter Server용 Element Plug-in용 QoSSIOC 서비스, NetApp 하이브리드 클라우드 제어 등이 포함됩니다.</block>
   <block id="1b4d7862ca62ac0691b197c1c4e48017" category="list-text">Element 소프트웨어를 업그레이드하기 전에 최신 관리 서비스 번들로 업그레이드해야 합니다.</block>
   <block id="a443497b41405480f6755e35166556e7" category="inline-link">관리 서비스 릴리즈 노트</block>
-  <block id="573d529ded9f2b66a55c1d25a9498c72" category="paragraph">관리 서비스 2.20부터 NetApp 하이브리드 클라우드 제어 UI 또는 API를 사용하여 관리 서비스를 업그레이드하기 전에 최종 사용자 라이센스 계약(EULA)에 동의해야 합니다.</block>
   <block id="a5237c2b3436db5dc67ab53b053d3ec9" category="paragraph">NetApp 하이브리드 클라우드 제어 UI 또는 관리 노드 REST API를 사용하여 관리 서비스를 업데이트할 수 있습니다.</block>
   <block id="7d6cae0c176b060b3eb918e8fc3a8a88" category="list-text"><block ref="8b810af37d36ecef3e8ce0cfd28cc60b" category="inline-xref-macro-rx"></block> (권장 방법)</block>
   <block id="45d5739efe933eabe3dda4a4ba6b61b1" category="list-text"><block ref="b795f7048c0a3127327e392f4c115728" category="inline-xref-macro-rx"></block></block>
@@ -1758,7 +1755,6 @@
   <block id="2aaad98bfcfbd95f21871cf486a3243c" category="inline-link">vCenter Server, ESXi, VM 및 기타 VMware 구성 요소를 비롯한 vSphere를 업그레이드합니다</block>
   <block id="f23d91ab86d1cf2e82bd86fd860c8585" category="list-text"><block ref="f0107c2e24795b3c47b3466dee69927b" category="inline-link-rx"></block>.</block>
   <block id="7389b01d5fe0e17f5523a7fb85295f91" category="inline-link">이 KB 문서를 참조하십시오</block>
-  <block id="38be14292d8d278a5d7b04a84bab839d" category="admonition">VMware vCenter Server 7.0 U3으로 업그레이드하면 vCenter Server용 NetApp Element 플러그인의 모든 버전이 배포되지 않습니다. 이 문제를 해결하려면 을 참조하십시오<block ref="770c119932f7fa962a47dc0795db1af6" category="inline-link-rx"></block>.</block>
   <block id="42baa5e1ef15c663eada13ad52636d31" category="inline-link">2노드 클러스터</block>
   <block id="0ba7583639a274c434bbe6ef797115a4" category="inline-link">등록</block>
   <block id="81750b82d55f7148c9a0001ed71e7dd4" category="list-text"><block ref="670ccc28c8c6a3ae1c020a0fa12ec195" category="inline-link-rx"></block> vCenter를 사용하여 vCenter Server용 Element Plug-in을 다시 사용할 수 있습니다.</block>
@@ -2562,7 +2558,6 @@
   <block id="2b25aeb8c7f6b5acc086216f641291e8" category="admonition">NetApp Support 사이트 자격 증명을 사용하여 로그인하라는 메시지가 표시됩니다.</block>
   <block id="08edd2123939d5309dced149763a50ee" category="section-title">NetApp HCI</block>
   <block id="54866f3f5260905d8cc6b998d85fee46" category="inline-link">NetApp HCI 1.9P1 릴리스 정보</block>
-  <block id="5f123fb5072e8736326c928e2de971af" category="list-text"><block ref="9676fc811bea74225536cdd128daebc0" category="inline-link-rx"></block> _신규 _</block>
   <block id="ad486ba7980ca0df1937d7f26f4ce12b" category="inline-link">NetApp HCI 1.9 릴리스 정보</block>
   <block id="633cc64117e19d8cdd0def00cc27e8f5" category="list-text"><block ref="633cc64117e19d8cdd0def00cc27e8f5" category="inline-link-rx"></block></block>
   <block id="93c90752aba7edbf5a9fd2d0543c08d3" category="inline-link">NetApp HCI 1.8P1 릴리스 정보</block>
@@ -2573,7 +2568,6 @@
   <block id="4eed15839b8c708f78b2b696364ff0aa" category="list-text"><block ref="4eed15839b8c708f78b2b696364ff0aa" category="inline-link-rx"></block></block>
   <block id="3938cfdbe176bad61cedb25bdb572858" category="section-title">NetApp Element 소프트웨어</block>
   <block id="56570048e2475ec7b64ee91388743714" category="inline-link">NetApp Element 소프트웨어 12.3.2 릴리스 정보</block>
-  <block id="3903fc6a9f0bcbe1f49608f5110cf661" category="list-text"><block ref="9de5606ae9b23ff6651244b85bd5dae8" category="inline-link-rx"></block> _신규 _</block>
   <block id="7199e7988a06a61dd6614783601855bd" category="inline-link">NetApp Element 소프트웨어 12.3.1 릴리스 정보</block>
   <block id="9add94ad0bafb6a0c0977e09efa22b79" category="list-text"><block ref="9add94ad0bafb6a0c0977e09efa22b79" category="inline-link-rx"></block></block>
   <block id="325c4db41bea4b4c5bc841d336b08e32" category="inline-link">NetApp Element 소프트웨어 12.3 릴리스 정보</block>
@@ -2595,7 +2589,6 @@
   <block id="3e6c92d2b92c58fc4bfb9dd99511b0d9" category="section-title">관리 서비스</block>
   <block id="3b79e75f8bb7342984eec3a3fd95ccf6" category="list-text"><block ref="3b79e75f8bb7342984eec3a3fd95ccf6" category="inline-link-rx"></block></block>
   <block id="c7c27143d481078e23cd4144c0df2f10" category="inline-link">vCenter 플러그인 4.9 릴리즈 노트</block>
-  <block id="6452d1b3e56fe38fdc537aeb6fe8d1c8" category="list-text"><block ref="779aeeb0a67ee84cae70c2361654111d" category="inline-link-rx"></block>_신규 _</block>
   <block id="3b34803433d83528840d8e729af0e8bc" category="inline-link">vCenter 플러그인 4.8 릴리즈 노트</block>
   <block id="c561b7d92736e6c451a661a0a5da7586" category="list-text"><block ref="c561b7d92736e6c451a661a0a5da7586" category="inline-link-rx"></block></block>
   <block id="8cf0a7fd902364db0eaa5ec60ad654f3" category="inline-link">vCenter 플러그인 4.7 릴리즈 노트</block>
@@ -2609,8 +2602,6 @@
   <block id="e6f04bc267aa8b790e8358fbcafd13da" category="inline-link">vCenter Plug-in 4.3 릴리즈 노트</block>
   <block id="b2a1b69fb08bccdb5677884b0a061505" category="list-text"><block ref="b2a1b69fb08bccdb5677884b0a061505" category="inline-link-rx"></block></block>
   <block id="ff87ebe2c25e682bd61568ba1a06d717" category="section-title">컴퓨팅 펌웨어</block>
-  <block id="7d00d7b09c7fcde97c11f675daf7ae62" category="inline-link-macro">컴퓨팅 펌웨어 번들 2.146 릴리스 정보(최신)</block>
-  <block id="e45bcf0f15e92deae2cfb38777071218" category="list-text"><block ref="e45bcf0f15e92deae2cfb38777071218" category="inline-link-macro-rx"></block></block>
   <block id="e408d2698eab83bad6a25c0414c9fccd" category="list-text"><block ref="e408d2698eab83bad6a25c0414c9fccd" category="inline-link-macro-rx"></block></block>
   <block id="add6cf39bf48bd4bb95153935993051e" category="inline-link-macro">컴퓨팅 펌웨어 번들 2.27 릴리스 정보</block>
   <block id="8b8c8134b91716e60636957418102f63" category="list-text"><block ref="8b8c8134b91716e60636957418102f63" category="inline-link-macro-rx"></block></block>
@@ -3270,7 +3261,6 @@
   <block id="736c409b380383ee8843715d26079c63" category="list-text">* 클러스터 상태 *: 상태 점검을 실행하였습니다. 을 참조하십시오 <block ref="bdcf6db43efb3c82b174a0c4c0a65c66" category="inline-link-macro-rx"></block>.</block>
   <block id="d12abcbed858bffa82e8d643aeac1e4f" category="inline-link-macro">릴리스 정보 및 업그레이드 지침</block>
   <block id="13c2b42759130af4400c46b2b928dc26" category="admonition">하드웨어에 대한 펌웨어 및 드라이버 펌웨어의 전체 매트릭스를 보려면 다음을 참조하십시오<block ref="919d0da258d2c9346bfb11f078cfd474" category="inline-link-rx"></block> (로그인 필요).</block>
-  <block id="07cc0d856c010a1ee3ff9ee8f5157778" category="list-text">* 최종 사용자 라이센스 계약(EULA) *: 관리 서비스 2.20부터 NetApp 하이브리드 클라우드 제어 UI 또는 API를 사용하여 스토리지 펌웨어를 업그레이드하기 전에 EULA에 동의하고 저장해야 합니다.</block>
   <block id="5212e4232f93722ce70d3ed042cd25c1" category="paragraph">다음 스토리지 펌웨어 업그레이드 옵션 중 하나를 선택합니다.</block>
   <block id="71894c0623112f371e3598666af16695" category="list-text"><block ref="c67f607f0c5a6b98a7e28e151694a09a" category="inline-xref-macro-rx"></block></block>
   <block id="b8cff0b41605e83e8a12999dd0a4ca92" category="list-text"><block ref="bd241c643056b4027f18f8f059752b73" category="inline-xref-macro-rx"></block></block>
@@ -3410,7 +3400,6 @@
   <block id="b7328847f651fa46bcdd00a86f903b6a" category="inline-link-macro">증인 노드</block>
   <block id="efcf6e02f16fc585a25b810f97e71d20" category="list-text">* Witness 노드 요구 사항 *: 2노드 및 3노드 스토리지 클러스터의 경우 1개 <block ref="80652426a05b159dbdf64fb619693036" category="inline-link-macro-rx"></block> 항상 NetApp HCI 설치에서 실행되어야 합니다.</block>
   <block id="71adfd306f433bbb5f20cd616a19fc23" category="list-text">* 컴퓨팅 노드 상태 점검 *: 노드를 업그레이드할 준비가 되었는지 확인했습니다. 을 참조하십시오 <block ref="dd829c5049f30330148dc16f26fde06c" category="inline-link-macro-rx"></block>.</block>
-  <block id="0b2f19b801c71ab42a03e5347b8302ee" category="list-text">* 최종 사용자 라이센스 계약(EULA) *: 관리 서비스 2.20부터 NetApp 하이브리드 클라우드 제어 UI 또는 API를 사용하여 컴퓨팅 노드 펌웨어를 업그레이드하기 전에 EULA에 동의하고 저장해야 합니다.</block>
   <block id="e32fcfe10328af0f3217cd5ddb0808a4" category="paragraph">운영 환경에서는 컴퓨팅 노드 한 번에 펌웨어를 업그레이드할 수 있습니다.</block>
   <block id="344e78ec2ad025d33ea36041579f298c" category="inline-link-macro">ESXi 호스트에서 잠금 모드를 해제하는 방법</block>
   <block id="51e2f064fae02b78d50335320fa64dee" category="inline-link-macro">VMware 잠금 모드 동작</block>
@@ -3787,13 +3776,11 @@
   <block id="62403656f60d86891c7c9ad1ffa2f44f" category="summary">NetApp 하이브리드 클라우드 제어 UI 또는 REST API UI를 사용하여 관리 노드에서 SSH 기능을 해제 및 설정하거나 REST API UI를 사용하여 SSH 지원 연결 기능의 상태를 확인할 수 있습니다.</block>
   <block id="d6ffeb2fc4f82d1d17f906502ee07d86" category="doc">관리 노드에서 SSH 기능을 관리합니다</block>
   <block id="d1cfb55513d453a2cf4188067d2cf218" category="paragraph">REST API를 사용하여 관리 노드(mNode)에서 SSH 기능의 상태를 비활성화하거나 재설정하거나 확인할 수 있습니다. SSH 기능을 통해 제공됩니다 <block ref="6bb28df38aa0844e287b2e23fc581879" category="inline-link-macro-rx"></block> 관리 서비스 2.18 이상을 실행하는 관리 노드에서 기본적으로 이 비활성화됩니다.</block>
-  <block id="de7e6ba1aa5db3f3ecd18e0db7533988" category="paragraph">관리 서비스 2.20부터는 NetApp 하이브리드 클라우드 제어 UI를 사용하여 관리 노드에서 SSH 기능을 사용하거나 사용하지 않도록 설정할 수 있습니다.</block>
   <block id="3c94e6ce915e7526e3d52ade19785a73" category="list-text">* NetApp Hybrid Cloud Control 권한 *: 관리자로서의 권한이 있습니다.</block>
   <block id="893af10adfc625cc78ae6b31f194e8e2" category="list-text">* 클러스터 관리자 권한 *: 스토리지 클러스터에 대한 관리자 권한이 있습니다.</block>
   <block id="4a8504402e610045f6f515076b209af8" category="list-text">* Element 소프트웨어 *: 클러스터에서 NetApp Element 소프트웨어 11.3 이상이 실행 중입니다.</block>
   <block id="ac7ca17dbb21ace6afb8d4dca6cabea3" category="list-text">* 관리 서비스 업데이트 *:</block>
   <block id="72b0efdaad5d469b43f79c332bb57be4" category="inline-link">관리 서비스 번들</block>
-  <block id="b5fac2f2425ddc92784c5c7e5d8d557e" category="list-text">NetApp 하이브리드 클라우드 제어 UI를 사용하려면 를 업데이트했습니다<block ref="f6e495ec9a99fcd5692d41358780e884" category="inline-link-rx"></block> 2.20 버전으로.</block>
   <block id="43fe8cb39bfeedc36b52f882e1fa6566" category="list-text">REST API UI를 사용하려면 를 업데이트했습니다<block ref="f6e495ec9a99fcd5692d41358780e884" category="inline-link-rx"></block> 2.17 버전으로.</block>
   <block id="22b10ea78e232391f766c1d30f89f143" category="list-text"><block ref="ceecdddcb31feb92e45b5238bea4a2dd" category="inline-xref-macro-rx"></block></block>
   <block id="4dcaf58a1a6fd3555d9626cfadc42510" category="inline-link-macro">인증</block>
@@ -3846,7 +3833,6 @@
   <block id="1f530b0c76d9de4275104c651b6d5411" category="list-text">* 유효한 업그레이드 경로 *: 업그레이드하려는 Element 버전에 대한 업그레이드 경로 정보를 확인했으며 업그레이드 경로가 유효한지 확인했습니다.<block ref="b87eae6ace29db9b17ab7b20ed6745f5" category="inline-link-rx"></block></block>
   <block id="7cccd916bcdac08ea30e7c32df58e516" category="admonition">Element 소프트웨어를 버전 12.3.x로 업그레이드하기 전에 최신 관리 서비스 번들로 업그레이드해야 합니다 Element 소프트웨어를 버전 12.3.x로 업데이트하는 경우 계속하려면 관리 서비스 2.14.60 이상이 필요합니다.</block>
   <block id="eb3ef9d3145086e8447906c0ff28c122" category="list-text">* 클러스터 상태 *: 클러스터를 업그레이드할 준비가 되었는지 확인했습니다. 을 참조하십시오 <block ref="bdcf6db43efb3c82b174a0c4c0a65c66" category="inline-link-macro-rx"></block>.</block>
-  <block id="a3affadb8671444f8e45462ea7a0de50" category="list-text">* 최종 사용자 라이센스 계약(EULA) *: 관리 서비스 2.20부터 NetApp 하이브리드 클라우드 제어 UI 또는 API를 사용하여 Element 소프트웨어를 업그레이드하기 전에 EULA를 수락하고 저장해야 합니다.</block>
   <block id="0e7647873b3166c20d4bb762ef96b543" category="paragraph">다음 Element 소프트웨어 업그레이드 옵션 중 하나를 선택합니다.</block>
   <block id="f04c2dffe18d2f3b135204db9355705a" category="list-text"><block ref="d671d4153cf8124770baff9fa1830cd7" category="inline-xref-macro-rx"></block></block>
   <block id="c68d0cefaf6daaa0eddd2f2ab63ba5c8" category="list-text"><block ref="910aaaa5a5f6089f423c0c681bb2f1ce" category="inline-xref-macro-rx"></block></block>
@@ -4263,7 +4249,6 @@
   <block id="0b2d8b6ff87d29566fb56d20870a7943" category="paragraph">업그레이드는 누적 패키지 대신 구성 요소에서 사용할 수 있습니다. 따라서 Ubuntu OS와 같은 일부 구성 요소 업그레이드를 보다 빠른 속도로 이용할 수 있습니다. 업그레이드는 Rancher Server가 구축된 관리 클러스터와 Rancher 서버 인스턴스에만 영향을 미칩니다. 관리 클러스터 노드의 Ubuntu OS로의 업그레이드는 중요한 보안 패치에만 사용되며 운영 체제를 업그레이드하지 않습니다. NetApp 하이브리드 클라우드 제어에서 사용자 클러스터를 업그레이드할 수 없습니다.</block>
   <block id="fa6526605ff956fa699802ea347526ff" category="admonition">Rancher 기능을 사용하려면 최신 관리 서비스 번들 2.17 이상으로 업그레이드해야 합니다.</block>
   <block id="ab0a7321d296fe5e16313845b6e86f0d" category="list-text">* 시스템 포트 *: 업그레이드에 NetApp 하이브리드 클라우드 제어를 사용하는 경우 필요한 포트가 열려 있는지 확인했습니다. 을 참조하십시오 <block ref="2b8d9142e89de477f0f719fb06286d84" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
-  <block id="2620c9636e86b36feea9216102a5bec7" category="list-text">* 최종 사용자 라이센스 계약(EULA) *: 관리 서비스 2.20부터 NetApp 하이브리드 클라우드 제어 UI 또는 API를 사용하여 Rancher 구축 환경을 업그레이드하기 전에 EULA에 동의하고 저장해야 합니다.</block>
   <block id="69639530f6f543c75958d80c8a23f7bc" category="paragraph">다음 업그레이드 프로세스 중 하나를 선택합니다.</block>
   <block id="9e618518a7acfbe695c481345087d7ab" category="list-text"><block ref="8d85d0eab3300aa3b4c83383333d291f" category="inline-xref-macro-rx"></block></block>
   <block id="a2e344ad0778d1af4ecc859cc11bf478" category="list-text"><block ref="4bf4c6160c669fd3806156a3dcc1e18c" category="inline-xref-macro-rx"></block></block>
@@ -5139,7 +5124,6 @@
   <block id="f5734d4e8acdeb186a1c22c351c4a0bf" category="paragraph">Element 스토리지를 업그레이드하기 전에 상태 점검을 실행하여 클러스터의 모든 스토리지 노드가 다음 Element 스토리지 업그레이드를 수행할 준비가 되었는지 확인해야 합니다.</block>
   <block id="f4926605dca5caffd5d52e790b9eb676" category="list-text">* 관리 서비스 *: 최신 관리 서비스 번들(2.10.27 이상)으로 업데이트되었습니다.</block>
   <block id="cd87cb364b82cfd7ff555087f3e88e59" category="list-text">* Element 소프트웨어 *: 클러스터 버전에서 NetApp Element 소프트웨어 11.3 이상이 실행되고 있습니다.</block>
-  <block id="84d8587fb67731ba50262a0ffeacb7ac" category="list-text">* 최종 사용자 라이센스 계약(EULA) *: 관리 서비스 2.20부터 NetApp 하이브리드 클라우드 제어 UI 또는 API를 사용하여 Element 스토리지 상태 점검을 실행하기 전에 EULA에 동의하고 저장해야 합니다.</block>
   <block id="a42a5f062307c65656fb022b1bc38224" category="paragraph">NetApp HCC(하이브리드 클라우드 제어) UI, HCC API 또는 HealthTools 제품군을 사용하여 상태 점검을 실행할 수 있습니다.</block>
   <block id="0096c254c62197f713da16cbb8cf17bf" category="list-text"><block ref="43e2712ac16e77262f42113e91f41bfc" category="inline-xref-macro-rx"></block> (선호 방법)</block>
   <block id="c0ce03ffdb1b2eaf2997d4b003a6c398" category="list-text"><block ref="33b5a46d5ad547c7160d2877495cd388" category="inline-xref-macro-rx"></block></block>
@@ -5979,7 +5963,6 @@
   <block id="651784e7a6ddc6534201a6e8d1fbf248" category="paragraph">vCenter Server용 NetApp Element 플러그인이 등록된 기존 vSphere 환경의 경우 플러그인 서비스가 포함된 관리 서비스 패키지를 먼저 업데이트한 후 플러그인 등록을 업데이트할 수 있습니다.</block>
   <block id="e6c04958395a323ddbc02c929b4dfdf0" category="paragraph">등록 유틸리티를 사용하여 vCenter Server vCSA(Virtual Appliance) 또는 Windows에서 플러그인 등록을 업데이트할 수 있습니다. 플러그인을 사용해야 하는 모든 vCenter Server에서 vCenter 플러그인의 등록을 변경해야 합니다.</block>
   <block id="badb045d93b6de2fe8d2a1a664b92d6f" category="paragraph">이 업그레이드 절차에서는 다음 업그레이드 시나리오에 대해 설명합니다.</block>
-  <block id="fe7edd9e3b4efc71766ba03d23b51c44" category="list-text">VMware vCenter Server 4.9, 4.8, 4.7, 4.6, 4.5 또는 4.4용 Element 플러그인으로 업그레이드하려는 경우</block>
   <block id="a6a18366932bfeffc2341cc7aa5fe09d" category="list-text">7.0, 6.7 또는 6.5 HTML5 vSphere Web Client로 업그레이드하는 중입니다.</block>
   <block id="8eeabd6de4a231c731b82c27ee25bbdb" category="admonition">이 플러그인은 VMware vCenter Server 4.6, 4.7 및 4.8용 Element Plug-in용 VMware vCenter Server 6.5와 호환되지 않습니다.</block>
   <block id="f171584692be059c88cbbda35827f299" category="list-text">6.7 Flash vSphere Web Client로 업그레이드하는 중입니다.</block>
@@ -6253,4 +6236,26 @@
   <block id="4f8fc3e1fce78186b06dfda99cdedd17" category="paragraph">NetApp HCI 솔루션을 사용하면 동일한 인프라에서 마찰 없이 여러 워크로드를 동시에 처리할 수 있으므로 규모 대비 성능을 높일 수 있습니다.</block>
   <block id="921c0975b352bf1530a52271d2abf5c6" category="inline-link">NetApp HCI 솔루션 설명서</block>
   <block id="705d4d08d5af2e9dd1c4616188dd681f" category="paragraph">NetApp HCI 솔루션에 대한 자세한 내용은 를 참조하십시오<block ref="80564718f738f8f02fcd8afb2a3d09de" category="inline-link-rx"></block>.</block>
+  <block id="edb046160eb6ed03c39de5860e72e509" category="list-text">* 최종 사용자 라이센스 계약(EULA) *: 관리 서비스 2.20.69부터 NetApp 하이브리드 클라우드 제어 UI 또는 API를 사용하여 목장 배포를 업그레이드하기 전에 EULA에 동의하고 저장해야 합니다.</block>
+  <block id="6802ee2e6d325852973924be55003180" category="inline-link-macro">관리 서비스 공지 2.21.61(vCenter Server용 NetApp Element 플러그인 4.10.12)</block>
+  <block id="ca9239bf570791b1b05bcb88781e4290" category="list-text"><block ref="ca9239bf570791b1b05bcb88781e4290" category="inline-link-macro-rx"></block></block>
+  <block id="5d8cb69408d9a6773459aa0a397a3003" category="list-text">관리 노드에서 REST API UI를 엽니다.</block>
+  <block id="4eed3af07414f10fffdba8a7ff51ca36" category="list-text">관리 서비스 시작 2.21.61:</block>
+  <block id="880c70977a68b1ec897e498bb11c7021" category="list-text">관리 서비스 2.20.69 이전:</block>
+  <block id="2394ff28a38b482ef2918be4c8e7540c" category="list-text">* 최종 사용자 라이센스 계약(EULA) *: 관리 서비스 2.20.69부터 NetApp 하이브리드 클라우드 제어 UI 또는 API를 사용하여 스토리지 펌웨어를 업그레이드하기 전에 EULA에 동의하고 저장해야 합니다.</block>
+  <block id="47f6196d2c02469142a3352c4f8f17f5" category="list-text">* 최종 사용자 라이센스 계약(EULA) *: 관리 서비스 2.20.69부터 NetApp 하이브리드 클라우드 제어 UI 또는 API를 사용하여 컴퓨팅 노드 펌웨어를 업그레이드하기 전에 EULA에 동의하고 저장해야 합니다.</block>
+  <block id="b1dc794dd924da27c3e3280ab948e305" category="list-text">* 최종 사용자 라이센스 계약(EULA) *: 관리 서비스 2.20.69부터 NetApp 하이브리드 클라우드 제어 UI 또는 API를 사용하여 컴퓨팅 노드 상태 점검을 실행하기 전에 EULA에 동의하고 저장해야 합니다.</block>
+  <block id="54c78d15a850ddddfc9da22742280908" category="list-text">* 최종 사용자 라이센스 계약(EULA) *: 관리 서비스 2.20.69부터 NetApp 하이브리드 클라우드 제어 UI 또는 API를 사용하여 Element 스토리지 상태 점검을 실행하기 전에 EULA에 동의하고 저장해야 합니다.</block>
+  <block id="cf975bc9efb412ba97aeeb129f06f92a" category="paragraph">관리 서비스 2.20.69부터 NetApp 하이브리드 클라우드 제어 UI를 사용하여 관리 노드에서 SSH 기능을 활성화 및 비활성화할 수 있습니다.</block>
+  <block id="742443519c431a58e3020342bebdad42" category="list-text">NetApp 하이브리드 클라우드 제어 UI를 사용하려면 를 업데이트했습니다<block ref="f6e495ec9a99fcd5692d41358780e884" category="inline-link-rx"></block> 2.20.69 버전 이상</block>
+  <block id="9676fc811bea74225536cdd128daebc0" category="list-text"><block ref="9676fc811bea74225536cdd128daebc0" category="inline-link-rx"></block></block>
+  <block id="9de5606ae9b23ff6651244b85bd5dae8" category="list-text"><block ref="9de5606ae9b23ff6651244b85bd5dae8" category="inline-link-rx"></block></block>
+  <block id="90e7c2277ee69a3d3ecf30fa1fe61ab1" category="inline-link">vCenter 플러그인 4.10 릴리즈 노트</block>
+  <block id="5c6c5d2c88269bcae97dbd93d213851a" category="list-text"><block ref="a9fc1ab89aaaf4e529a9e4251a8b3b33" category="inline-link-rx"></block> _신규 _</block>
+  <block id="779aeeb0a67ee84cae70c2361654111d" category="list-text"><block ref="779aeeb0a67ee84cae70c2361654111d" category="inline-link-rx"></block></block>
+  <block id="97107deca957b5e4a6b53d3c09cc1c16" category="list-text"><block ref="97107deca957b5e4a6b53d3c09cc1c16" category="inline-link-macro-rx"></block></block>
+  <block id="e4eccb810d78b1a07fe7514cdf52eb9f" category="admonition">VMware vCenter Server 7.0 U3으로 업그레이드하면 Element 플러그인이 배포되지 않습니다. Spring Framework 4를 사용하여 이 문제를 해결하려면 을 참조하십시오<block ref="770c119932f7fa962a47dc0795db1af6" category="inline-link-rx"></block>.</block>
+  <block id="62449609bcf95f48fbdbae6dddedcc19" category="list-text">* 최종 사용자 라이센스 계약(EULA) *: 관리 서비스 2.20.69부터 NetApp 하이브리드 클라우드 제어 UI 또는 API를 사용하여 Element 소프트웨어를 업그레이드하기 전에 EULA에 동의하고 저장해야 합니다.</block>
+  <block id="b829058e02635e31c81abf49f37e64d2" category="list-text">VMware vCenter Server 4.10, 4.9, 4.8, 4.7, 4.6용 Element 플러그인으로 업그레이드하려는 경우 4.5 또는 4.4.</block>
+  <block id="d6802e127914e53f73aa2f2db8cb5e44" category="paragraph">관리 서비스 2.20.69부터 NetApp 하이브리드 클라우드 제어 UI 또는 API를 사용하여 관리 서비스를 업그레이드하기 전에 최종 사용자 라이센스 계약(EULA)에 동의해야 합니다.</block>
 </blocks>

@@ -92,7 +92,7 @@ Add permission * (권한 추가 *) 창에 다음 세부 정보를 추가합니�
 
 +
 .. "vSphere.local" 또는 LDAP 도메인을 선택합니다
-.. 검색을 사용하여 에서 만든 새 사용자를 찾습니다 <<Set up a new user account in vCenter>>.
+.. 검색을 사용하여 에서 만든 새 사용자를 찾습니다  up a new user account in vCenter.
 .. 'NetApp Role'을 선택합니다.
 +
 
@@ -120,7 +120,7 @@ Add permission * (권한 추가 *) 창에 다음 세부 정보를 추가합니�
 
 +
 .. "vSphere.local" 또는 LDAP 도메인을 선택합니다.
-.. 검색을 사용하여 에서 생성한 새 HCC 사용자를 찾습니다 <<Set up a new user account in vCenter>>.
+.. 검색을 사용하여 에서 생성한 새 HCC 사용자를 찾습니다  up a new user account in vCenter.
 .. ReadOnly role을 선택한다.
 +
 
@@ -148,7 +148,7 @@ Add permission * (권한 추가 *) 창에 다음 세부 정보를 추가합니�
 
 +
 .. "vSphere.local" 또는 LDAP 도메인을 선택합니다.
-.. 검색을 사용하여 에서 생성한 새 HCC 사용자를 찾습니다 <<Set up a new user account in vCenter>>.
+.. 검색을 사용하여 에서 생성한 새 HCC 사용자를 찾습니다  up a new user account in vCenter.
 .. 관리자 역할 을 선택합니다.
 .. Propagate to Children * 을 선택합니다.
 
@@ -170,7 +170,7 @@ Add permission * (권한 추가 *) 창에 다음 세부 정보를 추가합니�
 
 +
 .. "vSphere.local" 또는 LDAP 도메인을 선택합니다.
-.. 검색을 사용하여 에서 생성한 새 HCC 사용자를 찾습니다 <<Set up a new user account in vCenter>>.
+.. 검색을 사용하여 에서 생성한 새 HCC 사용자를 찾습니다  up a new user account in vCenter.
 .. NetApp Role 또는 Administrator를 선택합니다.
 .. Propagate to Children * 을 선택합니다.
 
@@ -199,7 +199,7 @@ Add permission * (권한 추가 *) 창에 다음 세부 정보를 추가합니�
 
 +
 .. "vSphere.local" 또는 LDAP 도메인을 선택합니다.
-.. 검색을 사용하여 에서 만든 새 사용자를 찾습니다 <<Set up a new user account in vCenter>>.
+.. 검색을 사용하여 에서 만든 새 사용자를 찾습니다  up a new user account in vCenter.
 .. NetApp Role 또는 Administrator를 선택합니다.
 
 
@@ -221,7 +221,7 @@ Add permission * (권한 추가 *) 창에 다음 세부 정보를 추가합니�
 
 +
 .. "vSphere.local" 또는 LDAP 도메인을 선택합니다.
-.. 검색을 사용하여 에서 만든 새 사용자를 찾습니다 <<Set up a new user account in vCenter>>.
+.. 검색을 사용하여 에서 만든 새 사용자를 찾습니다  up a new user account in vCenter.
 .. 'NetApp Role'을 선택합니다.
 +
 
@@ -237,7 +237,7 @@ Add permission * (권한 추가 *) 창에 다음 세부 정보를 추가합니�
 
 +
 .. "vSphere.local" 또는 LDAP 도메인을 선택합니다.
-.. 검색을 사용하여 에서 만든 새 사용자를 찾습니다 <<Set up a new user account in vCenter>>.
+.. 검색을 사용하여 에서 만든 새 사용자를 찾습니다  up a new user account in vCenter.
 .. NetApp Role 또는 Administrator를 선택합니다.
 .. Propagate to Children * 을 선택합니다.
 
@@ -269,7 +269,7 @@ Add permission * (권한 추가 *) 창에 다음 세부 정보를 추가합니�
 
 == 관리 노드에 자산 또는 컴퓨팅 노드를 추가합니다
 
-설치 후 새 자산 또는 컴퓨팅 노드(및 BMC 자산)를 수동으로 추가해야 하는 경우 에서 생성한 새 HCC 사용자 계정을 사용하십시오 <<Set up a new user account in vCenter>>. 자세한 내용은 을 참조하십시오 link:task_mnode_add_assets.html["컴퓨팅 및 컨트롤러 자산을 관리 노드에 추가합니다"].
+설치 후 새 자산 또는 컴퓨팅 노드(및 BMC 자산)를 수동으로 추가해야 하는 경우 에서 생성한 새 HCC 사용자 계정을 사용하십시오  up a new user account in vCenter. 자세한 내용은 을 참조하십시오 link:task_mnode_add_assets.html["컴퓨팅 및 컨트롤러 자산을 관리 노드에 추가합니다"].
 
 
 
