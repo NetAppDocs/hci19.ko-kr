@@ -323,7 +323,7 @@ https:/<ManagementNodeIP>/mnode
 .. 컨트롤러 하위 자산을 추가하려면 * POST/ASSET/{ASSET_ID}/컨트롤러 * 를 선택합니다.
 +
 
-NOTE: 컨트롤러 하위 자산을 추가하려면 vCenter에서 새로운 NetApp HCC 역할을 생성하는 것이 좋습니다. 이러한 새로운 NetApp HCC 역할은 관리 노드 서비스 뷰를 NetApp 전용 자산으로 제한합니다. 을 참조하십시오 link:task_mnode_create_netapp_hcc_role_vcenter.html["vCenter에서 NetApp HCC 역할을 생성합니다"].
+NOTE: 컨트롤러 하위 자산을 추가하려면 vCenter에서 새로운 NetApp HCC 역할을 생성해야 합니다. 이러한 새로운 NetApp HCC 역할은 관리 노드 서비스 뷰를 NetApp 전용 자산으로 제한합니다. 을 참조하십시오 link:task_mnode_create_netapp_hcc_role_vcenter.html["vCenter에서 NetApp HCC 역할을 생성합니다"].
 
 .. 체험하기 * 를 선택합니다.
 .. 클립보드에 복사한 상위 기본 자산 ID를 * asset_id * 필드에 입력합니다.

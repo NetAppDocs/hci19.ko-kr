@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: docs/task_vcp_upgrade_plugin.html 
 summary: NetApp HCI 시스템 업그레이드의 일부로 vCenter Server용 Element 플러그인을 업그레이드할 수 있습니다. 
-keywords: netapp, vcp, vCenter plug-in, upgrade, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 4.10 
+keywords: netapp, vcp, vCenter plug-in, upgrade, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 4.10, 5.0 
 ---
 = vCenter Server용 Element 플러그인을 업그레이드합니다
 :hardbreaks:
@@ -14,18 +14,46 @@ keywords: netapp, vcp, vCenter plug-in, upgrade, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 4
 
 
 [role="lead"]
-vCenter Server용 NetApp Element 플러그인이 등록된 기존 vSphere 환경의 경우 플러그인 서비스가 포함된 관리 서비스 패키지를 먼저 업데이트한 후 플러그인 등록을 업데이트할 수 있습니다.
+VMware vCenter Server용 NetApp Element 플러그인이 등록된 기존 vSphere 환경의 경우 플러그인 서비스가 포함된 관리 서비스 패키지를 먼저 업데이트한 후 플러그인 등록을 업데이트할 수 있습니다.
 
 등록 유틸리티를 사용하여 vCenter Server vCSA(Virtual Appliance) 또는 Windows에서 플러그인 등록을 업데이트할 수 있습니다. 플러그인을 사용해야 하는 모든 vCenter Server에서 vCenter 플러그인의 등록을 변경해야 합니다.
 
 이 업그레이드 절차에서는 다음 업그레이드 시나리오에 대해 설명합니다.
 
+
+NOTE: 관리 서비스 2.22.7에는 원격 플러그인이 포함된 vCenter Server 5.0용 NetApp Element 플러그인이 포함되어 있습니다. Element 플러그인을 사용하는 경우, 로컬 플러그인 지원을 제거하는 VMware 지침을 준수하도록 버전 5.0으로 업그레이드해야 합니다. https://kb.vmware.com/s/article/87880["자세한 정보"^]. 플러그인을 사용하지 않는 경우 선택적 업그레이드입니다.
+
+[role="tabbed-block"]
+====
+.vCenter 5.0 이상용 Element 플러그인
+--
+vCenter Server 5.0용 Element Plug-in 부터는 이 업그레이드 절차에 다음과 같은 업그레이드 시나리오가 포함됩니다.
+
+* vCenter Server 5.0용 Element 플러그인으로 업그레이드하려는 경우
+* 8.0 또는 7.0 HTML5 vSphere Web Client로 업그레이드하는 중입니다.
+
+
+
+IMPORTANT: vCenter 5.0 이상의 Element 플러그인은 vCenter Server 6.7 및 6.5와 호환되지 않습니다.
+
+
+NOTE: Element Plug-in for vCenter Server 4.x에서 5.0으로 업그레이드하면 vCenter 인스턴스에서 원격 플러그인으로 데이터를 복사할 수 없기 때문에 플러그인으로 이미 구성된 클러스터가 손실됩니다. 원격 플러그인에 클러스터를 다시 추가해야 합니다. 이 작업은 로컬 플러그인에서 원격 플러그인으로 업그레이드할 때 한 번 수행하는 작업입니다.
+
+--
+.vCenter 4.10 이전 버전용 Element 플러그인
+--
+vCenter Server 4.10 이전 버전용 Element Plug-in의 경우 이 업그레이드 절차에 다음과 같은 업그레이드 시나리오가 포함됩니다.
+
 * VMware vCenter Server 4.10, 4.9, 4.8, 4.7, 4.6용 Element 플러그인으로 업그레이드하려는 경우 4.5 또는 4.4.
 * 7.0, 6.7 또는 6.5 HTML5 vSphere Web Client로 업그레이드하는 중입니다.
 +
+[IMPORTANT]
+====
+** 이 플러그인은 VMware vCenter Server 4.x용 Element Plug-in용 VMware vCenter Server 8.0과 호환되지 않습니다
+** 이 플러그인은 VMware vCenter Server 4.6, 4.7 및 4.8용 Element Plug-in용 VMware vCenter Server 6.5와 호환되지 않습니다.
 
-IMPORTANT: 이 플러그인은 VMware vCenter Server 4.6, 4.7 및 4.8용 Element Plug-in용 VMware vCenter Server 6.5와 호환되지 않습니다.
 
+====
 * 6.7 Flash vSphere Web Client로 업그레이드하는 중입니다.
 +
 
@@ -33,13 +61,25 @@ IMPORTANT: 플러그인은 HTML5 vSphere Web Client의 버전 6.7 U2 빌드 1300
 
 
 
+--
+====
 .무엇을 &#8217;필요로 할거야
 * * 관리자 권한 *: 플러그인을 설치할 vCenter 관리자 역할 권한이 있습니다.
 * * vSphere 업그레이드 *: vCenter Server용 NetApp Element 플러그인을 업그레이드하기 전에 필요한 vCenter 업그레이드를 모두 수행했습니다. 이 절차에서는 vCenter 업그레이드가 이미 완료된 것으로 가정합니다.
-* * vCenter Server *: vCenter 플러그인 버전 4.x가 vCenter Server에 등록됩니다. 등록 유틸리티('https://[management node IP]:9443')에서 * 등록 상태 * 를 선택하고 필수 필드를 입력한 다음 * 상태 확인 * 을 선택하여 vCenter 플러그인이 이미 등록되어 있는지, 현재 설치의 버전 번호를 확인합니다.
+* * vCenter Server *: vCenter 플러그인 버전 5.x 또는 4.x가 vCenter Server에 등록됩니다. 등록 유틸리티에서 (`https://[management node IP]:9443`)에서 * 등록 상태 * 를 선택하고 필수 필드를 입력한 다음 * 상태 확인 * 을 선택하여 vCenter 플러그인이 이미 등록되어 있는지, 현재 설치 버전 번호를 확인합니다.
 * * 관리 서비스 업데이트 *: 을(를) 업데이트했습니다 https://mysupport.netapp.com/site/products/all/details/mgmtservices/downloads-tab["관리 서비스 번들"^] 를 최신 버전으로 업데이트합니다. vCenter 플러그인의 업데이트는 NetApp HCI의 주요 제품 릴리즈 외부에서 릴리스된 관리 서비스 업데이트를 사용하여 배포됩니다.
-* * 관리 노드 업그레이드 *: 이미 실행 중인 관리 노드를 실행 중입니다 link:task_hcc_upgrade_management_node.html["업그레이드되었습니다"] 11.3 이상 버전으로. vCenter 플러그인 4.4 이상에서는 개별 서비스를 제공하는 모듈식 아키텍처를 갖춘 11.3 이상의 관리 노드가 필요합니다. 관리 노드의 전원은 IP 주소 또는 DHCP 주소가 구성되어 있어야 합니다.
-* * Element 스토리지 업그레이드 *: NetApp Element 소프트웨어 11.3 이상을 실행하는 클러스터가 있습니다.
+* * 관리 노드 업그레이드 *:
++
+** Element vCenter 플러그인 5.0부터는 이미 있던 관리 노드를 실행하고 있습니다 link:task_hcc_upgrade_management_node.html["업그레이드되었습니다"] 12.3.x 이상 버전으로.
+** Element vCenter 플러그인 4.4 ~ 4.10의 경우, 이미 있던 관리 노드를 실행하고 있습니다 link:task_hcc_upgrade_management_node.html["업그레이드되었습니다"] 11.3 이상 버전으로. vCenter 플러그인 4.4 이상에서는 개별 서비스를 제공하는 모듈식 아키텍처를 갖춘 11.3 이상의 관리 노드가 필요합니다. 관리 노드의 전원은 IP 주소 또는 DHCP 주소가 구성되어 있어야 합니다.
+
+
+* * Element 스토리지 업그레이드 *:
++
+** Element vCenter 플러그인 5.0부터는 NetApp Element 소프트웨어 12.3.x 이상을 실행하는 클러스터가 있습니다.
+** Element vCenter 플러그인 4.10 이전의 경우 NetApp Element 소프트웨어 11.3 이상을 실행하는 클러스터가 있습니다.
+
+
 * * vSphere Web Client *: 플러그인 업그레이드를 시작하기 전에 vSphere Web Client에서 로그아웃했습니다. 로그아웃하지 않으면 웹 클라이언트가 이 프로세스 중에 수행한 업데이트를 플러그인으로 인식하지 못합니다.
 
 
@@ -50,7 +90,16 @@ image::vcp_registration_utility_ui_qossioc.png[에서는 플러그인의 등록 
 
 . vCenter 플러그인 등록 * 을 선택합니다.
 +
-image::vcp_registration_utility_ui.png[에서는 플러그인의 등록 유틸리티 UI를 보여 줍니다]
+vCenter Server 5:0용 Element 플러그인으로 시작:
+
++
+image::vcp_remote_plugin_registration_ui.png[에서는 원격 플러그인의 등록 유틸리티 UI를 보여 줍니다]
+
++
+vCenter Server 4.10 이전 버전용 Element 플러그인:
+
++
+image::vcp_registration_utility_ui.png[에서는 로컬 플러그인의 등록 유틸리티 UI를 보여 줍니다]
 
 . vCenter 플러그인 관리 * 에서 * 플러그인 업데이트 * 를 선택합니다.
 . 다음 정보를 확인하거나 업데이트합니다.
@@ -62,10 +111,19 @@ image::vcp_registration_utility_ui.png[에서는 플러그인의 등록 유틸�
 NOTE: 입력한 사용자 이름과 암호 자격 증명은 vCenter 관리자 역할 권한이 있는 사용자의 자격 증명이어야 합니다.
 
 .. vCenter 관리자 암호입니다.
-.. (사내 서버/다크 사이트의 경우) 플러그인 ZIP에 대한 사용자 지정 URL입니다.
+.. (사내 서버/다크 사이트의 경우) vCenter용 Element 플러그인 버전에 따라 플러그인 JSON 파일 또는 플러그인 ZIP에 대한 사용자 지정 URL:
++
+... vCenter Server 5.0용 Element 플러그인부터 플러그인 JSON 파일의 사용자 지정 URL입니다.
++
+
+NOTE: HTTP 또는 HTTPS 서버(다크 사이트)를 사용 중이거나 JSON 파일 이름 또는 네트워크 설정을 수정한 경우 * 사용자 지정 URL * 을 선택하여 URL을 사용자 지정할 수 있습니다. URL을 사용자 지정하려는 경우 추가 구성 단계를 보려면 vCenter Server용 Element Plug-in 설명서를 참조하십시오. 내부(다크 사이트) HTTP 서버에 대한 vCenter 속성 수정에 대한 자세한 내용은 vCenter Server 설명서를 참조하십시오.
+
+... vCenter Server 4.10 이전 버전용 Element Plug-in의 경우 플러그인 ZIP에 대한 사용자 지정 URL입니다.
 +
 
 NOTE: HTTP 또는 HTTPS 서버(다크 사이트)를 사용 중이거나 ZIP 파일 이름 또는 네트워크 설정을 수정한 경우 * 사용자 지정 URL * 을 선택하여 URL을 사용자 지정할 수 있습니다. URL을 사용자 지정하려는 경우 추가 구성 단계를 보려면 vCenter Server용 Element Plug-in 설명서를 참조하십시오. 내부(다크 사이트) HTTP 서버에 대한 vCenter 속성 수정에 대한 자세한 내용은 vCenter Server 설명서를 참조하십시오.
+
+
 
 
 
@@ -79,9 +137,18 @@ NOTE: HTTP 또는 HTTPS 서버(다크 사이트)를 사용 중이거나 ZIP 파�
 NOTE: 이 작업을 수행하면 새 데이터베이스가 생성되고 vSphere Web Client에서 설치가 완료됩니다.
 
 . vSphere Web Client에서 작업 모니터에서 완료된 다음 작업을 찾아 설치가 완료되었는지 확인합니다. "Download plug-in" 및 "ploy plug-in".
-. NetApp Element 구성 및 관리 확장 지점이 vSphere 웹 클라이언트의 * Shortcuts * 탭과 측면 패널에 나타나는지 확인합니다.
+. 플러그인 확장 지점이 vSphere Web Client의 * Shortcuts * 탭과 측면 패널에 나타나는지 확인합니다.
 +
-image::vcp_shortcuts_page_accessing_plugin.png[에서는 업그레이드 또는 설치 후 플러그인 확장 지점을 보여 줍니다]
+vCenter Server 5.0용 Element 플러그인부터 NetApp Element 원격 플러그인 확장 포인트:
+
++
+image::vcp_remote_plugin_icons_home_page.png[에는 Element Plug-in 5.10 이상의 업그레이드 또는 설치 후 플러그인 확장 지점이 나와 있습니다]
+
++
+vCenter Server 4.10 이전 버전용 Element 플러그인의 경우 NetApp Element 구성 및 관리 확장 지점은 다음과 같습니다.
+
++
+image::vcp_shortcuts_page_accessing_plugin.png[에는 Element Plug-in 4.10 이전 버전에 대한 업그레이드 또는 설치 성공 후의 플러그인 확장 지점이 나와 있습니다]
 
 +
 [NOTE]
@@ -99,13 +166,14 @@ VMware vCenter Server 6.7U1을 사용하여 vCenter Server 4.8 이상용 NetApp 
 
 [listing]
 ----
-NetApp Element Plug-in Version: 4.10
-NetApp Element Plug-in Build Number: 12
+NetApp Element Plug-in Version: 5.0
+NetApp Element Plug-in Build Number: 37
 ----
 
 NOTE: vCenter 플러그인에는 온라인 도움말 콘텐츠가 포함되어 있습니다. 도움말에 최신 콘텐츠가 포함되어 있는지 확인하려면 플러그인을 업그레이드한 후 브라우저 캐시를 지웁니다.
 
-[discrete]
+
+
 == 자세한 내용을 확인하십시오
 
 * https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]

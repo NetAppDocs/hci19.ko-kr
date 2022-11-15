@@ -227,6 +227,9 @@ image::network_ports.PNG[포트 연결을 확인합니다]
 | vCenter Server를 선택합니다 | 스토리지 클러스터 MVIP | 443 | vCenter 플러그인 API 액세스 
 
 
+| vCenter Server를 선택합니다 | 원격 플러그인 | 8333 | 원격 vCenter 플러그인 서비스 
+
+
 | vCenter Server를 선택합니다 | 관리 노드 | 8443 | (선택 사항) vCenter 플러그인 QoSSIOC 서비스. 
 
 

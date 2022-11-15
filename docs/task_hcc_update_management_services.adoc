@@ -22,9 +22,13 @@ Element 11.3 관리 노드 릴리즈부터 개별 서비스를 제공하는 새�
 * Element 소프트웨어를 업그레이드하기 전에 최신 관리 서비스 번들로 업그레이드해야 합니다.
 
 
+[NOTE]
+====
+* 관리 서비스 2.22.7에는 원격 플러그인이 포함된 VMware vCenter Server 5.0용 NetApp Element 플러그인이 포함되어 있습니다. Element 플러그인을 사용하는 경우, 로컬 플러그인 지원을 제거하는 VMware 지침을 준수하도록 버전 5.0으로 업그레이드해야 합니다. https://kb.vmware.com/s/article/87880["자세한 정보"^]. 플러그인을 사용하지 않는 경우 선택적 업그레이드입니다.
+* 주요 서비스, 새로운 기능, 버그 수정 사항 및 각 서비스 번들에 대한 대안을 설명하는 최신 관리 서비스 릴리즈 노트는 를 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Management_services_for_Element_Software_and_NetApp_HCI/Management_Services_Release_Notes["관리 서비스 릴리즈 노트"^]
 
-NOTE: 주요 서비스, 새로운 기능, 버그 수정 사항 및 각 서비스 번들에 대한 대안을 설명하는 최신 관리 서비스 릴리즈 노트는 를 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Management_services_for_Element_Software_and_NetApp_HCI/Management_Services_Release_Notes["관리 서비스 릴리즈 노트"^].
 
+====
 관리 서비스 2.20.69부터 NetApp 하이브리드 클라우드 제어 UI 또는 API를 사용하여 관리 서비스를 업그레이드하기 전에 최종 사용자 라이센스 계약(EULA)에 동의해야 합니다.
 
 . 웹 브라우저에서 관리 노드의 IP 주소를 엽니다.
