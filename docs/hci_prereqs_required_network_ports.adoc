@@ -212,13 +212,25 @@ image::network_ports.PNG[포트 연결을 확인합니다]
 | 시스템 관리자 PC입니다 | 스토리지 노드 MIP | 442 | NetApp 배포 엔진에서 스토리지 노드에 대한 HTTPS UI 및 API 액세스, (NetApp HCI만 해당) 구성 및 배포 모니터링 
 
 
+| 시스템 관리자 PC입니다 | 컴퓨팅 노드 BMC/IPMI H410 및 H600 시리즈를 지원합니다 | 443 | 노드 원격 제어에 대한 HTTPS UI 및 API 액세스 
+
+
 | 시스템 관리자 PC입니다 | 관리 노드 | 443 | 관리 노드에 대한 HTTPS UI 및 API 액세스 
 
 
 | 시스템 관리자 PC입니다 | 스토리지 클러스터 MVIP | 443 | 스토리지 클러스터에 대한 HTTPS UI 및 API 액세스 
 
 
+| 시스템 관리자 PC입니다 | 스토리지 노드 BMC/IPMI H410 및 H600 시리즈 | 443 | 노드 원격 제어에 대한 HTTPS UI 및 API 액세스 
+
+
 | 시스템 관리자 PC입니다 | 스토리지 노드 MIP | 443 | 스토리지 클러스터에 대한 HTTPS 스토리지 클러스터 생성, 구축 후 UI 액세스 
+
+
+| 시스템 관리자 PC입니다 | 컴퓨팅 노드 BMC/IPMI H410 및 H600 시리즈를 지원합니다 | 623 UDP | RMCP 포트. IPMI 지원 시스템을 관리하는 데 필요합니다. 
+
+
+| 시스템 관리자 PC입니다 | 스토리지 노드 BMC/IPMI H410 및 H600 시리즈 | 623 UDP | RMCP 포트. IPMI 지원 시스템을 관리하는 데 필요합니다. 
 
 
 | 시스템 관리자 PC입니다 | 증인 노드 | 8080 | 증인 노드/노드 웹 UI 
@@ -238,7 +250,8 @@ image::network_ports.PNG[포트 연결을 확인합니다]
 
 | vCenter Server를 선택합니다 | 관리 노드 | 9443 | vCenter 플러그인 등록. 등록이 완료되면 포트를 닫을 수 있습니다. 
 |===
-[discrete]
+
+
 == 자세한 내용을 확인하십시오
 
 * https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지를 참조하십시오"^]

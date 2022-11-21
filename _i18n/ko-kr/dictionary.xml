@@ -6246,7 +6246,6 @@
   <block id="07800d7fa4e084c955b9006d30b6eed1" category="cell">원격 플러그인</block>
   <block id="b8ffa41d4e492f0fad2f13e29e1762eb" category="cell">8333</block>
   <block id="5b3a5766ccd94c0ef0148e61340c831e" category="cell">원격 vCenter 플러그인 서비스</block>
-  <block id="286f53b31c582a023d851a7a85dcda06" category="paragraph">스토리지 클러스터가 Element 12.3.1 에 있고 VVOL 기능이 활성화된 경우 Element 소프트웨어 12.3.2를 업그레이드해야 합니다.</block>
   <block id="ce02290d452fe7b936543abc774ea33a" category="list-text">관리 노드 12.3.2에는 가상 볼륨(VVol) 기능이 활성화된 스토리지 클러스터에 대한 보안 완화 기능이 포함되어 있습니다. 스토리지 클러스터가 이미 Element 12.3에 있고 VVOL 기능이 활성화된 경우 12.3.2로 업그레이드해야 합니다.</block>
   <block id="a362557c8df01a4a86eda6338af59907" category="admonition">NetApp 하이브리드 클라우드 제어 UI를 사용하여 H300E/H500E/H700E 컴퓨팅 노드에서 컴퓨팅 펌웨어를 업그레이드하는 것은 더 이상 지원되지 않습니다. 업그레이드하려면 를 사용해야 합니다 <block ref="4d9d1e5487766b88d4d71ed7b5cbc3b9" category="inline-xref-macro-rx"></block> 또는 을 누릅니다 <block ref="1f3fb96b93183df027058d51b91b7971" category="inline-xref-macro-rx"></block> 컴퓨팅 펌웨어 번들을 마운트합니다.</block>
   <block id="6b777567daa827d5b0665b94c630539f" category="inline-link">vCenter Plug-in 5.0 릴리즈 노트</block>
@@ -6274,18 +6273,13 @@
   <block id="924861571eeb51fd5eb1d806da0f0e5e" category="list-text">* Element 스토리지 업그레이드 *:</block>
   <block id="b9ad9c0000e5c2b012be9c9ba83b7cff" category="list-text">Element vCenter 플러그인 5.0부터는 NetApp Element 소프트웨어 12.3.x 이상을 실행하는 클러스터가 있습니다.</block>
   <block id="02738f63a80a594ad3ab131f3a7298f2" category="list-text">Element vCenter 플러그인 4.10 이전의 경우 NetApp Element 소프트웨어 11.3 이상을 실행하는 클러스터가 있습니다.</block>
-  <block id="e8b1bdd38a7601206cf400f05fbdc57d" category="paragraph">vCenter Server 5:0용 Element 플러그인으로 시작:</block>
   <block id="f1b4824619210c84aa04d2783d1f908e" category="image-alt">에서는 원격 플러그인의 등록 유틸리티 UI를 보여 줍니다</block>
-  <block id="05c0e13a813e930c3eab807f98959379" category="paragraph">vCenter Server 4.10 이전 버전용 Element 플러그인:</block>
   <block id="cbe647d2b7e55a533fb2f01689441181" category="image-alt">에서는 로컬 플러그인의 등록 유틸리티 UI를 보여 줍니다</block>
-  <block id="23fa7915a24406758b2d7b2b274fe1f3" category="list-text">(사내 서버/다크 사이트의 경우) vCenter용 Element 플러그인 버전에 따라 플러그인 JSON 파일 또는 플러그인 ZIP에 대한 사용자 지정 URL:</block>
   <block id="1e35767408ad5bd29ecc61c301c556ef" category="list-text">vCenter Server 5.0용 Element 플러그인부터 플러그인 JSON 파일의 사용자 지정 URL입니다.</block>
   <block id="b9d11c83e937a9ece9e8b7051bc68606" category="admonition">HTTP 또는 HTTPS 서버(다크 사이트)를 사용 중이거나 JSON 파일 이름 또는 네트워크 설정을 수정한 경우 * 사용자 지정 URL * 을 선택하여 URL을 사용자 지정할 수 있습니다. URL을 사용자 지정하려는 경우 추가 구성 단계를 보려면 vCenter Server용 Element Plug-in 설명서를 참조하십시오. 내부(다크 사이트) HTTP 서버에 대한 vCenter 속성 수정에 대한 자세한 내용은 vCenter Server 설명서를 참조하십시오.</block>
   <block id="ba85baaa049f62983a89ac7da1647abd" category="list-text">vCenter Server 4.10 이전 버전용 Element Plug-in의 경우 플러그인 ZIP에 대한 사용자 지정 URL입니다.</block>
   <block id="d471727ba1fb423986701d5307906d08" category="list-text">플러그인 확장 지점이 vSphere Web Client의 * Shortcuts * 탭과 측면 패널에 나타나는지 확인합니다.</block>
-  <block id="290b380ec7760347344e9055b68f217d" category="paragraph">vCenter Server 5.0용 Element 플러그인부터 NetApp Element 원격 플러그인 확장 포인트:</block>
   <block id="a00eed84eaa5a9a20d9aaa7f39c5e19e" category="image-alt">에는 Element Plug-in 5.10 이상의 업그레이드 또는 설치 후 플러그인 확장 지점이 나와 있습니다</block>
-  <block id="7bf63d049a5ff0e7522ac0eb51350e50" category="paragraph">vCenter Server 4.10 이전 버전용 Element 플러그인의 경우 NetApp Element 구성 및 관리 확장 지점은 다음과 같습니다.</block>
   <block id="85406fb94df2ff523b7477f229b1c9c8" category="image-alt">에는 Element Plug-in 4.10 이전 버전에 대한 업그레이드 또는 설치 성공 후의 플러그인 확장 지점이 나와 있습니다</block>
   <block id="b220ec4e47107c76be4a952b590dce4a" category="paragraph">설치 후 관리 노드에 vCenter 자산(컨트롤러) 또는 컴퓨팅 노드(노드)를 수동으로 추가하거나 기존 컨트롤러 또는 노드를 수정하려면 vCenter에서 NetApp HCC 역할을 생성해야 합니다.</block>
   <block id="89e4c8f92f7c3506781613b3dbd40e89" category="list-text">vCenter Server 5.0용 NetApp Element 플러그인부터 사용할 수 있습니다<block ref="b9ce345290cb228a35dd424c40eebf37" category="inline-link-rx"></block>에서 NetApp SolidFire 스토리지 클러스터를 관리하는 각 vCenter Server에 대한 별도의 관리 노드에서 Element 플러그인을 등록합니다(권장).</block>
@@ -6293,4 +6287,14 @@
   <block id="ec78c54d60054bc44ae2e26c00313bdb" category="list-text">관리 서비스 2.22.7에는 원격 플러그인이 포함된 VMware vCenter Server 5.0용 NetApp Element 플러그인이 포함되어 있습니다. Element 플러그인을 사용하는 경우, 로컬 플러그인 지원을 제거하는 VMware 지침을 준수하도록 버전 5.0으로 업그레이드해야 합니다.<block ref="3eff1b8505d27ff6caa23fbbb1b7b25c" category="inline-link-rx"></block>. 플러그인을 사용하지 않는 경우 선택적 업그레이드입니다.</block>
   <block id="b142e9d9b67c7c4504bd1ab09fd15db2" category="list-text">주요 서비스, 새로운 기능, 버그 수정 사항 및 각 서비스 번들에 대한 대안을 설명하는 최신 관리 서비스 릴리즈 노트는 를 참조하십시오<block ref="51c56ce961e981301a44342800a6fcbd" category="inline-link-rx"></block></block>
   <block id="9db4acd10c15ec173e6516c347342e25" category="admonition">컨트롤러 하위 자산을 추가하려면 vCenter에서 새로운 NetApp HCC 역할을 생성해야 합니다. 이러한 새로운 NetApp HCC 역할은 관리 노드 서비스 뷰를 NetApp 전용 자산으로 제한합니다. 을 참조하십시오 <block ref="8fe5279440ee3c239e840ed9b8e10ddd" category="inline-link-macro-rx"></block>.</block>
+  <block id="2e4fe9cef5b49ad23180da86877e63cb" category="cell">컴퓨팅 노드 BMC/IPMI H410 및 H600 시리즈를 지원합니다</block>
+  <block id="59f1e3a87c5b329f2a5a951d9bf325f8" category="cell">노드 원격 제어에 대한 HTTPS UI 및 API 액세스</block>
+  <block id="1381491a5bb8087f95db0601150c5c28" category="cell">스토리지 노드 BMC/IPMI H410 및 H600 시리즈</block>
+  <block id="291dd45cc603b1047e92bf5a13259357" category="cell">RMCP 포트. IPMI 지원 시스템을 관리하는 데 필요합니다.</block>
+  <block id="7b62456477fe482fad0de3c51aabd5d1" category="paragraph">스토리지 클러스터가 Element 12.3.1 에 있고 VVOL 기능이 활성화된 경우 Element 소프트웨어 12.3.2로 업그레이드해야 합니다.</block>
+  <block id="3ef00ef1af91bf9fe0b72f4052a67f59" category="list-text">vCenter Server 5.0용 Element Plug-in에 대한 vCenter 플러그인 등록 페이지:</block>
+  <block id="1875d143de1e9be70dc9e780b41377fe" category="list-text">vCenter Server 4.10 이전 버전의 Element Plug-in에 대한 vCenter 플러그인 등록 페이지:</block>
+  <block id="b8b146fd1e1ecdf074536a02bfe40871" category="list-text">(사내 서버/다크 사이트의 경우) vCenter용 Element 플러그인 버전에 따라 플러그인 JSON 파일 또는 플러그인 ZIP에 대한 사용자 지정 URL:</block>
+  <block id="1993643c12bb4ee547f04d8d85f8c4bf" category="list-text">vCenter Server 5.0용 Element 플러그인부터 NetApp Element 원격 플러그인 확장 지점이 나타납니다.</block>
+  <block id="1c63b3cd9a6d3bdf8b9b31aca68672d7" category="list-text">vCenter Server 4.10 이전 버전용 Element Plug-in의 경우 NetApp Element 구성 및 관리 확장 지점이 나타납니다.</block>
 </blocks>

@@ -90,16 +90,15 @@ image::vcp_registration_utility_ui_qossioc.png[에서는 플러그인의 등록 
 
 . vCenter 플러그인 등록 * 을 선택합니다.
 +
-vCenter Server 5:0용 Element 플러그인으로 시작:
-
+** vCenter Server 5.0용 Element Plug-in에 대한 vCenter 플러그인 등록 페이지:
 +
 image::vcp_remote_plugin_registration_ui.png[에서는 원격 플러그인의 등록 유틸리티 UI를 보여 줍니다]
 
-+
-vCenter Server 4.10 이전 버전용 Element 플러그인:
-
+** vCenter Server 4.10 이전 버전의 Element Plug-in에 대한 vCenter 플러그인 등록 페이지:
 +
 image::vcp_registration_utility_ui.png[에서는 로컬 플러그인의 등록 유틸리티 UI를 보여 줍니다]
+
+
 
 . vCenter 플러그인 관리 * 에서 * 플러그인 업데이트 * 를 선택합니다.
 . 다음 정보를 확인하거나 업데이트합니다.
@@ -139,14 +138,11 @@ NOTE: 이 작업을 수행하면 새 데이터베이스가 생성되고 vSphere 
 . vSphere Web Client에서 작업 모니터에서 완료된 다음 작업을 찾아 설치가 완료되었는지 확인합니다. "Download plug-in" 및 "ploy plug-in".
 . 플러그인 확장 지점이 vSphere Web Client의 * Shortcuts * 탭과 측면 패널에 나타나는지 확인합니다.
 +
-vCenter Server 5.0용 Element 플러그인부터 NetApp Element 원격 플러그인 확장 포인트:
-
+** vCenter Server 5.0용 Element 플러그인부터 NetApp Element 원격 플러그인 확장 지점이 나타납니다.
 +
 image::vcp_remote_plugin_icons_home_page.png[에는 Element Plug-in 5.10 이상의 업그레이드 또는 설치 후 플러그인 확장 지점이 나와 있습니다]
 
-+
-vCenter Server 4.10 이전 버전용 Element 플러그인의 경우 NetApp Element 구성 및 관리 확장 지점은 다음과 같습니다.
-
+** vCenter Server 4.10 이전 버전용 Element Plug-in의 경우 NetApp Element 구성 및 관리 확장 지점이 나타납니다.
 +
 image::vcp_shortcuts_page_accessing_plugin.png[에는 Element Plug-in 4.10 이전 버전에 대한 업그레이드 또는 설치 성공 후의 플러그인 확장 지점이 나와 있습니다]
 
@@ -158,17 +154,20 @@ vCenter 플러그인 아이콘이 표시되지 않으면 를 참조하십시오 
 VMware vCenter Server 6.7U1을 사용하여 vCenter Server 4.8 이상용 NetApp Element 플러그인으로 업그레이드한 후 스토리지 클러스터가 나열되지 않거나 NetApp Element 구성의 * 클러스터 * 및 * QoSSIOC 설정 * 섹션에 서버 오류가 나타나는 경우 을 참조하십시오 link:https://docs.netapp.com/us-en/vcp/vcp_reference_troubleshoot_vcp.html#error_vcp48_67u1["vCenter Server용 Element 플러그인"^] 이러한 오류 문제 해결에 대한 문서.
 
 ====
+
+
 . 플러그인의 * NetApp Element 구성 * 확장 지점의 * 정보 * 탭에서 버전 변경을 확인합니다.
 +
 최신 버전의 다음 버전 세부 정보 또는 세부 정보가 표시됩니다.
 
-
-
++
 [listing]
 ----
 NetApp Element Plug-in Version: 5.0
 NetApp Element Plug-in Build Number: 37
 ----
+
+
 
 NOTE: vCenter 플러그인에는 온라인 도움말 콘텐츠가 포함되어 있습니다. 도움말에 최신 콘텐츠가 포함되어 있는지 확인하려면 플러그인을 업그레이드한 후 브라우저 캐시를 지웁니다.
 
