@@ -17,13 +17,14 @@ keywords: netapp, hci, netapp deployment engine, deployment, vsphere
 [role="lead"]
 vCenter Server 네트워크 정보 및 자격 증명을 제공하여 기존 vSphere 구축을 활용하도록 NetApp HCI를 구성할 수 있습니다.
 
-.무엇을 &#8217;필요로 할거야
+.필요한 것
 * 기존 vSphere 6.7 구축에 참여하는 경우 vCenter Server가 버전 6.7 업데이트 1을 실행 중인지 확인합니다.
 * 기존 vSphere 6.5 배포에 참여하는 경우 vCenter Server에서 버전 6.5 업데이트 2 이상이 실행되고 있는지 확인합니다.
 * 기존 vSphere 구축에 대한 네트워크 세부 정보 및 관리자 자격 증명을 얻습니다.
 * vCenter Server용 NetApp Element 플러그인이 기존 vCenter 인스턴스에 등록되어 있는 경우 다음을 수행해야 합니다 https://docs.netapp.com/us-en/vcp/task_vcp_unregister.html["등록 취소"^] 계속하기 전에 확인하십시오. NetApp HCI 배포가 완료되면 플러그인이 다시 등록됩니다.
 
 
+.이 작업에 대해
 vCenter 연결 모드를 사용하여 연결된 여러 vCenter Server 시스템에 연결된 경우 NetApp HCI는 vCenter Server 시스템 중 하나만 인식합니다.
 
 [NOTE]

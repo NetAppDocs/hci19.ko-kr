@@ -18,7 +18,7 @@ REST API를 사용하여 관리 노드(mNode)에서 SSH 기능의 상태를 비�
 
 관리 서비스 2.20.69부터 NetApp 하이브리드 클라우드 제어 UI를 사용하여 관리 노드에서 SSH 기능을 활성화 및 비활성화할 수 있습니다.
 
-.무엇을 &#8217;필요로 할거야
+.필요한 것
 * * NetApp Hybrid Cloud Control 권한 *: 관리자로서의 권한이 있습니다.
 * * 클러스터 관리자 권한 *: 스토리지 클러스터에 대한 관리자 권한이 있습니다.
 * * Element 소프트웨어 *: 클러스터에서 NetApp Element 소프트웨어 11.3 이상이 실행 중입니다.
@@ -32,13 +32,13 @@ REST API를 사용하여 관리 노드(mNode)에서 SSH 기능의 상태를 비�
 
 
 .옵션
-*  or enable the SSH capability on the management node using NetApp Hybrid Cloud Control UI
+* <<NetApp 하이브리드 클라우드 제어 UI를 사용하여 관리 노드에서 SSH 기능을 비활성화하거나 활성화합니다>>
 
 
 다음 작업 중 하나를 수행할 수 있습니다 link:task_mnode_api_get_authorizationtouse.html["인증"]:
 
-*  or enable the SSH capability on the management node using APIs
-*  status of the SSH capability on the management node using APIs
+* <<API를 사용하여 관리 노드에서 SSH 기능을 비활성화하거나 활성화합니다>>
+* <<API를 사용하여 관리 노드에서 SSH 기능의 상태를 확인합니다>>
 
 
 
@@ -62,6 +62,7 @@ NOTE: 스토리지 클러스터에 대해 SSH를 사용하여 지원 액세스�
 
 관리 노드에서 SSH 기능을 비활성화하거나 다시 활성화할 수 있습니다. SSH 기능을 통해 제공됩니다 link:task_mnode_enable_remote_support_connections.html["NetApp RST(Remote Support Tunnel) 세션 액세스"] 관리 서비스 2.18 이상을 실행하는 관리 노드에서 기본적으로 이 비활성화됩니다. SSH를 비활성화해도 관리 노드에 대한 기존 SSH 클라이언트 세션은 종료되거나 연결 해제하지 않습니다. SSH를 비활성화하고 나중에 다시 활성화하도록 선택한 경우 동일한 API를 사용하여 다시 활성화할 수 있습니다.
 
+.API 명령
 관리 서비스 2.18 이상:
 
 [listing]
@@ -107,6 +108,7 @@ https://<ManagementNodeIP>/mnode/
 
 관리 노드 서비스 API를 사용하여 관리 노드에서 SSH 기능이 설정되어 있는지 여부를 확인할 수 있습니다. 관리 서비스 2.18 이상을 실행하는 관리 노드에서 SSH가 기본적으로 해제되어 있습니다.
 
+.API 명령
 관리 서비스 2.18 이상:
 
 [listing]

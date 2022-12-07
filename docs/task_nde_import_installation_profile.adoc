@@ -16,6 +16,7 @@ keywords: netapp, hci, deployment, compatibility, nodes, installation, profile, 
 [role="lead"]
 다시 한 경우 NetApp을 구입합니다 https://configbuilder.netapp.com/["ConfigBuilder를 선택합니다"^] 설치 프로필 출력 NetApp HCI 설치 프로세스 중에 프로필을 가져오면 NetApp Deployment Engine의 필드가 자동으로 입력됩니다. 이것은 선택적 단계입니다.
 
+.이 작업에 대해
 설치 프로필을 가져오는 경우에도 NetApp 배포 엔진의 * 자격 증명 * 페이지에서 NetApp HCI에 사용할 자격 증명을 입력해야 합니다.
 
 

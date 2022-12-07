@@ -15,7 +15,7 @@ NetApp 하이브리드 클라우드 제어(HCC)를 사용하여 관리할 수 �
 
 Element 12.2부터 를 사용할 수 있습니다 link:concept_hci_storage_maintenance_mode.html["유지보수 모드"] 스토리지 클러스터 노드에 대한 유지보수 모드를 설정 및 해제하는 기능 옵션입니다.
 
-.무엇을 &#8217;필요로 할거야
+.필요한 것
 * * 클러스터 관리자 권한 *: 에 대한 관리자 권한이 있습니다 link:concept_hci_clusters.html#authoritative-storage-clusters["권한 있는 스토리지 클러스터"]. 권한 있는 클러스터는 시스템 설치 중에 관리 노드 인벤토리에 추가된 첫 번째 클러스터입니다.
 * * Element 소프트웨어 *: 스토리지 클러스터 버전이 NetApp Element 소프트웨어 11.3 이상을 실행하고 있습니다.
 * * 관리 노드 *: 버전 11.3 이상을 실행하는 관리 노드를 배포했습니다.
@@ -23,11 +23,11 @@ Element 12.2부터 를 사용할 수 있습니다 link:concept_hci_storage_maint
 
 
 .옵션
-*  a storage cluster
-*  storage cluster status
-*  storage cluster credentials
-*  a storage cluster
-*  and disable maintenance mode
+* <<스토리지 클러스터를 추가합니다>>
+* <<스토리지 클러스터 상태를 확인합니다>>
+* <<스토리지 클러스터 자격 증명을 편집합니다>>
+* <<스토리지 클러스터를 제거합니다>>
+* <<유지보수 모드를 설정 및 해제합니다>>
 
 
 
@@ -111,9 +111,9 @@ CAUTION: Yes * NEXT를 클릭하면 클러스터에서 설치가 제거됩니다
 [discrete]
 == 유지보수 모드를 설정 및 해제합니다
 
-여기 link:concept_hci_storage_maintenance_mode.html["유지보수 모드"] 기능 옵션은 에 대한 기능을 제공합니다 ,활성화 및 ,사용 안 함 스토리지 클러스터 노드의 유지보수 모드입니다.
+여기 link:concept_hci_storage_maintenance_mode.html["유지보수 모드"] 기능 옵션은 에 대한 기능을 제공합니다 <<enable_main_mode,활성화>> 및 <<disable_main_mode,사용 안 함>> 스토리지 클러스터 노드의 유지보수 모드입니다.
 
-.무엇을 &#8217;필요로 할거야
+.필요한 것
 * Element 소프트웨어 *: 스토리지 클러스터 버전이 NetApp Element 소프트웨어 12.2 이상을 실행하고 있습니다.
 * * 관리 노드 *: 12.2 버전 이상을 실행하는 관리 노드를 배포했습니다.
 * * 관리 서비스 *: 관리 서비스 번들을 버전 2.19 이상으로 업데이트했습니다.
@@ -122,7 +122,7 @@ CAUTION: Yes * NEXT를 클릭하면 클러스터에서 설치가 제거됩니다
 
 
 
-=== 유지보수 모드를 활성화합니다
+=== [[enable_main_mode]] 유지보수 모드를 활성화합니다
 
 다음 절차를 사용하여 스토리지 클러스터 노드에 대한 유지보수 모드를 설정할 수 있습니다.
 
@@ -167,7 +167,7 @@ image:hcc_enable_maintenance_mode.PNG["유지보수 모드를 활성화합니다
 
 
 
-=== 유지보수 모드를 비활성화합니다
+=== [[DISABLE_MAIN_MODE]] 유지 관리 모드를 비활성화합니다
 
 노드가 유지보수 모드로 성공적으로 배치되면 이 노드에 대해 * 유지보수 모드 비활성화 * 작업을 사용할 수 있습니다. 유지 관리를 진행 중인 노드에서 유지보수 모드가 성공적으로 비활성화될 때까지 다른 노드의 작업을 사용할 수 없습니다.
 

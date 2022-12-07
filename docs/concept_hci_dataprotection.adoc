@@ -18,12 +18,12 @@ NetApp HCI 데이터 보호 용어에는 다양한 유형의 원격 복제, 볼�
 
 NetApp HCI 데이터 보호에는 다음과 같은 개념이 포함되어 있습니다.
 
-*  replication types
-*  snapshots for data protection
-*  clones
-*  and restore process overview for SolidFire storage
-*  domains
-*  Helix high availability
+* <<원격 복제 유형입니다>>
+* <<데이터 보호를 위한 볼륨 스냅샷입니다>>
+* <<볼륨 클론>>
+* <<SolidFire 스토리지에 대한 백업 및 복원 프로세스 개요>>
+* <<보호 도메인>>
+* <<이중 Helix 고가용성>>
 
 
 
@@ -32,9 +32,9 @@ NetApp HCI 데이터 보호에는 다음과 같은 개념이 포함되어 있습
 
 데이터의 원격 복제에는 다음과 같은 형태가 있습니다.
 
-*  and asynchronous replication between clusters
-*  replication
-*  between Element and ONTAP clusters using SnapMirror
+* <<클러스터 간 동기식 및 비동기식 복제>>
+* <<스냅샷 전용 복제>>
+* <<SnapMirror를 사용하여 Element와 ONTAP 클러스터 간 복제>>
 
 
 을 참조하십시오 https://www.netapp.com/us/media/tr-4741.pdf["TR-4741: NetApp Element 소프트웨어 원격 복제"^].

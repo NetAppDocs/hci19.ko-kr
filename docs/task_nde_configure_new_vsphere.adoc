@@ -17,6 +17,7 @@ keywords: netapp, hci, netapp deployment engine, deployment, vsphere
 [role="lead"]
 vSphere에서 사용해야 하는 네트워크 정보를 제공하여 NetApp HCI 설치 프로세스의 일부로 새로운 vSphere 환경을 구축할 수 있습니다. IP 주소를 사용하여 vSphere를 구성하는 경우 설치 후 주소를 변경할 수 없습니다.
 
+.필요한 것
 계획된 vSphere 환경에 대한 네트워크 정보를 확보했습니다.
 
 .단계

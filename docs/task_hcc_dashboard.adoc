@@ -21,12 +21,12 @@ NOTE: 새로운 NetApp 하이브리드 클라우드 제어 세션을 처음 시�
 
 관리되는 노드와 H 시리즈 하드웨어에 하나 이상의 관리 노드가 있는 클러스터만 하이브리드 클라우드 제어 대시보드에 표시됩니다.
 
-*  the NetApp HCC Dashboard
-*  storage resources
-*  compute resources
-*  storage capacity
-*  storage performance
-*  compute utilization
+* <<NetApp HCC 대시보드에 액세스합니다>>
+* <<스토리지 리소스 모니터링>>
+* <<컴퓨팅 리소스를 모니터링합니다>>
+* <<스토리지 용량을 모니터링합니다>>
+* <<스토리지 성능을 모니터링합니다>>
+* <<컴퓨팅 활용률 모니터링>>
 
 
 

@@ -19,6 +19,7 @@ keywords: netapp, hci, deployment, review, deploy
 * link:task_nde_supported_net_changes.html["지원되는 네트워킹 변경 사항"]
 * link:task_nde_disable_smartd.html["NetApp HCI 컴퓨팅 노드에서 smartd 서비스를 비활성화합니다"]
 * link:task_nde_disable_lacp_individual.html["구성된 스위치에서 "LACP-Individual" 명령을 비활성화합니다"]
+* link:task_mnode_create_netapp_hcc_role_vcenter.html["vCenter에서 NetApp HCC 역할을 생성합니다"]
 * link:task_nde_update_vsphere.html["VMware vSphere를 최신 상태로 유지"]
 * link:task_nde_install_GPU_drivers.html["GPU 지원 컴퓨팅 노드용 GPU 드라이버를 설치합니다"]
 * link:task_nde_access_hcc.html["NetApp 하이브리드 클라우드 제어에 액세스"]

@@ -16,7 +16,7 @@ keywords: netapp, hci, api, REST, remove, compute, asset
 [role="lead"]
 컴퓨팅 노드를 물리적으로 교체하거나 NetApp HCI 클러스터에서 제거해야 하는 경우 관리 노드 API를 사용하여 컴퓨팅 노드 자산을 제거해야 합니다.
 
-.무엇을 &#8217;필요로 할거야
+.필요한 것
 * 스토리지 클러스터에서 NetApp Element 소프트웨어 11.3 이상이 실행 중입니다.
 * 버전 11.3 이상을 실행하는 관리 노드를 배포했습니다.
 

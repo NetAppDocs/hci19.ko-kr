@@ -16,6 +16,7 @@ keywords: netapp, hci, witness nodes, two-node cluster, four-node cluster, compu
 [role="lead"]
 2노드 스토리지 클러스터를 4개 이상의 노드로 확장한 후 Witness 노드 쌍을 삭제하여 NetApp HCI 설치 시 컴퓨팅 리소스를 확보할 수 있습니다. 스토리지 클러스터에서 이전에 사용된 Witness 노드는 vSphere Web Client에서 대기 가상 머신(VM)으로 계속 표시됩니다.
 
+.이 작업에 대해
 감시 노드는 4개 이상의 스토리지 노드가 있는 클러스터에는 필요하지 않습니다. 2노드 클러스터를 4개 이상의 노드로 확장한 후 CPU와 메모리를 확보하려는 경우 이 절차는 선택 사항입니다.
 
 

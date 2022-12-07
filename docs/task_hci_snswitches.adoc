@@ -16,7 +16,7 @@ keywords: netapp, hci, SSDs, drives, replace drives, H410S, H610S
 [role="lead"]
 NetApp에서 제공하는 모범 사례 및 단계에 따라 장애가 발생한 SN2000 시리즈 스위치를 중단 없이 교체할 수 있습니다.
 
-.무엇을 &#8217;필요로 할거야
+.필요한 것
 * Putty가 노트북에 설치되어 있고 출력을 캡처했는지 확인합니다. 출력 세션을 캡처하도록 Putty를 구성하는 방법을 알아보려면 이 비디오를 참조하십시오.
 
 
@@ -43,17 +43,18 @@ image::sn2010_rear.png[SN2010 및 SN2100 후면,600,400]
 .SN2700 스위치 프론트 및 리어
 image::SN2700.png[SN2700 전면 및 후면,600,400]
 
+.이 작업에 대해
 이 절차의 단계를 아래 순서대로 수행해야 합니다. 이는 스위치 교체 전에 가동 중지 시간이 최소화되고 교체 스위치가 사전 구성되도록 하기 위한 것입니다.
 
 
 NOTE: 지침이 필요한 경우 NetApp 지원에 문의하십시오.
 
-다음은 절차의 단계에 대한 개요입니다. to replace the faulty switch
- the configuration file
- the faulty switch and install the replacement
- the operating system version on the switch
- the replacement switch
- the replacement
+다음은 절차의 단계에 대한 개요입니다.<<결함이 있는 스위치를 교체할 준비를 합니다>>
+<<구성 파일을 생성합니다>>
+<<결함이 있는 스위치를 탈거하고 교체품을 장착하십시오>>
+<<스위치의 운영 체제 버전을 확인합니다>>
+<<교체 스위치를 구성합니다>>
+<<교체를 완료하십시오>>
 
 
 

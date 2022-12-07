@@ -134,7 +134,6 @@
   <block id="4890b06e0bef2ccd30ddebf19fa9e652" category="summary">REST API를 사용하여 관리 ndoe에서 실행 중인 서비스에서 로그를 검색할 수 있습니다.</block>
   <block id="a5790b06c6321c773eca064d8f8b323a" category="doc">관리 서비스에서 로그를 가져오는 중입니다</block>
   <block id="7eada9b3aeba75afea1bb6e56efd98a1" category="paragraph">REST API를 사용하여 관리 노드에서 실행 중인 서비스에서 로그를 검색할 수 있습니다. 모든 공용 서비스에서 로그를 풀거나 특정 서비스를 지정하고 쿼리 매개 변수를 사용하여 반환 결과를 더 잘 정의할 수 있습니다.</block>
-  <block id="a711863513c11f3a6d86294acc7be0ba" category="list-title">무엇을 &amp;#8217;필요로 할거야</block>
   <block id="fc78a25a814125bdaeb01b28be02a19d" category="list-text">클러스터 버전이 NetApp Element 소프트웨어 11.3 이상을 실행 중입니다.</block>
   <block id="d95dde96d5f37c05bba91d1bff6d1a55" category="list-text">버전 11.3 이상을 실행하는 관리 노드를 배포했습니다.</block>
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">단계</block>
@@ -492,7 +491,6 @@
   <block id="bfc5232cd54db21b7879b3adc6550835" category="paragraph">하이브리드 클라우드 제어 대시보드에서 경고를 확인하고 신속하게 대응할 수 있습니다.</block>
   <block id="92f931e19caf8af4e3a31a82b06ccabd" category="summary">NetApp HCI 노드에 다운로드하여 적용할 수 있는 펌웨어 패키지의 릴리즈 노트에 대한 링크를 제공합니다.</block>
   <block id="7a02f75af06b21c7f1cfccabab836899" category="doc">컴퓨팅 펌웨어 번들 2.76 릴리스 정보</block>
-  <block id="5fef629b836b60819e0c0ce49cd2b9d7" category="section-title">새로운 기능</block>
   <block id="5d97960a6eafabed18140433c99665c6" category="paragraph">버전 2.76에는 일반적인 버그 수정이 포함되어 있습니다.</block>
   <block id="692731d8e937243e33f91c14df51cf3f" category="section-title">펌웨어 구성 요소가 업데이트되었습니다</block>
   <block id="0a07252a3e464951db5264e4d4279d52" category="paragraph">이 펌웨어 패키지에는 업데이트된 버전이 굵은 글꼴로 표시된 하드웨어 구성 요소에 대한 다음 펌웨어 버전이 포함되어 있습니다.</block>
@@ -1769,7 +1767,6 @@
   <block id="0e68b38eaff7123dcc12ce395a147a48" category="summary">NetApp HCI는 스토리지와 컴퓨팅 리소스를 결합하여 NetApp Element 소프트웨어의 기능을 기반으로 하는 VMware vSphere 환경을 구축합니다.</block>
   <block id="2bfee064de23abb29a29ad16b90c3080" category="doc">NetApp HCI 구성 및 관리 문서</block>
   <block id="2d2319a467144bf3a0e5baabca9ea680" category="paragraph">NetApp 하이브리드 클라우드 제어 인터페이스를 사용하여 시스템을 업그레이드, 확장, 모니터링하고, vCenter Server용 NetApp Element 플러그인을 통해 NetApp HCI 리소스를 관리할 수 있습니다.</block>
-  <block id="1fde0727b387439572ade83eecff4f68" category="section-title">새로운 기능 알아보기</block>
   <block id="6b51db420393cbff0d9f09dfeb229ecb" category="inline-link-macro">NetApp HCI의 새로운 기능</block>
   <block id="6709fa8e92b382825b811cdae7781d0f" category="list-text"><block ref="6709fa8e92b382825b811cdae7781d0f" category="inline-link-macro-rx"></block></block>
   <block id="858ea7ae6467e65992f082751f2c1cdf" category="inline-link">NetApp Element 소프트웨어의 새로운 기능</block>
@@ -2101,7 +2098,6 @@
   <block id="ae4ac9937fe2124bac1e8af524c0bdc6" category="list-text">Actions * 에서 * Enable Maintenance Mode * 를 선택합니다.</block>
   <block id="b66e6d3d140b3a6b8af0112f6c915150" category="paragraph">유지보수 모드 * 가 활성화되어 있는 동안에는 선택한 노드 및 동일한 클러스터의 다른 모든 노드에 대해 유지보수 모드 작업을 수행할 수 없습니다.</block>
   <block id="62ae267478305435d23b7df0f401bb38" category="paragraph">유지보수 모드 * 활성화 * 가 완료된 후 * 노드 상태 * 열에는 유지보수 모드에 있는 노드에 대해 렌치 아이콘과 " * 유지보수 모드 * " 텍스트가 표시됩니다.</block>
-  <block id="093586b1f3ef758c1cea8d476b072359" category="section-title">유지보수 모드를 비활성화합니다</block>
   <block id="a1572d68c738e66df4f2eba84768fe13" category="paragraph">노드가 유지보수 모드로 성공적으로 배치되면 이 노드에 대해 * 유지보수 모드 비활성화 * 작업을 사용할 수 있습니다. 유지 관리를 진행 중인 노드에서 유지보수 모드가 성공적으로 비활성화될 때까지 다른 노드의 작업을 사용할 수 없습니다.</block>
   <block id="6351ccc6ed60aa5dd025a0b847793a94" category="list-text">유지보수 모드의 노드에 대해 * Actions * 에서 * Disable Maintenance Mode * 를 선택합니다.</block>
   <block id="fc081ac4444d21e696896e77aedce790" category="paragraph">유지보수 모드 * 가 비활성화되어 있는 동안에는 선택한 노드 및 동일한 클러스터의 다른 모든 노드에 대해 유지보수 모드 작업을 수행할 수 없습니다.</block>
@@ -3640,7 +3636,6 @@
   <block id="ee04baa2ee228c73a80bcb76420c3f83" category="admonition">버전을 확인하려면 관리 노드에 로그인하고 로그인 배너에서 Element 버전 번호를 확인합니다. 11.3이 없는 경우 를 참조하십시오 <block ref="298642ffea6db0968793883313b436ff" category="inline-link-macro-rx"></block>.</block>
   <block id="df3748edc080e7a8ed49863460584cdd" category="paragraph">NetApp 하이브리드 클라우드 제어를 사용하는 업그레이드는 이전 서비스 번들 버전에서 사용할 수 없습니다.</block>
   <block id="ced99676ffdce11db0cf7ce2a4a812b8" category="list-text">모든 노드의 시스템 시간이 동기화되고 스토리지 클러스터 및 노드에 대해 NTP가 올바르게 구성되었는지 확인했습니다. 각 노드는 시간편중과 관련된 해결되지 않은 클러스터 장애가 없는 노드별 웹 UI('https://[IP address]:442')에서 DNS 이름 서버로 구성되어야 합니다.</block>
-  <block id="6ea7f8d4483b20144d2c82f1ed99c07a" category="section-title">시스템 업그레이드 순서</block>
   <block id="47f1925137d1bc975fa326ab8c3fdaba" category="paragraph">다음 순서를 사용하여 NetApp HCI 시스템을 업그레이드할 수 있습니다.</block>
   <block id="524813e84d210a04a3c005022becca08" category="inline-link-macro">하이브리드 클라우드 제어에서 관리 서비스를 업데이트합니다</block>
   <block id="c43409e402c491faff614694ff49b45b" category="list-text"><block ref="d96c5e393dc7f7cfcba5644a67a6ff8a" category="inline-link-macro-rx"></block>.</block>
@@ -4819,7 +4814,6 @@
   <block id="f4ad5fe6377e47eb0f1d3efd91917e13" category="section-title">vCenter Server를 사용하여 구축을 확인합니다</block>
   <block id="6c8f5781f8959d00ff258798ba1d4a06" category="paragraph">vSphere Client에서 3개의 가상 머신이 포함된 Rancher 관리 클러스터를 볼 수 있습니다.</block>
   <block id="6d5e0d8752a1244db9529c72a9402187" category="admonition">구축을 완료한 후에는 Rancher 서버 가상 머신 클러스터의 구성을 수정하거나 가상 머신을 제거하지 마십시오. NetApp HCI의 Rancher는 RKE 관리 클러스터 구성을 사용하여 정상적으로 작동합니다.</block>
-  <block id="3f297ef15cde0668e93b35f2752fd4fd" category="section-title">다음 단계</block>
   <block id="9ce36cf8bc97284a665ac4d465211731" category="inline-link-macro">구축 후 작업 완료</block>
   <block id="0d15f5317410136724749d58832233cd" category="list-text"><block ref="0d15f5317410136724749d58832233cd" category="inline-link-macro-rx"></block></block>
   <block id="50488dc9ca0f950ef434f471ee1a1ea1" category="list-text"><block ref="50488dc9ca0f950ef434f471ee1a1ea1" category="inline-link-macro-rx"></block></block>
@@ -6297,4 +6291,26 @@
   <block id="b8b146fd1e1ecdf074536a02bfe40871" category="list-text">(사내 서버/다크 사이트의 경우) vCenter용 Element 플러그인 버전에 따라 플러그인 JSON 파일 또는 플러그인 ZIP에 대한 사용자 지정 URL:</block>
   <block id="1993643c12bb4ee547f04d8d85f8c4bf" category="list-text">vCenter Server 5.0용 Element 플러그인부터 NetApp Element 원격 플러그인 확장 지점이 나타납니다.</block>
   <block id="1c63b3cd9a6d3bdf8b9b31aca68672d7" category="list-text">vCenter Server 4.10 이전 버전용 Element Plug-in의 경우 NetApp Element 구성 및 관리 확장 지점이 나타납니다.</block>
+  <block id="d59db7846bd10b6d60d21543df9faa9e" category="list-title">필요한 것</block>
+  <block id="625cc9b8ccc34496dc2b3fcffb7e384a" category="paragraph-title">단계 개요</block>
+  <block id="6c7cffebdb1404e3fc10effbd8df3e0b" category="paragraph-title">Witness 노드를 언제 재배포해야 합니까?</block>
+  <block id="91770f038cd944a1d3b9b347edeb2b10" category="section-title">새로운 기능</block>
+  <block id="64916198004d1ee19b1b50002f51f1a8" category="paragraph-title">업그레이드 옵션</block>
+  <block id="fde2050933cb4096508de5d1d771786e" category="paragraph-title">대치 옵션</block>
+  <block id="8fe5279440ee3c239e840ed9b8e10ddd" category="list-text"><block ref="8fe5279440ee3c239e840ed9b8e10ddd" category="inline-link-macro-rx"></block></block>
+  <block id="01e12de62fa77fda2815719aed8ff892" category="paragraph-title">다음 단계</block>
+  <block id="e7be2be07c433bfd89cb0a290a7015a0" category="paragraph-title">구성 최대</block>
+  <block id="2cd70ba1e2d0b294626ea7f96d25a07f" category="paragraph-title">로그 수집 옵션</block>
+  <block id="e5181fceb27eb67cd4791c26a3fa9076" category="paragraph-title">펌웨어 업그레이드 자동화를 시작하십시오</block>
+  <block id="492e5546e60705134bff8d7f80511a8d" category="section-title">새로운 기능 알아보기</block>
+  <block id="6a31058d1e6208d43e0d620fb4953c23" category="paragraph-title">스토리지 클러스터의 자산 관리 옵션</block>
+  <block id="50f33d14f129e4548c1c270fd6725a78" category="paragraph-title">구성 옵션</block>
+  <block id="bd965e38a0c9cf27aa1bde099308e23f" category="paragraph-title">작업을 마친 후</block>
+  <block id="891a52ee80600fd58bac60927df7a3a9" category="section-title">[[enable_main_mode]] 유지보수 모드를 활성화합니다</block>
+  <block id="27404255e546058b4a4837fb07e90bbf" category="section-title">[[DISABLE_MAIN_MODE]] 유지 관리 모드를 비활성화합니다</block>
+  <block id="a31b6eafc73ca0db90a0d96e6fb9dc93" category="paragraph-title">상태 점검 옵션</block>
+  <block id="df5820ca7f238b48987ff74db1271e4a" category="paragraph-title">업데이트 옵션</block>
+  <block id="d0ce6a73cc0e7aedcf58ba0e0c96c737" category="paragraph-title">일반적인 문제 해결</block>
+  <block id="58eaebf972358f1cf03d386a4ade1a0f" category="section-title">다음 단계</block>
+  <block id="18526b4be693f8e5ed12fb2721f65eea" category="section-title">[[sys_upgrade_seq]] 시스템 업그레이드 순서</block>
 </blocks>

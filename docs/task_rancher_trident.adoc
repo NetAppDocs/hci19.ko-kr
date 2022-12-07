@@ -19,13 +19,14 @@ NetApp HCI에 Rancher를 설치한 후 Trident를 설치하는 방법에 대해 
 
 TIP: Trident에 대한 자세한 내용은 를 참조하십시오 https://netapp-trident.readthedocs.io/en/stable-v20.10/introduction.html["Trident 문서"^].
 
-.무엇을 &#8217;필요로 할거야
+.필요한 것
 * NetApp HCI에 Rancher를 설치했습니다.
 * 사용자 클러스터를 구축했습니다.
 * Trident를 위한 사용자 클러스터 네트워크를 구성했습니다. 을 참조하십시오 link:task_trident_configure_networking.html["사용자 클러스터에 대한 Trident 지원을 활성화합니다"] 를 참조하십시오.
 * Trident를 위한 작업 노드 준비에 필요한 필수 필수 단계를 완료했습니다. 를 참조하십시오 https://netapp-trident.readthedocs.io/en/stable-v20.10/kubernetes/operations/tasks/worker.html["Trident 문서"^].
 
 
+.이 작업에 대해
 Trident 설치 프로그램 카탈로그는 NetApp 하이브리드 클라우드 제어를 사용하여 Rancher 설치의 일부로 설치됩니다. 이 작업에서는 설치 관리자 카탈로그를 사용하여 Trident를 설치 및 구성합니다. Rancher 설치의 일부로 NetApp이 노드 템플릿을 제공합니다. NetApp에서 제공하는 노드 템플릿을 사용하지 않고 RHEL 또는 CentOS에서 프로비저닝하려는 경우 추가 요구사항이 있을 수 있습니다. 작업자 노드를 RHEL 또는 CentOS로 변경할 경우 몇 가지 필수 구성 요소를 충족해야 합니다. 를 참조하십시오 https://netapp-trident.readthedocs.io/en/stable-v20.10/kubernetes/operations/tasks/worker.html["Trident 문서"^].
 
 .단계

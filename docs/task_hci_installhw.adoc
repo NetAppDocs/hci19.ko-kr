@@ -19,15 +19,15 @@ NetApp HCI를 사용하기 전에 스토리지 및 컴퓨팅 노드를 올바르
 
 TIP: 를 참조하십시오 link:../media/hseries-isi.pdf["포스터"^] 를 참조하십시오.
 
-*  diagrams
-*  for installation
-*  the rails
-*  the node/chassis
-*  the switches
-*  the nodes
-*  on the nodes
-*  NetApp HCI
-*  post-configuration tasks
+* <<워크플로 다이어그램>>
+* <<설치 준비>>
+* <<레일을 설치합니다>>
+* <<노드/섀시를 설치합니다>>
+* <<스위치를 장착하십시오>>
+* <<노드를 케이블로 연결합니다>>
+* <<노드의 전원을 켭니다>>
+* <<NetApp HCI를 구성합니다>>
+* <<구성 후 작업을 수행합니다>>
 
 
 
@@ -36,9 +36,9 @@ TIP: 를 참조하십시오 link:../media/hseries-isi.pdf["포스터"^] 를 참�
 
 이 워크플로우 다이어그램은 설치 단계에 대한 개괄적인 개요를 제공합니다. H 시리즈 모델에 따라 단계가 약간 다릅니다.
 
-*  and H410S
-*  and H615C
-* 
+* <<H410C 및 H410S>>
+* <<H610C 및 H615C>>
+* <<H610S>>
 
 
 
@@ -110,9 +110,9 @@ CAUTION: 하드웨어를 설치하는 동안, 모든 포장재를 제거하고 �
 
 TIP: 장비가 넘어지지 않도록 랙 하단에서 상단까지 하드웨어를 설치합니다. 랙에 고정 장치가 포함되어 있는 경우 하드웨어를 설치하기 전에 장치를 설치하십시오.
 
-*  and H410S
-* 
-*  and H615C
+* <<H410C 및 H410S>>
+* <<H610C>>
+* <<H610S 및 H615C>>
 
 
 
@@ -168,9 +168,9 @@ TIP: NetApp HCI 1.8부터 스토리지 노드를 2개 또는 3개 설정하여 �
 
 CAUTION: 모든 포장재를 제거하고 장치에서 포장합니다. 이렇게 하면 노드의 과열 및 종료를 방지할 수 있습니다.
 
-*  and H410S nodes
-*  node/chassis
-*  and H615C node/chassis
+* <<H410C 및 H410S 노드>>
+* <<H610C 노드/섀시>>
+* <<H610S 및 H615C 노드/섀시>>
 
 
 
@@ -227,10 +227,10 @@ NetApp HCI 설치에서 Mellanox SN2010, SN2100 및 SN2700 스위치를 사용�
 
 CAUTION: 섀시 후면의 공기 환풍구가 케이블 또는 레이블에 의해 막히지 않았는지 확인합니다. 이로 인해 과열로 인해 구성 요소 고장이 조기에 발생할 수 있습니다.
 
-*  compute node and H410S storage node
-*  compute node
-*  compute node
-*  storage node
+* <<H410C 컴퓨팅 노드 및 H410S 스토리지 노드>>
+* <<H610C 컴퓨팅 노드>>
+* <<H615C 컴퓨팅 노드>>
+* <<H610S 스토리지 노드>>
 
 
 
@@ -345,8 +345,8 @@ image::H600S_ISI_nodefront.png[에서는 H610S/H615C 노드/섀시의 전원 단
 
 다음 옵션 중 하나를 선택합니다.
 
-*  NetApp HCI installation
-*  an existing NetApp HCI installation
+* <<새 NetApp HCI 설치>>
+* <<기존 NetApp HCI 설치를 확장합니다>>
 
 
 
@@ -396,8 +396,8 @@ NOTE: 동일한 네트워크에 새로 설치된 NetApp HCI 노드가 자동으�
 
 사용 중인 노드의 유형에 따라 하드웨어를 설치하고 NetApp HCI를 구성한 후에 추가 단계를 수행해야 할 수 있습니다.
 
-*  node
-*  and H610S nodes
+* <<H610C 노드>>
+* <<H615C 및 H610S 노드>>
 
 
 

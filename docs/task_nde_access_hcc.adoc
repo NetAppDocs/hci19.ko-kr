@@ -16,7 +16,7 @@ keywords: netapp, hci, deployment, review, GPU, install, driver, drivers
 [role="lead"]
 NetApp 하이브리드 클라우드 제어를 통해 NetApp HCI를 관리할 수 있습니다. NetApp HCI의 관리 서비스 및 기타 구성 요소를 업그레이드하고 설치를 확장 및 모니터링할 수 있습니다. NetApp Hybrid Cloud Control에 로그인하려면 관리 노드의 IP 주소로 이동합니다.
 
-.무엇을 &#8217;필요로 할거야
+.필요한 것
 * * 클러스터 관리자 권한 *: 스토리지 클러스터에 대한 관리자 권한이 있습니다.
 * * 관리 서비스 *: 관리 서비스를 버전 2.1.326으로 업그레이드했습니다. NetApp 하이브리드 클라우드 제어는 이전 서비스 번들 버전에서 사용할 수 없습니다. 현재 서비스 번들 버전에 대한 자세한 내용은 를 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Management_services_for_Element_Software_and_NetApp_HCI/Management_Services_Release_Notes["관리 서비스 릴리스 정보"^].
 

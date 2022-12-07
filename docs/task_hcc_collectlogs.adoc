@@ -16,15 +16,16 @@ keywords: netapp, hci, logs, collection, troubleshooting, monitor
 [role="lead"]
 NetApp HCI 또는 SolidFire All-Flash 스토리지 설치에 문제가 있을 경우 로그를 수집하여 NetApp Support에 보내 진단에 도움이 될 수 있습니다. NetApp 하이브리드 클라우드 제어 또는 REST API를 사용하여 NetApp HCI 또는 Element 시스템에서 로그를 수집할 수 있습니다.
 
-.무엇을 &#8217;필요로 할거야
+.필요한 것
 * 스토리지 클러스터 버전이 NetApp Element 소프트웨어 11.3 이상을 실행하고 있는지 확인합니다.
 * 버전 11.3 이상을 실행하는 관리 노드를 배포했는지 확인합니다.
 
 
+.로그 수집 옵션
 다음 옵션 중 하나를 선택합니다.
 
-*  NetApp Hybrid Cloud Control to collect logs
-*  the REST API to collect logs
+* <<NetApp 하이브리드 클라우드 제어를 사용하여 로그를 수집하십시오>>
+* <<REST API를 사용하여 로그를 수집합니다>>
 
 
 

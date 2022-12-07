@@ -16,7 +16,7 @@ keywords: netapp, hci, HealthTools, cluster, element, H610S upgrade, hcc
 [role="lead"]
 NetApp Element 소프트웨어를 업그레이드하려면 NetApp 하이브리드 클라우드 제어 UI, REST API 또는 HealthTools 도구 제품군을 사용할 수 있습니다. 노드 추가 및 제거, 드라이브 추가 및 제거, 이니시에이터, 볼륨 액세스 그룹 및 가상 네트워크와 관련된 명령 등 Element 소프트웨어를 업그레이드하는 동안 특정 작업이 표시되지 않습니다.
 
-.무엇을 &#8217;필요로 할거야
+.필요한 것
 * * 관리자 권한 *: 업그레이드를 수행할 수 있는 스토리지 클러스터 관리자 권한이 있습니다.
 * * 유효한 업그레이드 경로 *: 업그레이드하려는 Element 버전에 대한 업그레이드 경로 정보를 확인했으며 업그레이드 경로가 유효한지 확인했습니다.https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Element_Software/What_is_the_upgrade_matrix_for_storage_clusters_running_NetApp_Element_software%3F["NetApp KB: NetApp Element 소프트웨어를 실행하는 스토리지 클러스터의 업그레이드 매트릭스입니다"^]
 * * 시스템 시간 동기화 *: 모든 노드의 시스템 시간이 동기화되고 스토리지 클러스터 및 노드에 대해 NTP가 올바르게 구성되었는지 확인했습니다. 각 노드는 시간편중과 관련된 해결되지 않은 클러스터 장애가 없는 노드별 웹 UI('https://[IP address]:442')에서 DNS 이름 서버로 구성되어야 합니다.
@@ -49,16 +49,17 @@ NOTE: EULA에 동의하면 향후 모든 업데이트에 대해 기록되고 자
 
 
 
+.업그레이드 옵션
 다음 Element 소프트웨어 업그레이드 옵션 중 하나를 선택합니다.
 
-*  NetApp Hybrid Cloud Control UI to upgrade Element storage
-*  NetApp Hybrid Cloud Control API to upgrade Element storage
-*  Element software at connected sites using HealthTools
-*  Element software at dark sites using HealthTools
+* <<NetApp 하이브리드 클라우드 제어 UI를 사용하여 Element 스토리지를 업그레이드하십시오>>
+* <<NetApp 하이브리드 클라우드 제어 API를 사용하여 Element 스토리지를 업그레이드하십시오>>
+* <<HealthTools를 사용하여 연결된 사이트에서 Element 소프트웨어를 업그레이드합니다>>
+* <<HealthTools를 사용하여 다크 사이트에 Element 소프트웨어를 업그레이드합니다>>
 
 
 
-IMPORTANT: H610S 시리즈 노드를 Element 12.3.x로 업그레이드하는 경우 노드에서 11.8 이전의 Element 버전이 실행되는 경우 추가 업그레이드 단계( )를 수행해야 합니다 H610S storage nodes to Element 12.3.x (phase 2),2단계)를 각 스토리지 노드에 대해 설정합니다. Element 11.8 이상을 실행 중인 경우 추가 업그레이드 단계(2단계)가 필요하지 않습니다.
+IMPORTANT: H610S 시리즈 노드를 Element 12.3.x로 업그레이드하는 경우 노드에서 11.8 이전의 Element 버전이 실행되는 경우 추가 업그레이드 단계( )를 수행해야 합니다<<H610S 스토리지 노드를 Element 12.3.x로 업그레이드(2단계),2단계>>)를 각 스토리지 노드에 대해 설정합니다. Element 11.8 이상을 실행 중인 경우 추가 업그레이드 단계(2단계)가 필요하지 않습니다.
 
 
 
@@ -66,6 +67,7 @@ IMPORTANT: H610S 시리즈 노드를 Element 12.3.x로 업그레이드하는 경
 
 NetApp 하이브리드 클라우드 제어 UI를 사용하여 스토리지 클러스터를 업그레이드할 수 있습니다.
 
+.필요한 것
 관리 노드가 인터넷에 연결되어 있지 않은 경우 를 다운로드했습니다 https://mysupport.netapp.com/site/products/all/details/netapp-hci/downloads-tab["NetApp HCI 스토리지 클러스터용 NetApp HCI 소프트웨어 패키지"^].
 
 
@@ -100,7 +102,7 @@ Storage * 탭에는 설치에 포함된 스토리지 클러스터가 나열됩�
 
 
 
-TIP: 업그레이드 중 * 업그레이드 상태 * 는 프로세스 상태를 반영하기 위해 변경됩니다. 또한 업그레이드를 일시 중지하거나 업그레이드가 오류를 반환하는 경우와 같이 수행한 작업에 대한 응답으로 변경됩니다. 을 참조하십시오  status changes.
+TIP: 업그레이드 중 * 업그레이드 상태 * 는 프로세스 상태를 반영하기 위해 변경됩니다. 또한 업그레이드를 일시 중지하거나 업그레이드가 오류를 반환하는 경우와 같이 수행한 작업에 대한 응답으로 변경됩니다. 을 참조하십시오 <<업그레이드 상태 변경>>.
 
 
 NOTE: 업그레이드가 진행되는 동안 페이지를 종료하고 나중에 다시 돌아와 진행 상황을 계속 모니터링할 수 있습니다. 클러스터 행이 축소되어 있는 경우 이 페이지는 상태 및 현재 버전을 동적으로 업데이트하지 않습니다. 테이블을 업데이트하거나 페이지를 새로 고치려면 클러스터 행을 확장해야 합니다.
@@ -127,7 +129,7 @@ CAUTION: 브라우저 창에서 이동하면 파일 업로드가 손실됩니다
 .. 에서 필요한 추가 단계(2단계)를 완료합니다 https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/H_Series/NetApp_H610S_storage_node_power_off_and_on_procedure["KB 문서를 참조하십시오"^], 및 UI에서 단계 2를 완료했음을 확인합니다.
 
 
-업그레이드가 완료된 후 로그를 다운로드할 수 있습니다. 다양한 업그레이드 상태 변경에 대한 자세한 내용은 을 참조하십시오  status changes.
+업그레이드가 완료된 후 로그를 다운로드할 수 있습니다. 다양한 업그레이드 상태 변경에 대한 자세한 내용은 을 참조하십시오 <<업그레이드 상태 변경>>.
 
 |===
 
@@ -420,7 +422,7 @@ https://<ManagementNodeIP>/storage/1/
 
 
 | 11.8 이전의 Element 버전을 실행하는 H610S 클러스터를 업그레이드하는 경우 응답 본문에 "finishedNeedsAck" 상태가 표시됩니다. 각 H610S 스토리지 노드에 대해 추가 업그레이드 단계(2단계)를 수행해야 합니다.  a| 
-... 을 참조하십시오  H610S storage nodes to Element 12.3.x or later (phase 2) 각 노드에 대해 프로세스를 완료합니다.
+... 을 참조하십시오 <<Upgrading H610S storage nodes to Element 12.3.x or later (phase 2)>> 각 노드에 대해 프로세스를 완료합니다.
 ... 필요한 경우 재인증을 수행하고 * Put cer/upgrades/{upgrade eId} * 를 선택합니다.
 ... 체험하기 * 를 선택합니다.
 ... 이전 단계의 업그레이드 ID를 * upgrade eId * 에 입력합니다.
@@ -633,7 +635,7 @@ Starting light cluster block service check
 
 
 
-IMPORTANT: H610S 시리즈 노드를 Element 12.3.x로 업그레이드하는 경우 노드에서 11.8 이전의 Element 버전이 실행되는 경우 추가 업그레이드 단계( )를 수행해야 합니다 H610S storage nodes to Element 12.3.x (phase 2),2단계)를 각 스토리지 노드에 대해 설정합니다. Element 11.8 이상을 실행 중인 경우 추가 업그레이드 단계(2단계)가 필요하지 않습니다.
+IMPORTANT: H610S 시리즈 노드를 Element 12.3.x로 업그레이드하는 경우 노드에서 11.8 이전의 Element 버전이 실행되는 경우 추가 업그레이드 단계( )를 수행해야 합니다<<H610S 스토리지 노드를 Element 12.3.x로 업그레이드(2단계),2단계>>)를 각 스토리지 노드에 대해 설정합니다. Element 11.8 이상을 실행 중인 경우 추가 업그레이드 단계(2단계)가 필요하지 않습니다.
 
 
 
@@ -641,7 +643,7 @@ IMPORTANT: H610S 시리즈 노드를 Element 12.3.x로 업그레이드하는 경
 
 HealthTools 도구 제품군을 사용하면 외부 연결이 없는 어두운 사이트에서 NetApp Element 소프트웨어를 업데이트할 수 있습니다.
 
-.무엇을 &#8217;필요로 할거야
+.필요한 것
 . NetApp HCI 소프트웨어로 이동합니다 https://mysupport.netapp.com/site/products/all/details/netapp-hci/downloads-tab["다운로드 페이지"^].
 . 올바른 소프트웨어 릴리즈를 선택하고 최신 스토리지 노드 이미지를 관리 노드가 아닌 컴퓨터에 다운로드합니다.
 +
@@ -701,7 +703,7 @@ sfinstall -u admin 10.117.78.244 /tmp/solidfire-rtfi-11.3.0.345.iso --metadata=/
 
 
 
-IMPORTANT: H610S 시리즈 노드를 Element 12.3.x로 업그레이드하는 경우 노드에서 11.8 이전의 Element 버전이 실행되는 경우 추가 업그레이드 단계( )를 수행해야 합니다 H610S storage nodes to Element 12.3.x (phase 2),2단계)를 각 스토리지 노드에 대해 설정합니다. Element 11.8 이상을 실행 중인 경우 추가 업그레이드 단계(2단계)가 필요하지 않습니다.
+IMPORTANT: H610S 시리즈 노드를 Element 12.3.x로 업그레이드하는 경우 노드에서 11.8 이전의 Element 버전이 실행되는 경우 추가 업그레이드 단계( )를 수행해야 합니다<<H610S 스토리지 노드를 Element 12.3.x로 업그레이드(2단계),2단계>>)를 각 스토리지 노드에 대해 설정합니다. Element 11.8 이상을 실행 중인 경우 추가 업그레이드 단계(2단계)가 필요하지 않습니다.
 
 
 

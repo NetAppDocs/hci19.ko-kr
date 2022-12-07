@@ -16,8 +16,10 @@ keywords: netapp, hci, on premise, cluster, element, compute node
 [role="lead"]
 모든 H 시리즈 컴퓨팅 노드에 대해 VMware Update Manager를 사용하여 노드에 사용된 드라이버를 업데이트할 수 있습니다.
 
+.필요한 것
 의 하드웨어 펌웨어 및 드라이버 매트릭스를 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/NetApp_HCI/Firmware_and_driver_versions_in_NetApp_HCI_and_NetApp_Element_software["이 NetApp KB 문서를 참조하십시오"^] (로그인 필요).
 
+.이 작업에 대해
 이러한 업데이트 작업 중 하나만 한 번에 수행합니다.
 
 컴퓨팅 펌웨어 업그레이드를 시도하기 전에 현재 ESXi 드라이버 버전을 확인해야 합니다. 드라이버가 최신 버전이 아니면 먼저 드라이버를 업그레이드하십시오. 그런 다음 컴퓨팅 노드의 컴퓨팅 펌웨어를 업그레이드합니다.

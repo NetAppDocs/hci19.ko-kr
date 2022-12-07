@@ -17,6 +17,7 @@ keywords: netapp, hci, netapp deployment engine, deployment, vsphere
 [role="lead"]
 NetApp HCI에 대한 스토리지 리소스의 전원을 끌 경우 스토리지 노드를 제대로 중지하려면 'Shutdown' Element API 메소드를 사용해야 합니다.
 
+.단계
 컴퓨팅 리소스의 전원을 끈 후 웹 브라우저를 사용하여 NetApp HCI 스토리지 클러스터의 모든 노드를 종료합니다.
 
 . 스토리지 클러스터에 로그인하여 올바른 MVIP에 연결되어 있는지 확인합니다.

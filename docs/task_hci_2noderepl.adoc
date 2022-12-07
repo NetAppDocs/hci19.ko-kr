@@ -16,7 +16,7 @@ keywords: netapp, hci, H610C, H615C, chassis replacement, node replacement
 [role="lead"]
 2노드 클러스터의 일부인 스토리지 노드를 교체하기 전에 먼저 세 번째 스토리지 노드(새 IP 주소 세트가 필요함)를 추가하고 동기화를 완료한 다음 결함이 있는 노드를 제거해야 합니다. 교체 노드가 클러스터에 연결될 때까지 클러스터는 성능 저하 상태로 유지됩니다.
 
-.무엇을 &#8217;필요로 할거야
+.필요한 것
 * 새로운 관리 IP 및 스토리지 IP 주소가 있습니다.
 * 노드가 오프라인이 된 후 클러스터에 'ClusterCannotSync' 경고가 표시됨을 확인했습니다. 따라서 새 노드가 클러스터에 다시 추가될 때 클러스터가 전체 재동기화를 수행합니다. 이 알림은 스토리지 노드가 오프라인이 된 후 약 6분 후에 표시됩니다.
 * NetApp 지원에 문의했습니다. 교체를 주문하는 경우 NetApp Support에 케이스를 접수해야 합니다.
@@ -24,6 +24,7 @@ keywords: netapp, hci, H610C, H615C, chassis replacement, node replacement
 * 정전기 방전(ESD) 손목 보호대가 있거나 다른 정전기 방지 보호 장치를 착용하고 있습니다.
 
 
+.이 작업에 대해
 VMware vSphere Web Client의 알람은 호스트에 장애가 발생할 경우 사용자에게 경고합니다. VMware vSphere Web Client에서 장애가 발생한 호스트의 일련 번호와 노드 뒷면의 스티커에 있는 일련 번호가 일치해야 합니다.
 
 .단계

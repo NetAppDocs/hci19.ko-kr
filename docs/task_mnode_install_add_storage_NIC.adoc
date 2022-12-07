@@ -22,10 +22,11 @@ keywords: netapp, element, management node, mnode, network, nic, storage nic
 * 관리 노드 11.3 이상을 배포했습니다.
 
 
+.구성 옵션
 사용자 환경과 관련된 옵션을 선택합니다.
 
-*  a storage Network Interface Controller (NIC) for an untagged network interface
-*  a storage Network Interface Controller (NIC) for a tagged network interface
+* <<태그 없는 네트워크 인터페이스에 대한 스토리지 NIC(Network Interface Controller)를 구성합니다>>
+* <<태그가 지정된 네트워크 인터페이스에 대한 스토리지 NIC(Network Interface Controller)를 구성합니다>>
 
 
 

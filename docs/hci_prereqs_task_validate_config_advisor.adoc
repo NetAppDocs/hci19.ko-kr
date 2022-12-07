@@ -48,11 +48,13 @@ https://mysupport.netapp.com/site/tools/tool-eula/5ddb829ebd393e00015179b2["NetA
 
 Active IQ Config Advisor는 브라우저 창에서 실행되고 네트워크 및 환경에 대한 정보를 수집하며 NetApp HCI 배포를 방해할 수 있는 네트워크 또는 구성 문제를 해결하는 데 사용할 수 있는 보고서를 생성합니다.
 
+.시작하기 전에
 관리 네트워크, VMware vCenter Server 네트워킹(기존 VMware 설치를 연결하는 경우) 및 NetApp HCI에 사용할 스위치를 액세스할 수 있는 디바이스에 Active IQ Config Advisor를 설치했습니다.
 
 
 NOTE: Mellanox 스위치를 사용하고 NetApp 전문 서비스를 통해 이러한 스위치를 구축 일부로 구성하는 경우에는 스위치 정보를 제공할 필요가 없습니다.
 
+.이 작업에 대해
 Active IQ Config Advisor는 읽기 전용 검사만 수행하여 정보를 수집합니다. 컬렉션의 일부로 구성이 수정되지 않습니다.
 
 .단계

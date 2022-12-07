@@ -63,7 +63,7 @@ IMPORTANT: 플러그인은 HTML5 vSphere Web Client의 버전 6.7 U2 빌드 1300
 
 --
 ====
-.무엇을 &#8217;필요로 할거야
+.필요한 것
 * * 관리자 권한 *: 플러그인을 설치할 vCenter 관리자 역할 권한이 있습니다.
 * * vSphere 업그레이드 *: vCenter Server용 NetApp Element 플러그인을 업그레이드하기 전에 필요한 vCenter 업그레이드를 모두 수행했습니다. 이 절차에서는 vCenter 업그레이드가 이미 완료된 것으로 가정합니다.
 * * vCenter Server *: vCenter 플러그인 버전 5.x 또는 4.x가 vCenter Server에 등록됩니다. 등록 유틸리티에서 (`https://[management node IP]:9443`)에서 * 등록 상태 * 를 선택하고 필수 필드를 입력한 다음 * 상태 확인 * 을 선택하여 vCenter 플러그인이 이미 등록되어 있는지, 현재 설치 버전 번호를 확인합니다.

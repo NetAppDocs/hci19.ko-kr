@@ -17,7 +17,7 @@ keywords: netapp, hci, netapp deployment engine, deployment, engine, deploy, acc
 [role="lead"]
 네트워크에서 DHCP를 사용하지 않는 경우 NetApp 배포 엔진에 액세스하는 데 사용할 스토리지 노드 중 하나(제어 스토리지 노드라고도 함)의 Bond1G 인터페이스에 정적 IPv4 주소를 설정해야 합니다. 제어 스토리지 노드의 NetApp Deployment Engine은 모든 노드의 Bond10G 인터페이스에서 자동 구성된 IPv4 주소를 사용하여 다른 컴퓨팅 및 스토리지 노드를 검색하고 통신합니다. 네트워크에 특별한 요구 사항이 없는 경우 이 방법을 사용해야 합니다.
 
-.무엇을 &#8217;필요로 할거야
+.필요한 것
 * 사용자 또는 네트워크 관리자가 설치 및 설정 지침 문서의 작업을 완료했습니다.
 * NetApp HCI 노드에 물리적으로 액세스할 수 있습니다.
 * 모든 NetApp HCI 노드의 전원이 켜져 있습니다.

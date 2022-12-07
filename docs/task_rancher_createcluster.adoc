@@ -19,7 +19,7 @@ Rancher를 구축한 후 Rancher UI를 사용하여 Kubernetes 사용자 클러�
 
 TIP: 클러스터 생성 요구 사항에 대한 자세한 내용은 를 참조하십시오 https://rancher.com/docs/rancher/v2.x/en/cluster-provisioning/["Rancher 문서"^].
 
-.무엇을 &#8217;필요로 할거야
+.필요한 것
 * NetApp HCI에 Rancher를 설치했습니다.
 * 필요한 고정 IP 주소가 있습니다. 각 사용자 클러스터에는 3개의 정적 IP 주소가 필요합니다.
 * 에 나와 있는 요구 사항을 숙지합니다 https://rancher.com/docs/rancher/v2.x/en/cluster-provisioning/["Rancher 문서"^].
