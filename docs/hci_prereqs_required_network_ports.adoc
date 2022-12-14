@@ -125,6 +125,9 @@ image::network_ports.PNG[포트 연결을 확인합니다]
 | 관리 노드 | 컴퓨팅 노드 BMC/IPMI | 623 UDP | RMCP(원격 관리 제어 프로토콜) 포트. NetApp 하이브리드 Cloud Control 컴퓨팅 펌웨어 업그레이드에 필요 
 
 
+| 관리 노드 | 스토리지 노드 BMC/IPMI | 623 UDP | RMCP 포트. IPMI 지원 시스템을 관리하는 데 필요합니다. 
+
+
 | 관리 노드 | VMware vCenter를 참조하십시오 | 5988-5989 | NetApp 하이브리드 클라우드 제어 HTTPS 통신 
 
 
@@ -138,6 +141,9 @@ image::network_ports.PNG[포트 연결을 확인합니다]
 
 
 | SNMP 서버 | 스토리지 노드 MIP | 161UDP | SNMP 폴링 
+
+
+| 스토리지 노드 BMC/IPMI | 관리 노드 | 623 UDP | RMCP 포트. IPMI 지원 시스템을 관리하는 데 필요합니다. 
 
 
 | 스토리지 노드 MIP | DNS 서버 | 53 TCP/UDP | DNS 조회 
