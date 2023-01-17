@@ -234,7 +234,7 @@ NOTE: 보안 프롬프트에 암호를 입력하라는 메시지가 표시됩니
 +
 [listing]
 ----
-/sf/packages/mnode/redeploy-mnode --mnode_admin_user [username]
+sudo /sf/packages/mnode/redeploy-mnode --mnode_admin_user [username]
 ----
 +
 .. 대괄호를 포함하여 [ ] 대괄호 안의 값을 관리 노드 관리자 계정의 사용자 이름으로 바꿉니다. 관리 노드에 로그인하는 데 사용한 사용자 계정의 사용자 이름일 수 있습니다.
