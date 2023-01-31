@@ -41,8 +41,9 @@ keywords: netapp, hci, netapp deployment engine, deployment, vsphere
 * 시스템을 확인하고 추가 가상 머신의 전원을 켭니다.
 
 
-[discrete]
+
+
 == 자세한 내용을 확인하십시오
 
-* https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/NetApp_HCI/Firmware_and_driver_versions_in_NetApp_HCI_and_NetApp_Element_software["NetApp HCI 및 NetApp Element 소프트웨어의 펌웨어 및 드라이버 버전"^]
+* link:firmware_driver_versions.html["NetApp HCI 스토리지 노드의 NetApp HCI 및 펌웨어 버전에 대해 지원되는 펌웨어 및 ESXi 드라이버 버전"]
 

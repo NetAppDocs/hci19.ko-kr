@@ -373,6 +373,8 @@ homepage:
     links:
     - title: 제품 개요
       url: "/docs/concept_hci_product_overview.html"
+    - title: 지원되는 펌웨어 및 ESXi 드라이버 버전
+      url: docs/firmware_driver_versions.html
     - title: 릴리스 정보
       url: "/docs/rn_relatedrn.html"
     - title: 새로운 소식

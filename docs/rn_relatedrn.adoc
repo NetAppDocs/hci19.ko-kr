@@ -78,6 +78,7 @@ NOTE: NetApp Support 사이트 자격 증명을 사용하여 로그인하라는 
 * link:rn_compute_firmware_2.76.html["컴퓨팅 펌웨어 번들 2.76 릴리스 정보"]
 * link:rn_compute_firmware_2.27.html["컴퓨팅 펌웨어 번들 2.27 릴리스 정보"]
 * link:rn_firmware_12.2.109.html["컴퓨팅 펌웨어 번들 12.2.109 릴리스 정보"]
+* link:firmware_driver_versions.html["지원되는 펌웨어 및 ESXi 드라이버 버전"] _신규 _
 
 
 
@@ -89,4 +90,5 @@ NOTE: NetApp Support 사이트 자격 증명을 사용하여 로그인하라는 
 * link:rn_storage_firmware_2.76.html["스토리지 펌웨어 번들 2.76 릴리스 정보"]
 * link:rn_storage_firmware_2.27.html["스토리지 펌웨어 번들 2.27 릴리스 정보"]
 * link:rn_H610S_BMC_3.84.07.html["H610S BMC 3.84.07 릴리스 정보"]
+* link:firmware_driver_versions.html["지원되는 펌웨어 및 ESXi 드라이버 버전"] _신규 _
 
