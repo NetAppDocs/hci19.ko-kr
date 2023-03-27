@@ -24,7 +24,7 @@ Element 11.3 관리 노드 릴리즈부터 개별 서비스를 제공하는 새�
 
 [NOTE]
 ====
-* 관리 서비스 2.22.7에는 원격 플러그인이 포함된 VMware vCenter Server 5.0용 NetApp Element 플러그인이 포함되어 있습니다. Element 플러그인을 사용하는 경우, 로컬 플러그인 지원을 제거하는 VMware 지침을 준수하도록 버전 5.0으로 업그레이드해야 합니다. https://kb.vmware.com/s/article/87880["자세한 정보"^]. 플러그인을 사용하지 않는 경우 선택적 업그레이드입니다.
+* 관리 서비스 2.22.7에는 원격 플러그인이 포함된 vCenter Server 5.0용 Element 플러그인이 포함되어 있습니다. Element 플러그인을 사용하는 경우 관리 서비스 2.22.7 이상으로 업그레이드하여 로컬 플러그인 지원을 제거하는 VMware 지침을 준수해야 합니다. https://kb.vmware.com/s/article/87880["자세한 정보"^].
 * 주요 서비스, 새로운 기능, 버그 수정 사항 및 각 서비스 번들에 대한 대안을 설명하는 최신 관리 서비스 릴리즈 노트는 를 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Management_services_for_Element_Software_and_NetApp_HCI/Management_Services_Release_Notes["관리 서비스 릴리즈 노트"^]
 
 
@@ -41,10 +41,6 @@ https://<ManagementNodeIP>
 . NetApp 하이브리드 클라우드 제어에 스토리지 클러스터 관리자 자격 증명을 제공하여 로그인하십시오.
 . 인터페이스의 오른쪽 상단 근처에 있는 * Upgrade * 를 선택합니다.
 . EULA가 나타납니다. 아래로 스크롤하여 * 현재 업데이트 및 향후 모든 업데이트에 동의함 * 을 선택하고 * 저장 * 을 선택합니다.
-+
-
-NOTE: EULA에 동의하면 향후 모든 업데이트에 대해 기록되고 자동 다운로드 기능이 활성화됩니다. NetApp 소프트웨어 업데이트 및 업그레이드 관련 업데이트는 고유 권한으로 설치할 수 있습니다. NetApp 온라인 소프트웨어 저장소에 대한 네트워크 연결을 비활성화하여 자동 다운로드 기능을 비활성화할 수 있습니다.
-
 
 
 .업데이트 옵션
@@ -52,7 +48,6 @@ NetApp 하이브리드 클라우드 제어 UI 또는 관리 노드 REST API를 �
 
 * <<하이브리드 클라우드 제어를 사용하여 관리 서비스를 업데이트합니다>> (권장 방법)
 * <<관리 노드 API를 사용하여 관리 서비스를 업데이트합니다>>
-* <<다크 사이트에 대한 관리 노드 API를 사용하여 관리 서비스를 업데이트합니다>>
 
 
 
@@ -89,86 +84,19 @@ https://<ManagementNodeIP>
 . NetApp 하이브리드 클라우드 제어에 스토리지 클러스터 관리자 자격 증명을 제공하여 로그인하십시오.
 . 인터페이스의 오른쪽 상단 근처에 있는 * Upgrade * 를 선택합니다.
 . 업그레이드 페이지에서 * 관리 서비스 * 탭을 선택합니다.
-+
-관리 서비스 탭에는 관리 서비스 소프트웨어의 현재 버전과 사용 가능한 버전이 표시됩니다.
-
-+
-
-NOTE: 설치가 인터넷에 액세스할 수 없는 경우 현재 소프트웨어 버전만 표시됩니다. 외부 연결이 있지만 NetApp HCI이 NetApp 온라인 리포지토리에 액세스할 수 없는 경우 을(를) 확인합니다 link:task_mnode_configure_proxy_server.html["프록시 구성"^].
-
-. 설치가 인터넷에 액세스할 수 있고 관리 서비스 업그레이드를 사용할 수 있는 경우 * 업그레이드 시작 * 을 선택합니다.
-. 설치가 인터넷에 액세스할 수 없는 경우 다음을 수행합니다.
-+
-.. 페이지의 지침에 따라 관리 서비스 업그레이드 패키지를 다운로드하여 컴퓨터에 저장합니다.
-.. 저장한 패키지를 찾아 업로드하려면 * 찾아보기 * 를 선택합니다.
+. 페이지의 지침에 따라 관리 서비스 업그레이드 패키지를 다운로드하여 컴퓨터에 저장합니다.
+. 저장한 패키지를 찾아 업로드하려면 * 찾아보기 * 를 선택합니다.
 +
 패키지를 업로드하면 업그레이드가 자동으로 시작됩니다.
 
-
-
-
-
++
 업그레이드가 시작되면 이 페이지에서 업그레이드 상태를 확인할 수 있습니다. 업그레이드 중에 NetApp 하이브리드 클라우드 컨트롤과 연결이 끊어지고 업그레이드 결과를 보려면 다시 로그인해야 할 수 있습니다.
 
 
 
+
+
 == 관리 노드 API를 사용하여 관리 서비스를 업데이트합니다
-
-사용자는 NetApp 하이브리드 클라우드 제어에서 관리 서비스 업데이트를 수행하는 것이 이상적입니다. 그러나 관리 노드의 REST API UI를 사용하여 관리 서비스를 수동으로 업데이트할 수 있습니다.
-
-.시작하기 전에
-* 관리 노드 11.3 이상을 실행하고 있습니다.
-* 관리 서비스를 버전 2.16 이상으로 업데이트하고 관리 노드 11.3에서 11.8을 실행 중인 경우 관리 서비스를 업데이트하기 전에 관리 노드 VM의 RAM을 늘려야 합니다.
-+
-.. 관리 노드 VM의 전원을 끕니다.
-.. 관리 노드 VM의 RAM을 12GB에서 24GB RAM으로 변경합니다.
-.. 관리 노드 VM의 전원을 켭니다.
-
-
-* 클러스터 버전이 NetApp Element 소프트웨어 11.3 이상을 실행 중입니다.
-* 관리 서비스를 버전 2.1.326으로 업그레이드했습니다. NetApp 하이브리드 클라우드 제어 업그레이드는 이전 서비스 번들에서 사용할 수 없습니다.
-
-
-
-NOTE: 각 서비스 번들 버전에 대해 사용 가능한 서비스 목록은 를 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Management_services_for_Element_Software_and_NetApp_HCI/Management_Services_Release_Notes["관리 서비스 릴리스 정보"^].
-
-.단계
-. 관리 노드에서 REST API UI를 엽니다. 'https://<ManagementNodeIP>/mnode`
-. authorize * 를 선택하고 다음을 완료합니다.
-+
-.. 클러스터 사용자 이름 및 암호를 입력합니다.
-.. 값이 아직 채워지지 않은 경우 클라이언트 ID를 mnode-client로 입력합니다.
-.. 세션을 시작하려면 * authorize * 를 선택합니다.
-.. 창을 닫습니다.
-
-
-. (선택 사항) 사용 가능한 관리 노드 서비스 버전 확인: 'Get/services/Versions
-. (선택 사항) 최신 버전에 대한 자세한 내용은 'Get/services/Versions/Latest'를 참조하십시오
-. (선택 사항) 특정 버전에 대한 자세한 정보: 'get/services/versions/{version}/info'
-. 다음 관리 서비스 업데이트 옵션 중 하나를 수행합니다.
-+
-.. 이 명령을 실행하여 'put/services/update/latest' 관리 노드 서비스의 최신 버전으로 업데이트합니다
-.. 관리 노드 서비스의 특정 버전인 'PUT/SERVICES/UPDATE/{version}'로 업데이트하려면 이 명령을 실행합니다
-
-
-. 'Get/services/update/status'를 실행하여 업데이트 상태를 모니터링합니다.
-+
-성공적으로 업데이트하면 다음 예제와 유사한 결과가 반환됩니다.
-
-+
-[listing]
-----
-{
-"current_version": "2.10.29",
-"details": "Updated to version 2.14.60",
-"status": "success"
-}
-----
-
-
-
-
-== 다크 사이트에 대한 관리 노드 API를 사용하여 관리 서비스를 업데이트합니다
 
 사용자는 NetApp 하이브리드 클라우드 제어에서 관리 서비스 업데이트를 수행하는 것이 이상적입니다. 하지만 REST API를 사용하여 관리 서비스에 대한 서비스 번들 업데이트를 관리 노드에 수동으로 업로드, 추출 및 배포할 수 있습니다. 관리 노드의 REST API UI에서 각 명령을 실행할 수 있습니다.
 
@@ -182,7 +110,11 @@ NOTE: 각 서비스 번들 버전에 대해 사용 가능한 서비스 목록은
 
 
 * 클러스터 버전이 NetApp Element 소프트웨어 11.3 이상을 실행 중입니다.
-* 에서 서비스 번들 업데이트를 다운로드했습니다 https://mysupport.netapp.com/site/products/all/details/mgmtservices/downloads-tab["NetApp Support 사이트"^] 어두운 곳에서 사용할 수 있는 장치.
+* 관리 서비스를 버전 2.1.326으로 업그레이드했습니다. NetApp 하이브리드 클라우드 제어 업그레이드는 이전 서비스 번들에서 사용할 수 없습니다.
++
+
+NOTE: 각 서비스 번들 버전에 대해 사용 가능한 서비스 목록은 를 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Management_services_for_Element_Software_and_NetApp_HCI/Management_Services_Release_Notes["관리 서비스 릴리스 정보"^].
+
 
 
 .단계
