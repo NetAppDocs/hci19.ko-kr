@@ -32,6 +32,11 @@ Element 소프트웨어 버전 11.3 이상을 실행하는 클러스터의 경�
 * link:task_mnode_access_ui.html["관리 노드(UI 또는 REST API)에 액세스"]
 
 
+기본 SSL 인증서 변경:
+
+* link:reference_change_mnode_default_ssl_certificate.html["관리 노드의 기본 SSL 인증서를 변경합니다"]
+
+
 관리 노드 UI로 작업 수행:
 
 * link:task_mnode_work_overview_UI.html["관리 노드 UI 개요"]
