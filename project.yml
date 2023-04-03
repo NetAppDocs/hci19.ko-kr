@@ -194,7 +194,7 @@ sidebar:
       - title: 관리 노드에 액세스합니다
         url: "/docs/task_mnode_access_ui.html"
       - title: 관리 노드의 기본 SSL 인증서를 변경합니다
-        url: "/mnode/reference_change_mnode_default_ssl_certificate.html"
+        url: "/docs/reference_change_mnode_default_ssl_certificate.html"
       - title: 관리 노드 UI를 사용합니다
         entries:
         - title: 관리 노드 UI 개요
