@@ -36,4 +36,4 @@ NOTE: 사용자 지정 보호 도메인을 사용하는 경우 어떤 노드도 
 
 == 자세한 내용을 확인하십시오
 
-link:api/index.html["Element API를 사용하여 스토리지를 관리합니다"]
+https://docs.netapp.com/us-en/element-software/api/index.html["Element API를 사용하여 스토리지를 관리합니다"^]

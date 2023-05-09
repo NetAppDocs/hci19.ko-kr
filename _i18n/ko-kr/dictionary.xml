@@ -685,8 +685,6 @@
   <block id="85dcef363aee58216fb5391e1fe35922" category="list-text"><block ref="85dcef363aee58216fb5391e1fe35922" category="inline-link-rx"></block></block>
   <block id="da3eb0bd8c882a21931739ac39ce915a" category="inline-link">vCenter Server용 NetApp Element 플러그인 설명서</block>
   <block id="412377cf78b07a27c835e112fdfa7507" category="list-text"><block ref="412377cf78b07a27c835e112fdfa7507" category="inline-link-rx"></block></block>
-  <block id="1f9e8829ba3f07efa25b77f1eb0d6c07" category="inline-link">NetApp 구성 어드바이저</block>
-  <block id="d1ba909955f7a2392ac07c215865424a" category="list-text"><block ref="8eb8242e05dec3c7873bd909a6d9def7" category="inline-link-rx"></block> 5.8.1 이상의 네트워크 유효성 검사 도구</block>
   <block id="642b57ae61fbf875dba06df638def96a" category="inline-link">NetApp SolidFire Active IQ 문서</block>
   <block id="158f6a1d36f1b909e5a2856681ce6f42" category="summary">REST API UI에서 관리 서비스에 API를 사용하려면 먼저 권한을 부여해야 합니다.</block>
   <block id="223b5bfc7fd9ecabdd773228e6069bdd" category="doc">REST API 사용 인증 획득</block>
@@ -1273,7 +1271,6 @@
   <block id="a4da6a7298a51c03437fe8215d4cd7dc" category="admonition">관리 서비스와 연결된 영구 볼륨은 설치 또는 업그레이드 중에 새 계정에 할당됩니다. 영구 볼륨을 사용하는 경우 볼륨이나 연결된 계정을 수정하거나 삭제하지 마십시오. 이러한 계정을 삭제하면 관리 노드를 사용할 수 없게 될 수 있습니다.</block>
   <block id="b12641981b1007fecfaf498bd16ae5d5" category="list-text">테이블의 * Actions * 열에서 계정 메뉴를 확장하고 * Delete * 를 선택합니다.</block>
   <block id="1326a41ad4b26f3395b0f54dd9172b2b" category="inline-link-macro">어카운트에 대해 알아보십시오</block>
-  <block id="469d7f183f29ad292b8937af8903b1dc" category="list-text"><block ref="469d7f183f29ad292b8937af8903b1dc" category="inline-link-macro-rx"></block></block>
   <block id="7e5784de66821e5068bc24c9a5c6d1d6" category="inline-link">사용자 계정 작업</block>
   <block id="9197cc48c8ddd2d400f10cc220189fb2" category="list-text"><block ref="9197cc48c8ddd2d400f10cc220189fb2" category="inline-link-rx"></block></block>
   <block id="5fdb538f00d44b4e663cc26d707fee0d" category="doc">컴퓨팅 펌웨어 번들 2.76.10 릴리스 정보</block>
@@ -1719,7 +1716,6 @@
   <block id="eddbea64540d3f03b2661d8ecd4ac2a7" category="list-text">SetProtectionDomainLayout - 사용자 지정 보호 도메인을 각 노드에 할당할 수 있습니다.</block>
   <block id="03540783615c6f29364ad461ea3aa641" category="paragraph">맞춤형 보호 도메인 사용에 대한 자세한 내용은 NetApp 지원에 문의하십시오.</block>
   <block id="afc48abd77915d4342bb6d52750ca477" category="inline-link-macro">Element API를 사용하여 스토리지를 관리합니다</block>
-  <block id="8e078db9f02bd406ca631ba2825dd629" category="paragraph"><block ref="8e078db9f02bd406ca631ba2825dd629" category="inline-link-macro-rx"></block></block>
   <block id="599e1a6809dc1d900ef010f35876e742" category="summary">NetApp HCI용 VMware 구성 요소를 업그레이드하고 vCenter 플러그인을 다시 설치하는 추가 단계를 수행할 수 있습니다.</block>
   <block id="7c77d1cd8cf59e7967bc28ab7e2b5510" category="doc">vCenter Server용 Element 플러그인을 사용하여 NetApp HCI 시스템용 vSphere 구성 요소를 업그레이드합니다</block>
   <block id="1dde7381a082a94c2b207b46bd2bcf27" category="paragraph">NetApp HCI 설치의 VMware vSphere 구성 요소를 업그레이드할 때 vCenter Server용 Element 플러그인에 대해 수행해야 하는 몇 가지 추가 단계가 있습니다.</block>
@@ -3613,7 +3609,6 @@
   <block id="5a5285cbae65a3a4e6d2325887861e01" category="inline-link-macro">Ansible을 사용하여 컴퓨팅 펌웨어 업그레이드를 자동화하십시오</block>
   <block id="7cb9171d2e41fd487907a91fb38fae31" category="list-text"><block ref="9c1d2a43cd65a3c0eacb2a0469676bce" category="inline-link-macro-rx"></block> 또는 <block ref="ea7bc6be827f510faa492af963f76183" category="inline-link-macro-rx"></block>.</block>
   <block id="0c44c4e22a7e5a446ab9db51be083194" category="inline-link">NetApp SolidFire All-Flash 스토리지 시스템을 업그레이드하십시오</block>
-  <block id="0a9bb27e26601025f1f2f83ed531e6f2" category="list-text"><block ref="0a9bb27e26601025f1f2f83ed531e6f2" category="inline-link-rx"></block></block>
   <block id="65e6adcff1000b03a078e05d54c700f1" category="summary">NetApp HCI 구축 후 Rancher를 통한 모니터링 구성 방법에 대해 알아보십시오.</block>
   <block id="729e3399d869de5540bc06d71a6bcf81" category="doc">모니터링을 활성화합니다</block>
   <block id="aad6cd40798f943aaf25e268a77af03c" category="paragraph">NetApp HCI에 Rancher를 구축한 후 설치 또는 업그레이드 중에 NetApp HCI 스토리지 모니터링(SolidFire All-Flash 스토리지 및 NetApp HCI용) 및 NetApp HCI 컴퓨팅 모니터링(Active IQ 전용)을 아직 설정하지 않은 경우 설정할 수 있습니다.</block>
@@ -3709,7 +3704,6 @@
   <block id="6f5983880dad4e85e696acaacf3a185b" category="paragraph">설치 또는 업그레이드 중에 활성화된 영구 볼륨 기능은 할당된 클러스터의 이름에 NetApp-HCI 사전 할당 기능을 사용하여 여러 볼륨을 자동으로 생성합니다. 이러한 볼륨은 Element 소프트웨어 기반 볼륨과 마찬가지로 기본 설정 및 설치에 따라 Element 소프트웨어 웹 UI, vCenter Server용 NetApp Element 플러그인 또는 API를 사용하여 볼 수 있습니다. 복구에 사용할 수 있는 현재 구성 데이터를 유지하려면 관리 노드에 대한 iSCSI 연결을 통해 영구 볼륨이 가동되어 실행 중이어야 합니다.</block>
   <block id="055a5661c230e542ad2a37a3d951d4fd" category="admonition">설치 또는 업그레이드 중에 관리 서비스와 연결된 영구 볼륨이 생성되고 새 계정에 할당됩니다. 영구 볼륨을 사용하는 경우 볼륨이나 연결된 계정을 수정하거나 삭제하지 마십시오</block>
   <block id="e2439a8512b353f75391ba9c346bc84d" category="inline-link-macro">볼륨 관리</block>
-  <block id="9e69e35241eb196e84b4b8c5230c84b9" category="list-text"><block ref="9e69e35241eb196e84b4b8c5230c84b9" category="inline-link-macro-rx"></block></block>
   <block id="4dd2a5a1a2b6e0460ab3348dd584d1ea" category="doc">NetApp HCI 스토리지 리소스를 확장합니다</block>
   <block id="9fbc65e3085421d946ed1df665334512" category="admonition">스토리지 리소스를 확장할 때 최상의 안정성을 위해 모든 섀시에 걸쳐 스토리지 용량이 균등하게 분산되어야 합니다.</block>
   <block id="1ca31be899446d53a6c18003ad9bb98c" category="list-text">시작 * 페이지에서 * 아니요 * 를 클릭하고 * 계속 * 을 클릭합니다.</block>
@@ -4586,7 +4580,6 @@
   <block id="091d9ffd182526624821c249c3335c90" category="list-text"><block ref="091d9ffd182526624821c249c3335c90" category="inline-link-macro-rx"></block></block>
   <block id="c9676e9b030c94e7e828a060b343f3db" category="list-text"><block ref="c9676e9b030c94e7e828a060b343f3db" category="inline-link-macro-rx"></block></block>
   <block id="b8ce529cfc2b9255a783e211ddb57996" category="list-text"><block ref="b8ce529cfc2b9255a783e211ddb57996" category="inline-link-macro-rx"></block></block>
-  <block id="d422fe7cf0f32ce6c7b8426538c06795" category="list-text"><block ref="d422fe7cf0f32ce6c7b8426538c06795" category="inline-link-macro-rx"></block></block>
   <block id="0b9f382bf593a3a25e5173264b3e45f0" category="summary">NetApp 하이브리드 클라우드 제어에서 REST API UI를 사용하여 여러 vCenter를 사용하도록 구성할 수 있습니다.</block>
   <block id="28315137d10bfda5aa6175d449b196cb" category="paragraph">NetApp 하이브리드 클라우드 제어를 구성하여 Linked Mode를 사용하지 않는 둘 이상의 vCenter에서 자산을 관리할 수 있습니다.</block>
   <block id="0b48980124c47b4e4a60e939d9298e9d" category="paragraph">초기 설치 후 최근에 확장된 설치를 위해 자산을 추가해야 하거나 새 자산이 구성에 자동으로 추가되지 않은 경우 이 프로세스를 사용해야 합니다. 이러한 API를 사용하여 최근 설치에 추가된 자산을 추가하십시오.</block>
@@ -6174,7 +6167,6 @@
   <block id="67a13cf9dcb3321b59f28def3726ce13" category="list-text"><block ref="67a13cf9dcb3321b59f28def3726ce13" category="inline-link-macro-rx"></block></block>
   <block id="3e15463df093d30427e71f517fbcb0b0" category="paragraph">vCenter Server 4.x용 Element 플러그인을 사용하면 VMware vCenter Server 7.0 Update 3으로 업그레이드할 때 플러그인 4.x를 배포하지 못합니다. Spring Framework 4를 사용하여 이 문제를 해결하려면 을 참조하십시오<block ref="770c119932f7fa962a47dc0795db1af6" category="inline-link-rx"></block>.</block>
   <block id="9b50fd8de96fcf38bc35a026df14fbc4" category="paragraph">VMware vCenter Server용 NetApp Element 플러그인이 등록된 기존 vSphere 환경의 경우 플러그인 서비스가 포함된 관리 서비스 패키지를 먼저 업데이트한 후 플러그인 등록을 업데이트할 수 있습니다.</block>
-  <block id="56f4bca23bb3dd45148dc7171511b7e5" category="paragraph">이 업그레이드 절차에서는 다음 업그레이드 시나리오에 대해 설명합니다.</block>
   <block id="04e630ae5e9700f09b6ca3715246283d" category="open-title">vCenter 5.0 이상용 Element 플러그인</block>
   <block id="61517793d4523320c7cd75e303ad36ff" category="list-text">8.0 또는 7.0 HTML5 vSphere Web Client로 업그레이드하는 중입니다.</block>
   <block id="787e0e54cc17d9dd6bbd7cf4c4fbc14d" category="admonition">vCenter 5.0 이상의 Element 플러그인은 vCenter Server 6.7 및 6.5와 호환되지 않습니다.</block>
@@ -6536,4 +6528,12 @@
   <block id="e3b4df69e2fe4e8545e5e0240eada6a2" category="list-text"><block ref="e3b4df69e2fe4e8545e5e0240eada6a2" category="inline-link-rx"></block></block>
   <block id="631923a687ff82d68973d99b95597b47" category="inline-link">SolidFire 및 요소 리소스 페이지입니다</block>
   <block id="238c5b123e3473c57e2925edccb205c2" category="list-text"><block ref="238c5b123e3473c57e2925edccb205c2" category="inline-link-rx"></block></block>
+  <block id="bc2a79198b157bed1c1eaa43da985e00" category="cell">* 컴퓨팅 펌웨어 번들 2.174.0 *</block>
+  <block id="def5f641ad1584ffe19a578902c863ee" category="cell">2023년 4월 12일</block>
+  <block id="0b67b64b71fa04f23305e691b81ba252" category="cell">07.02.00</block>
+  <block id="ba3433b658d56109d8826f49ee0a8064" category="list-text"><block ref="ba3433b658d56109d8826f49ee0a8064" category="inline-link-rx"></block></block>
+  <block id="d5147898f653b5500d1ba07c4204c743" category="list-text"><block ref="9d6606ad3ff5278801234da0e6746362" category="inline-link-rx"></block> 5.8.1 이상의 네트워크 유효성 검사 도구</block>
+  <block id="c411aac8cf32395c454762934e85315b" category="list-text"><block ref="c411aac8cf32395c454762934e85315b" category="inline-link-macro-rx"></block></block>
+  <block id="3f8636b2ed4be15cc908d52557ffc327" category="list-text"><block ref="3f8636b2ed4be15cc908d52557ffc327" category="inline-link-macro-rx"></block></block>
+  <block id="78997922bf48b612914b49bc22e40752" category="paragraph"><block ref="78997922bf48b612914b49bc22e40752" category="inline-link-rx"></block></block>
 </blocks>

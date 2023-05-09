@@ -79,5 +79,5 @@ NOTE: 스토리지 클러스터에서 Element 소프트웨어를 업그레이드
 
 * https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
 * https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
-* https://docs.netapp.com/us-en/element-software/upgrade/task_sf_upgrade_all.html["NetApp SolidFire All-Flash 스토리지 시스템을 업그레이드하십시오"^]
+* https://docs.netapp.com/us-en/element-software/upgrade/concept_element_upgrade_overview.html["NetApp SolidFire All-Flash 스토리지 시스템을 업그레이드하십시오"^]
 

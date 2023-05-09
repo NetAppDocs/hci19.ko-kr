@@ -37,7 +37,7 @@ NOTE: 설치 또는 업그레이드 중에 관리 서비스와 연결된 영구 
 
 == 자세한 내용을 확인하십시오
 
-* link:hci_task_manage_vol_management.html["볼륨 관리"]
+* link:task_hcc_manage_vol_management.html["볼륨 관리"]
 * https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
 * http://docs.netapp.com/sfe-122/index.jsp["SolidFire 및 Element 소프트웨어 설명서 센터"^]
 

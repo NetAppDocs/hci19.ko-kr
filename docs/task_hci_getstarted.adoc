@@ -278,6 +278,6 @@ NetApp Hybrid Cloud Control 인터페이스가 나타납니다.
 * link:../media/hseries-isi.pdf["NetApp HCI 설치 및 설정 지침"^]
 * https://www.netapp.com/us/media/tr-4820.pdf["TR-4820: NetApp HCI 네트워킹 빠른 계획 가이드"^]
 * https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인 설명서"^]
-* https://mysupport-beta.netapp.com/site/tools/tool-eula/5ddb829ebd393e00015179b2["NetApp 구성 어드바이저"^] 5.8.1 이상의 네트워크 유효성 검사 도구
+* https://mysupport.netapp.com/site/tools/tool-eula/5ddb829ebd393e00015179b2["NetApp 구성 어드바이저"^] 5.8.1 이상의 네트워크 유효성 검사 도구
 * https://docs.netapp.com/us-en/solidfire-active-iq/index.html["NetApp SolidFire Active IQ 문서"^]
 
