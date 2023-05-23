@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: docs/task_mnode_work_overview_UI.html 
-summary: '관리 노드 UI 사용 (https://<mNodeIP>:442)[], 네트워크 및 클러스터 설정을 변경하거나, 시스템 테스트를 실행하거나, 시스템 유틸리티를 사용할 수 있습니다.' 
+summary: 관리 노드 UI 사용 , 네트워크 및 클러스터 설정을 변경하거나, 시스템 테스트를 실행하거나, 시스템 유틸리티를 사용할 수 있습니다. 
 keywords: 'netapp, management node ui, mnode ui, :442, element' 
 ---
 = 관리 노드 UI 개요
