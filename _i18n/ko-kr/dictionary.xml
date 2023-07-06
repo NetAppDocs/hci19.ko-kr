@@ -2333,7 +2333,6 @@
 <block ref="85d7ff8f1e3fd6efa440dcd74d3d3e02" category="inline-xref-macro-rx"></block>
 <block ref="74302f10271a48c9df46742d43d08db8" category="inline-xref-macro-rx"></block></block>
   <block id="d7f6ba0367c50b236e879580284dfabe" category="section-title">노드 교체를 준비합니다</block>
-  <block id="15e52a108fb327eeb4e05584634031a8" category="paragraph">노드를 교체하기 전에 노드에서 호스팅되는 VM(가상 머신)을 사용 가능한 호스트로 마이그레이션하고 클러스터에서 노드를 제거해야 합니다. 일련 번호 및 네트워킹 정보와 같은 노드에 대한 세부 정보를 확인해야 합니다.</block>
   <block id="597e3a12fc6d68edf2363fc3a1d9ff06" category="admonition">노드가 여전히 온라인 상태이고 작동 중인 상태에서 구성 요소 장애가 발생하는 경우(예: DIMM(Dual Inline Memory Module) 장애) 장애가 발생하면 장애가 발생한 노드를 제거하기 전에 클러스터에서 드라이브를 제거해야 합니다.</block>
   <block id="b3cead0e8121cac5eaa77199cb96bf4b" category="list-text">장애가 발생한 노드의 일련 번호를 기록해 둡니다. 다음 스크린샷은 예일 뿐입니다.</block>
   <block id="c52f4f387b86885b3321d0184a872a28" category="image-alt">에는 VMware vSphere Web Client에서 장애가 발생한 노드의 일련 번호가 나와 있습니다.</block>
@@ -6586,4 +6585,5 @@
   <block id="bc1db729f0157876d24fd3c55560294c" category="list-text">재검색이 완료되면 클러스터의 볼륨과 데이터 저장소가 새 컴퓨팅 노드(호스트)에 표시되는지 확인합니다.</block>
   <block id="f096b63658cb95d8f43a07e2d68c70b3" category="paragraph">vCenter 4.10 이전 버전용 Element Plug-in의 경우 클러스터에 노드(호스트)를 추가합니다.</block>
   <block id="fc4dbbaeabdf5700f373a65d12b45108" category="list-text">노드를 추가할 클러스터를 마우스 오른쪽 버튼으로 클릭하고 * 호스트 추가 * 를 선택합니다.</block>
+  <block id="a4b367d6a2f57fe52d770b2264b7d2d8" category="paragraph">노드를 교체하기 전에 노드에서 호스팅되는 VM(가상 머신)을 사용 가능한 호스트로 마이그레이션하고 클러스터에서 노드를 제거해야 합니다. 일련 번호 및 네트워킹 정보와 같은 노드에 대한 세부 정보를 기록해야 합니다. VM을 마이그레이션하고 노드 세부 정보를 기록하는 것은 노드가 여전히 온라인 상태이고 작동 중인 구성 요소 장애(예: DIMM(Dual Inline Memory Module) 장애)의 경우에도 적용됩니다.</block>
 </blocks>
