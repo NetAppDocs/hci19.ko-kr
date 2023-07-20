@@ -235,9 +235,6 @@ NOTE: 다음 표의 대시(*- *)는 특정 릴리스 차량에서 특정 하드�
 | 차량을 출고하십시오 | 릴리스 날짜 | NIC | 캐시 NVDIMM RMS200(RMS200) | 캐시 NVDIMM RMS200(RMS300) | 드라이브 삼성 PM863(SED) | Samsung PM863 구동(N-SED) | 드라이브 Toshiba Hawk-4(SED) | 드라이브 Toshiba Hawk-4(N-SED) | 드라이브 삼성 PM883(SED) 
 
 
-| * 스토리지 펌웨어 번들 2.164.0 * | 2022년 10월 20일 | 7.10.18 | ae3b8cc | 7d8422bc | GXT5404Q | GXT5103Q | 8ENP7101 | 8ENP6101)을 참조하십시오 | HXT7A04Q 
-
-
 | * 스토리지 펌웨어 번들 2.146.2 * | 2022년 2월 22일 | 7.10.18 | ae3b8cc | 7d8422bc | GXT5404Q | GXT5103Q | 8ENP7101 | 8ENP6101)을 참조하십시오 | HXT7A04Q 
 
 
