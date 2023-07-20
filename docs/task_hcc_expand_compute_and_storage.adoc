@@ -55,7 +55,11 @@ https://<ManagementNodeIP>
 +
 브라우저에서 NetApp 배포 엔진이 열립니다.
 
-. NetApp HCI 스토리지 클러스터 관리자 자격 증명을 제공하여 NetApp Deployment Engine에 로그인합니다.
+. 로컬 NetApp HCI 스토리지 클러스터 관리자 자격 증명을 제공하여 NetApp 배포 엔진에 로그인합니다.
++
+
+NOTE: Lightweight Directory Access Protocol 자격 증명을 사용하여 로그인할 수 없습니다.
+
 . 시작 * 페이지에서 * 예 * 를 클릭하고 * 계속 * 을 클릭합니다.
 . 최종 사용자 라이센스 * 페이지에서 VMware 최종 사용자 라이센스 계약을 읽고 * 동의함 * 을 클릭하여 약관에 동의하고 * 계속 * 을 클릭합니다.
 . vCenter * 페이지에서 다음 단계를 완료합니다.

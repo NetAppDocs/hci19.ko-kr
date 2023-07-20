@@ -157,7 +157,11 @@ https://<ManagementNodeIP>/manager/login
 ----
 . NetApp 하이브리드 클라우드 제어에 NetApp HCI 스토리지 클러스터 관리자 자격 증명을 제공하여 로그인하십시오.
 . Expand Installation(설치 확장) 창에서 * Expand *(확장 *)를 선택합니다.
-. NetApp HCI 스토리지 클러스터 관리자 자격 증명을 제공하여 NetApp Deployment Engine에 로그인합니다.
+. 로컬 NetApp HCI 스토리지 클러스터 관리자 자격 증명을 제공하여 NetApp 배포 엔진에 로그인합니다.
++
+
+NOTE: Lightweight Directory Access Protocol 자격 증명을 사용하여 로그인할 수 없습니다.
+
 . 시작 페이지에서 * 아니요 * 를 선택합니다.
 . Continue * 를 선택합니다.
 . 사용 가능한 인벤토리 페이지에서 기존 NetApp HCI 설치에 추가할 스토리지 노드를 선택합니다.
@@ -193,7 +197,11 @@ NetApp HCI 설치에서 버전 1.4P2, 1.4 또는 1.3을 실행하는 경우 NetA
 
 .단계
 . 기존 스토리지 노드 중 하나의 관리 IP 주소('http://<storage_node_management_IP_address>/` 찾습니다
-. NetApp HCI 스토리지 클러스터 관리자 자격 증명을 제공하여 NetApp Deployment Engine에 로그인합니다.
+. 로컬 NetApp HCI 스토리지 클러스터 관리자 자격 증명을 제공하여 NetApp 배포 엔진에 로그인합니다.
++
+
+NOTE: Lightweight Directory Access Protocol 자격 증명을 사용하여 로그인할 수 없습니다.
+
 . 설치 확장 * 을 선택합니다.
 . 시작 페이지에서 * 아니요 * 를 선택합니다.
 . 계속 * 을 클릭합니다.

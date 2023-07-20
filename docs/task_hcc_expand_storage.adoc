@@ -49,7 +49,11 @@ https://<ManagementNodeIP>
 +
 브라우저에서 NetApp 배포 엔진이 열립니다.
 
-. NetApp HCI 스토리지 클러스터 관리자 자격 증명을 제공하여 NetApp Deployment Engine에 로그인합니다.
+. 로컬 NetApp HCI 스토리지 클러스터 관리자 자격 증명을 제공하여 NetApp 배포 엔진에 로그인합니다.
++
+
+NOTE: Lightweight Directory Access Protocol 자격 증명을 사용하여 로그인할 수 없습니다.
+
 . 시작 * 페이지에서 * 아니요 * 를 클릭하고 * 계속 * 을 클릭합니다.
 . Available Inventory * 페이지에서 추가할 스토리지 노드를 선택하고 * Continue * 를 클릭합니다.
 . 네트워크 설정 * 페이지에서 일부 네트워크 정보가 초기 배포에서 감지되었습니다. 각 새 스토리지 노드는 일련 번호별로 나열되며 새 네트워크 정보를 할당해야 합니다. 각 새 스토리지 노드에 대해 다음 단계를 완료합니다.

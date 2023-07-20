@@ -17,6 +17,16 @@ summary: NetApp HCI 및 NetApp Element 소프트웨어에서 지원되는 펌웨
 [role="lead"]
 NetApp HCI 스토리지 노드의 NetApp HCI 및 펌웨어 버전에 대해 지원되는 펌웨어 및 ESXi 드라이버 버전.
 
-link:fw_storage_nodes.html["스토리지 노드"]* H610S * H410S
+link:fw_storage_nodes.html["스토리지 노드"]
 
-link:fw_compute_nodes.html["컴퓨팅 노드"]* H615C * H610C * H410C * H300E/H500E/H700E
+* H610S
+* H410S
+
+
+link:fw_compute_nodes.html["컴퓨팅 노드"]
+
+* H615C
+* H610C
+* H410C
+* H300E/H500E/H700E
+
