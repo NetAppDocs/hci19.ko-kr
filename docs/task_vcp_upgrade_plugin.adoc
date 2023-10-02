@@ -27,12 +27,12 @@ NOTE: 관리 서비스 2.22.7에는 원격 플러그인이 포함된 vCenter Ser
 --
 이 업그레이드 절차에서는 다음 업그레이드 시나리오에 대해 설명합니다.
 
-* vCenter Server 5.1 또는 5.0용 Element 플러그인으로 업그레이드하려고 합니다.
+* vCenter Server 5.2, 5.1 또는 5.0용 Element 플러그인으로 업그레이드하려고 합니다.
 * 8.0 또는 7.0 HTML5 vSphere Web Client로 업그레이드하는 중입니다.
 
 
 
-IMPORTANT: vCenter 5.0 이상의 Element 플러그인은 vCenter Server 6.7 및 6.5와 호환되지 않습니다.
+IMPORTANT: vCenter 5.0 이상용 Element 플러그인은 vCenter Server 6.7 및 6.5와 호환되지 않습니다.
 
 
 NOTE: Element Plug-in for vCenter Server 4.x에서 5.x로 업그레이드하면 vCenter 인스턴스에서 원격 플러그인으로 데이터를 복사할 수 없기 때문에 플러그인으로 이미 구성된 클러스터가 손실됩니다. 원격 플러그인에 클러스터를 다시 추가해야 합니다. 이 작업은 로컬 플러그인에서 원격 플러그인으로 업그레이드할 때 한 번 수행하는 작업입니다.
@@ -138,11 +138,11 @@ NOTE: 이 작업을 수행하면 새 데이터베이스가 생성되고 vSphere 
 +
 ** vCenter Server 5.0용 Element 플러그인부터 NetApp Element 원격 플러그인 확장 지점이 나타납니다.
 +
-image::vcp_remote_plugin_icons_home_page.png[에는 Element Plug-in 5.0 이상의 업그레이드 또는 설치 후 플러그인 확장 지점이 나와 있습니다]
+image::vcp_remote_plugin_icons_home_page.png[에서는 Element Plug-in 5.0 이상을 위한 업그레이드 또는 설치 후 플러그인 확장 지점을 보여 줍니다]
 
 ** vCenter Server 4.10 이전 버전용 Element Plug-in의 경우 NetApp Element 구성 및 관리 확장 지점이 나타납니다.
 +
-image::vcp_shortcuts_page_accessing_plugin.png[에는 Element Plug-in 4.10 이전 버전에 대한 업그레이드 또는 설치 성공 후의 플러그인 확장 지점이 나와 있습니다]
+image::vcp_shortcuts_page_accessing_plugin.png[에는 Element Plug-in 4.10 이하 버전에 대한 업그레이드 또는 설치 후 플러그인 확장 지점이 나와 있습니다]
 
 +
 [NOTE]
@@ -161,7 +161,7 @@ VMware vCenter Server 6.7U1을 사용하여 vCenter Server 4.8 이상용 NetApp 
 +
 [listing]
 ----
-NetApp Element Plug-in Version: 5.1
+NetApp Element Plug-in Version: 5.2
 NetApp Element Plug-in Build Number: 12
 ----
 
