@@ -4,7 +4,7 @@ permalink: docs/task_nde_disable_lacp_individual.html
 summary: 'NetApp HCI를 구축한 후 구성된 스위치에서 "LACP-Individual" 명령을 비활성화하는 방법에 대해 알아보십시오.' 
 keywords: netapp, hci, deployment, review, deploy 
 ---
-= 구성된 스위치에서 LACP-Individual 명령을 비활성화합니다
+= 구성된 스위치에서 "LACP-Individual" 명령을 비활성화합니다
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
