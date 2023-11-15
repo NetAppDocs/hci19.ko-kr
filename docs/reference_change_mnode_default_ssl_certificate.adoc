@@ -37,6 +37,6 @@ NetApp Element API를 사용하여 관리 노드의 기본 SSL 인증서 및 개
 
 * https://docs.netapp.com/us-en/element-software/storage/reference_post_deploy_change_default_ssl_certificate.html["Element 소프트웨어 기본 SSL 인증서를 변경합니다"^]
 * https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Element_Software/What_are_the_requirements_around_setting_custom_SSL_certificates_in_Element_Software%3F["Element 소프트웨어에서 사용자 정의 SSL 인증서를 설정하는 데 필요한 요구 사항은 무엇입니까?"^]
-* https://www.netapp.com/data-storage/solidfire/documentation["SolidFire 및 요소 리소스 페이지입니다"^]
+* https://docs.netapp.com/us-en/element-software/index.html["SolidFire 및 Element 소프트웨어 설명서"^]
 * https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
 

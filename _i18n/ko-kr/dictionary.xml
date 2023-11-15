@@ -1377,16 +1377,7 @@
   <block id="0d5228cf80832928fe934652a94cdf4f" category="paragraph">VMware vSphere Web Client의 알람은 노드에 장애가 발생할 경우 사용자에게 경고합니다. VMware vSphere Web Client에서 장애가 발생한 노드의 일련 번호와 노드 뒷면의 스티커에 있는 일련 번호가 일치해야 합니다.</block>
   <block id="51345fe1ab5e7f7efb63a32d183cdda9" category="paragraph">H410C 컴퓨팅 노드를 교체할 때 다음 사항을 고려하십시오.</block>
   <block id="5d6b6b077cfdeafcbe028bddcb655d4d" category="list-text">H410C 컴퓨팅 노드는 고전압(200~240VAC)에서만 작동합니다. H410C 노드를 기존 NetApp HCI 시스템에 추가할 때 전원 요구 사항이 충족되는지 확인해야 합니다.</block>
-  <block id="9726e8dc43a3741dbccc204feb2a9dda" category="paragraph">다음은 이 절차의 단계에 대한 개괄적인 개요입니다.<block ref="417a9ef94ddd6fb6079bf181e8da50c6" category="inline-xref-macro-rx"></block>
-<block ref="450dee795ede92f968238358045ee72c" category="inline-xref-macro-rx"></block>
-<block ref="302025b37ed9a655d26cb02c1523b2a4" category="inline-xref-macro-rx"></block>
-<block ref="133c0f35bcfb7bec627508ed13eaf913" category="inline-xref-macro-rx"></block>
-<block ref="3e9667909114056c0816cabcad3091ec" category="inline-xref-macro-rx"></block></block>
   <block id="cd4a531fb438950b1b12718c24e3a003" category="inline-link-macro">Witness 노드를 제거하여 컴퓨팅 리소스를 확보합니다</block>
-  <block id="693ac156676e30f319b9cd3e020727f7" category="paragraph">다음은 시스템에 적용되는 특정 조건이 있는 경우 수행해야 할 몇 가지 추가 작업입니다.<block ref="6f2e0dd9461f023001b32f634a66ca39" category="inline-link-macro-rx"></block>
-<block ref="96458e97c135f9cdca1845fd2743e79f" category="inline-xref-macro-rx"></block>
-<block ref="d095c71c5d51f56f74c0c624a25acdfc" category="inline-xref-macro-rx"></block></block>
-  <block id="bdf21dc543b5ab0b0d4037a3b86f500e" category="section-title">컴퓨팅 노드 교체를 준비합니다</block>
   <block id="49de3917417cb7a9d4c88a097084490f" category="paragraph">노드에서 호스팅되는 가상 머신(VM)을 사용 가능한 호스트로 마이그레이션하고 클러스터에서 장애가 발생한 노드를 제거해야 합니다. 일련 번호 및 네트워킹 정보와 같이 오류가 발생한 노드에 대한 세부 정보를 확인해야 합니다.</block>
   <block id="d8d7c90a9eba54aa51121a64132d7c53" category="list-text">VMware vSphere Web Client에서 사용 가능한 다른 호스트로 VM을 마이그레이션하는 단계를 수행합니다.</block>
   <block id="e2477b6b77307705f07f9d4a9bce00f5" category="admonition">마이그레이션 단계는 VMware 설명서를 참조하십시오.</block>
@@ -1402,7 +1393,6 @@
   <block id="030be96a2580787247ec3061b2771b9c" category="list-text">노드를 마우스 오른쪽 버튼으로 클릭하고 * 재고에서 제거 * 를 선택합니다.</block>
   <block id="99795f9ed04c0bb6ca3b66f13bde3f1d" category="list-text">장애가 발생한 노드의 일련 번호인 노드 0 일련 번호를 확인합니다. 이렇게 하면 노드 뒷면의 스티커에 있는 일련 번호와 기록한 일련 번호를 일치시켜 섀시의 노드를 식별하는 데 도움이 됩니다.</block>
   <block id="7a323f53d4e64c45f636ac4a7040e243" category="list-text">장애가 발생한 노드를 선택한 상태에서 * 관리 &gt; 네트워킹 &gt; VMkernel 어댑터 * 를 선택하고 나열된 4개의 IP 주소를 복사합니다. VMware ESXi에서 초기 네트워크 구성 단계를 수행할 때 이 정보를 다시 사용할 수 있습니다.</block>
-  <block id="c4aee125828819cff98e36e2ce8cb1a1" category="section-title">섀시에서 컴퓨팅 노드를 교체합니다</block>
   <block id="cf9dd3afde945016d53ec0a6ee2b2237" category="paragraph">클러스터에서 장애가 발생한 노드를 제거한 후 섀시에서 노드를 제거하고 교체 노드를 설치할 수 있습니다.</block>
   <block id="a48a58fb7b047fe3c92a6b8ef8c8b880" category="admonition">이 단계를 수행하기 전에 정전기 방지 보호 장치가 있는지 확인하십시오.</block>
   <block id="a300fbfd884ff458fb7de4f74e2cc07c" category="list-text">정전기 방지 보호 장치를 놓습니다.</block>
@@ -1422,7 +1412,6 @@
   <block id="3913668fe99dfd5c0efac354d1dd57e7" category="list-text">원래 연결을 끊은 포트에 케이블을 다시 연결합니다. 케이블을 분리할 때 케이블에 부착된 라벨은 도움이 됩니다.</block>
   <block id="2425222ca6c04a8497599ba50e5b39b1" category="admonition">섀시 후면의 공기 환풍구가 케이블 또는 레이블에 의해 막히면 과열되어 구성 요소에 조기 오류가 발생할 수 있습니다. 케이블을 포트에 억지로 밀어 넣지 마십시오. 케이블, 포트 또는 둘 다 손상될 수 있습니다.</block>
   <block id="4274645a2e2667daa5122269fa953970" category="admonition">교체 노드가 섀시의 다른 노드와 같은 방식으로 케이블로 연결되어 있는지 확인합니다.</block>
-  <block id="3611828f40bf631c043f2a1f9b7d8d80" category="section-title">NetApp HCI 1.7 이상에서 컴퓨팅 노드 자산을 제거합니다</block>
   <block id="fd3ac6bf15d6190cc923c4eac0662f3a" category="paragraph">NetApp HCI 1.7 이상에서는 노드를 물리적으로 교체한 후 관리 노드 API를 사용하여 컴퓨팅 노드 자산을 제거해야 합니다. REST API를 사용하려면 스토리지 클러스터에서 NetApp Element 소프트웨어 11.5 이상이 실행되고 있어야 하며 버전 11.5 이상을 실행하는 관리 노드를 구축해야 합니다.</block>
   <block id="65a4d29cbb5e1c44baa414f5cf2dc489" category="list-text">관리 노드 IP 주소와 /mnode:"https://[IP address]/mnode"를 차례로 입력합니다</block>
   <block id="49de61ab68074de5da296d48ffde4acb" category="list-text">authorize * 또는 임의의 잠금 아이콘을 선택하고 API 사용 권한에 대한 클러스터 관리자 자격 증명을 입력합니다.</block>
@@ -1434,7 +1423,6 @@
   <block id="b9bc6e4f464a0c8b1538f9995b92a895" category="list-text">Execute * 를 선택합니다. 응답 본문에서 Compute(계산) 섹션으로 아래로 스크롤하고 실패한 계산 노드의 부모 및 ID 값을 복사합니다.</block>
   <block id="149ab1533be009942aca64f58c4e6d19" category="list-text">delete/assets/{asset_id}/compute-nodes/{compute_id} * 를 선택합니다.</block>
   <block id="79ec8a7988ef4e63af167fe84122742f" category="list-text">체험하기 * 를 선택합니다. 7단계에서 얻은 부모 및 ID 값을 입력합니다.</block>
-  <block id="4cf099434af6b1eb3de3a02c4d7343f4" category="section-title">클러스터에 컴퓨팅 노드를 추가합니다</block>
   <block id="39b2525fb75e02c64814c90f2cbf3407" category="paragraph">컴퓨팅 노드를 다시 클러스터에 추가해야 합니다. 이 단계는 실행 중인 NetApp HCI 버전에 따라 다릅니다.</block>
   <block id="870bd874847cca4294c93fdb50347662" category="section-title">NetApp HCI 1.6P1 이상</block>
   <block id="80fe8777d7b15097b7f93768f900d2f0" category="paragraph">NetApp 하이브리드 클라우드 제어는 NetApp HCI 설치가 버전 1.6P1 이상에서 실행되는 경우에만 사용할 수 있습니다.</block>
@@ -1597,7 +1585,6 @@
   <block id="2d7b1bce570cfad61bcea75e56445e4c" category="list-text">어댑터 정보 아래에서 * 네트워크 포트 바인딩 * 을 선택하고 * + * 를 선택합니다.</block>
   <block id="09814996c945834d0173335b143561ec" category="list-text">iSCSI-B 및 iSCSI-A의 확인란을 선택하고 확인 을 클릭합니다. 스토리지 어댑터 재검색을 권장하는 메시지가 표시됩니다.</block>
   <block id="aeffbcab16d409629a6f42a11f66bf51" category="list-text">재스캔 아이콘을 선택합니다. 재검색이 완료되면 클러스터의 볼륨이 새 컴퓨팅 노드(호스트)에 표시되는지 확인합니다.</block>
-  <block id="9c9a41bc801502e6500c79ea7586ba95" category="section-title">2노드 및 3노드 스토리지 클러스터에 Witness 노드 재구축</block>
   <block id="cec682e94e3f77f9a4e97bcc8d93f2c4" category="paragraph">장애가 발생한 컴퓨팅 노드를 물리적으로 교체한 후 장애가 발생한 컴퓨팅 노드에서 Witness 노드를 호스팅하는 경우 NetApp HCI Witness 노드 VM을 재구축해야 합니다. 다음 지침은 2노드 또는 3노드 스토리지 클러스터를 포함한 NetApp HCI 설치의 일부인 컴퓨팅 노드에만 적용됩니다.</block>
   <block id="284dc6d1de61ec5c2a96db8bc40dd3ab" category="list-text">다음 정보를 수집합니다.</block>
   <block id="0b579df7695c3410f10a561f05959978" category="list-text">스토리지 클러스터의 클러스터 이름입니다</block>
@@ -2323,17 +2310,11 @@
   <block id="7dc71fc1ba8b3b46bc5aa180659fd0c4" category="list-text">정전기 방전(ESD) 손목 보호대가 있거나 다른 정전기 방지 보호 장치를 착용하고 있습니다.</block>
   <block id="4177894d92f9956a6f7250cb8b52d834" category="list-text">섀시에 연결된 각 케이블에 레이블을 붙였습니다.</block>
   <block id="af230ec2183265faedfc900d2b43745d" category="paragraph">VMware vSphere Web Client의 알람은 호스트에 장애가 발생할 경우 사용자에게 경고합니다. VMware vSphere Web Client에서 장애가 발생한 호스트의 일련 번호와 노드 뒷면의 스티커에 있는 일련 번호가 일치해야 합니다.</block>
-  <block id="b1579568b723cfa21964d9882eb934fb" category="paragraph">다음은 이 절차의 단계에 대한 개괄적인 개요입니다.<block ref="8b400d38091051616c1c5cc1808de640" category="inline-xref-macro-rx"></block>
-<block ref="3bbd6094cc077cc68f8084464864b066" category="inline-xref-macro-rx"></block>
-<block ref="85d7ff8f1e3fd6efa440dcd74d3d3e02" category="inline-xref-macro-rx"></block>
-<block ref="74302f10271a48c9df46742d43d08db8" category="inline-xref-macro-rx"></block></block>
-  <block id="d7f6ba0367c50b236e879580284dfabe" category="section-title">노드 교체를 준비합니다</block>
   <block id="597e3a12fc6d68edf2363fc3a1d9ff06" category="admonition">노드가 여전히 온라인 상태이고 작동 중인 상태에서 구성 요소 장애가 발생하는 경우(예: DIMM(Dual Inline Memory Module) 장애) 장애가 발생하면 장애가 발생한 노드를 제거하기 전에 클러스터에서 드라이브를 제거해야 합니다.</block>
   <block id="b3cead0e8121cac5eaa77199cb96bf4b" category="list-text">장애가 발생한 노드의 일련 번호를 기록해 둡니다. 다음 스크린샷은 예일 뿐입니다.</block>
   <block id="c52f4f387b86885b3321d0184a872a28" category="image-alt">에는 VMware vSphere Web Client에서 장애가 발생한 노드의 일련 번호가 나와 있습니다.</block>
   <block id="c2073896d66c7bb59af743cabc382009" category="paragraph">노드 뒷면의 스티커에 있는 일련 번호와 일치하는 일련 번호를 사용하여 섀시를 식별하려면 일련 번호가 필요합니다.</block>
   <block id="7ab682c31b3906d62159c2f9d858b798" category="list-text">예 * 를 클릭하여 작업을 확인합니다.</block>
-  <block id="4bf11adaae89a783a7925f82b81963ee" category="section-title">노드를 교체합니다</block>
   <block id="0284c3c24e20ba25bd655bfa5902da86" category="paragraph">클러스터에서 장애가 발생한 노드를 제거한 후 장애가 발생한 섀시를 제거하고 교체 섀시를 설치할 수 있습니다.</block>
   <block id="ef3f79bdcf9f4d42d419e2b9c45d5393" category="list-text">새 섀시의 포장을 풀고 평평한 표면에 놓습니다. 고장난 섀시를 NetApp에 반환할 때 사용할 수 있도록 포장재를 보관합니다.</block>
   <block id="bfc31a5b7c0c06e46b597db93cca8594" category="list-text">분리할 섀시 후면에 삽입되는 각 케이블에 레이블을 부착합니다. 새 섀시를 설치한 후 케이블을 원래 포트에 다시 삽입해야 합니다.</block>
@@ -2346,13 +2327,11 @@
   <block id="8daca91d830ace0c305c774cb41e9ecd" category="list-text">결함이 있는 섀시 양쪽에 있는 2개의 전원 공급 장치를 분리하고 교체 섀시에 삽입합니다.</block>
   <block id="48609f85b6f3b162f84d5b7d5d7677ae" category="list-text">원래 연결을 끊은 포트에 케이블을 다시 연결합니다. 케이블을 분리할 때 케이블에 추가한 레이블은 도움이 될 것입니다.</block>
   <block id="8d0dad879dbd06ad1f5f1f5acf51f28b" category="list-text">섀시의 전원을 켭니다.</block>
-  <block id="ff29627b32e07511ae92253ec85e9e61" category="section-title">클러스터에 노드를 추가합니다</block>
   <block id="1f2c6dfe21555b473dc802e5b22a343a" category="paragraph">새 컴퓨팅 노드를 사용하도록 NetApp HCI를 구성해야 합니다.</block>
   <block id="c056c0bf5b425a395761cd37de9ac4e3" category="list-text">vSphere 인스턴스 NetApp HCI에서 사용 중인 가상 분산 스위치를 사용하여 구축 환경에 노드를 추가하는 경우 vSphere Enterprise Plus 라이센스가 있습니다.</block>
   <block id="d57d6d6a586f9c13fbd97a299e3dfe3a" category="list-text">NetApp HCI에서 사용 중인 vCenter 또는 vSphere 인스턴스에 만료된 라이센스가 없습니다.</block>
   <block id="9a0e16aaba5fc23029c3fe1684661ae2" category="list-text">기존 노드와 동일한 네트워크 세그먼트에 사용 가능한 사용하지 않는 IPv4 주소가 있습니다(새 노드는 해당 유형의 기존 노드와 동일한 네트워크에 설치되어야 함).</block>
   <block id="94220c63d490d69862d0b6bd8c55bc36" category="list-text">vCenter 관리자 계정 자격 증명이 준비되었습니다.</block>
-  <block id="81dc4810c71d7b8507b965d26011ef81" category="list-text">Expand Installation(설치 확장) 창에서 * Expand *(확장 *)를 선택합니다. 브라우저에서 NetApp 배포 엔진이 열립니다.</block>
   <block id="1dbe43ca80d44abbf871801ea5aefb93" category="list-text">계속 을 클릭합니다.</block>
   <block id="ac9c7e2c5fd81b24c59b07707afae5c5" category="list-text">새 컴퓨팅 노드를 추가할 기존 vSphere 데이터 센터를 선택하거나 새 데이터 센터 생성 을 선택하여 새 데이터 센터에 새 컴퓨팅 노드를 추가합니다.</block>
   <block id="923d755bd18c8099d341640f86f5615e" category="admonition">NetApp HCI가 확장을 위해 선택한 클러스터의 네트워크 설정을 인식하지 못하는 경우 관리, 스토리지 및 vMotion 네트워크에 대한 vmkernel 및 vmnic 매핑이 구축 기본값으로 설정되어 있는지 확인합니다.</block>
@@ -2360,7 +2339,6 @@
   <block id="b8439da1d3bc0c45b81136dd3a07533a" category="list-text">네트워크 설정 페이지에서 일부 네트워크 정보가 초기 배포에서 감지되었습니다. 각 새 컴퓨팅 노드는 일련 번호별로 나열되며 새 네트워크 정보를 할당해야 합니다. 각 새 컴퓨팅 노드에 대해 다음 단계를 수행하십시오.</block>
   <block id="bdbca9155105fa70b02878fe37dcd59d" category="list-text">네트워크 설정 섹션의 검토 페이지에서 새 노드는 굵은 텍스트로 표시됩니다. 섹션의 정보를 변경해야 하는 경우 다음 단계를 수행하십시오.</block>
   <block id="e8972e60e4ed1d76df0feffb68866e46" category="list-text">선택 사항: vCenter에 새 컴퓨팅 노드가 표시되는지 확인합니다.</block>
-  <block id="e8ddb30cd234af505251fddfe210e770" category="section-title">GPU 드라이버를 설치합니다</block>
   <block id="34a9fb6a8c162efa753bd66e9b87e554" category="paragraph">H610C 노드와 같이 NVIDIA 그래픽 처리 장치(GPU)를 사용하는 컴퓨팅 노드에는 VMware ESXi에 설치된 NVIDIA 소프트웨어 드라이버가 있어야 증가된 처리 능력을 활용할 수 있습니다. GPU 드라이버를 설치하려면 컴퓨팅 노드에 GPU 카드가 있어야 합니다.</block>
   <block id="d7dc44e401260dbcb4fba3e3f12c02e3" category="list-text">브라우저를 열고 다음 URL의 NVIDIA 라이센싱 포털로 이동합니다. 'https://nvid.nvidia.com/dashboard/`</block>
   <block id="c8d7d8b784ab1d748bdb0f7f739baeb7" category="cell">vSphere 6.0</block>
@@ -2368,7 +2346,6 @@
   <block id="77b0f9ffcb30a7f70c02e260497b2e1b" category="paragraph">NVIDIA-GRID-vSphere-6.5-410.92-410.91-412.16.zip</block>
   <block id="ba2a9a549d747a47e02e9b887742d185" category="paragraph">NVIDIA-GRID-vSphere-6.7-410.92-410.91-412.16.zip</block>
   <block id="b9e90fd8805746049212e3a607805ca8" category="list-text">컴퓨터에서 드라이버 패키지를 추출합니다. 그 결과 .vIB 파일은 압축되지 않은 드라이버 파일입니다.</block>
-  <block id="69e7c0efe52761dba85359c9648bc4c6" category="list-text">컴퓨터에서 컴퓨팅 노드에서 실행 중인 ESXi로 .vIB 드라이버 파일을 복사합니다. 각 버전에 대한 다음 명령 예에서는 드라이버가 관리 호스트의 $HOME/nvidia/ESX6.x/ 디렉토리에 있다고 가정합니다. SCP 유틸리티는 대부분의 Linux 배포판에서 쉽게 사용할 수 있으며 모든 Windows 버전에 대해 다운로드 가능한 유틸리티로 사용할 수 있습니다.</block>
   <block id="054b4f3ea543c990f6b125f41af6ebf7" category="cell">옵션을 선택합니다</block>
   <block id="2b66f3a1e27f17f479018be59a0cc7d7" category="cell">ESXi 6.0</block>
   <block id="f0d858488904d8587f0a9f9286dceb97" category="paragraph">scp$home/nvidia/ESX6.0/nvidia**.vib root@&lt;esxi_ip_addr&gt;:/.</block>
@@ -6491,8 +6468,6 @@
   <block id="9e08f10312f3eaa134087c34ad076d92" category="paragraph">여기<block ref="f76e21c4f97e9ef2eb0114383d271ddf" category="inline-link-rx"></block> 현재 설치된 SSL 인증서 및 개인 키를 제거합니다. 그런 다음 클러스터가 새로운 자체 서명된 인증서와 개인 키를 생성합니다.</block>
   <block id="f056eadecebc58790da8eb91b5211492" category="inline-link">Element 소프트웨어에서 사용자 정의 SSL 인증서를 설정하는 데 필요한 요구 사항은 무엇입니까?</block>
   <block id="e3b4df69e2fe4e8545e5e0240eada6a2" category="list-text"><block ref="e3b4df69e2fe4e8545e5e0240eada6a2" category="inline-link-rx"></block></block>
-  <block id="631923a687ff82d68973d99b95597b47" category="inline-link">SolidFire 및 요소 리소스 페이지입니다</block>
-  <block id="238c5b123e3473c57e2925edccb205c2" category="list-text"><block ref="238c5b123e3473c57e2925edccb205c2" category="inline-link-rx"></block></block>
   <block id="ba3433b658d56109d8826f49ee0a8064" category="list-text"><block ref="ba3433b658d56109d8826f49ee0a8064" category="inline-link-rx"></block></block>
   <block id="d5147898f653b5500d1ba07c4204c743" category="list-text"><block ref="9d6606ad3ff5278801234da0e6746362" category="inline-link-rx"></block> 5.8.1 이상의 네트워크 유효성 검사 도구</block>
   <block id="c411aac8cf32395c454762934e85315b" category="list-text"><block ref="c411aac8cf32395c454762934e85315b" category="inline-link-macro-rx"></block></block>
@@ -6575,4 +6550,29 @@
   <block id="732713df3c4c58fb19fab37e747f6f0d" category="list-text"><block ref="732713df3c4c58fb19fab37e747f6f0d" category="inline-link-macro-rx"></block></block>
   <block id="7149d03eb62017e7cc5192a67ff56c1c" category="paragraph">데이터 센터의 에지 방화벽을 통해 다음 포트를 허용하여 시스템을 원격으로 관리하고, 데이터 센터 외부의 클라이언트가 리소스에 연결하도록 허용하고, 내부 서비스가 제대로 작동할 수 있도록 해야 할 수 있습니다. 시스템 사용 방법에 따라 이러한 포트, URL 또는 IP 주소 중 일부가 필요하지 않을 수 있습니다.</block>
   <block id="331d6d490990c63b2cee0dc04fe2589b" category="paragraph">달리 명시되지 않는 한 모든 포트는 TCP이며, 모든 TCP 포트는 NetApp 지원 서버, 관리 노드 및 Element 소프트웨어를 실행하는 노드 간의 3방향 핸드셰이크 통신을 지원해야 합니다. 예를 들어 관리 노드 소스의 호스트는 TCP 포트 443을 통해 스토리지 클러스터 MVIP 대상의 호스트와 통신하고 대상 호스트는 아무 포트나 통해 소스 호스트로 다시 통신합니다.</block>
+  <block id="b0c85ded726a3c8e46cbaafa60707f98" category="inline-link">NetApp HCI 컴퓨팅 노드에 ESXi를 수동으로 설치하는 방법</block>
+  <block id="280e8a9497f3d56d4812b7ef2ce31fc6" category="paragraph">NetApp은 NetApp 배포 엔진을 사용하여 대체 컴퓨팅 노드를 추가할 것을 권장합니다. NetApp Deployment Engine for ESXi 설치를 계속 진행할 수 없는 경우 NetApp 기술 자료 문서 를 참조하십시오<block ref="d673ea2f9a1bf5256cf7dd0779becf21" category="inline-link-rx"></block>.</block>
+  <block id="4e5f0133d50930ab8acffdd21544c950" category="section-title">1단계: 노드 교체를 준비합니다</block>
+  <block id="9385a8fdfdd5ec6a7a983c13d83b5d55" category="section-title">2단계: 노드 교체</block>
+  <block id="bf96948cb523bea2d786273b1d9e3726" category="section-title">3단계: 클러스터에 노드를 추가합니다</block>
+  <block id="667494acc646db65248acfcbfe2a10ab" category="section-title">4단계: GPU 드라이버를 설치합니다</block>
+  <block id="524202cb16f1d9b45d55ae3cf01846a9" category="list-text">사용자 환경에 따라 드라이버 패키지 버전을 컴퓨터에 다운로드합니다.</block>
+  <block id="cdf9b80a781028cfcd33975c9b549a66" category="paragraph">다음 예제는 vSphere 6.0, 6.5 및 6.7용 드라이버 패키지 버전을 보여줍니다.</block>
+  <block id="42531de91f94d49640c00256e0aa3ceb" category="list-text">컴퓨터에서 컴퓨팅 노드에서 실행 중인 ESXi로 .vIB 드라이버 파일을 복사합니다. SCP(Secure Copy Protocol) 유틸리티는 대부분의 Linux 배포판에서 쉽게 사용할 수 있으며 모든 Windows 버전에 대해 다운로드 가능한 유틸리티로 사용할 수 있습니다.</block>
+  <block id="7a144dd231d33708e9980e0a26cb3083" category="paragraph">다음 예에서는 ESXi 6.0, 6.5 및 6.7의 명령을 보여 줍니다. 명령은 드라이버가 관리 호스트의 $HOME/nVIDIA/ESX6.x/ 디렉토리에 있다고 가정합니다.</block>
+  <block id="d908683c495cc5cc655f7cd09695c523" category="paragraph">다음은 이 절차의 단계에 대한 개괄적인 개요입니다.
+<block ref="b3fddefb8533cc7fc260062e1b11797b" category="inline-xref-macro-rx"></block>
+<block ref="7fbd89059403f3c320101b5b73d264e9" category="inline-xref-macro-rx"></block>
+<block ref="a1a1a48df94086d036719fc33e283f5e" category="inline-xref-macro-rx"></block>
+<block ref="e2315890dcab7fdfd216149d3ebc535d" category="inline-xref-macro-rx"></block>
+<block ref="f15458d9685a9671cd038c3a408d2679" category="inline-xref-macro-rx"></block></block>
+  <block id="6a1419cffec796a0cf9688c584b108e5" category="paragraph">다음은 시스템에 적용되는 특정 조건이 있는 경우 수행해야 할 몇 가지 추가 작업입니다.</block>
+  <block id="6f2e0dd9461f023001b32f634a66ca39" category="list-text"><block ref="6f2e0dd9461f023001b32f634a66ca39" category="inline-link-macro-rx"></block></block>
+  <block id="d5e0ed137993fa47f6c52eaba475f986" category="list-text"><block ref="96458e97c135f9cdca1845fd2743e79f" category="inline-xref-macro-rx"></block></block>
+  <block id="27e4d3a5ce33dd22d6512ac546804968" category="list-text"><block ref="d095c71c5d51f56f74c0c624a25acdfc" category="inline-xref-macro-rx"></block></block>
+  <block id="fefc802a17eb78beb3791d194d57c778" category="section-title">1단계: 컴퓨팅 노드 교체를 준비합니다</block>
+  <block id="c5fe75a9a5a9f7b0e4279644ad5bba34" category="section-title">2단계: 섀시의 컴퓨팅 노드를 교체합니다</block>
+  <block id="527e6719cbc58f7527999477eaac0dd2" category="section-title">3단계: NetApp HCI 1.7 이상에서 컴퓨팅 노드 자산을 제거합니다</block>
+  <block id="714f787cf5a78abe3413cd3fa33c6c6b" category="section-title">4단계: 클러스터에 컴퓨팅 노드를 추가합니다</block>
+  <block id="4b07d1c342b03364f7120990720b53ef" category="section-title">5단계: 2노드 및 3노드 스토리지 클러스터에 대해 Witness Node를 재구축합니다</block>
 </blocks>
