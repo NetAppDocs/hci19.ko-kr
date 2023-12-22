@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: docs/hci_prereqs_final_prep.html 
 summary: NetApp HCI를 배포하기 전에 완료해야 하는 최종 준비 사항 및 구성에 대해 알아봅니다. 
-keywords: netapp, hci, final preparations, requirements 
+keywords: netapp, hci, final preparations, requirements, IPMI 
 ---
 = 각 노드에 대해 IPMI를 구성합니다
 :hardbreaks:
@@ -11,7 +11,6 @@ keywords: netapp, hci, final preparations, requirements
 :icons: font
 :linkattrs: 
 :imagesdir: ../media/
-:keywords: netapp, hci, final preparations, IPMI
 
 
 [role="lead"]

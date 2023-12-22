@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: docs/concept_nde_access_overview.html 
 summary: 환경에 따라 다양한 방법 중 하나를 사용하여 NetApp HCI를 구축하기 전에 NetApp 배포 엔진에 액세스하십시오. 
-keywords: netapp, hci, netapp deployment engine, deployment, engine, deploy, access 
+keywords: netapp, hci, netapp deployment engine, deployment, engine, deploy, access, vcp, element, management services, firmware 
 ---
 = NetApp 배포 엔진 액세스 옵션 개요
 :hardbreaks:
@@ -11,7 +11,6 @@ keywords: netapp, hci, netapp deployment engine, deployment, engine, deploy, acc
 :icons: font
 :linkattrs: 
 :imagesdir: ../media/
-:keywords: hci, release notes, vcp, element, management services, firmware
 
 
 [role="lead"]
