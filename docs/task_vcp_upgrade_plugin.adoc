@@ -27,7 +27,7 @@ NOTE: 관리 서비스 2.22.7에는 원격 플러그인이 포함된 vCenter Ser
 --
 이 업그레이드 절차에서는 다음 업그레이드 시나리오에 대해 설명합니다.
 
-* vCenter Server 5.2, 5.1 또는 5.0용 Element 플러그인으로 업그레이드하려고 합니다.
+* vCenter Server 5.3, 5.2, 5.1 또는 5.0용 Element 플러그인으로 업그레이드하려고 합니다.
 * 8.0 또는 7.0 HTML5 vSphere Web Client로 업그레이드하는 중입니다.
 
 
@@ -161,8 +161,8 @@ VMware vCenter Server 6.7U1을 사용하여 vCenter Server 4.8 이상용 NetApp 
 +
 [listing]
 ----
-NetApp Element Plug-in Version: 5.2
-NetApp Element Plug-in Build Number: 12
+NetApp Element Plug-in Version: 5.3
+NetApp Element Plug-in Build Number: 9
 ----
 
 

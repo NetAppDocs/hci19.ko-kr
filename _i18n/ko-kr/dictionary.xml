@@ -5910,34 +5910,6 @@
   <block id="b7f7f58ec15cebe706964cdc95d8f5cf" category="sidebar">NetApp HCI에서 Rancher를 사용합니다</block>
   <block id="efaccef33aabd635656b681f92a298ea" category="sidebar">H 시리즈 하드웨어 유지 관리</block>
   <block id="93168a8084b3e838d2932c4734bd234e" category="sidebar">이전 버전</block>
-  <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">시작하십시오</block>
-  <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">릴리스 정보</block>
-  <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">새로운 소식</block>
-  <block id="01064f33f360eefba819bf9542c0486b" category="sidebar">유지보수 하드웨어를 설치합니다</block>
-  <block id="147fc8b7d94adc0dceb5978ab928f776" category="sidebar">H 시리즈 하드웨어 설치</block>
-  <block id="09af8dd99d422c917dcb27847056b045" category="sidebar">H 시리즈 하드웨어 유지 관리</block>
-  <block id="bc2592cdeeae26af69f28b4f6a1c8ca0" category="sidebar">NetApp HCI를 설치합니다</block>
-  <block id="96e1a5a82d70a24f161f0adb6e19ac8d" category="sidebar">설치 및 구축 개요</block>
-  <block id="8a6e336622cf399a6453e4659f2a6147" category="sidebar">NetApp Deployment Engine으로 구축을 시작합니다</block>
-  <block id="a54d0ac20b8277a267fb90e8c0b05032" category="sidebar">배포 후 작업을 수행합니다</block>
-  <block id="cfe80b2a0cabf734adc7b7c1613cfe4f" category="sidebar">NetApp HCI를 사용합니다</block>
-  <block id="930dca22f6f735a61fd8f484808fecb3" category="sidebar">NetApp 하이브리드 클라우드 제어를 사용하여 관리</block>
-  <block id="6cb5dfacb4ee1684b5483221bfcf580c" category="sidebar">vCenter Server용 NetApp Element 플러그인을 사용합니다</block>
-  <block id="4584c33b1e8065c9dccf2c31d92f9dbf" category="sidebar">Rancher를 사용합니다</block>
-  <block id="d02b5df8c0bf5a555ea650be898817f7" category="sidebar">NetApp HCI 를 확장합니다</block>
-  <block id="748ace58318ab9d82392d680b07e89e6" category="sidebar">NetApp HCI를 업그레이드합니다</block>
-  <block id="f7731734f4507319f744fe2c8158536a" category="sidebar">NetApp HCI 및 Rancher 문제 해결</block>
-  <block id="eeabaf7c41bcd50a6a02694c070dbfb4" category="sidebar">컴퓨팅 노드에서 BMC를 재설정합니다</block>
-  <block id="166868e0f588717c1c62116a03c9b979" category="sidebar">더 많은 기술 자료 문서</block>
-  <block id="2a9dbfa4b74c53d7304fc8b79a1874d3" category="sidebar">해결하세요</block>
-  <block id="fcf140abed196b8eba71c45f21312bce" category="sidebar">NetApp 솔루션</block>
-  <block id="81a123ccab93cd947289b672b0e50348" category="sidebar">데모 자습서</block>
-  <block id="45a52e6c046bce2a0f9f5253cc23fbd6" category="sidebar">NetApp HCI 비디오 라이브러리</block>
-  <block id="9135ac6f13de11d3b4b9f2f98ff9bcb8" category="sidebar">NetApp 학습 서비스</block>
-  <block id="813011e2103649bb71f124adedcc10ea" category="sidebar">블로그 커뮤니티</block>
-  <block id="a310588c148d934b9b30c31802d4a30b" category="sidebar">NetApp 커뮤니티</block>
-  <block id="213686afc3803be7caa09348765467fe" category="sidebar">도움을 받을 수 있는 곳</block>
-  <block id="389672366ff11f72a82c5c495b9b5159" category="sidebar">NetApp HCI 1.8 설명서</block>
   <block id="ef1e8da076ed36db7d489060adff47fb" category="paragraph">다운로드할 수 있는 컴퓨팅 펌웨어 번들에는 지원되는 모든 NetApp HCI 컴퓨팅 노드에 대한 최신 BIOS 및 BMC 기능 향상, 버그 픽스 및 하드웨어 지원이 포함되어 있습니다.</block>
   <block id="778f439c373ac0d9448a4607920b1422" category="list-text"><block ref="e2bd782e3d45140e59a9770dafcf72d8" category="inline-xref-macro-rx"></block></block>
   <block id="36b254200cdbd8a07ea5d268a8d6baf6" category="list-text">관리 노드가 인터넷에 연결되어 있지 않은 경우 에서 컴퓨팅 펌웨어 번들을 다운로드했습니다<block ref="3a326a2da6806c2b958ef45116362803" category="inline-link-rx"></block>.</block>
@@ -6538,14 +6510,12 @@
   <block id="dd38f906b37d412de7d1c1dcf4cbf31c" category="paragraph"><block ref="dd38f906b37d412de7d1c1dcf4cbf31c" category="inline-link-macro-rx"></block></block>
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
-  <block id="eea7cb3a63edf642e1f15162351dfce7" category="list-text">vCenter Server 5.2, 5.1 또는 5.0용 Element 플러그인으로 업그레이드하려고 합니다.</block>
   <block id="474ed7ffbbc0fc1d58ad983e7ef700f6" category="admonition">vCenter 5.0 이상용 Element 플러그인은 vCenter Server 6.7 및 6.5와 호환되지 않습니다.</block>
   <block id="2553e35e4b345db1c1e3175a10539fdf" category="image-alt">에서는 Element Plug-in 5.0 이상을 위한 업그레이드 또는 설치 후 플러그인 확장 지점을 보여 줍니다</block>
   <block id="f35f89119a6374d18bd89e0103590c61" category="image-alt">에는 Element Plug-in 4.10 이하 버전에 대한 업그레이드 또는 설치 후 플러그인 확장 지점이 나와 있습니다</block>
   <block id="faf6c38631911f7840c3498b4ec9f746" category="inline-link-macro">관리 서비스 2.24.40 알림(VMware vCenter Server 5.2.12용 NetApp Element 플러그인)</block>
   <block id="1f3c662e49f317f7c70a24adc13870a1" category="list-text"><block ref="1f3c662e49f317f7c70a24adc13870a1" category="inline-link-macro-rx"></block></block>
   <block id="ce397f79b5032c3e327db3efe5a6048a" category="inline-link">vCenter Plug-in 5.2 릴리즈 노트</block>
-  <block id="4718467fa890cd0dcf159b3d461cedbe" category="list-text"><block ref="6bd87cf3d55c2ead3ab585e965bea4db" category="inline-link-rx"></block> _신규 _</block>
   <block id="410ecb079e286058eeb2bc6b56d9379c" category="list-text"><block ref="410ecb079e286058eeb2bc6b56d9379c" category="inline-link-rx"></block></block>
   <block id="732713df3c4c58fb19fab37e747f6f0d" category="list-text"><block ref="732713df3c4c58fb19fab37e747f6f0d" category="inline-link-macro-rx"></block></block>
   <block id="7149d03eb62017e7cc5192a67ff56c1c" category="paragraph">데이터 센터의 에지 방화벽을 통해 다음 포트를 허용하여 시스템을 원격으로 관리하고, 데이터 센터 외부의 클라이언트가 리소스에 연결하도록 허용하고, 내부 서비스가 제대로 작동할 수 있도록 해야 할 수 있습니다. 시스템 사용 방법에 따라 이러한 포트, URL 또는 IP 주소 중 일부가 필요하지 않을 수 있습니다.</block>
@@ -6577,4 +6547,10 @@
   <block id="4b07d1c342b03364f7120990720b53ef" category="section-title">5단계: 2노드 및 3노드 스토리지 클러스터에 대해 Witness Node를 재구축합니다</block>
   <block id="df0f8acf74958be223bdd3dabcce5038" category="inline-link">업그레이드 패키지 업로드 오류로 인해 SolidFire 및 HCI 업그레이드를 시작할 수 없습니다</block>
   <block id="b9bbae8efe5c0f15ffba3f05d619b861" category="admonition">2023년 11월 5일에 서명 키 인증서(개인 및 공개)가 만료되어 NetApp 하이브리드 클라우드 제어 또는 REST API를 사용하여 구성요소 업그레이드를 시작할 수 없습니다. 이 문제는 기술 자료 문서에 설명되어 있는 해결 방법을 따라 해결할 수 있습니다<block ref="43e83b9864cac922c7475bad0e74a40f" category="inline-link-rx"></block>.</block>
+  <block id="d3c4a89052a32dd9783dd119f30d6d47" category="inline-link">vCenter Plug-in 5.3 릴리즈 노트</block>
+  <block id="0c21440ced3ddae10d1eea32870fdf02" category="list-text"><block ref="ce90fd614158a5c7e0a42a5908fa1cd7" category="inline-link-rx"></block> _신규 _</block>
+  <block id="6bd87cf3d55c2ead3ab585e965bea4db" category="list-text"><block ref="6bd87cf3d55c2ead3ab585e965bea4db" category="inline-link-rx"></block></block>
+  <block id="976b368b923346c8ea4ccc71e72749f5" category="inline-link-macro">관리 서비스 2.25.42 알림(VMware vCenter Server 5.3.9용 NetApp Element 플러그인)</block>
+  <block id="f7e890b0a90e234e4df04fc0c6b8c6a7" category="list-text"><block ref="f7e890b0a90e234e4df04fc0c6b8c6a7" category="inline-link-macro-rx"></block></block>
+  <block id="bef71f962ff7a233f3e8439eeb8dac70" category="list-text">vCenter Server 5.3, 5.2, 5.1 또는 5.0용 Element 플러그인으로 업그레이드하려고 합니다.</block>
 </blocks>
