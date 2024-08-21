@@ -41,7 +41,7 @@ image::vcp-witnessnode.gif[에는 노드가 나열된 NetApp Element 관리 > �
 
 == 자세한 내용을 확인하십시오
 
-* https://www.netapp.com/us/media/tr-4823.pdf["NetApp HCI 2노드 스토리지 클러스터 | TR-4823"^]
+* https://www.netapp.com/pdf.html?item=/media/9489-tr-4823.pdf["NetApp HCI 2노드 스토리지 클러스터 | TR-4823"^]
 * https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
 * https://www.netapp.com/us/documentation/hci.aspx["NetApp HCI 리소스 페이지를 참조하십시오"^]
 * http://docs.netapp.com/sfe-122/index.jsp["SolidFire 및 Element 소프트웨어 설명서 센터"^]

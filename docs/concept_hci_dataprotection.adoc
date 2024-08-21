@@ -37,7 +37,7 @@ NetApp HCI 데이터 보호에는 다음과 같은 개념이 포함되어 있습
 * <<SnapMirror를 사용하여 Element와 ONTAP 클러스터 간 복제>>
 
 
-을 참조하십시오 https://www.netapp.com/us/media/tr-4741.pdf["TR-4741: NetApp Element 소프트웨어 원격 복제"^].
+을 https://www.netapp.com/pdf.html?item=/media/10607-tr4741pdf.pdf["TR-4741: NetApp Element 소프트웨어 원격 복제"^]참조하십시오.
 
 
 

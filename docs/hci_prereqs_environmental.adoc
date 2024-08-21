@@ -17,7 +17,7 @@ keywords: netapp, hci, environment, requirements
 [role="lead"]
 NetApp HCI 설치에 사용되는 랙의 전원이 AC 전원 콘센트에 의해 공급되고 데이터 센터에서 NetApp HCI 설치 크기에 적합한 냉각 기능을 제공하는지 확인하십시오.
 
-NetApp HCI의 각 구성 요소에 대한 자세한 기능은 NetApp HCI를 참조하십시오 http://www.netapp.com/us/media/ds-3881.pdf["데이터시트"^].
+NetApp HCI의 각 구성 요소에 대한 자세한 기능은 NetApp HCI를 https://www.netapp.com/pdf.html?item=/media/7977-ds-3881.pdf["데이터시트"^] 참조하십시오.
 
 
 NOTE: H410C 컴퓨팅 노드는 고전압(200~240VAC)에서만 작동합니다. H410C 노드를 기존 NetApp HCI 설치에 추가할 때 전원 요구 사항이 충족되는지 확인해야 합니다.

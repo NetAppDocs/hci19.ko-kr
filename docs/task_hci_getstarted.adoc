@@ -52,8 +52,8 @@ NOTE: 네트워크 토폴로지는 여기에 표시된 것과 다를 수 있습�
 다음 자료를 읽어 보십시오.
 
 * 설치 전에 _NetApp HCI 설치 검색 워크북_을 사용하여 네트워크를 구성하십시오.
-* 자세한 내용 및 기타 지원되는 구성은 를 참조하십시오 https://www.netapp.com/us/media/tr-4820.pdf["_TR-4820: NetApp HCI 네트워킹 빠른 계획 가이드 _"^] 및 https://library.netapp.com/ecm/ecm_download_file/ECMLP2856176["_NetApp HCI 설치 및 설정 지침 _"^].
-* 4개의 스토리지 노드보다 작은 NetApp HCI 구성에 대한 자세한 내용은 를 참조하십시오 https://www.netapp.com/us/media/tr-4823.pdf["_TR-4823:NetApp HCI 2-노드 스토리지 클러스터 _"^].
+* 자세한 내용과 기타 지원되는 구성은 https://www.netapp.com/pdf.html?item=/media/9413-tr4820pdf.pdf["_TR-4820: NetApp HCI 네트워킹 빠른 계획 가이드 _"^] 및 를 참조하십시오 https://library.netapp.com/ecm/ecm_download_file/ECMLP2856176["_NetApp HCI 설치 및 설정 지침 _"^].
+* 4개 미만의 스토리지 노드로 구성된 NetApp HCI 구성에 대한 자세한 내용은 을 참조하십시오. https://www.netapp.com/pdf.html?item=/media/9489-tr-4823.pdf["_TR-4823:NetApp HCI 2-노드 스토리지 클러스터 _"^]
 * 각 스토리지 노드에 사용되는 스위치 포트에 LACP(Link Aggregation Control Protocol)를 구성하는 방법에 대한 자세한 내용은 을 참조하십시오 link:hci_prereqs_LACP_configuration.html["최적의 스토리지 성능을 위해 LCAP를 구성합니다"].
 
 
@@ -276,7 +276,7 @@ NetApp Hybrid Cloud Control 인터페이스가 나타납니다.
 
 * https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지를 참조하십시오"^]
 * link:../media/hseries-isi.pdf["NetApp HCI 설치 및 설정 지침"^]
-* https://www.netapp.com/us/media/tr-4820.pdf["TR-4820: NetApp HCI 네트워킹 빠른 계획 가이드"^]
+* https://www.netapp.com/pdf.html?item=/media/9413-tr4820pdf.pdf["TR-4820: NetApp HCI 네트워킹 빠른 계획 가이드"^]
 * https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인 설명서"^]
 * https://mysupport.netapp.com/site/tools/tool-eula/5ddb829ebd393e00015179b2["NetApp 구성 어드바이저"^] 5.8.1 이상의 네트워크 유효성 검사 도구
 * https://docs.netapp.com/us-en/solidfire-active-iq/index.html["NetApp SolidFire Active IQ 문서"^]

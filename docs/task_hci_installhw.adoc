@@ -423,6 +423,6 @@ H615C 노드에 GPU가 있는 경우 설치한 각 H615C 노드에 대해 ESXi�
 
 * https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지를 참조하십시오"^]
 * https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
-* https://www.netapp.com/us/media/tr-4820.pdf["_TR-4820: NetApp HCI 네트워킹 빠른 계획 가이드 _"^]
+* https://www.netapp.com/pdf.html?item=/media/9413-tr4820pdf.pdf["_TR-4820: NetApp HCI 네트워킹 빠른 계획 가이드 _"^]
 * https://mysupport.netapp.com/site/tools["NetApp 구성 어드바이저"^] 5.8.1 이상의 네트워크 유효성 검사 도구
 
