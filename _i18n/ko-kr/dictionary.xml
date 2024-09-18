@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blocks>
   <block id="db035ffffac30b1a95fd497625c55167" category="summary">NetApp HCI 구성 및 관리 문서와 NetApp HCI 솔루션 정보를 사용하여 자세히 알아보십시오.</block>
-  <block id="ad0a505756223d68dc11afeae3459351" category="doc">NetApp HCI 문서</block>
   <block id="d1f3348004e8a355335cb19ad2503f19" category="summary">NetApp HCI 또는 NetApp SolidFire를 구축한 조직의 보안 정책에 따라 자격 증명 또는 암호를 변경하는 것이 일반적으로 보안 사례의 일부입니다. 암호를 변경하기 전에 배포의 다른 소프트웨어 구성 요소에 미치는 영향을 알고 있어야 합니다.</block>
   <block id="de55aaabf3e64f82482bfec3331b7b99" category="doc">NetApp HCI 및 NetApp SolidFire에서 자격 증명을 변경합니다</block>
   <block id="495c10200cf923b1c1357005661bbf33" category="paragraph">NetApp HCI 또는 NetApp SolidFire 구축의 구성 요소 중 하나에 대한 자격 증명을 변경하는 경우 다음 표에서는 다른 구성 요소에 미치는 영향에 대한 지침을 제공합니다.</block>
@@ -6582,4 +6581,5 @@
   <block id="a5f38386dcceecb027de7fd15fcc6aa4" category="list-text"><block ref="a5f38386dcceecb027de7fd15fcc6aa4" category="inline-link-rx"></block></block>
   <block id="0287de700b52d79d64e09aca72f4850b" category="admonition">에 대한 컴퓨팅 노드용 ESXi를 업그레이드할 때는<block ref="d6b7667dc675e8798d67d09fb8931bb2" category="inline-link-rx"></block> 한 번에 하나의 컴퓨팅 노드만 업그레이드하면 일시적으로 하나의 감시 노드만 사용할 수 있고 클러스터 쿼럼을 유지할 수 있습니다.</block>
   <block id="a2f9c1250a16a7514c9d6b0865b7bf42" category="list-text"><block ref="a2f9c1250a16a7514c9d6b0865b7bf42" category="inline-link-rx"></block></block>
+  <block id="846572971d410f1d04ff53e7bfc8a84b" category="sidebar">NetApp HCI 설명서 1.9</block>
 </blocks>
