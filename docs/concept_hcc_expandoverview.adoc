@@ -36,12 +36,12 @@ NetApp HCI는 VMware EVC(Enhanced vMotion Compatibility)를 사용하여 vSphere
 
 NOTE: NetApp 구축 엔진에서 NetApp HCI 컴퓨팅 또는 스토리지 리소스를 확장하는 경우 기존 NetApp HCI 컴퓨팅 노드를 관리하는 vCenter 인스턴스에 연결해야 합니다.
 
-[discrete]
+
+
 == 자세한 내용을 확인하십시오
 
 * link:task_hcc_expand_compute.html["NetApp HCI 컴퓨팅 리소스를 확장합니다"]
 * link:task_hcc_expand_storage.html["NetApp HCI 스토리지 리소스를 확장합니다"]
 * link:task_hcc_expand_compute_and_storage.html["NetApp HCI 스토리지 및 컴퓨팅 리소스를 동시에 확장합니다"]
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지를 참조하십시오"^]
 * https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
 

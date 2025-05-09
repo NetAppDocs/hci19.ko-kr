@@ -329,9 +329,8 @@ NOTE: 노드 OS의 경우 보안 패치에 대한 무인 업그레이드가 매�
 
 PercentComplete가 100을 나타내고, result가 업그레이드된 버전 번호를 나타내면 업그레이드가 성공적으로 완료된 것입니다.
 
-[discrete]
+
+
 == 자세한 내용을 확인하십시오
 
-* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
-
+https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]

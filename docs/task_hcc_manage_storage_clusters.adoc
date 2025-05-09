@@ -195,6 +195,4 @@ NOTE: 노드가 유지보수 모드일 때는 새 데이터를 허용하지 않�
 
 == 자세한 내용을 확인하십시오
 
-* link:task_mnode_manage_storage_cluster_assets.html["스토리지 클러스터 자산을 생성하고 관리합니다"]
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
-
+link:task_mnode_manage_storage_cluster_assets.html["스토리지 클러스터 자산을 생성하고 관리합니다"]

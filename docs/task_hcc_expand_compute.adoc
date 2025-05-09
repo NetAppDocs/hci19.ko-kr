@@ -113,10 +113,10 @@ NetApp HCI에서 리소스를 추가하고 구성하는 동안 진행률을 모�
 . * 선택 사항 *: VMware vSphere Web Client에 새 컴퓨팅 노드가 표시되는지 확인합니다.
 
 
-[discrete]
+
+
 == 자세한 내용을 확인하십시오
 
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
 * https://library.netapp.com/ecm/ecm_download_file/ECMLP2856176["NetApp HCI 컴퓨팅 및 스토리지 노드 설치 및 설정 지침"^]
 * https://kb.vmware.com/s/article/1003212["VMware 기술 자료: EVC(Enhanced vMotion Compatibility) 프로세서 지원"^]
 

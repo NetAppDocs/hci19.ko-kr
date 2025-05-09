@@ -11,7 +11,6 @@ summary: 스토리지 노드에 대해 지원되는 펌웨어 및 드라이버 �
 :icons: font
 :linkattrs: 
 :imagesdir: ../media/
-:keywords: hci, earlier, documentation, versions
 
 
 [role="lead"]

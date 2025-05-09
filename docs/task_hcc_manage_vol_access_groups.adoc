@@ -73,11 +73,11 @@ NetApp 하이브리드 클라우드 제어를 사용하여 볼륨 액세스 그�
 . 예 * 를 선택하여 삭제 작업을 확인합니다.
 
 
-[discrete]
+
+
 == 자세한 내용을 확인하십시오
 
 * link:concept_hci_volume_access_groups.html["볼륨 액세스 그룹에 대해 알아보십시오"]
 * link:task_hcc_manage_initiators.html#add-initiators-to-a-volume-access-group["볼륨 액세스 그룹에 이니시에이터를 추가합니다"]
 * https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
 

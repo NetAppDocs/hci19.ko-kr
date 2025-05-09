@@ -171,9 +171,9 @@ OpenStack Swift 또는 Amazon S3에서 볼륨을 복원할 때 원래 백업 프
 
 이중 Helix 데이터 보호는 시스템 내 모든 드라이브에 두 개 이상의 중복 데이터 복사본을 배포하는 복제 방법입니다. “RAID-less” 접근 방식을 통해 시스템은 스토리지 시스템의 모든 레벨에서 동시에 여러 건의 장애를 흡수하고 신속하게 복구할 수 있습니다.
 
-[discrete]
+
+
 == 자세한 내용을 확인하십시오
 
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지를 참조하십시오"^]
 * https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
 

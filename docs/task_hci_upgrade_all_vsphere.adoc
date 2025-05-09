@@ -43,6 +43,5 @@ NOTE: 에 대한 컴퓨팅 노드용 ESXi를 업그레이드할 때는 https://w
 == 자세한 내용을 확인하십시오
 
 * https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
 * https://www.netapp.com/pdf.html?item=/media/9489-tr-4823.pdf["NetApp HCI 2노드 스토리지 클러스터 기술 보고서"^]
 

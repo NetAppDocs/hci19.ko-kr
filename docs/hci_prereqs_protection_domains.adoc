@@ -16,9 +16,8 @@ keywords: netapp, hci, element, storage, protection domains
 [role="lead"]
 NetApp Element 소프트웨어는 를 지원합니다 link:concept_hci_dataprotection.html#protection-domains["보호 도메인"] 최적의 데이터 가용성을 위해 스토리지 노드의 데이터 레이아웃을 최적화합니다. 이 기능을 사용하려면 스토리지 안정성을 최적화할 수 있도록 세 개 이상의 NetApp H-Series 섀시에 걸쳐 스토리지 용량을 균등하게 분산해야 합니다. 이 시나리오에서는 스토리지 클러스터가 자동으로 보호 도메인을 설정합니다.
 
-[discrete]
+
+
 == 자세한 내용을 확인하십시오
 
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지를 참조하십시오"^]
-* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
-
+https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]

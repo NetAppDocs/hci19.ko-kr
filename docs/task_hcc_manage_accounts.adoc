@@ -193,11 +193,11 @@ NOTE: 관리 서비스와 연결된 영구 볼륨은 설치 또는 업그레이�
 . 예 * 를 선택하여 삭제를 확인합니다.
 
 
-[discrete]
+
+
 == 자세한 내용을 확인하십시오
 
 * link:concept_cg_hci_accounts.html["어카운트에 대해 알아보십시오"]
 * http://docs.netapp.com/sfe-122/topic/com.netapp.doc.sfe-ug/GUID-E93D3BAF-5A60-414D-86AF-0C1F86D43F26.html["사용자 계정 작업"^]
 * https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
 

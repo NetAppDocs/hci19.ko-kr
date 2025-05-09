@@ -251,10 +251,10 @@ NOTE: 사용자 이름을 추가하거나 스크립트에서 정보를 묻는 �
 
 IMPORTANT: SSH 기능을 통해 제공됩니다 link:task_mnode_enable_remote_support_connections.html["NetApp RST(Remote Support Tunnel) 세션 액세스"] 관리 서비스 2.18 이상을 실행하는 관리 노드에서 기본적으로 이 비활성화됩니다. 이전에 관리 노드에서 SSH 기능을 활성화한 경우 가 필요할 수 있습니다 link:task_mnode_ssh_management.html["SSH를 다시 비활성화합니다"] 복구된 관리 노드에서
 
-[discrete]
+
+
 == 자세한 내용을 확인하십시오
 
 * link:concept_hci_volumes.html#persistent-volumes["영구 볼륨"]
 * https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
 

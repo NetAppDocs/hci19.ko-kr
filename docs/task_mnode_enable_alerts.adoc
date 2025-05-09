@@ -75,9 +75,8 @@ NOTE: NetApp Deployment Engine을 사용하여 AIQ * 로 데이터 전송 옵션
 NOTE: NetApp Deployment Engine을 사용하여 AIQ * 로 데이터 전송 옵션을 끈 경우 다음을 수행해야 합니다 link:task_mnode_enable_activeIQ.html["원격 측정을 활성화합니다"] 관리 노드 REST API를 사용하여 이 페이지에서 서비스를 구성합니다.
 
 |===
-[discrete]
+
+
 == 자세한 내용을 확인하십시오
 
-* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
-
+https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]

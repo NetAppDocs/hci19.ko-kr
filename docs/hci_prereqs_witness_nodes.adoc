@@ -11,7 +11,6 @@ keywords: netapp, hci, element, Witness Node
 :icons: font
 :linkattrs: 
 :imagesdir: ../media/
-:keywords: netapp, hci, element, Witness Node
 
 
 [role="lead"]
@@ -43,9 +42,8 @@ NetApp HCI는 2노드 또는 3노드 스토리지 클러스터에서 특정 스�
 
 NOTE: NetApp HCI 설치 프로세스에서 Witness 노드를 설치하면 VMware vCenter에 VM 템플릿이 저장되며, Witness 노드가 실수로 제거, 손실 또는 손상된 경우 이를 다시 배포하는 데 사용할 수 있습니다. Witness Node를 호스팅하던 장애가 발생한 컴퓨팅 노드를 교체해야 하는 경우 이 템플릿을 사용하여 Witness Node를 재구축할 수도 있습니다. 자세한 내용은 2노드 및 3노드 스토리지 클러스터를 위한 * 재구축 Witness 노드 * 섹션을 참조하십시오 link:task_hci_h410crepl.html["여기"^].
 
-[discrete]
+
+
 == 자세한 내용을 확인하십시오
 
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지를 참조하십시오"^]
-* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
-
+https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]

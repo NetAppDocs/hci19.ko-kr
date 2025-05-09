@@ -54,8 +54,6 @@ indexpage:
       url: https://kb.netapp.com/Special:Search?query=netapp+hci&type=wiki
   - title: 해결하세요
     links:
-    - title: NetApp HCI 리소스 페이지를 참조하십시오
-      url: https://www.netapp.com/hybrid-cloud/hci-documentation/
     - title: NetApp 솔루션
       url: https://docs.netapp.com/us-en/netapp-solutions/index.html
   - title: 데모 및 자습서

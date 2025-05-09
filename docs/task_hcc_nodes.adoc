@@ -66,9 +66,8 @@ TIP: 스토리지 및 컴퓨팅 리소스의 수를 보려면 NetApp HCC(하이�
 
 NOTE: NetApp 하이브리드 클라우드 제어에서 컴퓨팅 노드를 관리하려면 반드시 필요합니다 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Management_services_for_Element_Software_and_NetApp_HCI/How_to_set_up_compute_node_management_in_NetApp_Hybrid_Cloud_Control["vCenter 호스트 클러스터에 컴퓨팅 노드를 추가합니다"^].
 
-[discrete]
+
+
 == 자세한 내용을 확인하십시오
 
-* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
-
+https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]

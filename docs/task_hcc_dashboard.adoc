@@ -181,10 +181,10 @@ image::hcc_dashboard_compute_util_cpu.png[사용량 창을 계산합니다]
 . 컴퓨팅 정보에 대한 자세한 내용은 을 참조하십시오 https://activeiq.solidfire.com["기간별 데이터를 위한 NetApp SolidFire Active IQ"^].
 
 
-[discrete]
+
+
 == 자세한 내용을 확인하십시오
 
 * https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
 * https://docs.netapp.com/us-en/solidfire-active-iq/index.html["NetApp SolidFire Active IQ 문서"^]
 

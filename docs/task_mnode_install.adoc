@@ -349,12 +349,12 @@ NOTE: 컨트롤러 하위 자산을 추가하려면 vCenter에서 새로운 NetA
 
 
 
-[discrete]
+
+
 == 자세한 내용을 확인하십시오
 
 * link:concept_hci_volumes.html#persistent-volumes["영구 볼륨"]
 * link:task_mnode_add_assets.html["컴퓨팅 및 컨트롤러 자산을 관리 노드에 추가합니다"]
 * link:task_mnode_install_add_storage_NIC.html["스토리지 NIC를 구성합니다"]
 * https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
 

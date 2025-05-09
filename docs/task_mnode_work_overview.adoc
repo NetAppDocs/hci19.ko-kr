@@ -53,9 +53,8 @@ Element 소프트웨어 버전 11.3 이상을 실행하는 클러스터의 경�
 * link:task_mnode_ssh_management.html["관리 노드에서 SSH 기능을 관리합니다"]
 
 
-[discrete]
+
+
 == 자세한 내용을 확인하십시오
 
-* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
-
+https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]

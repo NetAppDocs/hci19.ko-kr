@@ -53,6 +53,5 @@ Element API를 사용하여 유지보수 모드로 작업할 때 유지보수 �
 * https://docs.netapp.com/us-en/element-software/api/reference_element_api_enablemaintenancemode.html["Element API를 사용하여 유지보수 모드를 활성화합니다"^]
 * https://docs.netapp.com/us-en/element-software/api/reference_element_api_disablemaintenancemode.html["Element API를 사용하여 유지보수 모드를 비활성화합니다"^]
 * https://docs.netapp.com/us-en/element-software/api/concept_element_api_about_the_api.html["NetApp Element API 설명서"^]
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지를 참조하십시오"^]
 * https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
 

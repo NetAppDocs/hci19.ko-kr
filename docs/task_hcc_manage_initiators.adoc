@@ -128,11 +128,11 @@ Fibre Channel 이니시에이터 WWPN의 허용되는 형식은 ':AA:BB:CC:dd:11
 
 
 
-[discrete]
+
+
 == 자세한 내용을 확인하십시오
 
 * link:concept_hci_initiators.html["이니시에이터에 대해 자세히 알아보십시오"]
 * link:concept_hci_volume_access_groups.html["볼륨 액세스 그룹에 대해 알아보십시오"]
 * https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
 

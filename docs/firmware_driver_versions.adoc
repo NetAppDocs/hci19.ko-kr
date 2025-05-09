@@ -11,7 +11,6 @@ summary: NetApp HCI 및 NetApp Element 소프트웨어에서 지원되는 펌웨
 :icons: font
 :linkattrs: 
 :imagesdir: ../media/
-:keywords: hci, earlier, documentation, versions
 
 
 [role="lead"]

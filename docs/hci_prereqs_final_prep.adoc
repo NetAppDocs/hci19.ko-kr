@@ -100,10 +100,10 @@ IPMI 네트워크 포트를 구성하는 즉시 각 컴퓨팅 및 스토리지 �
 . 기본 IPMI 암호가 있는 다른 NetApp HCI H610C, H615C 또는 H610S 노드에 대해 이 절차를 반복합니다.
 
 
-[discrete]
+
+
 == 자세한 내용을 확인하십시오
 
 * https://docs.netapp.com/us-en/solidfire-active-iq/index.html["NetApp SolidFire Active IQ 문서"^]
 * https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
 

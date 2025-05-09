@@ -63,9 +63,8 @@ NOTE: 또는 NetApp 하이브리드 클라우드 제어 UI에서 인벤토리가
 . NetApp 하이브리드 클라우드 제어 브라우저를 새로고침하여 변경 사항을 확인하십시오.
 
 
-[discrete]
+
+
 == 자세한 내용을 확인하십시오
 
-* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
-
+https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]

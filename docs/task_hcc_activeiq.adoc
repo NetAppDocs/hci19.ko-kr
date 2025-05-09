@@ -54,10 +54,10 @@ https://<ManagementNodeIP>
 
 TIP: 스토리지 및 컴퓨팅 리소스의 수를 보려면 HCC(하이브리드 클라우드 제어) 대시보드를 확인하십시오. 을 참조하십시오 link:task_hcc_dashboard.html["HCC 대시보드를 사용하여 스토리지 및 컴퓨팅 리소스를 모니터링합니다"].
 
-[discrete]
+
+
 == 자세한 내용을 확인하십시오
 
 * https://docs.netapp.com/us-en/solidfire-active-iq/index.html["NetApp SolidFire Active IQ 문서"^]
 * https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
 

@@ -32,9 +32,3 @@ NOTE: 업그레이드를 위한 Ansible 역할은 NetApp HCI H-series 컴퓨팅 
 
 .펌웨어 업그레이드 자동화를 시작하십시오
 시작하려면 로 이동합니다 https://github.com/NetApp-Automation/nar_compute_firmware_upgrade["GitHub의 NetApp Ansible 리포지토리"^] 그리고 'NAR_컴퓨팅_노드_펌웨어_업그레이드' 역할 및 문서를 다운로드하십시오.
-
-[discrete]
-== 자세한 내용을 확인하십시오
-
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
-

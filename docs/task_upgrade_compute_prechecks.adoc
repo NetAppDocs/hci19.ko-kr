@@ -281,9 +281,8 @@ NetApp 하이브리드 클라우드 제어 또는 API 메서드에서 수행하�
 
 | 클러스터에서 Witness 노드의 상태는 어떻습니까? 감시 노드가 이 ESXi 호스트에서 실행 중이며 대체 감시 노드가 다른 ESXi 호스트에서 실행 중입니다. | 노드 | Witness Node가 이 ESXi 호스트에서 로컬로 실행 중입니다. 이 ESXi 호스트를 업그레이드할 준비가 되면 이 ESXi 호스트에서 Witness Node만 종료하고 상태 점검을 다시 실행하십시오. * 하나의 Witness Node는 HCI 설치에서 항상 실행되어야 합니다 *. | https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/NetApp_HCI/How_to_resolve_witness_node_issues_prior_to_upgrading_compute_nodes["이 KB를 참조하십시오"^] 
 |===
-[discrete]
+
+
 == 자세한 내용을 확인하십시오
 
-* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
-
+https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]

@@ -52,9 +52,8 @@ NetApp HCI에는 다음과 같은 스위치 요구 사항이 있습니다.
 
 모든 NetApp HCI 노드는 전용 관리 포트를 통해 추가적인 대역외 관리 기능을 제공합니다. NetApp H300S, H300E, H500S, H500E, H700S, H700E 및 H410C 노드도 포트 A를 통한 IPMI 액세스를 허용합니다 모범 사례로서, 사용자 환경의 모든 노드에 대해 대역외 관리를 구성하여 NetApp HCI의 원격 관리를 용이하게 해야 합니다.
 
-[discrete]
+
+
 == 자세한 내용을 확인하십시오
 
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지를 참조하십시오"^]
-* https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
-
+https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]

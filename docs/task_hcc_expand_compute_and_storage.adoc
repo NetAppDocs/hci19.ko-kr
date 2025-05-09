@@ -132,10 +132,10 @@ NOTE: 2노드 스토리지 클러스터를 4개 이상의 노드로 확장한 �
 
 
 
-[discrete]
+
+
 == 자세한 내용을 확인하십시오
 
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["NetApp HCI 리소스 페이지 를 참조하십시오"^]
 * https://docs.netapp.com/us-en/vcp/index.html["vCenter Server용 NetApp Element 플러그인"^]
 * https://library.netapp.com/ecm/ecm_download_file/ECMLP2856176["NetApp HCI 컴퓨팅 및 스토리지 노드 설치 및 설정 지침"^]
 * https://kb.vmware.com/s/article/1003212["VMware 기술 자료: EVC(Enhanced vMotion Compatibility) 프로세서 지원"^]
